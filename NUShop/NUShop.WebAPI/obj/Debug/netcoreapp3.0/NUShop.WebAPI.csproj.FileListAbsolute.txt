@@ -1,0 +1,6 @@
+D:\Fetch Training\DotnetProject\NUShop\NUShop.WebAPI\obj\Debug\netcoreapp3.0\NUShop.WebAPI.csproj.CoreCompileInputs.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.WebAPI\obj\Debug\netcoreapp3.0\NUShop.WebAPI.RazorAssemblyInfo.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.WebAPI\obj\Debug\netcoreapp3.0\NUShop.WebAPI.RazorAssemblyInfo.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop.WebAPI\obj\Debug\netcoreapp3.0\NUShop.WebAPI.AssemblyInfoInputs.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.WebAPI\obj\Debug\netcoreapp3.0\NUShop.WebAPI.AssemblyInfo.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop.WebAPI\obj\Debug\netcoreapp3.0\NUShop.WebAPI.RazorTargetAssemblyInfo.cache
