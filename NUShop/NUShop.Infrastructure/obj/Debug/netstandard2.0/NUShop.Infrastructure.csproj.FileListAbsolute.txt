@@ -1,0 +1,9 @@
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Infrastructure\bin\Debug\netstandard2.0\NUShop.Infrastructure.deps.json
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Infrastructure\bin\Debug\netstandard2.0\NUShop.Infrastructure.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Infrastructure\bin\Debug\netstandard2.0\NUShop.Infrastructure.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Infrastructure\obj\Debug\netstandard2.0\NUShop.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Infrastructure\obj\Debug\netstandard2.0\NUShop.Infrastructure.AssemblyInfoInputs.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Infrastructure\obj\Debug\netstandard2.0\NUShop.Infrastructure.AssemblyInfo.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Infrastructure\obj\Debug\netstandard2.0\NUShop.Infrastructure.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Infrastructure\obj\Debug\netstandard2.0\NUShop.Infrastructure.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Infrastructure\obj\Debug\netstandard2.0\NUShop.Infrastructure.csprojAssemblyReference.cache

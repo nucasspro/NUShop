@@ -1,0 +1,13 @@
+﻿using NUShop.Infrastructure.Shared;
+
+namespace NUShop.Data.Entities
+{
+    public class BlogTag : DomainEntity<int>
+    {
+        public int BlogId { set; get; }
+        public virtual Blog Blog { set; get; }
+
+        public string TagId { set; get; }
+        public virtual Tag Tag { set; get; }
+    }
+}
