@@ -1,9 +1,0 @@
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\bin\Debug\netstandard2.0\NUShop.Utilities.deps.json
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\bin\Debug\netstandard2.0\NUShop.Utilities.dll
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\bin\Debug\netstandard2.0\NUShop.Utilities.pdb
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netstandard2.0\NUShop.Utilities.csproj.CoreCompileInputs.cache
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netstandard2.0\NUShop.Utilities.AssemblyInfoInputs.cache
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netstandard2.0\NUShop.Utilities.AssemblyInfo.cs
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netstandard2.0\NUShop.Utilities.dll
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netstandard2.0\NUShop.Utilities.pdb
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netstandard2.0\NUShop.Utilities.csprojAssemblyReference.cache

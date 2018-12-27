@@ -5,6 +5,11 @@ namespace NUShop.Data.Entities
 {
     public class AdvertistmentPosition : DomainEntity<string>
     {
+        public AdvertistmentPosition()
+        {
+            Advertistments = new List<Advertistment>();
+        }
+
         public string Name { get; set; }
 
         public string PageId { get; set; }

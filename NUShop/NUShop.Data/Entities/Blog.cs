@@ -10,6 +10,7 @@ namespace NUShop.Data.Entities
     {
         public Blog()
         {
+            BlogTags = new List<BlogTag>();
         }
 
         public Blog(string name, string thumbnailImage,

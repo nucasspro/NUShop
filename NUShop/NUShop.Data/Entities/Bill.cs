@@ -10,6 +10,7 @@ namespace NUShop.Data.Entities
     {
         public Bill()
         {
+            BillDetails = new List<BillDetail>();
         }
 
         public Bill(string customerName, string customerAddress, string customerMobile, string customerMessage,

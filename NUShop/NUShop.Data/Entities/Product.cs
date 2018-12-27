@@ -42,6 +42,10 @@ namespace NUShop.Data.Entities
             SeoKeywords = seoMetaKeyword;
             SeoDescription = seoMetaDescription;
             ProductTags = new List<ProductTag>();
+            ProductImages = new List<ProductImage>();
+            ProductQuantities = new List<ProductQuantity>();
+            WholePrices = new List<WholePrice>();
+            BillDetails = new List<BillDetail>();
         }
 
         public Product(int id, string name, int categoryId, string thumbnailImage,
@@ -70,6 +74,10 @@ namespace NUShop.Data.Entities
             SeoKeywords = seoMetaKeyword;
             SeoDescription = seoMetaDescription;
             ProductTags = new List<ProductTag>();
+            ProductImages = new List<ProductImage>();
+            ProductQuantities = new List<ProductQuantity>();
+            WholePrices = new List<WholePrice>();
+            BillDetails = new List<BillDetail>();
         }
 
         public string Name { get; set; }

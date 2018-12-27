@@ -8,6 +8,7 @@ namespace NUShop.Data.Entities
     {
         public AppRole() : base()
         {
+            Permissions = new List<Permission>();
         }
 
         public AppRole(string name, string description) : base(name)

@@ -13,7 +13,7 @@ namespace NUShop.Data.Entities
         }
 
         public AppUser(Guid id, string fullName, string userName,
-            string email, string phoneNumber, string avatar, Status status)
+            string email, string phoneNumber, string avatar)
         {
             Id = id;
             FullName = fullName;
@@ -21,7 +21,7 @@ namespace NUShop.Data.Entities
             Email = email;
             PhoneNumber = phoneNumber;
             Avatar = avatar;
-            Status = status;
+            Status = Status.Active;
         }
 
         public string FullName { get; set; }

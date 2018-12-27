@@ -9,6 +9,7 @@ namespace NUShop.Data.Entities
     {
         public Function()
         {
+            Permissions = new List<Permission>();
         }
 
         public Function(string name, string url, string parentId, string iconCss, int sortOrder)

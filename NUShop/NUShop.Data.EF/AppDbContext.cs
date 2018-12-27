@@ -1,7 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
-using NUShop.Data.EF.EntitiesConfiguration;
+using NUShop.Data.EF.EntityConfigurations;
 using NUShop.Data.EF.Extensions;
 using NUShop.Data.Entities;
 using NUShop.Data.Interfaces;
@@ -12,7 +13,13 @@ namespace NUShop.Data.EF
 {
     public class AppDbContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
-        public AppDbContext(DbContextOptions options) : base(options)
+        private IdentityDbContext DbContext;
+
+        public AppDbContext()
+        {
+        }
+
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
 
@@ -54,13 +61,25 @@ namespace NUShop.Data.EF
         {
             if (optionsBuilder.IsConfigured)
                 return;
-            //optionsBuilder.UseSqlServer(Context.Database.GetDbConnection());
+            //optionsBuilder.UseSqlServer(DbContext.Database.GetDbConnection());
             optionsBuilder.UseSqlServer(@"Server = DESKTOP-9VB67KJ; Database = NUShop; Trusted_Connection = True; ConnectRetryCount = 0");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region Add Entity Configurations
+
+            modelBuilder.AddConfiguration(new IdentityUserClaimConfiguration());
+            modelBuilder.AddConfiguration(new IdentityRoleClaimConfiguration());
+            modelBuilder.AddConfiguration(new IdentityUserLoginConfiguration());
+            modelBuilder.AddConfiguration(new IdentityUserRoleConfiguration());
+            modelBuilder.AddConfiguration(new IdentityUserTokenConfiguration());
+
+            //modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims").HasKey(x => x.Id);
+            //modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims").HasKey(x => x.Id);
+            //modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
+            //modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.RoleId, x.UserId });
+            //modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => new { x.UserId });
 
             modelBuilder.AddConfiguration(new AdvertistmentConfiguration());
             modelBuilder.AddConfiguration(new AdvertistmentPageConfiguration());
@@ -93,6 +112,8 @@ namespace NUShop.Data.EF
             modelBuilder.AddConfiguration(new WholePriceConfiguration());
 
             #endregion Add Entity Configurations
+
+            //base.OnModelCreating(modelBuilder);
         }
 
         public override int SaveChanges()

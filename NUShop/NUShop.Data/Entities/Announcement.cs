@@ -13,12 +13,12 @@ namespace NUShop.Data.Entities
             AnnouncementUsers = new List<AnnouncementUser>();
         }
 
-        public Announcement(string title, string content, Guid userId, Status status)
+        public Announcement(string title, string content, Guid userId)
         {
             Title = title;
             Content = content;
             UserId = userId;
-            Status = status;
+            Status = Status.Active;
         }
 
         public string Title { set; get; }

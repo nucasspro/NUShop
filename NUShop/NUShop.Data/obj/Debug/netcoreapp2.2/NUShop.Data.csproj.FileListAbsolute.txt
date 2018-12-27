@@ -1,0 +1,14 @@
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\obj\Debug\netcoreapp2.2\NUShop.Data.csprojAssemblyReference.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\obj\Debug\netcoreapp2.2\NUShop.Data.csproj.CoreCompileInputs.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\obj\Debug\netcoreapp2.2\NUShop.Data.AssemblyInfoInputs.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\obj\Debug\netcoreapp2.2\NUShop.Data.AssemblyInfo.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\bin\Debug\netcoreapp2.2\NUShop.Data.deps.json
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\bin\Debug\netcoreapp2.2\NUShop.Data.runtimeconfig.json
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\bin\Debug\netcoreapp2.2\NUShop.Data.runtimeconfig.dev.json
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\bin\Debug\netcoreapp2.2\NUShop.Data.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\bin\Debug\netcoreapp2.2\NUShop.Data.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\bin\Debug\netcoreapp2.2\NUShop.Infrastructure.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\bin\Debug\netcoreapp2.2\NUShop.Infrastructure.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\obj\Debug\netcoreapp2.2\NUShop.Data.csproj.CopyComplete
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\obj\Debug\netcoreapp2.2\NUShop.Data.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data\obj\Debug\netcoreapp2.2\NUShop.Data.pdb
