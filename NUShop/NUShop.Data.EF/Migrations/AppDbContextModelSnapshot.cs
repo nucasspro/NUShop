@@ -33,7 +33,9 @@ namespace NUShop.Data.EF.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppRoleClaims");
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
@@ -50,40 +52,44 @@ namespace NUShop.Data.EF.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppUserClaims");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.Property<Guid>("UserId")
-                        .ValueGeneratedOnAdd();
-
                     b.Property<string>("LoginProvider");
-
-                    b.Property<string>("ProviderDisplayName");
 
                     b.Property<string>("ProviderKey");
 
-                    b.HasKey("UserId");
+                    b.Property<string>("ProviderDisplayName");
 
-                    b.ToTable("AppUserLogins");
+                    b.Property<Guid>("UserId");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.Property<Guid>("RoleId");
-
                     b.Property<Guid>("UserId");
 
-                    b.HasKey("RoleId", "UserId");
+                    b.Property<Guid>("RoleId");
 
-                    b.ToTable("AppUserRoles");
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.Property<Guid>("UserId")
-                        .ValueGeneratedOnAdd();
+                    b.Property<Guid>("UserId");
 
                     b.Property<string>("LoginProvider");
 
@@ -91,58 +97,40 @@ namespace NUShop.Data.EF.Migrations
 
                     b.Property<string>("Value");
 
-                    b.HasKey("UserId");
+                    b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("AppUserTokens");
+                    b.ToTable("AspNetUserTokens");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.Advertistment", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("AdvertistmentPositionId");
 
-                    b.Property<DateTime>("DateModified")
-                        .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateCreated");
 
-                    b.Property<string>("Description")
-                        .HasColumnName("Description")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<DateTime>("DateModified");
 
-                    b.Property<string>("Image")
-                        .HasColumnName("Image")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("Description");
 
-                    b.Property<string>("Name")
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Image");
 
-                    b.Property<string>("PositionId")
-                        .HasColumnName("PositionId")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<int>("SortOrder")
-                        .HasColumnName("SortOrder")
-                        .HasColumnType("int");
+                    b.Property<string>("PositionId");
 
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
+                    b.Property<int>("SortOrder");
 
-                    b.Property<string>("Url")
-                        .HasColumnName("URL")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("Status");
+
+                    b.Property<string>("Url");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PositionId");
+                    b.HasIndex("AdvertistmentPositionId");
 
                     b.ToTable("Advertistments");
                 });
@@ -150,13 +138,9 @@ namespace NUShop.Data.EF.Migrations
             modelBuilder.Entity("NUShop.Data.Entities.AdvertistmentPage", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("varchar(255)");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name")
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
                     b.HasKey("Id");
 
@@ -166,21 +150,17 @@ namespace NUShop.Data.EF.Migrations
             modelBuilder.Entity("NUShop.Data.Entities.AdvertistmentPosition", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("varchar(255)");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name")
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("AdvertistmentPageId");
 
-                    b.Property<string>("PageId")
-                        .HasColumnName("PageId")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("Name");
+
+                    b.Property<string>("PageId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PageId");
+                    b.HasIndex("AdvertistmentPageId");
 
                     b.ToTable("AdvertistmentPositions");
                 });
@@ -188,38 +168,25 @@ namespace NUShop.Data.EF.Migrations
             modelBuilder.Entity("NUShop.Data.Entities.Announcement", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("varchar(255)");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Content")
-                        .HasColumnName("Content")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<Guid?>("AppUserId");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<string>("Content");
 
-                    b.Property<DateTime>("DateModified")
-                        .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateCreated");
 
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("DateModified");
 
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnName("Title")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<int>("Status");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnName("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Title");
+
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("AppUserId");
 
                     b.ToTable("Announcements");
                 });
@@ -228,22 +195,13 @@ namespace NUShop.Data.EF.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AnnouncementId")
-                        .IsRequired()
-                        .HasColumnName("AnnouncementId")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("AnnouncementId");
 
-                    b.Property<bool?>("HasRead")
-                        .HasColumnName("HasRead")
-                        .HasColumnType("bit");
+                    b.Property<bool?>("HasRead");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnName("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<Guid>("UserId");
 
                     b.HasKey("Id");
 
@@ -255,25 +213,27 @@ namespace NUShop.Data.EF.Migrations
             modelBuilder.Entity("NUShop.Data.Entities.AppRole", b =>
                 {
                     b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("uniqueidentifier");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("ConcurrencyStamp");
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken();
 
-                    b.Property<string>("Description")
-                        .HasColumnName("Description")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Description");
 
                     b.Property<string>("Name")
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(MAX)");
+                        .HasMaxLength(256);
 
-                    b.Property<string>("NormalizedName");
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256);
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppRoles");
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.AppUser", b =>
@@ -283,43 +243,35 @@ namespace NUShop.Data.EF.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
-                    b.Property<string>("Avatar")
-                        .HasColumnName("Avatar")
-                        .HasColumnType("nvarchar(MAX)");
+                    b.Property<string>("Avatar");
 
-                    b.Property<decimal>("Balance")
-                        .HasColumnName("Balance")
-                        .HasColumnType("decimal");
+                    b.Property<decimal>("Balance");
 
-                    b.Property<DateTime?>("BirthDay")
-                        .HasColumnName("BirthDay")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime?>("BirthDay");
 
-                    b.Property<string>("ConcurrencyStamp");
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken();
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime>("DateModified")
-                        .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateModified");
 
-                    b.Property<string>("Email");
+                    b.Property<string>("Email")
+                        .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<string>("FullName")
-                        .HasColumnName("FullName")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("FullName");
 
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
-                    b.Property<string>("NormalizedEmail");
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256);
 
-                    b.Property<string>("NormalizedUserName");
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256);
 
                     b.Property<string>("PasswordHash");
 
@@ -329,111 +281,78 @@ namespace NUShop.Data.EF.Migrations
 
                     b.Property<string>("SecurityStamp");
 
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
+                    b.Property<int>("Status");
 
                     b.Property<bool>("TwoFactorEnabled");
 
-                    b.Property<string>("UserName");
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256);
 
                     b.HasKey("Id");
 
-                    b.ToTable("AppUsers");
+                    b.HasIndex("NormalizedEmail")
+                        .HasName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.Bill", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BillStatus")
-                        .HasColumnName("BillStatus")
-                        .HasColumnType("int");
+                    b.Property<int>("BillStatus");
 
-                    b.Property<string>("CustomerAddress")
-                        .IsRequired()
-                        .HasColumnName("CustomerAddress")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("CustomerAddress");
 
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnName("CustomerId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<Guid?>("CustomerId");
 
-                    b.Property<string>("CustomerMessage")
-                        .IsRequired()
-                        .HasColumnName("CustomerMessage")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("CustomerMessage");
 
-                    b.Property<string>("CustomerMobile")
-                        .IsRequired()
-                        .HasColumnName("CustomerMobile")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("CustomerMobile");
 
-                    b.Property<string>("CustomerName")
-                        .IsRequired()
-                        .HasColumnName("CustomerName")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("CustomerName");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime>("DateModified")
-                        .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateModified");
 
-                    b.Property<int>("PaymentMethod")
-                        .HasColumnName("PaymentMethod")
-                        .HasColumnType("int");
+                    b.Property<int>("PaymentMethod");
 
-                    b.Property<int>("Status")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Status")
-                        .HasColumnType("int")
-                        .HasDefaultValue(1);
+                    b.Property<int>("Status");
+
+                    b.Property<Guid?>("UserId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
+                    b.HasIndex("UserId");
 
-                    b.ToTable("Bills");
+                    b.ToTable("Bill");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.BillDetail", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BillId")
-                        .HasColumnName("BillId")
-                        .HasColumnType("int");
+                    b.Property<int>("BillId");
 
-                    b.Property<int>("ColorId")
-                        .HasColumnName("ColorId")
-                        .HasColumnType("int");
+                    b.Property<int>("ColorId");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnName("Price")
-                        .HasColumnType("decimal");
+                    b.Property<decimal>("Price");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnName("ProductId")
-                        .HasColumnType("int");
+                    b.Property<int>("ProductId");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnName("Quantity")
-                        .HasColumnType("int");
+                    b.Property<int>("Quantity");
 
-                    b.Property<int>("SizeId")
-                        .HasColumnName("SizeId")
-                        .HasColumnType("int");
+                    b.Property<int>("SizeId");
 
                     b.HasKey("Id");
 
@@ -452,92 +371,52 @@ namespace NUShop.Data.EF.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Content")
-                        .HasColumnName("Content")
-                        .HasColumnType("text");
+                    b.Property<string>("Content");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime>("DateModified")
-                        .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateModified");
 
-                    b.Property<string>("Description")
-                        .HasColumnName("Description")
-                        .HasColumnType("text");
+                    b.Property<string>("Description");
 
-                    b.Property<bool?>("HomeFlag")
-                        .HasColumnName("HomeFlag")
-                        .HasColumnType("bit");
+                    b.Property<bool?>("HomeFlag");
 
-                    b.Property<bool?>("HotFlag")
-                        .HasColumnName("HotFlag")
-                        .HasColumnType("bit");
+                    b.Property<bool?>("HotFlag");
 
-                    b.Property<string>("Image")
-                        .HasColumnName("Image")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Image");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("SeoAlias")
-                        .HasColumnName("SeoAlias")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("SeoAlias");
 
-                    b.Property<string>("SeoDescription")
-                        .HasColumnName("SeoDescription")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("SeoDescription");
 
-                    b.Property<string>("SeoKeywords")
-                        .HasColumnName("SeoKeywords")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("SeoKeywords");
 
-                    b.Property<string>("SeoPageTitle")
-                        .HasColumnName("SeoPageTitle")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("SeoPageTitle");
 
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
+                    b.Property<int>("Status");
 
-                    b.Property<string>("Tags")
-                        .HasColumnName("Tags")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Tags");
 
-                    b.Property<int?>("ViewCount")
-                        .HasColumnName("ViewCount")
-                        .HasColumnType("int");
+                    b.Property<int?>("ViewCount");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Blog");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.BlogTag", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BlogId")
-                        .HasColumnName("BlogId")
-                        .HasColumnType("int");
+                    b.Property<int>("BlogId");
 
-                    b.Property<string>("TagId")
-                        .IsRequired()
-                        .HasColumnName("TagId")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("TagId");
 
                     b.HasKey("Id");
 
@@ -548,21 +427,54 @@ namespace NUShop.Data.EF.Migrations
                     b.ToTable("BlogTags");
                 });
 
+            modelBuilder.Entity("NUShop.Data.Entities.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("DateCreated");
+
+                    b.Property<DateTime>("DateModified");
+
+                    b.Property<string>("Description");
+
+                    b.Property<bool?>("HomeFlag");
+
+                    b.Property<int?>("HomeOrder");
+
+                    b.Property<string>("Image");
+
+                    b.Property<string>("Name");
+
+                    b.Property<int?>("ParentId");
+
+                    b.Property<string>("SeoAlias");
+
+                    b.Property<string>("SeoDescription");
+
+                    b.Property<string>("SeoKeywords");
+
+                    b.Property<string>("SeoPageTitle");
+
+                    b.Property<int>("SortOrder");
+
+                    b.Property<int>("Status");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
             modelBuilder.Entity("NUShop.Data.Entities.Color", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Code")
-                        .HasColumnName("Code")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Code");
 
-                    b.Property<string>("Name")
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
                     b.HasKey("Id");
 
@@ -572,84 +484,48 @@ namespace NUShop.Data.EF.Migrations
             modelBuilder.Entity("NUShop.Data.Entities.Contact", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("nvarchar(255)");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Address")
-                        .HasColumnName("Address")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Address");
 
-                    b.Property<string>("Email")
-                        .HasColumnName("Email")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("Email");
 
-                    b.Property<double?>("Lat")
-                        .HasColumnName("Lat")
-                        .HasColumnType("float");
+                    b.Property<double?>("Lat");
 
-                    b.Property<double?>("Lng")
-                        .HasColumnName("Lng")
-                        .HasColumnType("float");
+                    b.Property<double?>("Lng");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Other")
-                        .HasColumnName("Other")
-                        .HasColumnType("nvarchar(MAX)");
+                    b.Property<string>("Other");
 
-                    b.Property<string>("Phone")
-                        .HasColumnName("Phone")
-                        .HasColumnType("varchar(50)");
+                    b.Property<string>("Phone");
 
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
+                    b.Property<int>("Status");
 
-                    b.Property<string>("Website")
-                        .HasColumnName("Website")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("Website");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactDetails");
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.Feedback", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime>("DateModified")
-                        .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateModified");
 
-                    b.Property<string>("Email")
-                        .HasColumnName("Email")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Email");
 
-                    b.Property<string>("Message")
-                        .HasColumnName("Message")
-                        .HasColumnType("nvarchar(500)");
+                    b.Property<string>("Message");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
+                    b.Property<int>("Status");
 
                     b.HasKey("Id");
 
@@ -659,14 +535,9 @@ namespace NUShop.Data.EF.Migrations
             modelBuilder.Entity("NUShop.Data.Entities.Footer", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("varchar(255)");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnName("Content")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Content");
 
                     b.HasKey("Id");
 
@@ -676,35 +547,19 @@ namespace NUShop.Data.EF.Migrations
             modelBuilder.Entity("NUShop.Data.Entities.Function", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("nvarchar(255)");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("IconCss")
-                        .HasColumnName("IconCss")
-                        .HasColumnType("varchar(MAX)");
+                    b.Property<string>("IconCss");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("ParentId")
-                        .HasColumnName("ParentId")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("ParentId");
 
-                    b.Property<int>("SortOrder")
-                        .HasColumnName("SortOrder")
-                        .HasColumnType("int");
+                    b.Property<int>("SortOrder");
 
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
+                    b.Property<int>("Status");
 
-                    b.Property<string>("URL")
-                        .IsRequired()
-                        .HasColumnName("URL")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("URL");
 
                     b.HasKey("Id");
 
@@ -714,21 +569,13 @@ namespace NUShop.Data.EF.Migrations
             modelBuilder.Entity("NUShop.Data.Entities.Language", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("varchar(255)");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<bool>("IsDefault")
-                        .HasColumnName("IsDefault")
-                        .HasColumnType("bit");
+                    b.Property<bool>("IsDefault");
 
-                    b.Property<string>("Name")
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Resources")
-                        .HasColumnName("Resource")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Resources");
 
                     b.Property<int>("Status");
 
@@ -741,27 +588,15 @@ namespace NUShop.Data.EF.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Alias")
-                        .IsRequired()
-                        .HasColumnName("Alias")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Alias");
 
-                    b.Property<string>("Content")
-                        .HasColumnName("Content")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Content");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
+                    b.Property<int>("Status");
 
                     b.HasKey("Id");
 
@@ -772,40 +607,27 @@ namespace NUShop.Data.EF.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("CanCreate")
-                        .HasColumnName("CanCreate")
-                        .HasColumnType("bit");
+                    b.Property<Guid?>("AppRoleId");
 
-                    b.Property<bool>("CanDelete")
-                        .HasColumnName("CanDelete")
-                        .HasColumnType("bit");
+                    b.Property<bool>("CanCreate");
 
-                    b.Property<bool>("CanRead")
-                        .HasColumnName("CanRead")
-                        .HasColumnType("bit");
+                    b.Property<bool>("CanDelete");
 
-                    b.Property<bool>("CanUpdate")
-                        .HasColumnName("CanUpdate")
-                        .HasColumnType("bit");
+                    b.Property<bool>("CanRead");
 
-                    b.Property<string>("FunctionId")
-                        .IsRequired()
-                        .HasColumnName("FunctionId")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<bool>("CanUpdate");
 
-                    b.Property<Guid>("RoleId")
-                        .HasColumnName("RoleId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("FunctionId");
+
+                    b.Property<Guid>("RoleId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FunctionId");
+                    b.HasIndex("AppRoleId");
 
-                    b.HasIndex("RoleId");
+                    b.HasIndex("FunctionId");
 
                     b.ToTable("Permissions");
                 });
@@ -814,92 +636,47 @@ namespace NUShop.Data.EF.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnName("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<int>("CategoryId");
 
-                    b.Property<string>("Content")
-                        .HasColumnName("Content")
-                        .HasColumnType("text");
+                    b.Property<string>("Content");
 
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateCreated");
 
-                    b.Property<DateTime>("DateModified")
-                        .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                    b.Property<DateTime>("DateModified");
 
-                    b.Property<string>("Description")
-                        .HasColumnName("Description")
-                        .HasColumnType("text");
+                    b.Property<string>("Description");
 
-                    b.Property<bool?>("HomeFlag")
-                        .HasColumnName("HomeFlag")
-                        .HasColumnType("bit");
+                    b.Property<bool?>("HomeFlag");
 
-                    b.Property<bool?>("HotFlag")
-                        .HasColumnName("HotFlag")
-                        .HasColumnType("bit");
+                    b.Property<bool?>("HotFlag");
 
-                    b.Property<string>("Image")
-                        .HasColumnName("Image")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("Image");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<decimal>("OriginalPrice")
-                        .HasColumnName("OriginalPrice")
-                        .HasColumnType("decimal");
+                    b.Property<decimal>("OriginalPrice");
 
-                    b.Property<decimal>("Price")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Price")
-                        .HasColumnType("decimal")
-                        .HasDefaultValue(0m);
+                    b.Property<decimal>("Price");
 
-                    b.Property<decimal?>("PromotionPrice")
-                        .HasColumnName("PromotionPrice")
-                        .HasColumnType("decimal");
+                    b.Property<decimal?>("PromotionPrice");
 
-                    b.Property<string>("SeoAlias")
-                        .HasColumnName("SeoAlias")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("SeoAlias");
 
-                    b.Property<string>("SeoDescription")
-                        .HasColumnName("SeoDescription")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("SeoDescription");
 
-                    b.Property<string>("SeoKeywords")
-                        .HasColumnName("SeoKeywords")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("SeoKeywords");
 
-                    b.Property<string>("SeoPageTitle")
-                        .HasColumnName("SeoPageTitle")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("SeoPageTitle");
 
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
+                    b.Property<int>("Status");
 
-                    b.Property<string>("Tags")
-                        .HasColumnName("Tags")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Tags");
 
-                    b.Property<string>("Unit")
-                        .HasColumnName("Unit")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Unit");
 
-                    b.Property<int?>("ViewCount")
-                        .HasColumnName("ViewCount")
-                        .HasColumnType("int");
+                    b.Property<int?>("ViewCount");
 
                     b.HasKey("Id");
 
@@ -908,94 +685,17 @@ namespace NUShop.Data.EF.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("NUShop.Data.Entities.ProductCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
-
-                    b.Property<DateTime>("DateModified")
-                        .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
-
-                    b.Property<string>("Description")
-                        .HasColumnName("Description")
-                        .HasColumnType("nvarchar(MAX)");
-
-                    b.Property<bool?>("HomeFlag")
-                        .HasColumnName("HomeFlag")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("HomeOrder")
-                        .HasColumnName("HomeOrder")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Image")
-                        .HasColumnName("Image")
-                        .HasColumnType("varchar(255)");
-
-                    b.Property<string>("Name")
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<int?>("ParentId")
-                        .HasColumnName("ParentId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("SeoAlias")
-                        .HasColumnName("SeoAlias")
-                        .HasColumnType("nvarchar(MAX)");
-
-                    b.Property<string>("SeoDescription")
-                        .HasColumnName("SeoDescription")
-                        .HasColumnType("nvarchar(MAX)");
-
-                    b.Property<string>("SeoKeywords")
-                        .HasColumnName("SeoKeywords")
-                        .HasColumnType("nvarchar(MAX)");
-
-                    b.Property<string>("SeoPageTitle")
-                        .HasColumnName("SeoPageTitle")
-                        .HasColumnType("nvarchar(MAX)");
-
-                    b.Property<int>("SortOrder")
-                        .HasColumnName("SortOrder")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductCategories");
-                });
-
             modelBuilder.Entity("NUShop.Data.Entities.ProductImage", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Caption")
-                        .HasColumnName("Caption")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("Caption");
 
-                    b.Property<string>("Path")
-                        .HasColumnName("Path")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("Path");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnName("ProductId")
-                        .HasColumnType("int");
+                    b.Property<int>("ProductId");
 
                     b.HasKey("Id");
 
@@ -1008,35 +708,23 @@ namespace NUShop.Data.EF.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ColorId")
-                        .HasColumnName("ColorId")
-                        .HasColumnType("int");
+                    b.Property<int>("ColorId");
 
-                    b.Property<int>("ColorId1");
+                    b.Property<int>("ProductId");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnName("ProductId")
-                        .HasColumnType("int");
+                    b.Property<int>("Quantity");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnName("Quantity")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SizeId")
-                        .HasColumnName("SizeId")
-                        .HasColumnType("int");
+                    b.Property<int>("SizeId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ColorId");
 
-                    b.HasIndex("ColorId1");
-
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("SizeId");
 
                     b.ToTable("ProductQuantities");
                 });
@@ -1045,18 +733,11 @@ namespace NUShop.Data.EF.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ProductId")
-                        .HasColumnName("ProductId")
-                        .HasColumnType("int");
+                    b.Property<int>("ProductId");
 
-                    b.Property<string>("TagId")
-                        .IsRequired()
-                        .HasColumnName("TagId")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("TagId");
 
                     b.HasKey("Id");
 
@@ -1071,13 +752,9 @@ namespace NUShop.Data.EF.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Name")
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
                     b.HasKey("Id");
 
@@ -1088,45 +765,23 @@ namespace NUShop.Data.EF.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Content")
-                        .HasColumnName("Content")
-                        .HasColumnType("text");
+                    b.Property<string>("Content");
 
-                    b.Property<string>("Description")
-                        .HasColumnName("Description")
-                        .HasColumnType("text");
+                    b.Property<string>("Description");
 
-                    b.Property<int?>("DisplayOrder")
-                        .HasColumnName("DisplayOrder")
-                        .HasColumnType("int");
+                    b.Property<int?>("DisplayOrder");
 
-                    b.Property<string>("GroupAlias")
-                        .IsRequired()
-                        .HasColumnName("GroupAlias")
-                        .HasColumnType("nvarchar(25)");
+                    b.Property<string>("GroupAlias");
 
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnName("Image")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("Image");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<bool>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("bit");
+                    b.Property<bool>("Status");
 
-                    b.Property<string>("Url")
-                        .IsRequired()
-                        .HasColumnName("Url")
-                        .HasColumnType("varchar(255)");
+                    b.Property<string>("Url");
 
                     b.HasKey("Id");
 
@@ -1136,35 +791,21 @@ namespace NUShop.Data.EF.Migrations
             modelBuilder.Entity("NUShop.Data.Entities.SystemConfig", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("varchar(255)");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name")
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<int>("Status")
-                        .HasColumnName("Status")
-                        .HasColumnType("int");
+                    b.Property<int>("Status");
 
-                    b.Property<string>("Value1")
-                        .HasColumnName("Value1")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Value1");
 
-                    b.Property<int?>("Value2")
-                        .HasColumnName("Value2")
-                        .HasColumnType("int");
+                    b.Property<int?>("Value2");
 
-                    b.Property<bool?>("Value3")
-                        .HasColumnName("Value3")
-                        .HasColumnType("bit");
+                    b.Property<bool?>("Value3");
 
                     b.Property<DateTime?>("Value4");
 
-                    b.Property<decimal?>("Value5")
-                        .HasColumnName("Value5")
-                        .HasColumnType("decimal");
+                    b.Property<decimal?>("Value5");
 
                     b.HasKey("Id");
 
@@ -1174,19 +815,11 @@ namespace NUShop.Data.EF.Migrations
             modelBuilder.Entity("NUShop.Data.Entities.Tag", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("varchar(255)");
+                        .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnName("Name")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Name");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnName("Type")
-                        .HasColumnType("nvarchar(255)");
+                    b.Property<string>("Type");
 
                     b.HasKey("Id");
 
@@ -1197,25 +830,15 @@ namespace NUShop.Data.EF.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnName("Id")
-                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("FromQuantity")
-                        .HasColumnName("FromQuantity")
-                        .HasColumnType("int");
+                    b.Property<int>("FromQuantity");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnName("Price")
-                        .HasColumnType("decimal");
+                    b.Property<decimal>("Price");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnName("ProductId")
-                        .HasColumnType("int");
+                    b.Property<int>("ProductId");
 
-                    b.Property<int>("ToQuantity")
-                        .HasColumnName("ToQuantity")
-                        .HasColumnType("int");
+                    b.Property<int>("ToQuantity");
 
                     b.HasKey("Id");
 
@@ -1224,41 +847,84 @@ namespace NUShop.Data.EF.Migrations
                     b.ToTable("WholePrices");
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
+                {
+                    b.HasOne("NUShop.Data.Entities.AppRole")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
+                {
+                    b.HasOne("NUShop.Data.Entities.AppUser")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
+                {
+                    b.HasOne("NUShop.Data.Entities.AppUser")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
+                {
+                    b.HasOne("NUShop.Data.Entities.AppRole")
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NUShop.Data.Entities.AppUser")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
+                {
+                    b.HasOne("NUShop.Data.Entities.AppUser")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
             modelBuilder.Entity("NUShop.Data.Entities.Advertistment", b =>
                 {
                     b.HasOne("NUShop.Data.Entities.AdvertistmentPosition", "AdvertistmentPosition")
                         .WithMany("Advertistments")
-                        .HasForeignKey("PositionId");
+                        .HasForeignKey("AdvertistmentPositionId");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.AdvertistmentPosition", b =>
                 {
                     b.HasOne("NUShop.Data.Entities.AdvertistmentPage", "AdvertistmentPage")
                         .WithMany("AdvertistmentPositions")
-                        .HasForeignKey("PageId");
+                        .HasForeignKey("AdvertistmentPageId");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.Announcement", b =>
                 {
                     b.HasOne("NUShop.Data.Entities.AppUser", "AppUser")
                         .WithMany("Announcements")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AppUserId");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.AnnouncementUser", b =>
                 {
                     b.HasOne("NUShop.Data.Entities.Announcement", "Announcement")
                         .WithMany("AnnouncementUsers")
-                        .HasForeignKey("AnnouncementId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AnnouncementId");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.Bill", b =>
                 {
                     b.HasOne("NUShop.Data.Entities.AppUser", "User")
                         .WithMany("Bills")
-                        .HasForeignKey("CustomerId");
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.BillDetail", b =>
@@ -1293,26 +959,23 @@ namespace NUShop.Data.EF.Migrations
 
                     b.HasOne("NUShop.Data.Entities.Tag", "Tag")
                         .WithMany("BlogTags")
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TagId");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.Permission", b =>
                 {
-                    b.HasOne("NUShop.Data.Entities.Function", "Function")
-                        .WithMany("Permissions")
-                        .HasForeignKey("FunctionId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("NUShop.Data.Entities.AppRole", "AppRole")
                         .WithMany("Permissions")
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AppRoleId");
+
+                    b.HasOne("NUShop.Data.Entities.Function", "Function")
+                        .WithMany("Permissions")
+                        .HasForeignKey("FunctionId");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.Product", b =>
                 {
-                    b.HasOne("NUShop.Data.Entities.ProductCategory", "ProductCategory")
+                    b.HasOne("NUShop.Data.Entities.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -1328,19 +991,19 @@ namespace NUShop.Data.EF.Migrations
 
             modelBuilder.Entity("NUShop.Data.Entities.ProductQuantity", b =>
                 {
-                    b.HasOne("NUShop.Data.Entities.Size", "Size")
-                        .WithMany("ProductQuantities")
-                        .HasForeignKey("ColorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("NUShop.Data.Entities.Color", "Color")
                         .WithMany("ProductQuantities")
-                        .HasForeignKey("ColorId1")
+                        .HasForeignKey("ColorId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("NUShop.Data.Entities.Product", "Product")
                         .WithMany("ProductQuantities")
                         .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("NUShop.Data.Entities.Size", "Size")
+                        .WithMany("ProductQuantities")
+                        .HasForeignKey("SizeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -1353,8 +1016,7 @@ namespace NUShop.Data.EF.Migrations
 
                     b.HasOne("NUShop.Data.Entities.Tag", "Tag")
                         .WithMany("ProductTags")
-                        .HasForeignKey("TagId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("TagId");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.WholePrice", b =>

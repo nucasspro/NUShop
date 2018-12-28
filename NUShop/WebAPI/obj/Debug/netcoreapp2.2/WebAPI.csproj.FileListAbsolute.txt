@@ -21,3 +21,4 @@ D:\Fetch Training\DotnetProject\NUShop\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.dll
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.pdb
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Utilities.dll
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Utilities.pdb
+D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\WebAPI.exe

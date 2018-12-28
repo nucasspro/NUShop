@@ -82,7 +82,7 @@ namespace NUShop.Data.Entities
 
         public string Name { get; set; }
         public int CategoryId { get; set; }
-        public virtual ProductCategory ProductCategory { set; get; }
+        public virtual Category Category { set; get; }
         public string Image { get; set; }
         public decimal Price { get; set; }
         public decimal? PromotionPrice { get; set; }

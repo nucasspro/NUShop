@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NUShop.Data.EF;
+using NUShop.Data.Entities;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace WebAPI
@@ -22,12 +24,24 @@ namespace WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddJsonOptions(opt =>
-            {
-                opt.SerializerSettings.ContractResolver = new DefaultContractResolver();
-            });
+            services
+                .AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(opt => { opt.SerializerSettings.ContractResolver = new DefaultContractResolver(); });
 
-            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<AppDbContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            //services
+            //    .AddIdentity<AppUser, AppRole>()
+            //    .AddEntityFrameworkStores<AppDbContext>()
+            //    .AddDefaultTokenProviders();
+
+            //services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
+            //services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+
+            services.AddTransient<DbSeeder>();
 
             #region Swagger
 
@@ -44,7 +58,7 @@ namespace WebAPI
 
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowMyOrigin",
+                options.AddPolicy("AllowAllOrigin",
                     builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
                 options.AddPolicy("Localhost",
@@ -71,7 +85,7 @@ namespace WebAPI
             app.UseHttpsRedirection();
             app.UseSwagger();
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Core API"); });
-            app.UseCors("Localhost");
+            app.UseCors("AllowAllOrigin");
             app.UseMvc();
         }
     }

@@ -32,7 +32,10 @@ namespace NUShop.Data.Entities
         public DateTime DateModified { get; set; }
         public Status Status { get; set; }
         public virtual ICollection<Announcement> Announcements { get; set; }
-        public virtual ICollection<Bill> Bills{ get; set; }
-
+        public virtual ICollection<Bill> Bills { get; set; }
+        public virtual ICollection<AppUserRole> AppUserRoles { get; set; }
+        public virtual ICollection<AppUserClaim> AppUserClaims { get; set; }
+        public virtual ICollection<AppUserLogin> AppUserLogins { get; set; }
+        public virtual ICollection<AppUserToken> AppUserTokens { get; set; }
     }
 }

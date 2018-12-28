@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using NUShop.Data.EF.EntityConfigurations;
@@ -13,7 +12,7 @@ namespace NUShop.Data.EF
 {
     public class AppDbContext : IdentityDbContext<AppUser, AppRole, Guid>
     {
-        private IdentityDbContext DbContext;
+        private readonly IdentityDbContext DbContext;
 
         public AppDbContext()
         {
@@ -31,11 +30,17 @@ namespace NUShop.Data.EF
         public DbSet<Announcement> Announcements { set; get; }
         public DbSet<AnnouncementUser> AnnouncementUsers { set; get; }
         public DbSet<AppRole> AppRoles { get; set; }
+        public DbSet<AppRoleClaim> AppRoleClaims { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<AppUserClaim> AppUserClaims { get; set; }
+        public DbSet<AppUserLogin> AppUserLogins { get; set; }
+        public DbSet<AppUserRole> AppUserRoles { get; set; }
+        public DbSet<AppUserToken> AppUserTokens { get; set; }
         public DbSet<BillDetail> BillDetails { set; get; }
         public DbSet<Blog> Bills { set; get; }
         public DbSet<Blog> Blogs { set; get; }
         public DbSet<BlogTag> BlogTags { set; get; }
+        public DbSet<Category> Categories { set; get; }
         public DbSet<Color> Colors { set; get; }
         public DbSet<Contact> Contacts { set; get; }
         public DbSet<Feedback> Feedbacks { set; get; }
@@ -45,7 +50,6 @@ namespace NUShop.Data.EF
         public DbSet<Page> Pages { set; get; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Product> Products { set; get; }
-        public DbSet<ProductCategory> ProductCategories { set; get; }
         public DbSet<ProductImage> ProductImages { set; get; }
         public DbSet<ProductQuantity> ProductQuantities { set; get; }
         public DbSet<ProductTag> ProductTags { set; get; }
@@ -69,38 +73,34 @@ namespace NUShop.Data.EF
         {
             #region Add Entity Configurations
 
-            modelBuilder.AddConfiguration(new IdentityUserClaimConfiguration());
-            modelBuilder.AddConfiguration(new IdentityRoleClaimConfiguration());
-            modelBuilder.AddConfiguration(new IdentityUserLoginConfiguration());
-            modelBuilder.AddConfiguration(new IdentityUserRoleConfiguration());
-            modelBuilder.AddConfiguration(new IdentityUserTokenConfiguration());
-
-            //modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims").HasKey(x => x.Id);
-            //modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims").HasKey(x => x.Id);
-            //modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
-            //modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.RoleId, x.UserId });
-            //modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => new { x.UserId });
-
             modelBuilder.AddConfiguration(new AdvertistmentConfiguration());
             modelBuilder.AddConfiguration(new AdvertistmentPageConfiguration());
             modelBuilder.AddConfiguration(new AdvertistmentPositionConfiguration());
             modelBuilder.AddConfiguration(new AnnouncementConfiguration());
             modelBuilder.AddConfiguration(new AnnouncementUserConfiguration());
             modelBuilder.AddConfiguration(new AppRoleConfiguration());
+            modelBuilder.AddConfiguration(new AppRoleClaimConfiguration());
+            
+            modelBuilder.AddConfiguration(new AppUserClaimConfiguration());
+            modelBuilder.AddConfiguration(new AppUserLoginConfiguration());
+            modelBuilder.AddConfiguration(new AppUserRoleConfiguration());
+            modelBuilder.AddConfiguration(new AppUserTokenConfiguration());
+
             modelBuilder.AddConfiguration(new AppUserConfiguration());
             modelBuilder.AddConfiguration(new BillConfiguration());
             modelBuilder.AddConfiguration(new BillDetailConfiguration());
             modelBuilder.AddConfiguration(new BlogConfiguration());
             modelBuilder.AddConfiguration(new BlogTagConfiguration());
+            modelBuilder.AddConfiguration(new CategoryConfiguration());
             modelBuilder.AddConfiguration(new ColorConfiguration());
             modelBuilder.AddConfiguration(new ContactConfiguration());
             modelBuilder.AddConfiguration(new FeedbackConfiguration());
             modelBuilder.AddConfiguration(new FooterConfiguration());
             modelBuilder.AddConfiguration(new FunctionConfiguration());
+            
             modelBuilder.AddConfiguration(new LanguageConfiguration());
             modelBuilder.AddConfiguration(new PageConfiguration());
             modelBuilder.AddConfiguration(new PermissionConfiguration());
-            modelBuilder.AddConfiguration(new ProductCategoryConfiguration());
             modelBuilder.AddConfiguration(new ProductConfiguration());
             modelBuilder.AddConfiguration(new ProductImageConfiguration());
             modelBuilder.AddConfiguration(new ProductQuantityConfiguration());
