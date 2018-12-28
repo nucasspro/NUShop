@@ -17,8 +17,6 @@ namespace NUShop.Data.Entities
         }
 
         public string Description { get; set; }
-        public virtual ICollection<AppUserRole> AppUserRoles { get; set; }
-        public virtual ICollection<AppRoleClaim> AppRoleClaims { get; set; }
         public virtual ICollection<Permission> Permissions { get; set; }
     }
 }

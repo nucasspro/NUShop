@@ -1,7 +1,3 @@
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.csprojAssemblyReference.cache
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.csproj.CoreCompileInputs.cache
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.AssemblyInfoInputs.cache
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.AssemblyInfo.cs
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Data.EF.deps.json
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Data.EF.runtimeconfig.json
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Data.EF.runtimeconfig.dev.json
@@ -9,10 +5,14 @@ D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NU
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Data.EF.pdb
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Data.dll
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Infrastructure.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Utilities.dll
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Data.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Utilities.pdb
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Infrastructure.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.csprojAssemblyReference.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.csproj.CoreCompileInputs.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.AssemblyInfoInputs.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.AssemblyInfo.cs
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.csproj.CopyComplete
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.dll
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\obj\Debug\netcoreapp2.2\NUShop.Data.EF.pdb
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Utilities.dll
-D:\Fetch Training\DotnetProject\NUShop\NUShop.Data.EF\bin\Debug\netcoreapp2.2\NUShop.Utilities.pdb

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using NUShop.Data.EF.EntityConfigurations;
@@ -11,6 +12,8 @@ using System.Linq;
 namespace NUShop.Data.EF
 {
     public class AppDbContext : IdentityDbContext<AppUser, AppRole, Guid>
+    //public class AppDbContext : IdentityDbContext
+
     {
         private readonly IdentityDbContext DbContext;
 
@@ -30,12 +33,7 @@ namespace NUShop.Data.EF
         public DbSet<Announcement> Announcements { set; get; }
         public DbSet<AnnouncementUser> AnnouncementUsers { set; get; }
         public DbSet<AppRole> AppRoles { get; set; }
-        public DbSet<AppRoleClaim> AppRoleClaims { get; set; }
         public DbSet<AppUser> AppUsers { get; set; }
-        public DbSet<AppUserClaim> AppUserClaims { get; set; }
-        public DbSet<AppUserLogin> AppUserLogins { get; set; }
-        public DbSet<AppUserRole> AppUserRoles { get; set; }
-        public DbSet<AppUserToken> AppUserTokens { get; set; }
         public DbSet<BillDetail> BillDetails { set; get; }
         public DbSet<Blog> Bills { set; get; }
         public DbSet<Blog> Blogs { set; get; }
@@ -66,12 +64,18 @@ namespace NUShop.Data.EF
             if (optionsBuilder.IsConfigured)
                 return;
             //optionsBuilder.UseSqlServer(DbContext.Database.GetDbConnection());
-            optionsBuilder.UseSqlServer(@"Server = DESKTOP-9VB67KJ; Database = NUShop; Trusted_Connection = True; ConnectRetryCount = 0");
+            optionsBuilder.UseSqlServer(@"Server = DESKTOP-9VB67KJ; Database = NUShop1; Trusted_Connection = True; ConnectRetryCount = 0");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region Add Entity Configurations
+
+            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims").HasKey(x => x.Id);
+            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims").HasKey(x => x.Id);
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.RoleId, x.UserId });
+            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => new { x.UserId });
 
             modelBuilder.AddConfiguration(new AdvertistmentConfiguration());
             modelBuilder.AddConfiguration(new AdvertistmentPageConfiguration());
@@ -79,13 +83,6 @@ namespace NUShop.Data.EF
             modelBuilder.AddConfiguration(new AnnouncementConfiguration());
             modelBuilder.AddConfiguration(new AnnouncementUserConfiguration());
             modelBuilder.AddConfiguration(new AppRoleConfiguration());
-            modelBuilder.AddConfiguration(new AppRoleClaimConfiguration());
-            
-            modelBuilder.AddConfiguration(new AppUserClaimConfiguration());
-            modelBuilder.AddConfiguration(new AppUserLoginConfiguration());
-            modelBuilder.AddConfiguration(new AppUserRoleConfiguration());
-            modelBuilder.AddConfiguration(new AppUserTokenConfiguration());
-
             modelBuilder.AddConfiguration(new AppUserConfiguration());
             modelBuilder.AddConfiguration(new BillConfiguration());
             modelBuilder.AddConfiguration(new BillDetailConfiguration());
@@ -97,7 +94,6 @@ namespace NUShop.Data.EF
             modelBuilder.AddConfiguration(new FeedbackConfiguration());
             modelBuilder.AddConfiguration(new FooterConfiguration());
             modelBuilder.AddConfiguration(new FunctionConfiguration());
-            
             modelBuilder.AddConfiguration(new LanguageConfiguration());
             modelBuilder.AddConfiguration(new PageConfiguration());
             modelBuilder.AddConfiguration(new PermissionConfiguration());
@@ -112,8 +108,6 @@ namespace NUShop.Data.EF
             modelBuilder.AddConfiguration(new WholePriceConfiguration());
 
             #endregion Add Entity Configurations
-
-            //base.OnModelCreating(modelBuilder);
         }
 
         public override int SaveChanges()
