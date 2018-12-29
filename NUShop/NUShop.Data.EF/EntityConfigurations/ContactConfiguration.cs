@@ -10,7 +10,7 @@ namespace NUShop.Data.EF.EntityConfigurations
     {
         public override void Configure(EntityTypeBuilder<Contact> entity)
         {
-            entity.ToTable("ContactDetails");
+            entity.ToTable("Contacts");
             entity.HasKey(x => x.Id);
             entity.Property(x => x.Id).IsRequired(true).HasColumnName("Id").HasColumnType("nvarchar(255)");
             entity.Property(x => x.Name).IsRequired(true).HasColumnName("Name").HasColumnType("nvarchar(255)");

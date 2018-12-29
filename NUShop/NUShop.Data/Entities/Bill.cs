@@ -46,8 +46,8 @@ namespace NUShop.Data.Entities
         public string CustomerMessage { set; get; }
         public PaymentMethod PaymentMethod { set; get; }
         public BillStatus BillStatus { set; get; }
-        public DateTime DateCreated { set; get; }
-        public DateTime DateModified { set; get; }
+        public string DateCreated { set; get; }
+        public string DateModified { set; get; }
         public Status Status { set; get; } = Status.Active;
 
         public Guid? CustomerId { set; get; }

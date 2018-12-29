@@ -28,8 +28,8 @@ namespace NUShop.Data.Entities
         public DateTime? BirthDay { set; get; }
         public decimal Balance { get; set; }
         public string Avatar { get; set; }
-        public DateTime DateCreated { get; set; }
-        public DateTime DateModified { get; set; }
+        public string DateCreated { get; set; }
+        public string DateModified { get; set; }
         public Status Status { get; set; }
         public virtual ICollection<Announcement> Announcements { get; set; }
         public virtual ICollection<Bill> Bills { get; set; }

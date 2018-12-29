@@ -104,13 +104,15 @@ namespace NUShop.Data.EF.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<string>("DateCreated")
+                        .IsRequired()
                         .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("DateModified")
+                    b.Property<string>("DateModified")
+                        .IsRequired()
                         .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Description")
                         .HasColumnName("Description")
@@ -196,13 +198,15 @@ namespace NUShop.Data.EF.Migrations
                         .HasColumnName("Content")
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<string>("DateCreated")
+                        .IsRequired()
                         .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("DateModified")
+                    b.Property<string>("DateModified")
+                        .IsRequired()
                         .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("Status")
                         .HasColumnName("Status")
@@ -297,13 +301,15 @@ namespace NUShop.Data.EF.Migrations
 
                     b.Property<string>("ConcurrencyStamp");
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<string>("DateCreated")
+                        .IsRequired()
                         .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("DateModified")
+                    b.Property<string>("DateModified")
+                        .IsRequired()
                         .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Email");
 
@@ -378,13 +384,15 @@ namespace NUShop.Data.EF.Migrations
                         .HasColumnName("CustomerName")
                         .HasColumnType("nvarchar(255)");
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<string>("DateCreated")
+                        .IsRequired()
                         .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("DateModified")
+                    b.Property<string>("DateModified")
+                        .IsRequired()
                         .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<int>("PaymentMethod")
                         .HasColumnName("PaymentMethod")
@@ -460,13 +468,15 @@ namespace NUShop.Data.EF.Migrations
                         .HasColumnName("Content")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<string>("DateCreated")
+                        .IsRequired()
                         .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("DateModified")
+                    b.Property<string>("DateModified")
+                        .IsRequired()
                         .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Description")
                         .HasColumnName("Description")
@@ -556,13 +566,15 @@ namespace NUShop.Data.EF.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<string>("DateCreated")
+                        .IsRequired()
                         .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("DateModified")
+                    b.Property<string>("DateModified")
+                        .IsRequired()
                         .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Description")
                         .HasColumnName("Description")
@@ -684,7 +696,7 @@ namespace NUShop.Data.EF.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactDetails");
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("NUShop.Data.Entities.Feedback", b =>
@@ -695,13 +707,15 @@ namespace NUShop.Data.EF.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<string>("DateCreated")
+                        .IsRequired()
                         .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("DateModified")
+                    b.Property<string>("DateModified")
+                        .IsRequired()
                         .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Email")
                         .HasColumnName("Email")
@@ -895,13 +909,15 @@ namespace NUShop.Data.EF.Migrations
                         .HasColumnName("Content")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("DateCreated")
+                    b.Property<string>("DateCreated")
+                        .IsRequired()
                         .HasColumnName("DateCreated")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("DateModified")
+                    b.Property<string>("DateModified")
+                        .IsRequired()
                         .HasColumnName("DateModified")
-                        .HasColumnType("datetime");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Description")
                         .HasColumnName("Description")

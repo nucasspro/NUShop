@@ -2,20 +2,21 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.Extensions.Configuration;
 using NUShop.Data.EF.EntityConfigurations;
 using NUShop.Data.EF.Extensions;
 using NUShop.Data.Entities;
 using NUShop.Data.Interfaces;
 using System;
 using System.Linq;
+using System.IO;
+using NUShop.Utilities.Helpers;
 
 namespace NUShop.Data.EF
 {
     public class AppDbContext : IdentityDbContext<AppUser, AppRole, Guid>
-    //public class AppDbContext : IdentityDbContext
 
     {
-        private readonly IdentityDbContext DbContext;
 
         public AppDbContext()
         {
@@ -63,8 +64,8 @@ namespace NUShop.Data.EF
         {
             if (optionsBuilder.IsConfigured)
                 return;
-            //optionsBuilder.UseSqlServer(DbContext.Database.GetDbConnection());
-            optionsBuilder.UseSqlServer(@"Server = DESKTOP-9VB67KJ; Database = NUShop1; Trusted_Connection = True; ConnectRetryCount = 0");
+            optionsBuilder.UseSqlServer(GetConnection.GetConnectionString());
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -121,12 +122,24 @@ namespace NUShop.Data.EF
                 {
                     if (item.State == EntityState.Added)
                     {
-                        changedOrAddedItem.DateCreated = DateTime.Now;
+                        changedOrAddedItem.DateCreated = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
                     }
-                    changedOrAddedItem.DateModified = DateTime.Now;
+                    changedOrAddedItem.DateModified = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
                 }
             }
             return base.SaveChanges();
+        }
+    }
+
+    public static class GetConnection
+    {
+        public static string GetConnectionString()
+        {
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json").Build();
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            return connectionString;
         }
     }
 }

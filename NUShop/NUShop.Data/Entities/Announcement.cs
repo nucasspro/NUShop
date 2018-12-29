@@ -28,8 +28,8 @@ namespace NUShop.Data.Entities
         public virtual AppUser AppUser { get; set; }
 
         public Status Status { set; get; }
-        public DateTime DateCreated { set; get; }
-        public DateTime DateModified { set; get; }
+        public string DateCreated { set; get; }
+        public string DateModified { set; get; }
 
         public virtual ICollection<AnnouncementUser> AnnouncementUsers { get; set; }
     }

@@ -38,8 +38,8 @@ namespace NUShop.Data.Entities
         public int? HomeOrder { get; set; }
         public string Image { get; set; }
         public bool? HomeFlag { get; set; }
-        public DateTime DateCreated { set; get; }
-        public DateTime DateModified { set; get; }
+        public string DateCreated { set; get; }
+        public string DateModified { set; get; }
         public int SortOrder { set; get; }
         public Status Status { set; get; }
         public string SeoPageTitle { set; get; }

@@ -21,7 +21,7 @@ namespace WebAPI
                 try
                 {
                     var dbSeeder = services.GetRequiredService<DbSeeder>();
-                    //dbSeeder.Seed().Wait();
+                    dbSeeder.Seed().Wait();
                 }
                 catch (Exception ex)
                 {

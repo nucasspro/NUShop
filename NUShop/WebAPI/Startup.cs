@@ -10,6 +10,7 @@ using Newtonsoft.Json.Serialization;
 using NUShop.Data.EF;
 using NUShop.Data.Entities;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
 
 namespace WebAPI
 {
@@ -33,16 +34,34 @@ namespace WebAPI
             services.AddDbContext<AppDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            //services
-            //    .AddIdentity<AppUser, AppRole>()
-            //    .AddEntityFrameworkStores<AppDbContext>()
-            //    .AddDefaultTokenProviders();
+            services
+                .AddIdentity<AppUser, AppRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
 
-            //services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
-            //services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+            
+
+            // Configure Identity
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 2;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+
+                // Lockout settings
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+                options.Lockout.MaxFailedAccessAttempts = 10;
+
+                // User settings
+                options.User.RequireUniqueEmail = true;
+            });
+            services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
+            services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
             services.AddTransient<DbSeeder>();
-
             #region Swagger
 
             services.AddSwaggerGen(

@@ -24,8 +24,8 @@ namespace NUShop.Data.EF.EntityConfigurations
             entity.Property(x => x.SeoAlias).IsRequired(false).HasColumnName("SeoAlias").HasColumnType("nvarchar(MAX)");
             entity.Property(x => x.SeoKeywords).IsRequired(false).HasColumnName("SeoKeywords").HasColumnType("nvarchar(MAX)");
             entity.Property(x => x.SeoDescription).IsRequired(false).HasColumnName("SeoDescription").HasColumnType("nvarchar(MAX)");
-            entity.Property(x => x.DateCreated).IsRequired(true).HasColumnName("DateCreated").HasColumnType("datetime");
-            entity.Property(x => x.DateModified).IsRequired(true).HasColumnName("DateModified").HasColumnType("datetime");
+            entity.Property(x => x.DateCreated).IsRequired(true).HasColumnName("DateCreated").HasColumnType("varchar(255)");
+            entity.Property(x => x.DateModified).IsRequired(true).HasColumnName("DateModified").HasColumnType("varchar(255)");
         }
     }
 }

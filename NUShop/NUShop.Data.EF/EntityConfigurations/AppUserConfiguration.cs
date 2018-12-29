@@ -15,8 +15,8 @@ namespace NUShop.Data.EF.EntityConfigurations
             entity.Property(x => x.BirthDay).IsRequired(false).HasColumnName("BirthDay").HasColumnType("datetime");
             entity.Property(x => x.Balance).IsRequired(true).HasColumnName("Balance").HasColumnType("decimal");
             entity.Property(x => x.Avatar).IsRequired(false).HasColumnName("Avatar").HasColumnType("nvarchar(MAX)");
-            entity.Property(x => x.DateCreated).IsRequired(true).HasColumnName("DateCreated").HasColumnType("datetime");
-            entity.Property(x => x.DateModified).IsRequired(true).HasColumnName("DateModified").HasColumnType("datetime");
+            entity.Property(x => x.DateCreated).IsRequired(true).HasColumnName("DateCreated").HasColumnType("varchar(255)");
+            entity.Property(x => x.DateModified).IsRequired(true).HasColumnName("DateModified").HasColumnType("varchar(255)");
             entity.Property(x => x.Status).IsRequired(true).HasColumnName("Status").HasColumnType("int");
         }
     }

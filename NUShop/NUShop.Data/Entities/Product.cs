@@ -105,8 +105,8 @@ namespace NUShop.Data.Entities
         public string SeoAlias { set; get; }
         public string SeoKeywords { set; get; }
         public string SeoDescription { set; get; }
-        public DateTime DateCreated { set; get; }
-        public DateTime DateModified { set; get; }
+        public string DateCreated { set; get; }
+        public string DateModified { set; get; }
         public Status Status { set; get; }
     }
 }
