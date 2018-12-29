@@ -5,10 +5,10 @@ using System;
 
 namespace NUShop.Data.Entities
 {
-    public class Advertistment : DomainEntity<int>, ISwitchable, ISortable
+    public class Advertistment : DomainEntity<int>, ISwitchable, ISortable, IDateTracking
     {
         public Advertistment(string name, string description, string image,
-            string url, string positionId, int sortOrder, DateTime dateCreated, DateTime dateModified)
+            string url, string positionId, int sortOrder, string dateCreated, string dateModified)
         {
             Name = name;
             Description = description;
@@ -31,7 +31,7 @@ namespace NUShop.Data.Entities
 
         public Status Status { set; get; }
         public int SortOrder { set; get; }
-        public DateTime DateCreated { set; get; }
-        public DateTime DateModified { set; get; }
+        public string DateCreated { set; get; }
+        public string DateModified { set; get; }
     }
 }

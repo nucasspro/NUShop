@@ -4,7 +4,7 @@ namespace NUShop.Data.Interfaces
 {
     public interface IDateTracking
     {
-        DateTime DateCreated { set; get; }
-        DateTime DateModified { set; get; }
+        string DateCreated { set; get; }
+        string DateModified { set; get; }
     }
 }

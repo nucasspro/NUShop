@@ -20,8 +20,8 @@ namespace NUShop.Data.EF.EntityConfigurations
             entity.Property(x => x.PaymentMethod).IsRequired(true).HasColumnName("PaymentMethod").HasColumnType("int");
             entity.Property(x => x.BillStatus).IsRequired(true).HasColumnName("BillStatus").HasColumnType("int");
             entity.Property(x => x.Status).IsRequired(true).HasColumnName("Status").HasColumnType("int").HasDefaultValue(Status.Active);
-            entity.Property(x => x.DateCreated).IsRequired(true).HasColumnName("DateCreated").HasColumnType("datetime");
-            entity.Property(x => x.DateModified).IsRequired(true).HasColumnName("DateModified").HasColumnType("datetime");
+            entity.Property(x => x.DateCreated).IsRequired(true).HasColumnName("DateCreated").HasColumnType("varchar(255)");
+            entity.Property(x => x.DateModified).IsRequired(true).HasColumnName("DateModified").HasColumnType("varchar(255)");
 
             entity.Property(x => x.CustomerId).IsRequired(false).HasColumnName("CustomerId").HasColumnType("uniqueidentifier");
             entity.HasOne(x => x.User).WithMany(y => y.Bills).HasForeignKey(z => z.CustomerId);

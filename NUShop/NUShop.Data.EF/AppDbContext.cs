@@ -2,18 +2,21 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.Extensions.Configuration;
 using NUShop.Data.EF.EntityConfigurations;
 using NUShop.Data.EF.Extensions;
 using NUShop.Data.Entities;
 using NUShop.Data.Interfaces;
 using System;
 using System.Linq;
+using System.IO;
+using NUShop.Utilities.Helpers;
 
 namespace NUShop.Data.EF
 {
     public class AppDbContext : IdentityDbContext<AppUser, AppRole, Guid>
+
     {
-        private IdentityDbContext DbContext;
 
         public AppDbContext()
         {
@@ -36,6 +39,7 @@ namespace NUShop.Data.EF
         public DbSet<Blog> Bills { set; get; }
         public DbSet<Blog> Blogs { set; get; }
         public DbSet<BlogTag> BlogTags { set; get; }
+        public DbSet<Category> Categories { set; get; }
         public DbSet<Color> Colors { set; get; }
         public DbSet<Contact> Contacts { set; get; }
         public DbSet<Feedback> Feedbacks { set; get; }
@@ -45,7 +49,6 @@ namespace NUShop.Data.EF
         public DbSet<Page> Pages { set; get; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Product> Products { set; get; }
-        public DbSet<ProductCategory> ProductCategories { set; get; }
         public DbSet<ProductImage> ProductImages { set; get; }
         public DbSet<ProductQuantity> ProductQuantities { set; get; }
         public DbSet<ProductTag> ProductTags { set; get; }
@@ -61,25 +64,19 @@ namespace NUShop.Data.EF
         {
             if (optionsBuilder.IsConfigured)
                 return;
-            //optionsBuilder.UseSqlServer(DbContext.Database.GetDbConnection());
-            optionsBuilder.UseSqlServer(@"Server = DESKTOP-9VB67KJ; Database = NUShop; Trusted_Connection = True; ConnectRetryCount = 0");
+            optionsBuilder.UseSqlServer(GetConnection.GetConnectionString());
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             #region Add Entity Configurations
 
-            modelBuilder.AddConfiguration(new IdentityUserClaimConfiguration());
-            modelBuilder.AddConfiguration(new IdentityRoleClaimConfiguration());
-            modelBuilder.AddConfiguration(new IdentityUserLoginConfiguration());
-            modelBuilder.AddConfiguration(new IdentityUserRoleConfiguration());
-            modelBuilder.AddConfiguration(new IdentityUserTokenConfiguration());
-
-            //modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims").HasKey(x => x.Id);
-            //modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims").HasKey(x => x.Id);
-            //modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
-            //modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.RoleId, x.UserId });
-            //modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => new { x.UserId });
+            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims").HasKey(x => x.Id);
+            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims").HasKey(x => x.Id);
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogins").HasKey(x => x.UserId);
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.RoleId, x.UserId });
+            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => new { x.UserId });
 
             modelBuilder.AddConfiguration(new AdvertistmentConfiguration());
             modelBuilder.AddConfiguration(new AdvertistmentPageConfiguration());
@@ -92,6 +89,7 @@ namespace NUShop.Data.EF
             modelBuilder.AddConfiguration(new BillDetailConfiguration());
             modelBuilder.AddConfiguration(new BlogConfiguration());
             modelBuilder.AddConfiguration(new BlogTagConfiguration());
+            modelBuilder.AddConfiguration(new CategoryConfiguration());
             modelBuilder.AddConfiguration(new ColorConfiguration());
             modelBuilder.AddConfiguration(new ContactConfiguration());
             modelBuilder.AddConfiguration(new FeedbackConfiguration());
@@ -100,7 +98,6 @@ namespace NUShop.Data.EF
             modelBuilder.AddConfiguration(new LanguageConfiguration());
             modelBuilder.AddConfiguration(new PageConfiguration());
             modelBuilder.AddConfiguration(new PermissionConfiguration());
-            modelBuilder.AddConfiguration(new ProductCategoryConfiguration());
             modelBuilder.AddConfiguration(new ProductConfiguration());
             modelBuilder.AddConfiguration(new ProductImageConfiguration());
             modelBuilder.AddConfiguration(new ProductQuantityConfiguration());
@@ -112,8 +109,6 @@ namespace NUShop.Data.EF
             modelBuilder.AddConfiguration(new WholePriceConfiguration());
 
             #endregion Add Entity Configurations
-
-            //base.OnModelCreating(modelBuilder);
         }
 
         public override int SaveChanges()
@@ -127,12 +122,24 @@ namespace NUShop.Data.EF
                 {
                     if (item.State == EntityState.Added)
                     {
-                        changedOrAddedItem.DateCreated = DateTime.Now;
+                        changedOrAddedItem.DateCreated = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
                     }
-                    changedOrAddedItem.DateModified = DateTime.Now;
+                    changedOrAddedItem.DateModified = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
                 }
             }
             return base.SaveChanges();
+        }
+    }
+
+    public static class GetConnection
+    {
+        public static string GetConnectionString()
+        {
+            IConfiguration configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json").Build();
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+            return connectionString;
         }
     }
 }

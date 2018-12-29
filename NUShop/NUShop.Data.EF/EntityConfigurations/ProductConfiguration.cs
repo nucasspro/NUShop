@@ -16,7 +16,7 @@ namespace NUShop.Data.EF.EntityConfigurations
             entity.Property(x => x.Name).IsRequired(true).HasColumnName("Name").HasColumnType("nvarchar(255)");
 
             entity.Property(x => x.CategoryId).IsRequired(true).HasColumnName("CategoryId").HasColumnType("int");
-            entity.HasOne(x => x.ProductCategory).WithMany(y => y.Products).HasForeignKey(z => z.CategoryId);
+            entity.HasOne(x => x.Category).WithMany(y => y.Products).HasForeignKey(z => z.CategoryId);
 
             entity.Property(x => x.Image).IsRequired(false).HasColumnName("Image").HasColumnType("varchar(255)");
             entity.Property(x => x.Price).IsRequired(true).HasColumnName("Price").HasColumnType("decimal").HasDefaultValue(0);
@@ -35,8 +35,8 @@ namespace NUShop.Data.EF.EntityConfigurations
             entity.Property(x => x.SeoKeywords).IsRequired(false).HasColumnName("SeoKeywords").HasColumnType("nvarchar(255)");
             entity.Property(x => x.SeoDescription).IsRequired(false).HasColumnName("SeoDescription").HasColumnType("nvarchar(255)");
             entity.Property(x => x.Status).IsRequired(true).HasColumnName("Status").HasColumnType("int");
-            entity.Property(x => x.DateCreated).IsRequired(true).HasColumnName("DateCreated").HasColumnType("datetime");
-            entity.Property(x => x.DateModified).IsRequired(true).HasColumnName("DateModified").HasColumnType("datetime");
+            entity.Property(x => x.DateCreated).IsRequired(true).HasColumnName("DateCreated").HasColumnType("varchar(255)");
+            entity.Property(x => x.DateModified).IsRequired(true).HasColumnName("DateModified").HasColumnType("varchar(255)");
         }
     }
 }

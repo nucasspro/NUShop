@@ -82,7 +82,7 @@ namespace NUShop.Data.Entities
 
         public string Name { get; set; }
         public int CategoryId { get; set; }
-        public virtual ProductCategory ProductCategory { set; get; }
+        public virtual Category Category { set; get; }
         public string Image { get; set; }
         public decimal Price { get; set; }
         public decimal? PromotionPrice { get; set; }
@@ -105,8 +105,8 @@ namespace NUShop.Data.Entities
         public string SeoAlias { set; get; }
         public string SeoKeywords { set; get; }
         public string SeoDescription { set; get; }
-        public DateTime DateCreated { set; get; }
-        public DateTime DateModified { set; get; }
+        public string DateCreated { set; get; }
+        public string DateModified { set; get; }
         public Status Status { set; get; }
     }
 }
