@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NUShop.Data.EF.Migrations
 {
-    public partial class InitDB : Migration
+    public partial class Inital_database : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -114,8 +114,8 @@ namespace NUShop.Data.EF.Migrations
                     BirthDay = table.Column<DateTime>(type: "datetime", nullable: true),
                     Balance = table.Column<decimal>(type: "decimal", nullable: false),
                     Avatar = table.Column<string>(type: "nvarchar(MAX)", nullable: true),
-                    DateCreated = table.Column<DateTime>(type: "datetime", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime", nullable: false),
+                    DateCreated = table.Column<string>(type: "varchar(255)", nullable: false),
+                    DateModified = table.Column<string>(type: "varchar(255)", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -156,8 +156,8 @@ namespace NUShop.Data.EF.Migrations
                     SeoKeywords = table.Column<string>(type: "nvarchar(255)", nullable: true),
                     SeoDescription = table.Column<string>(type: "nvarchar(255)", nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    DateCreated = table.Column<DateTime>(type: "datetime", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime", nullable: false)
+                    DateCreated = table.Column<string>(type: "varchar(255)", nullable: false),
+                    DateModified = table.Column<string>(type: "varchar(255)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -176,8 +176,8 @@ namespace NUShop.Data.EF.Migrations
                     HomeOrder = table.Column<int>(type: "int", nullable: true),
                     Image = table.Column<string>(type: "varchar(255)", nullable: true),
                     HomeFlag = table.Column<bool>(type: "bit", nullable: true),
-                    DateCreated = table.Column<DateTime>(type: "datetime", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime", nullable: false),
+                    DateCreated = table.Column<string>(type: "varchar(255)", nullable: false),
+                    DateModified = table.Column<string>(type: "varchar(255)", nullable: false),
                     SortOrder = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     SeoPageTitle = table.Column<string>(type: "nvarchar(MAX)", nullable: true),
@@ -205,7 +205,7 @@ namespace NUShop.Data.EF.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ContactDetails",
+                name: "Contacts",
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(255)", nullable: false),
@@ -221,7 +221,7 @@ namespace NUShop.Data.EF.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ContactDetails", x => x.Id);
+                    table.PrimaryKey("PK_Contacts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -234,8 +234,8 @@ namespace NUShop.Data.EF.Migrations
                     Email = table.Column<string>(type: "nvarchar(255)", nullable: true),
                     Message = table.Column<string>(type: "nvarchar(500)", nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    DateCreated = table.Column<DateTime>(type: "datetime", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime", nullable: false)
+                    DateCreated = table.Column<string>(type: "varchar(255)", nullable: false),
+                    DateModified = table.Column<string>(type: "varchar(255)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -394,8 +394,8 @@ namespace NUShop.Data.EF.Migrations
                     Content = table.Column<string>(type: "nvarchar(255)", nullable: true),
                     UserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    DateCreated = table.Column<DateTime>(type: "datetime", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime", nullable: false)
+                    DateCreated = table.Column<string>(type: "varchar(255)", nullable: false),
+                    DateModified = table.Column<string>(type: "varchar(255)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -420,8 +420,8 @@ namespace NUShop.Data.EF.Migrations
                     CustomerMessage = table.Column<string>(type: "nvarchar(255)", nullable: false),
                     PaymentMethod = table.Column<int>(type: "int", nullable: false),
                     BillStatus = table.Column<int>(type: "int", nullable: false),
-                    DateCreated = table.Column<DateTime>(type: "datetime", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime", nullable: false),
+                    DateCreated = table.Column<string>(type: "varchar(255)", nullable: false),
+                    DateModified = table.Column<string>(type: "varchar(255)", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
                     CustomerId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
@@ -459,8 +459,8 @@ namespace NUShop.Data.EF.Migrations
                     SeoAlias = table.Column<string>(type: "nvarchar(255)", nullable: true),
                     SeoKeywords = table.Column<string>(type: "nvarchar(255)", nullable: true),
                     SeoDescription = table.Column<string>(type: "nvarchar(255)", nullable: true),
-                    DateCreated = table.Column<DateTime>(type: "datetime", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime", nullable: false),
+                    DateCreated = table.Column<string>(type: "varchar(255)", nullable: false),
+                    DateModified = table.Column<string>(type: "varchar(255)", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -543,8 +543,8 @@ namespace NUShop.Data.EF.Migrations
                     PositionId = table.Column<string>(type: "varchar(255)", nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
                     SortOrder = table.Column<int>(type: "int", nullable: false),
-                    DateCreated = table.Column<DateTime>(type: "datetime", nullable: false),
-                    DateModified = table.Column<DateTime>(type: "datetime", nullable: false)
+                    DateCreated = table.Column<string>(type: "varchar(255)", nullable: false),
+                    DateModified = table.Column<string>(type: "varchar(255)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -860,7 +860,7 @@ namespace NUShop.Data.EF.Migrations
                 name: "BlogTags");
 
             migrationBuilder.DropTable(
-                name: "ContactDetails");
+                name: "Contacts");
 
             migrationBuilder.DropTable(
                 name: "Feedbacks");

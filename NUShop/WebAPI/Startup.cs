@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AutoMapper;
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +11,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NUShop.Data.EF;
+using NUShop.Data.EF.Repositories;
 using NUShop.Data.Entities;
+using NUShop.Data.IRepositories;
+using NUShop.Infrastructure.Interfaces;
+using NUShop.Service.Implements;
+using NUShop.Service.Interfaces;
+using NUShop.Service.ViewModelConfiguration;
+using NUShop.Service.ViewModels;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
 
@@ -28,18 +38,29 @@ namespace WebAPI
             services
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddFluentValidation()
                 .AddJsonOptions(opt => { opt.SerializerSettings.ContractResolver = new DefaultContractResolver(); });
+
+            #region Dependency Injection for Fluent Validators
+
+            services.AddTransient<IValidator<CategoryViewModel>, CategoryValidator>();
+
+            #endregion Dependency Injection for Fluent Validators
 
 
             services.AddDbContext<AppDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+
+
+
+
+            #region Configure Identity I
+
             services
                 .AddIdentity<AppUser, AppRole>()
                 .AddEntityFrameworkStores<AppDbContext>()
                 .AddDefaultTokenProviders();
-
-            
 
             // Configure Identity
             services.Configure<IdentityOptions>(options =>
@@ -61,7 +82,25 @@ namespace WebAPI
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
+            #endregion Configure Identity I
+
             services.AddTransient<DbSeeder>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            #region Dependency Injection for Repositories
+
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+
+            #endregion Dependency Injection for Repositories
+
+            #region Dependency Injection for Services
+
+            services.AddTransient<ICategoryService, CategoryService>();
+
+            #endregion Dependency Injection for Services
+
+            services.AddAutoMapper();
+
             #region Swagger
 
             services.AddSwaggerGen(

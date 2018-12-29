@@ -7,8 +7,10 @@ D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\WebAPI.pdb
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Data.dll
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Data.EF.dll
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Infrastructure.dll
+D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Service.dll
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Utilities.dll
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Data.EF.pdb
+D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Service.pdb
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Data.pdb
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Infrastructure.pdb
 D:\Fetch Training\DotnetProject\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.Utilities.pdb

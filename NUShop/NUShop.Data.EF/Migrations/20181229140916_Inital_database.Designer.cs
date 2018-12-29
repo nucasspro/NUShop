@@ -10,8 +10,8 @@ using NUShop.Data.EF;
 namespace NUShop.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20181229064307_Change_datetime_to_varchar")]
-    partial class Change_datetime_to_varchar
+    [Migration("20181229140916_Inital_database")]
+    partial class Inital_database
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

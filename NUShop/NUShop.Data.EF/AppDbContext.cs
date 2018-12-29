@@ -7,17 +7,16 @@ using NUShop.Data.EF.EntityConfigurations;
 using NUShop.Data.EF.Extensions;
 using NUShop.Data.Entities;
 using NUShop.Data.Interfaces;
-using System;
-using System.Linq;
-using System.IO;
 using NUShop.Utilities.Helpers;
+using System;
+using System.IO;
+using System.Linq;
 
 namespace NUShop.Data.EF
 {
     public class AppDbContext : IdentityDbContext<AppUser, AppRole, Guid>
 
     {
-
         public AppDbContext()
         {
         }
@@ -65,7 +64,6 @@ namespace NUShop.Data.EF
             if (optionsBuilder.IsConfigured)
                 return;
             optionsBuilder.UseSqlServer(GetConnection.GetConnectionString());
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -137,7 +135,8 @@ namespace NUShop.Data.EF
         {
             IConfiguration configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json").Build();
+                .AddJsonFile("appsettings.json")
+                .Build();
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             return connectionString;
         }

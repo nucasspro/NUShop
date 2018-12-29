@@ -11,16 +11,16 @@ namespace NUShop.Infrastructure.Interfaces
     /// 
     /// </summary>
     /// <typeparam name="T">T is entity class/entity</typeparam>
-    /// <typeparam name="K">K is key</typeparam>
+    /// <typeparam name="K">K is type</typeparam>
     public interface IRepository<T, K> where T : class
     {
-        T FindById(K id, params Expression<Func<T, object>>[] includeProperties);
+        T GetById(K id, params Expression<Func<T, object>>[] includeProperties);
 
-        T FindSingle(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties);
+        T GetSingle(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties);
 
-        IQueryable<T> FindAll(params Expression<Func<T, object>>[] includeProperties);
+        IQueryable<T> GetAll(params Expression<Func<T, object>>[] includeProperties);
 
-        IQueryable<T> FindAll(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties);
+        IQueryable<T> GetAll(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties);
 
         void Add(T entity);
 
