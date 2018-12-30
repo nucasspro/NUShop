@@ -87,11 +87,12 @@ namespace NUShop.Service.Implements
             throw new NotImplementedException();
         }
 
-        public void Update(CategoryViewModel categoryViewModel)
+        public CategoryViewModel Update(CategoryViewModel categoryViewModel)
         {
             var category = _mapper.Map<Category>(categoryViewModel);
             _categoryRepository.Update(category);
             _unitOfWork.CommitAsync();
+            return categoryViewModel;
         }
 
         public void UpdateParentId(int sourceId, int targetId, Dictionary<int, int> items)

@@ -57,34 +57,34 @@ namespace WebAPI
 
             #region Configure Identity I
 
-            services
-                .AddIdentity<AppUser, AppRole>()
-                .AddEntityFrameworkStores<AppDbContext>()
-                .AddDefaultTokenProviders();
+            //services
+            //    .AddIdentity<AppUser, AppRole>()
+            //    .AddEntityFrameworkStores<AppDbContext>()
+            //    .AddDefaultTokenProviders();
 
-            // Configure Identity
-            services.Configure<IdentityOptions>(options =>
-            {
-                // Password settings
-                options.Password.RequireDigit = false;
-                options.Password.RequiredLength = 2;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireLowercase = false;
+            //// Configure Identity
+            //services.Configure<IdentityOptions>(options =>
+            //{
+            //    // Password settings
+            //    options.Password.RequireDigit = false;
+            //    options.Password.RequiredLength = 2;
+            //    options.Password.RequireNonAlphanumeric = false;
+            //    options.Password.RequireUppercase = false;
+            //    options.Password.RequireLowercase = false;
 
-                // Lockout settings
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
-                options.Lockout.MaxFailedAccessAttempts = 10;
+            //    // Lockout settings
+            //    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+            //    options.Lockout.MaxFailedAccessAttempts = 10;
 
-                // User settings
-                options.User.RequireUniqueEmail = true;
-            });
-            services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
-            services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+            //    // User settings
+            //    options.User.RequireUniqueEmail = true;
+            //});
+            //services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
+            //services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
             #endregion Configure Identity I
 
-            services.AddTransient<DbSeeder>();
+            //services.AddTransient<DbSeeder>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             #region Dependency Injection for Repositories

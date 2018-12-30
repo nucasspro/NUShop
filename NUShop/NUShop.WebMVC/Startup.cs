@@ -5,11 +5,11 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using NUShop.Data.EF;
 using NUShop.Data.EF.Repositories;
@@ -21,6 +21,7 @@ using NUShop.Service.Interfaces;
 using NUShop.Service.ViewModelConfiguration;
 using NUShop.Service.ViewModels;
 using System;
+using System.IO;
 
 namespace NUShop.WebMVC
 {
@@ -58,7 +59,6 @@ namespace NUShop.WebMVC
             services.AddTransient<IValidator<CategoryViewModel>, CategoryValidator>();
 
             #endregion Dependency Injection for Fluent Validators
-
 
             #region Configure Identity I
 
@@ -108,6 +108,12 @@ namespace NUShop.WebMVC
             loggerFactory.AddFile(Configuration.GetSection("Logging"));
             if (env.IsDevelopment())
             {
+                app.UseStaticFiles(new StaticFileOptions()
+                {
+                    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"node_modules")),
+                    RequestPath = new PathString("/node_modules")
+                });
+
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }

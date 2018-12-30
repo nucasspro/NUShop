@@ -9,7 +9,7 @@ namespace NUShop.Service.Interfaces
     {
         CategoryViewModel Add(CategoryViewModel categoryViewModel);
 
-        void Update(CategoryViewModel categoryViewModel);
+        CategoryViewModel Update(CategoryViewModel categoryViewModel);
 
         void Delete(int id);
 
