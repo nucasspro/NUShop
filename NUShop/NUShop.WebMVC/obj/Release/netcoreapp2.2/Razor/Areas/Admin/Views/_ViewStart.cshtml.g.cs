@@ -24,12 +24,22 @@ using NUShop.WebMVC.Models;
 #line default
 #line hidden
 #line 3 "D:\Fetch Training\DotnetProject\NUShop\NUShop.WebMVC\Areas\Admin\Views\_ViewImports.cshtml"
+using NUShop.WebMVC.Models.AccountViewModels;
+
+#line default
+#line hidden
+#line 4 "D:\Fetch Training\DotnetProject\NUShop\NUShop.WebMVC\Areas\Admin\Views\_ViewImports.cshtml"
+using NUShop.WebMVC.Models.ManageViewModels;
+
+#line default
+#line hidden
+#line 5 "D:\Fetch Training\DotnetProject\NUShop\NUShop.WebMVC\Areas\Admin\Views\_ViewImports.cshtml"
 using NUShop.Data.Entities;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Areas/Admin/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"498dadb98ab44da8f22dd3bbfc4141cfe3943b8d", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"14c988d755476399d813dc855f689766ebfd6d25", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 using NUShop.Data.EF;
 using NUShop.Data.EF.Repositories;
 using NUShop.Data.Entities;
@@ -52,7 +53,8 @@ namespace NUShop.WebMVC
             services
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
-                .AddFluentValidation();
+                .AddFluentValidation()
+                .AddJsonOptions(opt => { opt.SerializerSettings.ContractResolver = new DefaultContractResolver(); });
 
             #region Dependency Injection for Fluent Validators
 
@@ -60,7 +62,7 @@ namespace NUShop.WebMVC
 
             #endregion Dependency Injection for Fluent Validators
 
-            #region Configure Identity I
+            #region Configure Identity 
 
             // Configure Identity
             services.Configure<IdentityOptions>(options =>
@@ -83,7 +85,7 @@ namespace NUShop.WebMVC
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
-            #endregion Configure Identity I
+            #endregion Configure Identity 
 
             services.AddTransient<DbSeeder>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
@@ -137,7 +139,7 @@ namespace NUShop.WebMVC
 
                 routes.MapRoute(
                     name: "adminArea",
-                    template: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                    template: "{area:exists}/{controller=Login}/{action=Index}/{id?}");
             });
         }
     }

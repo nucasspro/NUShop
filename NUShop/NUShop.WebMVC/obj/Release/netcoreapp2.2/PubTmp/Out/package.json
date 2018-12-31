@@ -10,7 +10,9 @@
     "jquery-sparkline": "2.4.0",
     "jquery-validation": "1.19.0",
     "jquery-validation-unobtrusive": "3.2.11",
-    "popper.js": "1.14.6"
+    "popper.js": "1.14.6",
+    "notifyjs": "3.0.0",
+    "bootbox": "4.4.0"
   },
   "description": "",
   "devDependencies": {},
