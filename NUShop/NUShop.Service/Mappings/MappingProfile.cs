@@ -13,6 +13,9 @@ namespace NUShop.Service.Mappings
 
             CreateMap<ProductViewModel, Product>();
             CreateMap<Product, ProductViewModel>();
+
+            CreateMap<FunctionViewModel, Function>();
+            CreateMap<Function, FunctionViewModel>();
         }
     }
 }

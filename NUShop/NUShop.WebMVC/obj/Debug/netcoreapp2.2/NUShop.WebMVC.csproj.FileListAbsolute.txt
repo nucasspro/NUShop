@@ -49,4 +49,4 @@ D:\Fetch Training\DotnetProject\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\NUS
 D:\Fetch Training\DotnetProject\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\NUShop.WebMVC.csproj.CopyComplete
 D:\Fetch Training\DotnetProject\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\NUShop.WebMVC.dll
 D:\Fetch Training\DotnetProject\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\NUShop.WebMVC.pdb
-D:\Fetch Training\DotnetProject\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Login\Index121.cshtml.g.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Shared\Components\SideBar\Default.cshtml.g.cs

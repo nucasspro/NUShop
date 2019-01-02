@@ -38,8 +38,13 @@ using NUShop.Data.Entities;
 
 #line default
 #line hidden
+#line 6 "D:\Fetch Training\DotnetProject\NUShop\NUShop.WebMVC\Areas\Admin\Views\_ViewImports.cshtml"
+using NUShop.Service.ViewModels;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Areas/Admin/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"14c988d755476399d813dc855f689766ebfd6d25", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"30213de04598013f548c2f6332a75d7445d97e2c", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

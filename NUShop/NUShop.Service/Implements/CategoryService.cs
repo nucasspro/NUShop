@@ -5,17 +5,23 @@ using NUShop.Data.IRepositories;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Interfaces;
 using NUShop.Service.ViewModels;
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace NUShop.Service.Implements
 {
     public class CategoryService : ICategoryService
     {
+        #region Variables
+
         private readonly ICategoryRepository _categoryRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+
+        #endregion Variables
+
+        #region Constructor
 
         public CategoryService(IUnitOfWork unitOfWork, ICategoryRepository categoryRepository, IMapper mapper)
         {
@@ -24,18 +30,22 @@ namespace NUShop.Service.Implements
             _mapper = mapper;
         }
 
-        public CategoryViewModel Add(CategoryViewModel categoryViewModel)
+        #endregion Constructor
+
+        #region Implements
+
+        public async Task<CategoryViewModel> Add(CategoryViewModel categoryViewModel)
         {
             var category = _mapper.Map<Category>(categoryViewModel);
             _categoryRepository.Add(category);
-            _unitOfWork.CommitAsync();
+            await _unitOfWork.CommitAsync();
             return categoryViewModel;
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
             _categoryRepository.Remove(id);
-            _unitOfWork.CommitAsync();
+            await _unitOfWork.CommitAsync();
         }
 
         public IEnumerable<CategoryViewModel> GetAll()
@@ -82,22 +92,45 @@ namespace NUShop.Service.Implements
             return categoriesViewModel;
         }
 
-        public void ReOrder(int sourceId, int targetId)
+        public async Task ReOrder(int sourceId, int targetId)
         {
-            throw new NotImplementedException();
+            var source = _categoryRepository.GetById(sourceId);
+            var target = _categoryRepository.GetById(targetId);
+            int tempOrder = source.SortOrder;
+            source.SortOrder = target.SortOrder;
+            target.SortOrder = tempOrder;
+
+            _categoryRepository.Update(source);
+            _categoryRepository.Update(target);
+            await _unitOfWork.CommitAsync();
         }
 
-        public CategoryViewModel Update(CategoryViewModel categoryViewModel)
+        public async Task<CategoryViewModel> Update(CategoryViewModel categoryViewModel)
         {
             var category = _mapper.Map<Category>(categoryViewModel);
             _categoryRepository.Update(category);
-            _unitOfWork.CommitAsync();
+            await _unitOfWork.CommitAsync();
             return categoryViewModel;
         }
 
-        public void UpdateParentId(int sourceId, int targetId, Dictionary<int, int> items)
+        public async Task UpdateParentId(int sourceId, int targetId, Dictionary<int, int> items)
         {
-            throw new NotImplementedException();
+            var sourceCategory = _categoryRepository.GetById(sourceId);
+            sourceCategory.ParentId = targetId;
+            _categoryRepository.Update(sourceCategory);
+
+            //Get all sibling
+            var sibling = _categoryRepository.GetAll(x => items.ContainsKey(x.Id));
+            foreach (var child in sibling)
+            {
+                child.SortOrder = items[child.Id];
+                _categoryRepository.Update(child);
+            }
+            await _unitOfWork.CommitAsync();
         }
+
+       
+
+        #endregion Implements
     }
 }

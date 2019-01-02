@@ -2,16 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace NUShop.Service.Interfaces
 {
     public interface ICategoryService
     {
-        CategoryViewModel Add(CategoryViewModel categoryViewModel);
+        Task<CategoryViewModel> Add(CategoryViewModel categoryViewModel);
 
-        CategoryViewModel Update(CategoryViewModel categoryViewModel);
+        Task<CategoryViewModel> Update(CategoryViewModel categoryViewModel);
 
-        void Delete(int id);
+        Task Delete(int id);
 
         IEnumerable<CategoryViewModel> GetAll();
 
@@ -21,8 +22,9 @@ namespace NUShop.Service.Interfaces
 
         CategoryViewModel GetById(int id);
 
-        void UpdateParentId(int sourceId, int targetId, Dictionary<int, int> items);
-        void ReOrder(int sourceId, int targetId);
+        Task UpdateParentId(int sourceId, int targetId, Dictionary<int, int> items);
+
+        Task ReOrder(int sourceId, int targetId);
 
         IEnumerable<CategoryViewModel> GetHomeCategories(int top);
     }

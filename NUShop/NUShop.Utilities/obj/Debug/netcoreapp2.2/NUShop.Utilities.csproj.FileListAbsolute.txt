@@ -6,3 +6,4 @@ D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netcoreapp2.2\
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netcoreapp2.2\NUShop.Utilities.AssemblyInfo.cs
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netcoreapp2.2\NUShop.Utilities.dll
 D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netcoreapp2.2\NUShop.Utilities.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop.Utilities\obj\Debug\netcoreapp2.2\NUShop.Utilities.csprojAssemblyReference.cache
