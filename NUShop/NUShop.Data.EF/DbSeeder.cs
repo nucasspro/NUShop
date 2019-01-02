@@ -59,6 +59,7 @@ namespace NUShop.Data.EF
                     TwoFactorEnabled = false,
                     LockoutEnabled = false,
                     AccessFailedCount = 0,
+                    Avatar = @"https://sv1.uphinhnhanh.com/images/2019/01/02/logo-new.png",
                     DateCreated = datetime,
                     DateModified = datetime,
                     Status = Status.Active
