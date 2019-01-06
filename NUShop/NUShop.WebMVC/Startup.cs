@@ -96,6 +96,7 @@ namespace NUShop.WebMVC
 
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IFunctionService, FunctionService>();
+            services.AddTransient<IProductService, ProductService>();
 
             #endregion Dependency Injection for Services
 

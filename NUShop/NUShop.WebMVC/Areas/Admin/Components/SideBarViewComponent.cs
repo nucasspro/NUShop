@@ -13,12 +13,16 @@ namespace NUShop.WebMVC.Areas.Admin.Components
 {
     public class SideBarViewComponent : ViewComponent
     {
+        #region Injections
+
         private readonly IFunctionService _functionService;
 
         public SideBarViewComponent(IFunctionService functionService)
         {
             _functionService = functionService;
         }
+
+        #endregion Injections
 
         public async Task<IViewComponentResult> InvokeAsync()
         {

@@ -79,9 +79,6 @@ namespace NUShop.WebAPI
 
             #region Dependency Injection for Repositories
 
-            //services.AddTransient<ICategoryRepository, CategoryRepository>();
-            //services.AddTransient<IFunctionRepository, FunctionRepository>();
-            //services.AddTransient<Iproducre, FunctionRepository>();
             services.AddTransient(typeof(IRepository<,>), typeof(Repository<,>));
 
             #endregion Dependency Injection for Repositories

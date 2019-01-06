@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using NUShop.Data.Entities;
 using NUShop.Data.Enums;
-using NUShop.Data.IRepositories;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Interfaces;
 using NUShop.Service.ViewModels;
@@ -14,24 +13,22 @@ namespace NUShop.Service.Implements
 {
     public class FunctionService : IFunctionService
     {
-        #region Variables
+        #region Injections
 
-        private readonly IFunctionRepository _functionRepository;
+        private readonly IRepository<Function, string> _functionRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        #endregion Variables
-
-        #region Constructor
-
-        public FunctionService(IUnitOfWork unitOfWork, IMapper mapper, IFunctionRepository functionRepository)
+        public FunctionService(IUnitOfWork unitOfWork, IMapper mapper, IRepository<Function, string> functionRepository)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _functionRepository = functionRepository;
         }
 
-        #endregion Constructor
+        #endregion Injections
+
+
 
         #region Implements
 
