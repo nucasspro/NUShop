@@ -23,8 +23,8 @@ namespace NUShop.WebMVC.Areas.Admin.Components
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var roles = ((ClaimsPrincipal)User).GetSpecificClaim("Roles");
-            IEnumerable<FunctionViewModel> function;
-            if (roles.Split(";").Contains(CommonConstants.AppRole.ADMIN_ROLE))
+            List<FunctionViewModel> function;
+            if (roles.Split(";").Contains(CommonConstants.AppRole.AdminRole))
             {
                 function = await _functionService.GetAll(string.Empty);
             }

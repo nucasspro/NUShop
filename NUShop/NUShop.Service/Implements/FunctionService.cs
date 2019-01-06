@@ -49,7 +49,7 @@ namespace NUShop.Service.Implements
             await _unitOfWork.CommitAsync();
         }
 
-        public async Task<IEnumerable<FunctionViewModel>> GetAll(string filter)
+        public async Task<List<FunctionViewModel>> GetAll(string filter)
         {
             var functions = _functionRepository.GetAll(x => x.Status == Status.Active);
             if (!string.IsNullOrEmpty(filter))
@@ -57,14 +57,14 @@ namespace NUShop.Service.Implements
                 functions = functions.Where(x => x.Name.Contains(filter));
             }
             var functionsOrderBy = await functions.OrderBy(x => x.ParentId).ToListAsync();
-            var functionsViewModel = _mapper.Map<IEnumerable<FunctionViewModel>>(functionsOrderBy);
+            var functionsViewModel = _mapper.Map<List<FunctionViewModel>>(functionsOrderBy);
             return functionsViewModel;
         }
 
-        public IEnumerable<FunctionViewModel> GetAllByParentId(string parentId)
+        public List<FunctionViewModel> GetAllByParentId(string parentId)
         {
             var functions = _functionRepository.GetAll(x => x.ParentId == parentId && x.Status == Status.Active);
-            var functionsViewModel = _mapper.Map<IEnumerable<FunctionViewModel>>(functions);
+            var functionsViewModel = _mapper.Map<List<FunctionViewModel>>(functions);
             return functionsViewModel;
         }
 

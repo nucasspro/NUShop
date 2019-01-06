@@ -14,11 +14,11 @@ namespace NUShop.Service.Interfaces
 
         Task Delete(int id);
 
-        IEnumerable<CategoryViewModel> GetAll();
+        List<CategoryViewModel> GetAll();
 
-        IEnumerable<CategoryViewModel> GetAll(string keyword);
+        List<CategoryViewModel> GetAll(string keyword);
 
-        IEnumerable<CategoryViewModel> GetAllByParentId(int parentId);
+        List<CategoryViewModel> GetAllByParentId(int parentId);
 
         CategoryViewModel GetById(int id);
 
@@ -26,6 +26,6 @@ namespace NUShop.Service.Interfaces
 
         Task ReOrder(int sourceId, int targetId);
 
-        IEnumerable<CategoryViewModel> GetHomeCategories(int top);
+        List<CategoryViewModel> GetHomeCategories(int top);
     }
 }

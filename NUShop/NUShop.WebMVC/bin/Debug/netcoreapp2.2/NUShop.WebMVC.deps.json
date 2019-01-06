@@ -759,7 +759,8 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.0.0",
           "FluentValidation.AspNetCore": "8.1.2",
-          "NUShop.Data": "1.0.0"
+          "NUShop.Data": "1.0.0",
+          "NUShop.Utilities": "1.0.0"
         },
         "runtime": {
           "NUShop.Service.dll": {}

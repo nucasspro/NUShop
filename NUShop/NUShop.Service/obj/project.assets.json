@@ -2822,6 +2822,16 @@
         "runtime": {
           "bin/placeholder/NUShop.Infrastructure.dll": {}
         }
+      },
+      "NUShop.Utilities/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "compile": {
+          "bin/placeholder/NUShop.Utilities.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NUShop.Utilities.dll": {}
+        }
       }
     }
   },
@@ -8448,6 +8458,11 @@
       "type": "project",
       "path": "../NUShop.Infrastructure/NUShop.Infrastructure.csproj",
       "msbuildProject": "../NUShop.Infrastructure/NUShop.Infrastructure.csproj"
+    },
+    "NUShop.Utilities/1.0.0": {
+      "type": "project",
+      "path": "../NUShop.Utilities/NUShop.Utilities.csproj",
+      "msbuildProject": "../NUShop.Utilities/NUShop.Utilities.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8455,7 +8470,8 @@
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 6.0.0",
       "FluentValidation.AspNetCore >= 8.1.2",
       "Microsoft.NETCore.App >= 2.2.0",
-      "NUShop.Data >= 1.0.0"
+      "NUShop.Data >= 1.0.0",
+      "NUShop.Utilities >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8483,13 +8499,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
             "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Data\\NUShop.Data.csproj": {
               "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Data\\NUShop.Data.csproj"
+            },
+            "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj": {
+              "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj"
             }
           }
         }

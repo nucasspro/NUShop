@@ -90,12 +90,14 @@ namespace WebAPI
             #region Dependency Injection for Repositories
 
             services.AddTransient<ICategoryRepository, CategoryRepository>();
+            services.AddTransient<IFunctionRepository, FunctionRepository>();
 
             #endregion Dependency Injection for Repositories
 
             #region Dependency Injection for Services
 
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IFunctionService, FunctionService>();
 
             #endregion Dependency Injection for Services
 

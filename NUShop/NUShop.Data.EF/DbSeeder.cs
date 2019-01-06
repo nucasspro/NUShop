@@ -86,7 +86,7 @@ namespace NUShop.Data.EF
             {
                 _context.Contacts.Add(new Contact()
                 {
-                    Id = CommonConstants.DEFAULT_FOOTER_ID,
+                    Id = CommonConstants.DefaultFooterId,
                     Address = "KTX khu B - ĐHQG TPHCM",
                     Email = "nucasspro26@gmail.com",
                     Name = "NU Shop",
@@ -132,12 +132,12 @@ namespace NUShop.Data.EF
                     new Function() {Id = "READER"   ,Name = "Reader Report"     ,ParentId = "REPORT"    ,SortOrder = 3, Status = Status.Active, URL = "/admin/report/reader"    ,IconCss = "fa-bar-chart-o"  },
                 });
             }
-            if (_context.Footers.Count(x => x.Id == CommonConstants.DEFAULT_FOOTER_ID) == 0)
+            if (_context.Footers.Count(x => x.Id == CommonConstants.DefaultFooterId) == 0)
             {
                 string content = "Footer";
                 _context.Footers.Add(new Footer()
                 {
-                    Id = CommonConstants.DEFAULT_FOOTER_ID,
+                    Id = CommonConstants.DefaultFooterId,
                     Content = content
                 });
             }

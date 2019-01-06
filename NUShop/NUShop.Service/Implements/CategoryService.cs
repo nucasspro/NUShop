@@ -48,33 +48,33 @@ namespace NUShop.Service.Implements
             await _unitOfWork.CommitAsync();
         }
 
-        public IEnumerable<CategoryViewModel> GetAll()
+        public List<CategoryViewModel> GetAll()
         {
             var categories = _categoryRepository.GetAll().OrderBy(x => x.Id);
-            var categoriesViewModel = _mapper.Map<IEnumerable<CategoryViewModel>>(categories);
+            var categoriesViewModel = _mapper.Map<List<CategoryViewModel>>(categories);
             return categoriesViewModel;
         }
 
-        public IEnumerable<CategoryViewModel> GetAll(string keyword)
+        public List<CategoryViewModel> GetAll(string keyword)
         {
             if (!string.IsNullOrEmpty(keyword))
             {
                 var categories = _categoryRepository.GetAll(x => x.Name.Contains(keyword) || x.Description.Contains(keyword)).OrderBy(x => x.ParentId);
-                var categoriesViewModel = _mapper.Map<IEnumerable<CategoryViewModel>>(categories);
+                var categoriesViewModel = _mapper.Map<List<CategoryViewModel>>(categories);
                 return categoriesViewModel;
             }
             else
             {
                 var categories = _categoryRepository.GetAll().OrderBy(x => x.ParentId);
-                var categoriesViewModel = _mapper.Map<IEnumerable<CategoryViewModel>>(categories);
+                var categoriesViewModel = _mapper.Map<List<CategoryViewModel>>(categories);
                 return categoriesViewModel;
             }
         }
 
-        public IEnumerable<CategoryViewModel> GetAllByParentId(int parentId)
+        public List<CategoryViewModel> GetAllByParentId(int parentId)
         {
             var categories = _categoryRepository.GetAll(x => x.ParentId == parentId && x.Status == Status.Active);
-            var categoriesViewModel = _mapper.Map<IEnumerable<CategoryViewModel>>(categories);
+            var categoriesViewModel = _mapper.Map<List<CategoryViewModel>>(categories);
             return categoriesViewModel;
         }
 
@@ -85,10 +85,10 @@ namespace NUShop.Service.Implements
             return categoryViewModel;
         }
 
-        public IEnumerable<CategoryViewModel> GetHomeCategories(int top)
+        public List<CategoryViewModel> GetHomeCategories(int top)
         {
             var categories = _categoryRepository.GetAll(x => x.HomeFlag == true, y => y.Products).OrderBy(x => x.HomeOrder).Take(top);
-            var categoriesViewModel = _mapper.Map<IEnumerable<CategoryViewModel>>(categories);
+            var categoriesViewModel = _mapper.Map<List<CategoryViewModel>>(categories);
             return categoriesViewModel;
         }
 

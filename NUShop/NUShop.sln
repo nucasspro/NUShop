@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28407.52
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{777A5FC9-0A08-4520-B9BF-E3150FF3A849}"
 EndProject
@@ -21,9 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUShop.Data.EF", "NUShop.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUShop.Data", "NUShop.Data\NUShop.Data.csproj", "{D88F2E59-7CCE-4057-92AF-5A4045AE4F6D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebAPI\WebAPI.csproj", "{47818143-034D-46D6-B245-E56999FF824E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUShop.WebAPI", "WebAPI\NUShop.WebAPI.csproj", "{47818143-034D-46D6-B245-E56999FF824E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUShop.WebMVC", "NUShop.WebMVC\NUShop.WebMVC.csproj", "{B5D2CD53-2CAB-4382-8F8B-810FF28DE3AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUShop.WebMVC", "NUShop.WebMVC\NUShop.WebMVC.csproj", "{B5D2CD53-2CAB-4382-8F8B-810FF28DE3AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

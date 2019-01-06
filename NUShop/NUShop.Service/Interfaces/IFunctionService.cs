@@ -12,9 +12,9 @@ namespace NUShop.Service.Interfaces
 
         Task Delete(string id);
 
-        Task<IEnumerable<FunctionViewModel>> GetAll(string filter);
+        Task<List<FunctionViewModel>> GetAll(string filter);
 
-        IEnumerable<FunctionViewModel> GetAllByParentId(string parentId);
+        List<FunctionViewModel> GetAllByParentId(string parentId);
 
         FunctionViewModel GetById(string id);
 
