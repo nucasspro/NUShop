@@ -1,27 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using NUShop.Data.Entities;
-using NUShop.Utilities.DTOs;
-using NUShop.WebMVC.Models.AccountViewModels;
-using System.Threading.Tasks;
+using Newtonsoft.Json;
+using NUShop.Service.ViewModels.AccountViewModels;
+using RestSharp;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers
 {
     public class LoginController : BaseController
     {
-        private readonly UserManager<AppUser> _userManage;
-        private readonly SignInManager<AppUser> _signInManager;
-        private readonly ILogger<LoginController> _logger;
-
-        public LoginController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ILogger<LoginController> logger)
-        {
-            _userManage = userManager;
-            _signInManager = signInManager;
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             return View();
@@ -30,30 +16,14 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AuthenticationAsync(LoginViewModel loginViewModel)
+        public IActionResult Authentication(LoginViewModel loginViewModel)
         {
-            if (ModelState.IsValid)
-            {
-                var result = await _signInManager.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, loginViewModel.RememberMe, lockoutOnFailure: true);
-                if (result.Succeeded)
-                {
-                    _logger.LogInformation("User logged in.");
-                    return new OkObjectResult(new GenericResult(true));
-                }
-
-                if (result.IsLockedOut)
-                {
-                    _logger.LogWarning("User account locked out.");
-                    return new OkObjectResult(new GenericResult(false, "User account locked out."));
-                }
-                else
-                {
-                    return new OkObjectResult(new GenericResult(false, "Wrong user or password."));
-                }
-            }
-
-            // If we got this far, something failed, redisplay form
-            return new OkObjectResult(new GenericResult(false, loginViewModel));
+            var client = new RestClient("https://localhost:5003/api/Login");
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Content-Type", "application/json");
+            request.AddParameter("application/json", JsonConvert.SerializeObject(loginViewModel), ParameterType.RequestBody);
+            var response = client.Execute(request);
+            return new OkObjectResult(response.Content);
         }
     }
 }

@@ -24,13 +24,13 @@
             },
             contentType: 'application/x-www-form-urlencoded;',
             dataType: 'json',
-            url: '/admin/login/AuthenticationAsync',
+            url: '/admin/login/Authentication',
             success: function (response) {
                 if (response.IsSuccess) {
                     window.location.href = '/Admin/Home/Index';
                 }
                 else {
-                    NUShopConfig.notify('Login unsuccessfully', 'error');
+                    //NUShopConfig.notify('Login unsuccessfully', 'error');
                 }
             }
         });

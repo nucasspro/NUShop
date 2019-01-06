@@ -24,27 +24,17 @@ using NUShop.WebMVC.Models;
 #line default
 #line hidden
 #line 3 "D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\Areas\Admin\Views\_ViewImports.cshtml"
-using NUShop.WebMVC.Models.AccountViewModels;
-
-#line default
-#line hidden
-#line 4 "D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\Areas\Admin\Views\_ViewImports.cshtml"
-using NUShop.WebMVC.Models.ManageViewModels;
-
-#line default
-#line hidden
-#line 5 "D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\Areas\Admin\Views\_ViewImports.cshtml"
 using NUShop.Data.Entities;
 
 #line default
 #line hidden
-#line 6 "D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\Areas\Admin\Views\_ViewImports.cshtml"
+#line 4 "D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\Areas\Admin\Views\_ViewImports.cshtml"
 using NUShop.Service.ViewModels;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"2189fea3baa3940c03ae139f5b46febfd310d268", @"/Areas/Admin/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"30213de04598013f548c2f6332a75d7445d97e2c", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"82de23e385a0a99a5782abb68c7d1d5b05576a42", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("selected", new global::Microsoft.AspNetCore.Html.HtmlString(""), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -94,7 +84,7 @@ using NUShop.Service.ViewModels;
                             ");
             EndContext();
             BeginContext(511, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d2688189", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d2687816", async() => {
                 BeginContext(531, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -115,7 +105,7 @@ using NUShop.Service.ViewModels;
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(581, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d2689479", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d2689106", async() => {
                 BeginContext(599, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -150,7 +140,7 @@ using NUShop.Service.ViewModels;
                             ");
             EndContext();
             BeginContext(1214, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26811469", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26811096", async() => {
                 BeginContext(1234, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -171,7 +161,7 @@ using NUShop.Service.ViewModels;
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(1284, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26812763", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26812390", async() => {
                 BeginContext(1302, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -206,7 +196,7 @@ using NUShop.Service.ViewModels;
                             ");
             EndContext();
             BeginContext(1912, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26814751", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26814378", async() => {
                 BeginContext(1932, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -227,7 +217,7 @@ using NUShop.Service.ViewModels;
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(1982, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26816045", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26815672", async() => {
                 BeginContext(2000, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -262,7 +252,7 @@ using NUShop.Service.ViewModels;
                             ");
             EndContext();
             BeginContext(2617, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26818040", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26817667", async() => {
                 BeginContext(2637, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -283,7 +273,7 @@ using NUShop.Service.ViewModels;
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(2687, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26819334", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26818961", async() => {
                 BeginContext(2705, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -321,7 +311,7 @@ using NUShop.Service.ViewModels;
                 ");
             EndContext();
             BeginContext(3252, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26821257", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26820884", async() => {
                 BeginContext(3272, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -342,7 +332,7 @@ using NUShop.Service.ViewModels;
             WriteLiteral("\r\n                ");
             EndContext();
             BeginContext(3310, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26822539", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26822166", async() => {
                 BeginContext(3328, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -451,7 +441,7 @@ using NUShop.Service.ViewModels;
                         ");
             EndContext();
             BeginContext(6729, 34, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26827451", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26827078", async() => {
                 BeginContext(6749, 5, true);
                 WriteLiteral("Today");
                 EndContext();
@@ -472,7 +462,7 @@ using NUShop.Service.ViewModels;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(6789, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26828734", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26828361", async() => {
                 BeginContext(6807, 11, true);
                 WriteLiteral("Last 7 Days");
                 EndContext();
@@ -559,7 +549,7 @@ using NUShop.Service.ViewModels;
                     ");
             EndContext();
             BeginContext(9558, 140, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26832943", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2189fea3baa3940c03ae139f5b46febfd310d26832570", async() => {
                 BeginContext(9584, 107, true);
                 WriteLiteral("\r\n                        <input type=\"text\" name=\"search\" placeholder=\"Search Here\">\r\n                    ");
                 EndContext();
@@ -582,7 +572,7 @@ using NUShop.Service.ViewModels;
             WriteLiteral("\r\n                </div>\r\n                <div class=\"member-box\">\r\n                    <div class=\"s-member\">\r\n                        <div class=\"media align-items-center\">\r\n                            ");
             EndContext();
             BeginContext(9902, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2189fea3baa3940c03ae139f5b46febfd310d26834808", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2189fea3baa3940c03ae139f5b46febfd310d26834435", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -614,7 +604,7 @@ using NUShop.Service.ViewModels;
                             ");
             EndContext();
             BeginContext(10608, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2189fea3baa3940c03ae139f5b46febfd310d26836772", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2189fea3baa3940c03ae139f5b46febfd310d26836399", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -646,7 +636,7 @@ using NUShop.Service.ViewModels;
                             ");
             EndContext();
             BeginContext(11318, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2189fea3baa3940c03ae139f5b46febfd310d26838741", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2189fea3baa3940c03ae139f5b46febfd310d26838368", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -678,7 +668,7 @@ using NUShop.Service.ViewModels;
                             ");
             EndContext();
             BeginContext(12030, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2189fea3baa3940c03ae139f5b46febfd310d26840712", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2189fea3baa3940c03ae139f5b46febfd310d26840339", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -710,7 +700,7 @@ using NUShop.Service.ViewModels;
                             ");
             EndContext();
             BeginContext(12739, 96, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2189fea3baa3940c03ae139f5b46febfd310d26842680", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "2189fea3baa3940c03ae139f5b46febfd310d26842307", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

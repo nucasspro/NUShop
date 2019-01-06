@@ -12,12 +12,12 @@ namespace NUShop.WebMVC.Helpers
         {
         }
 
-        public async override Task<ClaimsPrincipal> CreateAsync(AppUser user)
+        public override async Task<ClaimsPrincipal> CreateAsync(AppUser user)
         {
             var claimsPrincipal = await base.CreateAsync(user);
             var roles = await UserManager.GetRolesAsync(user);
 
-            Claim[] claims = new[]
+            var claims = new[]
             {
                 new Claim("UserId", user.Id.ToString()),
                 new Claim("Email",user.Email??string.Empty),

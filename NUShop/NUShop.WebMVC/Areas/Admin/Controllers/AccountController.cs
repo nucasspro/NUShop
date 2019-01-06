@@ -2,17 +2,18 @@
 using Microsoft.AspNetCore.Mvc;
 using NUShop.Data.Entities;
 using System.Threading.Tasks;
+using RestSharp;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers
 {
     public class AccountController : BaseController
     {
-        private readonly SignInManager<AppUser> _signInManager;
+        //private readonly SignInManager<AppUser> _signInManager;
 
-        public AccountController(SignInManager<AppUser> signInManager)
-        {
-            _signInManager = signInManager;
-        }
+        //public AccountController(SignInManager<AppUser> signInManager)
+        //{
+        //    _signInManager = signInManager;
+        //}
 
         public IActionResult Index()
         {
@@ -21,10 +22,17 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Logout()
+        public IActionResult Logout()
         {
-            await _signInManager.SignOutAsync();
-            return Redirect("/Admin/Login/Index");
+            var client = new RestClient("https://localhost:5003/api/account/Logout");
+            var request = new RestRequest(Method.POST);
+            request.AddHeader("Content-Type", "application/x-www-form-urlencoded");
+            var response = client.Execute(request);
+            return response.IsSuccessful ? Redirect("/Admin/Login/Index") : null;
+
+            //await _signInManager.SignOutAsync();
+            //return Redirect("/Admin/Login/Index");
+
         }
     }
 }
