@@ -27,9 +27,7 @@ namespace NUShop.Data.EF
 
         #region DbSet
 
-        public DbSet<Advertistment> Advertistments { get; set; }
-        public DbSet<AdvertistmentPage> AdvertistmentPages { get; set; }
-        public DbSet<AdvertistmentPosition> AdvertistmentPositions { get; set; }
+        
         public DbSet<Announcement> Announcements { set; get; }
         public DbSet<AnnouncementUser> AnnouncementUsers { set; get; }
         public DbSet<AppRole> AppRoles { get; set; }
@@ -45,7 +43,7 @@ namespace NUShop.Data.EF
         public DbSet<Footer> Footers { set; get; }
         public DbSet<Function> Functions { get; set; }
         public DbSet<Language> Languages { set; get; }
-        public DbSet<Page> Pages { set; get; }
+        public DbSet<SinglePage> SinglePages { set; get; }
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Product> Products { set; get; }
         public DbSet<ProductImage> ProductImages { set; get; }
@@ -76,9 +74,6 @@ namespace NUShop.Data.EF
             modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.RoleId, x.UserId });
             modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => new { x.UserId });
 
-            modelBuilder.AddConfiguration(new AdvertistmentConfiguration());
-            modelBuilder.AddConfiguration(new AdvertistmentPageConfiguration());
-            modelBuilder.AddConfiguration(new AdvertistmentPositionConfiguration());
             modelBuilder.AddConfiguration(new AnnouncementConfiguration());
             modelBuilder.AddConfiguration(new AnnouncementUserConfiguration());
             modelBuilder.AddConfiguration(new AppRoleConfiguration());
@@ -94,7 +89,7 @@ namespace NUShop.Data.EF
             modelBuilder.AddConfiguration(new FooterConfiguration());
             modelBuilder.AddConfiguration(new FunctionConfiguration());
             modelBuilder.AddConfiguration(new LanguageConfiguration());
-            modelBuilder.AddConfiguration(new PageConfiguration());
+            modelBuilder.AddConfiguration(new SinglePageConfiguration());
             modelBuilder.AddConfiguration(new PermissionConfiguration());
             modelBuilder.AddConfiguration(new ProductConfiguration());
             modelBuilder.AddConfiguration(new ProductImageConfiguration());

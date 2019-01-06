@@ -31,7 +31,7 @@ namespace NUShop.Data.Entities
         public string DateCreated { get; set; }
         public string DateModified { get; set; }
         public Status Status { get; set; }
-        public virtual ICollection<Announcement> Announcements { get; set; }
+        public virtual ICollection<AnnouncementUser> AnnouncementUsers { get; set; }
         public virtual ICollection<Bill> Bills { get; set; }
     }
 }

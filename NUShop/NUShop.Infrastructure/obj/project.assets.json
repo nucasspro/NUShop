@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Infrastructure\\NUShop.Infrastructure.csproj",
+      "projectUniqueName": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Infrastructure\\NUShop.Infrastructure.csproj",
       "projectName": "NUShop.Infrastructure",
-      "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Infrastructure\\NUShop.Infrastructure.csproj",
+      "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Infrastructure\\NUShop.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\nucas\\.nuget\\packages\\",
-      "outputPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Infrastructure\\obj\\",
+      "outputPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

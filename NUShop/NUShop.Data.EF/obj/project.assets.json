@@ -4718,11 +4718,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Data.EF\\NUShop.Data.EF.csproj",
+      "projectUniqueName": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Data.EF\\NUShop.Data.EF.csproj",
       "projectName": "NUShop.Data.EF",
-      "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Data.EF\\NUShop.Data.EF.csproj",
+      "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Data.EF\\NUShop.Data.EF.csproj",
       "packagesPath": "C:\\Users\\nucas\\.nuget\\packages\\",
-      "outputPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Data.EF\\obj\\",
+      "outputPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Data.EF\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -4742,11 +4742,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Data\\NUShop.Data.csproj": {
-              "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Data\\NUShop.Data.csproj"
+            "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Data\\NUShop.Data.csproj": {
+              "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Data\\NUShop.Data.csproj"
             },
-            "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj": {
-              "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj"
+            "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj": {
+              "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj"
             }
           }
         }

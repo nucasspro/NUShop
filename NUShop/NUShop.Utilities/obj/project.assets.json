@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj",
+      "projectUniqueName": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj",
       "projectName": "NUShop.Utilities",
-      "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj",
+      "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj",
       "packagesPath": "C:\\Users\\nucas\\.nuget\\packages\\",
-      "outputPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Utilities\\obj\\",
+      "outputPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Utilities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

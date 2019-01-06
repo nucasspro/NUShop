@@ -4,11 +4,11 @@ using NUShop.Infrastructure.Shared;
 
 namespace NUShop.Data.Entities
 {
-    public class Page : DomainEntity<int>, ISwitchable
+    public class SinglePage : DomainEntity<int>, ISwitchable
     {
-        public Page() { }
+        public SinglePage() { }
 
-        public Page(int id, string name, string alias, string content, Status status)
+        public SinglePage(int id, string name, string alias, string content, Status status)
         {
             Id = id;
             Name = name;

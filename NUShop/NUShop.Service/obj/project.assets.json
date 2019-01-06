@@ -8465,11 +8465,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Service\\NUShop.Service.csproj",
+      "projectUniqueName": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Service\\NUShop.Service.csproj",
       "projectName": "NUShop.Service",
-      "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Service\\NUShop.Service.csproj",
+      "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Service\\NUShop.Service.csproj",
       "packagesPath": "C:\\Users\\nucas\\.nuget\\packages\\",
-      "outputPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Service\\obj\\",
+      "outputPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -8483,14 +8483,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://dotnetfeed.blob.core.windows.net/dotnet-core/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Data\\NUShop.Data.csproj": {
-              "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop.Data\\NUShop.Data.csproj"
+            "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Data\\NUShop.Data.csproj": {
+              "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Data\\NUShop.Data.csproj"
             }
           }
         }

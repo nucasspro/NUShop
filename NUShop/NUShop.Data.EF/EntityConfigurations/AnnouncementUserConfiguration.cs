@@ -17,7 +17,12 @@ namespace NUShop.Data.EF.EntityConfigurations
             entity.HasOne(x => x.Announcement).WithMany(y => y.AnnouncementUsers).HasForeignKey(z => z.AnnouncementId);
 
             entity.Property(x => x.UserId).IsRequired(true).HasColumnName("UserId").HasColumnType("uniqueidentifier");
+            entity.HasOne(x => x.AppUser).WithMany(y => y.AnnouncementUsers).HasForeignKey(z => z.UserId);
+
             entity.Property(x => x.HasRead).IsRequired(false).HasColumnName("HasRead").HasColumnType("bit");
+
+
+            
         }
     }
 }

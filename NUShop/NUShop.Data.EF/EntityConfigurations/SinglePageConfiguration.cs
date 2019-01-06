@@ -5,11 +5,11 @@ using NUShop.Data.Entities;
 
 namespace NUShop.Data.EF.EntityConfigurations
 {
-    public class PageConfiguration : DbEntityConfiguration<Page>
+    public class SinglePageConfiguration : DbEntityConfiguration<SinglePage>
     {
-        public override void Configure(EntityTypeBuilder<Page> entity)
+        public override void Configure(EntityTypeBuilder<SinglePage> entity)
         {
-            entity.ToTable("Pages");
+            entity.ToTable("SinglePages");
             entity.HasKey(x => x.Id);
             entity.Property(x => x.Id).IsRequired(true).HasColumnName("Id").HasColumnType("int");
             entity.Property(x => x.Name).IsRequired(true).HasColumnName("Name").HasColumnType("nvarchar(255)");

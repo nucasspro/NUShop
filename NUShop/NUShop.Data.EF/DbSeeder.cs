@@ -152,40 +152,7 @@ namespace NUShop.Data.EF
                 };
                 _context.Colors.AddRange(listColor);
             }
-            if (_context.AdvertistmentPages.Count() == 0)
-            {
-                List<AdvertistmentPage> pages = new List<AdvertistmentPage>()
-                {
-                    new AdvertistmentPage()
-                    {
-                        Id ="home",
-                        Name ="Home",
-                        AdvertistmentPositions = new List<AdvertistmentPosition>()
-                        {
-                            new AdvertistmentPosition(){Id="home-left",Name="Bên trái"}
-                        }
-                    },
-                    new AdvertistmentPage()
-                    {
-                        Id ="product-cate",
-                        Name ="Product category" ,
-                        AdvertistmentPositions = new List<AdvertistmentPosition>()
-                        {
-                            new AdvertistmentPosition(){ Id="product-cate-left",Name="Bên trái" }
-                        }
-                    },
-                    new AdvertistmentPage()
-                    {
-                        Id ="product-detail",
-                        Name ="Product detail",
-                        AdvertistmentPositions = new List<AdvertistmentPosition>()
-                        {
-                            new AdvertistmentPosition(){Id="product-detail-left",Name="Bên trái"}
-                        }
-                    },
-                };
-                _context.AdvertistmentPages.AddRange(pages);
-            }
+           
             if (_context.Slides.Count() == 0)
             {
                 List<Slide> slides = new List<Slide>()
