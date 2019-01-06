@@ -1,56 +1,50 @@
 ﻿using AutoMapper;
 using NUShop.Data.Entities;
 using NUShop.Data.Enums;
-using NUShop.Data.IRepositories;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Interfaces;
 using NUShop.Service.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace NUShop.Service.Implements
 {
     public class CategoryService : ICategoryService
     {
-        #region Variables
+        #region Injections
 
-        private readonly ICategoryRepository _categoryRepository;
+        private readonly IRepository<Category, int> _categoryRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        #endregion Variables
-
-        #region Constructor
-
-        public CategoryService(IUnitOfWork unitOfWork, ICategoryRepository categoryRepository, IMapper mapper)
+        public CategoryService(IRepository<Category, int> categoryRepository, IUnitOfWork unitOfWork, IMapper mapper)
         {
-            _unitOfWork = unitOfWork;
             _categoryRepository = categoryRepository;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
-        #endregion Constructor
+        #endregion Injections
 
         #region Implements
 
-        public async Task<CategoryViewModel> Add(CategoryViewModel categoryViewModel)
+        public CategoryViewModel Add(CategoryViewModel categoryViewModel)
         {
             var category = _mapper.Map<Category>(categoryViewModel);
             _categoryRepository.Add(category);
-            await _unitOfWork.CommitAsync();
+            _unitOfWork.Commit();
             return categoryViewModel;
         }
 
-        public async Task Delete(int id)
+        public void Delete(int id)
         {
             _categoryRepository.Remove(id);
-            await _unitOfWork.CommitAsync();
+            _unitOfWork.Commit();
         }
 
         public List<CategoryViewModel> GetAll()
         {
-            var categories = _categoryRepository.GetAll().OrderBy(x => x.Id);
+            var categories = _categoryRepository.GetAll().OrderBy(x => x.ParentId);
             var categoriesViewModel = _mapper.Map<List<CategoryViewModel>>(categories);
             return categoriesViewModel;
         }
@@ -59,7 +53,8 @@ namespace NUShop.Service.Implements
         {
             if (!string.IsNullOrEmpty(keyword))
             {
-                var categories = _categoryRepository.GetAll(x => x.Name.Contains(keyword) || x.Description.Contains(keyword)).OrderBy(x => x.ParentId);
+                var categories = _categoryRepository
+                    .GetAll(x => x.Name.Contains(keyword) || x.Description.Contains(keyword)).OrderBy(x => x.ParentId);
                 var categoriesViewModel = _mapper.Map<List<CategoryViewModel>>(categories);
                 return categoriesViewModel;
             }
@@ -73,7 +68,7 @@ namespace NUShop.Service.Implements
 
         public List<CategoryViewModel> GetAllByParentId(int parentId)
         {
-            var categories = _categoryRepository.GetAll(x => x.ParentId == parentId && x.Status == Status.Active);
+            var categories = _categoryRepository.GetAll(x => x.Status == Status.Active);
             var categoriesViewModel = _mapper.Map<List<CategoryViewModel>>(categories);
             return categoriesViewModel;
         }
@@ -87,33 +82,42 @@ namespace NUShop.Service.Implements
 
         public List<CategoryViewModel> GetHomeCategories(int top)
         {
-            var categories = _categoryRepository.GetAll(x => x.HomeFlag == true, y => y.Products).OrderBy(x => x.HomeOrder).Take(top);
-            var categoriesViewModel = _mapper.Map<List<CategoryViewModel>>(categories);
-            return categoriesViewModel;
+            var query = _categoryRepository.GetAll(x => x.HomeFlag == true, c => c.Products).OrderBy(x => x.HomeOrder).Take(top);
+            var queryViewModel = _mapper.Map<List<CategoryViewModel>>(query);
+
+            var categories = queryViewModel.ToList();
+            foreach (var category in categories)
+            {
+                //category.Products = _productRepository
+                //    .FindAll(x => x.HotFlag == true && x.CategoryId == category.Id)
+                //    .OrderByDescending(x => x.DateCreated)
+                //    .Take(5)
+                //    .ProjectTo<ProductViewModel>().ToList();
+            }
+            return categories;
         }
 
-        public async Task ReOrder(int sourceId, int targetId)
+        public void ReOrder(int sourceId, int targetId)
         {
             var source = _categoryRepository.GetById(sourceId);
             var target = _categoryRepository.GetById(targetId);
-            int tempOrder = source.SortOrder;
+            var tempOrder = source.SortOrder;
             source.SortOrder = target.SortOrder;
             target.SortOrder = tempOrder;
 
             _categoryRepository.Update(source);
             _categoryRepository.Update(target);
-            await _unitOfWork.CommitAsync();
+            _unitOfWork.Commit();
         }
 
-        public async Task<CategoryViewModel> Update(CategoryViewModel categoryViewModel)
+        public void Update(CategoryViewModel categoryViewModel)
         {
             var category = _mapper.Map<Category>(categoryViewModel);
             _categoryRepository.Update(category);
-            await _unitOfWork.CommitAsync();
-            return categoryViewModel;
+            _unitOfWork.Commit();
         }
 
-        public async Task UpdateParentId(int sourceId, int targetId, Dictionary<int, int> items)
+        public void UpdateParentId(int sourceId, int targetId, Dictionary<int, int> items)
         {
             var sourceCategory = _categoryRepository.GetById(sourceId);
             sourceCategory.ParentId = targetId;
@@ -126,10 +130,8 @@ namespace NUShop.Service.Implements
                 child.SortOrder = items[child.Id];
                 _categoryRepository.Update(child);
             }
-            await _unitOfWork.CommitAsync();
+            _unitOfWork.Commit();
         }
-
-       
 
         #endregion Implements
     }

@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.EntityFrameworkCore.Internal;
 using NUShop.Data.Entities;
 using NUShop.Data.Enums;
 using NUShop.Infrastructure.Interfaces;
@@ -25,13 +24,10 @@ namespace NUShop.Service.Implements
 
         private readonly IUnitOfWork _unitOfWork;
 
-        public ProductService(IRepository<Product, int> productRepository,
-            IRepository<Tag, string> tagRepository,
-            IRepository<ProductQuantity, int> productQuantityRepository,
-            IRepository<ProductImage, int> productImageRepository,
-            IRepository<WholePrice, int> wholePriceRepository,
-            IUnitOfWork unitOfWork,
-            IRepository<ProductTag, int> productTagRepository, IMapper mapper)
+        public ProductService(IRepository<Product, int> productRepository, IRepository<Tag, string> tagRepository,
+                            IRepository<ProductQuantity, int> productQuantityRepository, IRepository<ProductImage, int> productImageRepository,
+                            IRepository<WholePrice, int> wholePriceRepository, IRepository<ProductTag, int> productTagRepository,
+                            IUnitOfWork unitOfWork, IMapper mapper)
         {
             _productRepository = productRepository;
             _tagRepository = tagRepository;
@@ -43,13 +39,13 @@ namespace NUShop.Service.Implements
             _unitOfWork = unitOfWork;
         }
 
-        public ProductViewModel Add(ProductViewModel productVm)
+        public ProductViewModel Add(ProductViewModel productViewModel)
         {
             var productTags = new List<ProductTag>();
-            if (string.IsNullOrEmpty(productVm.Tags))
-                return productVm;
+            if (string.IsNullOrEmpty(productViewModel.Tags))
+                return productViewModel;
 
-            var tags = productVm.Tags.Split(',');
+            var tags = productViewModel.Tags.Split(',');
             foreach (var t in tags)
             {
                 var tagId = TextHelper.ToUnsignString(t);
@@ -70,14 +66,15 @@ namespace NUShop.Service.Implements
                 };
                 productTags.Add(productTag);
             }
-            var product = Mapper.Map<ProductViewModel, Product>(productVm);
+
+            var product = _mapper.Map<Product>(productViewModel);
             foreach (var productTag in productTags)
             {
                 product.ProductTags.Add(productTag);
             }
             _productRepository.Add(product);
             _unitOfWork.Commit();
-            return productVm;
+            return productViewModel;
         }
 
         public void AddQuantity(int productId, List<ProductQuantityViewModel> quantities)
@@ -104,7 +101,7 @@ namespace NUShop.Service.Implements
 
         public List<ProductViewModel> GetAll()
         {
-            var products = _productImageRepository.GetAll();
+            var products = _productRepository.GetAll();
             var productsViewModel = _mapper.Map<List<ProductViewModel>>(products);
             return productsViewModel;
         }
@@ -136,7 +133,9 @@ namespace NUShop.Service.Implements
 
         public ProductViewModel GetById(int id)
         {
-            return Mapper.Map<Product, ProductViewModel>(_productRepository.GetById(id));
+            var product = _productRepository.GetById(id);
+            var productViewModel = _mapper.Map<ProductViewModel>(product);
+            return productViewModel;
         }
 
         public List<ProductQuantityViewModel> GetQuantities(int productId)
@@ -146,13 +145,13 @@ namespace NUShop.Service.Implements
             return productQuantitiesViewModel;
         }
 
-        public void Update(ProductViewModel productVm)
+        public void Update(ProductViewModel productViewModel)
         {
             var productTags = new List<ProductTag>();
 
-            if (!string.IsNullOrEmpty(productVm.Tags))
+            if (!string.IsNullOrEmpty(productViewModel.Tags))
             {
-                var tags = productVm.Tags.Split(',');
+                var tags = productViewModel.Tags.Split(',');
                 foreach (var t in tags)
                 {
                     var tagId = TextHelper.ToUnsignString(t);
@@ -166,7 +165,7 @@ namespace NUShop.Service.Implements
                         };
                         _tagRepository.Add(tag);
                     }
-                    _productTagRepository.RemoveMultiple(_productTagRepository.GetAll(x => x.Id == productVm.Id).ToList());
+                    _productTagRepository.RemoveMultiple(_productTagRepository.GetAll(x => x.Id == productViewModel.Id).ToList());
                     var productTag = new ProductTag
                     {
                         TagId = tagId
@@ -175,7 +174,7 @@ namespace NUShop.Service.Implements
                 }
             }
 
-            var product = Mapper.Map<ProductViewModel, Product>(productVm);
+            var product = _mapper.Map<Product>(productViewModel);
             foreach (var productTag in productTags)
             {
                 product.ProductTags.Add(productTag);
@@ -259,7 +258,7 @@ namespace NUShop.Service.Implements
             return relatedProductsViewModel;
         }
 
-        public List<ProductViewModel> GetUpsellProducts(int top)
+        public List<ProductViewModel> GetUpSellProducts(int top)
         {
             var products = _productRepository
                             .GetAll(x => x.PromotionPrice != null)

@@ -2,11 +2,11 @@
 
 namespace NUShop.Utilities.Helpers
 {
-    public class ConvertDatetime
+    public static class ConvertDatetime
     {
         public static string ConvertToTimeSpan(string time)
         {
-            DateTime dateTime = DateTime.Parse(time).ToLocalTime();
+            var dateTime = DateTime.Parse(time).ToLocalTime();
             var dateTimeOffset = new DateTimeOffset(dateTime);
             return dateTimeOffset.ToUnixTimeSeconds().ToString();
         }
@@ -19,8 +19,14 @@ namespace NUShop.Utilities.Helpers
 
         public static DateTime UnixTimestampToDateTime(double unixTime)
         {
-            DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            var dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
             dateTime = dateTime.AddSeconds(unixTime).ToLocalTime();
+            return dateTime;
+        }
+        public static DateTime UnixTimestampToDateTime(string unixTime)
+        {
+            var dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            dateTime = dateTime.AddSeconds(Convert.ToDouble(unixTime)).ToLocalTime();
             return dateTime;
         }
     }

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NUShop.Service.Interfaces;
 using NUShop.Service.ViewModels;
 using NUShop.Utilities.Helpers;
+using System.Linq;
 
 namespace NUShop.WebAPI.Controllers
 {
@@ -16,123 +11,136 @@ namespace NUShop.WebAPI.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
+        #region Injections
+
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
         private readonly ILogger<ProductController> _logger;
 
-        public ProductController(IProductService productService, ICategoryService categoryService , ILogger<ProductController> logger)
+        public ProductController(IProductService productService, ICategoryService categoryService, ILogger<ProductController> logger)
         {
             _productService = productService;
             _categoryService = categoryService;
             _logger = logger;
         }
 
+        #endregion Injections
+
+        #region REST
+
+        #region GET: api/Product
 
         [HttpGet]
         public IActionResult GetAll()
         {
-            var model = _productService.GetAll();
-            return new OkObjectResult(model);
+            var products = _productService.GetAll();
+            return new OkObjectResult(products);
         }
 
-        [HttpGet]
-        public IActionResult GetAllCategories()
-        {
-            var model = _categoryService.GetAll();
-            return new OkObjectResult(model);
-        }
+        #endregion GET: api/Product
 
-        [HttpGet]
+        #region GET: api/Product/GetAllPaging?
+
+        [HttpGet("GetAllPaging")]
         public IActionResult GetAllPaging(int? categoryId, string keyword, int page, int pageSize)
         {
-            var model = _productService.GetAllPaging(categoryId, keyword, page, pageSize);
-            return new OkObjectResult(model);
+            var products = _productService.GetAllPaging(categoryId, keyword, page, pageSize);
+            return new OkObjectResult(products);
         }
 
-        [HttpGet]
+        #endregion GET: api/Product/GetAllPaging?
+
+        #region GET: api/Product/1
+
+        [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            var model = _productService.GetById(id);
-
-            return new OkObjectResult(model);
+            var product = _productService.GetById(id);
+            return new OkObjectResult(product);
         }
 
+        #endregion GET: api/Product/1
+
+        //[HttpGet]
+        //public IActionResult GetQuantities(int productId)
+        //{
+        //    var quantities = _productService.GetQuantities(productId);
+        //    return new OkObjectResult(quantities);
+        //}
+
+        //[HttpGet]
+        //public IActionResult GetImages(int productId)
+        //{
+        //    var images = _productService.GetImages(productId);
+        //    return new OkObjectResult(images);
+        //}
+
+        //[HttpGet]
+        //public IActionResult GetWholePrices(int productId)
+        //{
+        //    var wholePrices = _productService.GetWholePrices(productId);
+        //    return new OkObjectResult(wholePrices);
+        //}
+
         [HttpPost]
-        public IActionResult SaveEntity(ProductViewModel productVm)
+        public IActionResult SaveEntity(ProductViewModel productViewModel)
         {
             if (!ModelState.IsValid)
             {
-                IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                var allErrors = ModelState.Values.SelectMany(v => v.Errors);
                 return new BadRequestObjectResult(allErrors);
             }
-            else
-            {
-                productVm.SeoAlias = TextHelper.ToUnsignString(productVm.Name);
-                if (productVm.Id == 0)
-                {
-                    _productService.Add(productVm);
-                }
-                else
-                {
-                    _productService.Update(productVm);
-                }
-                return new OkObjectResult(productVm);
-            }
-        }
 
-        [HttpDelete]
-        public IActionResult Delete(int id)
-        {
-            if (!ModelState.IsValid)
+            productViewModel.SeoAlias = TextHelper.ToUnsignString(productViewModel.Name);
+            if (productViewModel.Id == 0)
             {
-                return new BadRequestObjectResult(ModelState);
+                _productService.Add(productViewModel);
             }
             else
             {
-                _productService.Delete(id);
-
-                return new OkObjectResult(id);
+                _productService.Update(productViewModel);
             }
-        }
-        [HttpPost]
-        public IActionResult SaveQuantities(int productId, List<ProductQuantityViewModel> quantities)
-        {
-            _productService.AddQuantity(productId, quantities);
-            return new OkObjectResult(quantities);
+            return new OkObjectResult(productViewModel);
         }
 
-        [HttpGet]
-        public IActionResult GetQuantities(int productId)
-        {
-            var quantities = _productService.GetQuantities(productId);
-            return new OkObjectResult(quantities);
-        }
-        [HttpPost]
-        public IActionResult SaveImages(int productId, string[] images)
-        {
-            _productService.AddImages(productId, images);
-            return new OkObjectResult(images);
-        }
+        //[HttpPost]
+        //public IActionResult SaveQuantities(int productId, List<ProductQuantityViewModel> quantities)
+        //{
+        //    _productService.AddQuantity(productId, quantities);
+        //    return new OkObjectResult(quantities);
+        //}
 
-        [HttpGet]
-        public IActionResult GetImages(int productId)
-        {
-            var images = _productService.GetImages(productId);
-            return new OkObjectResult(images);
-        }
+        //[HttpPost]
+        //public IActionResult SaveImages(int productId, string[] images)
+        //{
+        //    _productService.AddImages(productId, images);
+        //    return new OkObjectResult(images);
+        //}
 
-        [HttpPost]
-        public IActionResult SaveWholePrice(int productId, List<WholePriceViewModel> wholePrices)
-        {
-            _productService.AddWholePrice(productId, wholePrices);
-            return new OkObjectResult(wholePrices);
-        }
+        //[HttpPost]
+        //public IActionResult SaveWholePrice(int productId, List<WholePriceViewModel> wholePrices)
+        //{
+        //    _productService.AddWholePrice(productId, wholePrices);
+        //    return new OkObjectResult(wholePrices);
+        //}
 
-        [HttpGet]
-        public IActionResult GetWholePrices(int productId)
-        {
-            var wholePrices = _productService.GetWholePrices(productId);
-            return new OkObjectResult(wholePrices);
-        }
+        #region DELETE: api/Product/1
+
+        //[HttpDelete]
+        //public IActionResult Delete(int id)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return new BadRequestObjectResult(ModelState);
+        //    }
+
+        //    _productService.Delete(id);
+
+        //    return new OkObjectResult(id);
+        //}
+
+        #endregion DELETE: api/Product/1
+
+        #endregion REST
     }
 }

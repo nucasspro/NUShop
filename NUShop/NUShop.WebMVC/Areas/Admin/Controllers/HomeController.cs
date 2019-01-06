@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public IActionResult Index()
         {

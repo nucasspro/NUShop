@@ -8,11 +8,11 @@ namespace NUShop.Service.Interfaces
 {
     public interface ICategoryService
     {
-        Task<CategoryViewModel> Add(CategoryViewModel categoryViewModel);
+        CategoryViewModel Add(CategoryViewModel categoryViewModel);
 
-        Task<CategoryViewModel> Update(CategoryViewModel categoryViewModel);
+        void Update(CategoryViewModel categoryViewModel);
 
-        Task Delete(int id);
+        void Delete(int id);
 
         List<CategoryViewModel> GetAll();
 
@@ -22,9 +22,8 @@ namespace NUShop.Service.Interfaces
 
         CategoryViewModel GetById(int id);
 
-        Task UpdateParentId(int sourceId, int targetId, Dictionary<int, int> items);
-
-        Task ReOrder(int sourceId, int targetId);
+        void UpdateParentId(int sourceId, int targetId, Dictionary<int, int> items);
+        void ReOrder(int sourceId, int targetId);
 
         List<CategoryViewModel> GetHomeCategories(int top);
     }

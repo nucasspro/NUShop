@@ -14,7 +14,7 @@ namespace NUShop.Service.Interfaces
 
         ProductViewModel Add(ProductViewModel product);
 
-        void Update(ProductViewModel product);
+        void Update(ProductViewModel productViewModel);
 
         void Delete(int id);
 
@@ -37,7 +37,7 @@ namespace NUShop.Service.Interfaces
         List<ProductViewModel> GetHotProduct(int top);
         List<ProductViewModel> GetRelatedProducts(int id, int top);
 
-        List<ProductViewModel> GetUpsellProducts(int top);
+        List<ProductViewModel> GetUpSellProducts(int top);
 
         List<TagViewModel> GetProductTags(int productId);
 

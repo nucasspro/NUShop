@@ -9,8 +9,7 @@ using System.Threading.Tasks;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers
 {
-    [Area("Admin")]
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
         private readonly UserManager<AppUser> _userManage;
         private readonly SignInManager<AppUser> _signInManager;

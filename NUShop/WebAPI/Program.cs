@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using NUShop.Data.EF;
-using System;
 
-namespace WebAPI
+namespace NUShop.WebAPI
 {
     public class Program
     {

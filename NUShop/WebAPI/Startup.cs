@@ -3,7 +3,6 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -11,18 +10,14 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NUShop.Data.EF;
-using NUShop.Data.EF.Repositories;
-using NUShop.Data.Entities;
-using NUShop.Data.IRepositories;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Implements;
 using NUShop.Service.Interfaces;
 using NUShop.Service.ViewModelConfiguration;
 using NUShop.Service.ViewModels;
 using Swashbuckle.AspNetCore.Swagger;
-using System;
 
-namespace WebAPI
+namespace NUShop.WebAPI
 {
     public class Startup
     {
@@ -47,13 +42,8 @@ namespace WebAPI
 
             #endregion Dependency Injection for Fluent Validators
 
-
             services.AddDbContext<AppDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-
-
-
 
             #region Configure Identity I
 
@@ -89,8 +79,10 @@ namespace WebAPI
 
             #region Dependency Injection for Repositories
 
-            services.AddTransient<ICategoryRepository, CategoryRepository>();
-            services.AddTransient<IFunctionRepository, FunctionRepository>();
+            //services.AddTransient<ICategoryRepository, CategoryRepository>();
+            //services.AddTransient<IFunctionRepository, FunctionRepository>();
+            //services.AddTransient<Iproducre, FunctionRepository>();
+            services.AddTransient(typeof(IRepository<,>), typeof(Repository<,>));
 
             #endregion Dependency Injection for Repositories
 
@@ -98,6 +90,7 @@ namespace WebAPI
 
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IFunctionService, FunctionService>();
+            services.AddTransient<IProductService, ProductService>();
 
             #endregion Dependency Injection for Services
 

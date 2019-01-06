@@ -13,9 +13,7 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NUShop.Data.EF;
-using NUShop.Data.EF.Repositories;
 using NUShop.Data.Entities;
-using NUShop.Data.IRepositories;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Implements;
 using NUShop.Service.Interfaces;
@@ -63,7 +61,7 @@ namespace NUShop.WebMVC
 
             #endregion Dependency Injection for Fluent Validators
 
-            #region Configure Identity 
+            #region Configure Identity
 
             // Configure Identity
             services.Configure<IdentityOptions>(options =>
@@ -86,25 +84,18 @@ namespace NUShop.WebMVC
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
-            #endregion Configure Identity 
+            #endregion Configure Identity
 
             services.AddTransient<DbSeeder>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient(typeof(IRepository<,>), typeof(Repository<,>));
 
             services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipal>();
-
-            #region Dependency Injection for Repositories
-
-            services.AddTransient<ICategoryRepository, CategoryRepository>();
-            services.AddTransient<IFunctionRepository, FunctionRepository>();
-
-            #endregion Dependency Injection for Repositories
 
             #region Dependency Injection for Services
 
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IFunctionService, FunctionService>();
-
 
             #endregion Dependency Injection for Services
 
