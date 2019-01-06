@@ -2973,6 +2973,15 @@
           "lib/netstandard1.0/Remotion.Linq.dll": {}
         }
       },
+      "RestSharp/106.6.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "type": "package",
         "runtimeTargets": {
@@ -7935,6 +7944,15 @@
         },
         "runtime": {
           "lib/netstandard1.0/Remotion.Linq.dll": {}
+        }
+      },
+      "RestSharp/106.6.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RestSharp.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
@@ -13489,6 +13507,21 @@
         "remotion.linq.nuspec"
       ]
     },
+    "RestSharp/106.6.3": {
+      "sha512": "gYhUa1/Vtl/joKDge6lkkAR4oc61yJ+hMJ5LQ1sr/FIKRZbrxeTzqreaw6P9kx6NX2NKfAuT286vAT5F1nogoQ==",
+      "type": "package",
+      "path": "restsharp/106.6.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/RestSharp.dll",
+        "lib/net452/RestSharp.xml",
+        "lib/netstandard2.0/RestSharp.dll",
+        "lib/netstandard2.0/RestSharp.xml",
+        "restsharp.106.6.3.nupkg.sha512",
+        "restsharp.nuspec"
+      ]
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "sha512": "HdSSp5MnJSsg08KMfZThpuLPJpPwE5hBXvHwoKWosyHHfe8Mh5WKT0ylEOf6yNzX6Ngjxe4Whkafh5q7Ymac4Q==",
       "type": "package",
@@ -18773,6 +18806,7 @@
       "NUShop.Data >= 1.0.0",
       "NUShop.Data.EF >= 1.0.0",
       "NUShop.Service >= 1.0.0",
+      "RestSharp >= 106.6.3",
       "Serilog.Extensions.Logging.File >= 1.1.0"
     ]
   },
@@ -18864,6 +18898,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "RestSharp": {
+            "target": "Package",
+            "version": "[106.6.3, )"
           },
           "Serilog.Extensions.Logging.File": {
             "target": "Package",

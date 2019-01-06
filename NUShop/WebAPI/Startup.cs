@@ -112,7 +112,7 @@ namespace NUShop.WebAPI
                     builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
                 options.AddPolicy("Localhost",
-                    builder => builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod());
+                    builder => builder.WithOrigins("https://localhost:5001","http://localhost:5000").AllowAnyHeader().AllowAnyMethod());
             });
 
             services.AddCors();
