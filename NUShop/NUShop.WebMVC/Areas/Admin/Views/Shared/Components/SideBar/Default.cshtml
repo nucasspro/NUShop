@@ -1,0 +1,32 @@
+﻿@model List<FunctionViewModel>
+@{
+    Layout = null;
+}
+
+<div class="sidebar-menu">
+    <div class="sidebar-header">
+        <div class="logo">
+            <a href="index.html"><img src="~/admin-site/images/icon/logo.png" alt="logo"></a>
+        </div>
+    </div>
+    <div class="main-menu">
+        <div class="menu-inner">
+            <nav>
+                <ul class="metismenu" id="menu">
+                    @foreach (var item in Model.Where(x => string.IsNullOrEmpty(x.ParentId)))
+                    {
+                        <li>
+                            <a href="javascript:void(0)"><i class="@item.IconCss"></i><span>@item.Name</span></a>
+                            @foreach (var subItem in Model.Where(x => x.ParentId == item.Id))
+                            {
+                                <ul class="collapse">
+                                    <li><a href="@subItem.URL">@subItem.Name</a></li>
+                                </ul>
+                            }
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>

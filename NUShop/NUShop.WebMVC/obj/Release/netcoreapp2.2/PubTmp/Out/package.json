@@ -1,0 +1,26 @@
+{
+  "author": "nucasspro",
+  "dependencies": {
+    "animate.css": "3.7.0",
+    "bootstrap": "4.2.1",
+    "bootstrap-daterangepicker": "3.0.3",
+    "ckeditor": "4.11.1",
+    "font-awesome": "4.7.0",
+    "jquery": "3.3.1",
+    "jquery-sparkline": "2.4.0",
+    "jquery-validation": "1.19.0",
+    "jquery-validation-unobtrusive": "3.2.11",
+    "popper.js": "1.14.6",
+    "notifyjs": "3.0.0",
+    "bootbox": "4.4.0"
+  },
+  "description": "",
+  "devDependencies": {},
+  "license": "ISC",
+  "main": "index.js",
+  "name": "webmvc",
+  "scripts": {
+    "test": "nucasspro"
+  },
+  "version": "1.0.0"
+}

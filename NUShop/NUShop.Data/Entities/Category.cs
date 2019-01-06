@@ -1,7 +1,6 @@
 ﻿using NUShop.Data.Enums;
 using NUShop.Data.Interfaces;
 using NUShop.Infrastructure.Shared;
-using System;
 using System.Collections.Generic;
 
 namespace NUShop.Data.Entities

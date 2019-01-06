@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-NUShop.WebMVC-BA0CA5C6-7CEE-4A06-A036-D270EA09AEE8")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("aspnet-NUShop.WebMVC-5330DBA9-5C70-4A7D-8FB2-33CAA9916BBE")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("NUShop.WebMVC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

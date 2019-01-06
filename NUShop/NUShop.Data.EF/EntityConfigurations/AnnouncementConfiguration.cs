@@ -15,9 +15,6 @@ namespace NUShop.Data.EF.EntityConfigurations
             entity.Property(x => x.Title).IsRequired(true).HasColumnName("Title").HasColumnType("nvarchar(255)");
             entity.Property(x => x.Content).IsRequired(false).HasColumnName("Content").HasColumnType("nvarchar(255)");
 
-            entity.Property(x => x.UserId).IsRequired(true).HasColumnName("UserId").HasColumnType("uniqueidentifier");
-            entity.HasOne(x => x.AppUser).WithMany(y => y.Announcements).HasForeignKey(z => z.UserId);
-
             entity.Property(x => x.Status).IsRequired(true).HasColumnName("Status").HasColumnType("int");
             entity.Property(x => x.DateCreated).IsRequired(true).HasColumnName("DateCreated").HasColumnType("varchar(255)");
             entity.Property(x => x.DateModified).IsRequired(true).HasColumnName("DateModified").HasColumnType("varchar(255)");

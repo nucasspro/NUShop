@@ -1,12 +1,8 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using NUShop.Data.EF;
-using System;
 
-namespace WebAPI
+namespace NUShop.WebAPI
 {
     public class Program
     {
@@ -14,21 +10,21 @@ namespace WebAPI
         {
             var host = CreateWebHostBuilder(args).Build();
 
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
+            //using (var scope = host.Services.CreateScope())
+            //{
+            //    var services = scope.ServiceProvider;
 
-                try
-                {
-                    var dbSeeder = services.GetRequiredService<DbSeeder>();
-                    dbSeeder.Seed().Wait();
-                }
-                catch (Exception ex)
-                {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError(ex, "An error occurred creating the DB.");
-                }
-            }
+            //    try
+            //    {
+            //        var dbSeeder = services.GetRequiredService<DbSeeder>();
+            //        dbSeeder.Seed().Wait();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        var logger = services.GetRequiredService<ILogger<Program>>();
+            //        logger.LogError(ex, $"An error occurred creating the DB. {ex.InnerException.Message}");
+            //    }
+            //}
 
             host.Run();
         }

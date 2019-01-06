@@ -20,6 +20,8 @@ namespace NUShop.Data.Entities
         public virtual Announcement Announcement { get; set; }
 
         public Guid UserId { get; set; }
+        public virtual AppUser AppUser { get; set; }
+
         public bool? HasRead { get; set; }
     }
 }

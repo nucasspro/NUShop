@@ -59,6 +59,7 @@ namespace NUShop.Data.EF
                     TwoFactorEnabled = false,
                     LockoutEnabled = false,
                     AccessFailedCount = 0,
+                    Avatar = @"https://sv1.uphinhnhanh.com/images/2019/01/02/logo-new.png",
                     DateCreated = datetime,
                     DateModified = datetime,
                     Status = Status.Active
@@ -85,7 +86,7 @@ namespace NUShop.Data.EF
             {
                 _context.Contacts.Add(new Contact()
                 {
-                    Id = CommonConstants.DEFAULT_FOOTER_ID,
+                    Id = CommonConstants.DefaultFooterId,
                     Address = "KTX khu B - ĐHQG TPHCM",
                     Email = "nucasspro26@gmail.com",
                     Name = "NU Shop",
@@ -131,12 +132,12 @@ namespace NUShop.Data.EF
                     new Function() {Id = "READER"   ,Name = "Reader Report"     ,ParentId = "REPORT"    ,SortOrder = 3, Status = Status.Active, URL = "/admin/report/reader"    ,IconCss = "fa-bar-chart-o"  },
                 });
             }
-            if (_context.Footers.Count(x => x.Id == CommonConstants.DEFAULT_FOOTER_ID) == 0)
+            if (_context.Footers.Count(x => x.Id == CommonConstants.DefaultFooterId) == 0)
             {
                 string content = "Footer";
                 _context.Footers.Add(new Footer()
                 {
-                    Id = CommonConstants.DEFAULT_FOOTER_ID,
+                    Id = CommonConstants.DefaultFooterId,
                     Content = content
                 });
             }
@@ -151,40 +152,7 @@ namespace NUShop.Data.EF
                 };
                 _context.Colors.AddRange(listColor);
             }
-            if (_context.AdvertistmentPages.Count() == 0)
-            {
-                List<AdvertistmentPage> pages = new List<AdvertistmentPage>()
-                {
-                    new AdvertistmentPage()
-                    {
-                        Id ="home",
-                        Name ="Home",
-                        AdvertistmentPositions = new List<AdvertistmentPosition>()
-                        {
-                            new AdvertistmentPosition(){Id="home-left",Name="Bên trái"}
-                        }
-                    },
-                    new AdvertistmentPage()
-                    {
-                        Id ="product-cate",
-                        Name ="Product category" ,
-                        AdvertistmentPositions = new List<AdvertistmentPosition>()
-                        {
-                            new AdvertistmentPosition(){ Id="product-cate-left",Name="Bên trái" }
-                        }
-                    },
-                    new AdvertistmentPage()
-                    {
-                        Id ="product-detail",
-                        Name ="Product detail",
-                        AdvertistmentPositions = new List<AdvertistmentPosition>()
-                        {
-                            new AdvertistmentPosition(){Id="product-detail-left",Name="Bên trái"}
-                        }
-                    },
-                };
-                _context.AdvertistmentPages.AddRange(pages);
-            }
+           
             if (_context.Slides.Count() == 0)
             {
                 List<Slide> slides = new List<Slide>()

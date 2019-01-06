@@ -1,5 +1,3 @@
-using System;
-
 namespace NUShop.WebMVC.Models
 {
     public class ErrorViewModel

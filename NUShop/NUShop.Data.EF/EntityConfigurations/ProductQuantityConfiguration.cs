@@ -23,7 +23,7 @@ namespace NUShop.Data.EF.EntityConfigurations
             entity.HasOne(x => x.Size).WithMany(y => y.ProductQuantities).HasForeignKey(z => z.SizeId);
 
             entity.Property(x => x.ColorId).IsRequired(true).HasColumnName("ColorId").HasColumnType("int");
-            entity.HasOne(x => x.Size).WithMany(y => y.ProductQuantities).HasForeignKey(z => z.ColorId);
+            entity.HasOne(x => x.Color).WithMany(y => y.ProductQuantities).HasForeignKey(z => z.ColorId);
 
             entity.Property(x => x.Quantity).IsRequired(true).HasColumnName("Quantity").HasColumnType("int");
         }

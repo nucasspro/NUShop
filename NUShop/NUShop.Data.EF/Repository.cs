@@ -22,7 +22,7 @@ namespace NUShop.Data.EF
             _context = context;
         }
 
-        public IQueryable<T> FindAll(params Expression<Func<T, object>>[] includeProperties)
+        public IQueryable<T> GetAll(params Expression<Func<T, object>>[] includeProperties)
         {
             IQueryable<T> items = _context.Set<T>();
             if (includeProperties != null)
@@ -35,20 +35,20 @@ namespace NUShop.Data.EF
             return items;
         }
 
-        public IQueryable<T> FindAll(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties)
+        public IQueryable<T> GetAll(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties)
         {
-            var items = FindAll(includeProperties);
+            var items = GetAll(includeProperties);
             return items.Where(predicate);
         }
 
-        public T FindById(K id, params Expression<Func<T, object>>[] includeProperties)
+        public T GetById(K id, params Expression<Func<T, object>>[] includeProperties)
         {
-            return FindAll(includeProperties).SingleOrDefault(x => x.Id.Equals(id));
+            return GetAll(includeProperties).SingleOrDefault(x => x.Id.Equals(id));
         }
 
-        public T FindSingle(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties)
+        public T GetSingle(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties)
         {
-            return FindAll(includeProperties).SingleOrDefault(predicate);
+            return GetAll(includeProperties).SingleOrDefault(predicate);
         }
 
         public void Add(T entity)
@@ -68,7 +68,7 @@ namespace NUShop.Data.EF
 
         public void Remove(K id)
         {
-            var entity = FindById(id);
+            var entity = GetById(id);
             Remove(entity);
         }
 

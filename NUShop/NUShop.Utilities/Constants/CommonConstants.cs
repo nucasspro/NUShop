@@ -2,20 +2,20 @@
 {
     public class CommonConstants
     {
-        public const string DEFAULT_FOOTER_ID = "DefaultFooterId";
-        public const string DEFAULT_CONTACT_ID = "default";
-        public const string CART_SESSION = "CartSession";
-        public const string PRODUCT_TAG = "Product";
-        public const string BLOG_TAG = "Blog";
+        public const string DefaultFooterId = "DefaultFooterId";
+        public const string DefaultContactId = "default";
+        public const string CartSession = "CartSession";
+        public const string ProductTag = "Product";
+        public const string BlogTag = "Blog";
 
         public class AppRole
         {
-            public const string ADMIN_ROLE = "Admin";
+            public const string AdminRole = "Admin";
         }
 
         public class UserClaims
         {
-            public const string ROLES = "Roles";
+            public const string Roles = "Roles";
         }
     }
 }
