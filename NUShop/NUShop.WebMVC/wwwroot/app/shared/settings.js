@@ -119,7 +119,7 @@
             return a.join('.');
         }
     },
-    unflattern: function (arr) {
+    unflattering: function (arr) {
         var map = {};
         var roots = [];
         for (var i = 0; i < arr.length; i += 1) {
