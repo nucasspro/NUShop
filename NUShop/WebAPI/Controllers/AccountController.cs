@@ -1,12 +1,18 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using NUShop.Data.Entities;
 using NUShop.Utilities.DTOs;
 using NUShop.ViewModel.ViewModels.AccountViewModels;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
+using NUShop.WebAPI.Helpers;
 
 namespace NUShop.WebAPI.Controllers
 {
@@ -17,18 +23,21 @@ namespace NUShop.WebAPI.Controllers
         #region Injections
 
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly UserManager<AppUser> _userManager;
         private readonly ILogger<AccountController> _logger;
+        private readonly IConfiguration _config;
 
-        public AccountController(SignInManager<AppUser> signInManager, ILogger<AccountController> logger)
+        public AccountController(SignInManager<AppUser> signInManager, UserManager<AppUser> userManager, ILogger<AccountController> logger, IConfiguration config)
         {
             _signInManager = signInManager;
+            _userManager = userManager;
             _logger = logger;
+            _config = config;
         }
 
         #endregion Injections
 
         #region API
-
 
         [HttpPost("login")]
         [AllowAnonymous]
@@ -40,22 +49,28 @@ namespace NUShop.WebAPI.Controllers
             }
 
             var result = await _signInManager.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, loginViewModel.RememberMe, true);
-            if (result.Succeeded)
+            if (!result.Succeeded)
             {
-                _logger.LogInformation("User logged in.");
-                return new OkObjectResult(new GenericResult(true));
+                return new BadRequestObjectResult(result.ToString());
             }
-
             if (!result.IsLockedOut)
             {
                 return new OkObjectResult(new GenericResult(false, "Wrong user or password."));
             }
 
+            var user = await _userManager.FindByNameAsync(loginViewModel.Username);
+            if (user != null)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+                var token = JwtToken.GenerateJwtToken(user, roles, _config);
+                var tokenHandler = new JwtSecurityTokenHandler();
+                _logger.LogInformation("User logged in.");
+                return new OkObjectResult(token);
+            }
+
             _logger.LogWarning("User account locked out.");
             return new OkObjectResult(new GenericResult(false, "User account locked out."));
-
         }
-
 
         [HttpPost("logout")]
         public async Task<IActionResult> Logout()
@@ -76,7 +91,6 @@ namespace NUShop.WebAPI.Controllers
             }
         }
 
-
-        #endregion
+        #endregion API
     }
 }

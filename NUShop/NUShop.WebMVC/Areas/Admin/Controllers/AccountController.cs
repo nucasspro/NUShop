@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using NUShop.Data.Entities;
 using RestSharp;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers
@@ -8,11 +11,11 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
     {
         #region Injections
 
-        private readonly ILogger<AccountController> _logger;
+        private readonly SignInManager<AppUser> _signInManager;
 
-        public AccountController(ILogger<AccountController> logger)
+        public AccountController(SignInManager<AppUser> signInManager)
         {
-            _logger = logger;
+            _signInManager = signInManager;
         }
 
         #endregion Injections
@@ -24,13 +27,10 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            var client = new RestClient("https://localhost:5003/api/account/Logout");
-            var request = new RestRequest(Method.POST);
-            request.AddHeader("Content-Type", "application/json");
-            var response = client.Execute(request);
-            return response.IsSuccessful ? Redirect("/Admin/Login/Index") : null;
+            await _signInManager.SignOutAsync();
+            return Redirect("/Admin/Login/Index");
         }
     }
 }

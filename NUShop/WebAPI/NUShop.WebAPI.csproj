@@ -22,4 +22,8 @@
     <ProjectReference Include="..\NUShop.ViewModel\NUShop.ViewModel.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
 </Project>

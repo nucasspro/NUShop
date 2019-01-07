@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,6 +16,9 @@ using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Implements;
 using NUShop.Service.Interfaces;
 using System.IO;
+using Microsoft.AspNetCore.Identity;
+using NUShop.Data.Entities;
+using NUShop.WebMVC.Extensions;
 
 namespace NUShop.WebMVC
 {
@@ -38,9 +42,9 @@ namespace NUShop.WebMVC
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            //services.AddIdentity<AppUser, AppRole>()
-            //    .AddEntityFrameworkStores<AppDbContext>()
-            //    .AddDefaultTokenProviders();
+            services.AddIdentity<AppUser, AppRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
 
             services
                 .AddMvc()
@@ -56,34 +60,34 @@ namespace NUShop.WebMVC
 
             #region Configure Identity
 
-            //// Configure Identity
-            //services.Configure<IdentityOptions>(options =>
-            //{
-            //    // Password settings
-            //    options.Password.RequireDigit = false;
-            //    options.Password.RequiredLength = 2;
-            //    options.Password.RequireNonAlphanumeric = false;
-            //    options.Password.RequireUppercase = false;
-            //    options.Password.RequireLowercase = false;
+            // Configure Identity
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 2;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
 
-            //    // Lockout settings
-            //    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
-            //    options.Lockout.MaxFailedAccessAttempts = 10;
+                // Lockout settings
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+                options.Lockout.MaxFailedAccessAttempts = 10;
 
-            //    // User settings
-            //    options.User.RequireUniqueEmail = true;
-            //});
+                // User settings
+                options.User.RequireUniqueEmail = true;
+            });
 
-            //services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
-            //services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+            services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
+            services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
             #endregion Configure Identity
 
-            //services.AddTransient<DbSeeder>();
+            services.AddTransient<DbSeeder>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient(typeof(IRepository<,>), typeof(Repository<,>));
 
-            //services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipal>();
+            services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipal>();
 
             #region Dependency Injection for Services
 

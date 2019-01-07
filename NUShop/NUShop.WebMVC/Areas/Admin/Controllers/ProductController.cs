@@ -50,21 +50,8 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
        [ HttpGet]
         public IActionResult GetAllPaging(int? categoryId, string keyword, int pageSize, int pageIndex = 1)
         {
-            //var model = _productService.GetAllPaging(categoryId, keyword, page, pageSize);
-            var client = new RestClient("https://localhost:5003/api/product/GetAllPaging");
-            var request = new RestRequest(Method.GET);
-            request.AddHeader("Content-Type", "application/json");
-            if (categoryId != null)
-            {
-                request.AddParameter("categoryId", categoryId, ParameterType.QueryString);
-            }
-            request.AddParameter("keyword", keyword,ParameterType.QueryString);
-            request.AddParameter("page", pageIndex, ParameterType.QueryString);
-            request.AddParameter("pageSize", pageSize, ParameterType.QueryString);
-
-            var response = client.Execute(request);
-
-            return new OkObjectResult(response.Content);
+            var model = _productService.GetAllPaging(categoryId, keyword, pageIndex, pageSize);
+            return new OkObjectResult(model);
         }
 
         [HttpGet]

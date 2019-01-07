@@ -496,3 +496,347 @@ ORDER BY [x].[ParentId]" (0723d8ff)
 2019-01-07T11:39:56.6884318+07:00 0HLJKAI6K6GEU:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.FunctionController.GetAll (NUShop.WebAPI)" in 13.0047ms (afa2e885)
 2019-01-07T11:39:56.6885090+07:00 0HLJKAI6K6GEU:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.FunctionController.GetAll (NUShop.WebAPI)"' (99874f2b)
 2019-01-07T11:39:56.6886772+07:00 0HLJKAI6K6GEU:00000001 [INF] Request finished in 13.7346ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-07T13:30:27.2120287+07:00 0HLJKD6E811EM:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Login application/json 58 (ca22a1cb)
+2019-01-07T13:30:27.4201927+07:00 0HLJKD6E811EM:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (500cc934)
+2019-01-07T13:30:27.5091217+07:00 0HLJKD6E811EM:00000001 [INF] Route matched with "{action = \"AuthenticationAsync\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" (a44c0341)
+2019-01-07T13:30:28.1910034+07:00 0HLJKD6E811EM:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-07T13:30:29.9136204+07:00 0HLJKD6E811EM:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-07T13:30:31.0255051+07:00 0HLJKD6E811EM:00000001 [INF] Executed DbCommand ("102"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-07T13:30:31.5966922+07:00 0HLJKD6E811EM:00000001 [INF] Executed DbCommand ("67"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-07T13:30:31.7246718+07:00 0HLJKD6E811EM:00000001 [INF] Executed DbCommand ("12"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T13:30:31.8623124+07:00 0HLJKD6E811EM:00000001 [INF] Executed DbCommand ("40"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-07T13:30:32.0081865+07:00 0HLJKD6E811EM:00000001 [INF] Executed DbCommand ("68"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-07T13:30:32.0775576+07:00 0HLJKD6E811EM:00000001 [INF] Executed DbCommand ("55"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T13:30:32.1463768+07:00 0HLJKD6E811EM:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-07T13:30:32.1555148+07:00 0HLJKD6E811EM:00000001 [INF] User logged in. (fdce0db4)
+2019-01-07T13:30:32.1669203+07:00 0HLJKD6E811EM:00000001 [INF] Executed action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3968.5932ms. (50a9e262)
+2019-01-07T13:30:32.2663982+07:00 0HLJKD6E811EM:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.GenericResult"'. (8a1b66c8)
+2019-01-07T13:30:32.3401180+07:00 0HLJKD6E811EM:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" in 4822.0688ms (afa2e885)
+2019-01-07T13:30:32.3422749+07:00 0HLJKD6E811EM:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T13:30:32.4075575+07:00 0HLJKD6E811EM:00000001 [INF] Request finished in 5209.1486ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-07T13:45:12.3012573+07:00 0HLJKDELUMEN2:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Login application/json 58 (ca22a1cb)
+2019-01-07T13:45:12.5535187+07:00 0HLJKDELUMEN2:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (500cc934)
+2019-01-07T13:45:12.6486069+07:00 0HLJKDELUMEN2:00000001 [INF] Route matched with "{action = \"AuthenticationAsync\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" (a44c0341)
+2019-01-07T13:45:13.2849210+07:00 0HLJKDELUMEN2:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-07T13:45:15.0174145+07:00 0HLJKDELUMEN2:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-07T13:45:15.9145672+07:00 0HLJKDELUMEN2:00000001 [INF] Executed DbCommand ("35"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-07T13:45:16.4953375+07:00 0HLJKDELUMEN2:00000001 [INF] Executed DbCommand ("16"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-07T13:45:16.6480277+07:00 0HLJKDELUMEN2:00000001 [INF] Executed DbCommand ("32"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T13:45:16.7340755+07:00 0HLJKDELUMEN2:00000001 [INF] Executed DbCommand ("14"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-07T13:45:16.8862999+07:00 0HLJKDELUMEN2:00000001 [INF] Executed DbCommand ("72"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-07T13:45:16.9761896+07:00 0HLJKDELUMEN2:00000001 [INF] Executed DbCommand ("74"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T13:45:17.0440344+07:00 0HLJKDELUMEN2:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-07T13:45:17.0612769+07:00 0HLJKDELUMEN2:00000001 [INF] User logged in. (fdce0db4)
+2019-01-07T13:45:17.0954540+07:00 0HLJKDELUMEN2:00000001 [INF] Executed action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3793.8049ms. (50a9e262)
+2019-01-07T13:45:17.1499904+07:00 0HLJKDELUMEN2:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.GenericResult"'. (8a1b66c8)
+2019-01-07T13:45:17.2323052+07:00 0HLJKDELUMEN2:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" in 4567.687ms (afa2e885)
+2019-01-07T13:45:17.2348309+07:00 0HLJKDELUMEN2:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T13:45:17.2570905+07:00 0HLJKDELUMEN2:00000001 [INF] Request finished in 4967.8955ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-07T13:46:43.3005784+07:00 0HLJKDELUMEN3:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Login application/json 58 (ca22a1cb)
+2019-01-07T13:46:43.3077175+07:00 0HLJKDELUMEN3:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (500cc934)
+2019-01-07T13:46:43.3082139+07:00 0HLJKDELUMEN3:00000001 [INF] Route matched with "{action = \"AuthenticationAsync\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" (a44c0341)
+2019-01-07T13:46:43.3109122+07:00 0HLJKDELUMEN3:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-07T13:46:43.3127493+07:00 0HLJKDELUMEN3:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-07T13:46:43.3950800+07:00 0HLJKDELUMEN3:00000001 [INF] Executed DbCommand ("81"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-07T13:46:43.4364496+07:00 0HLJKDELUMEN3:00000001 [INF] Executed DbCommand ("17"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-07T13:46:43.4509228+07:00 0HLJKDELUMEN3:00000001 [INF] Executed DbCommand ("12"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T13:46:43.4556624+07:00 0HLJKDELUMEN3:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-07T13:46:43.4617929+07:00 0HLJKDELUMEN3:00000001 [INF] Executed DbCommand ("4"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-07T13:46:43.4636812+07:00 0HLJKDELUMEN3:00000001 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T13:46:43.4702260+07:00 0HLJKDELUMEN3:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-07T13:46:43.4703496+07:00 0HLJKDELUMEN3:00000001 [INF] User logged in. (fdce0db4)
+2019-01-07T13:46:43.4705135+07:00 0HLJKDELUMEN3:00000001 [INF] Executed action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 159.4201ms. (50a9e262)
+2019-01-07T13:46:43.4709492+07:00 0HLJKDELUMEN3:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.GenericResult"'. (8a1b66c8)
+2019-01-07T13:46:43.4720188+07:00 0HLJKDELUMEN3:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" in 163.6595ms (afa2e885)
+2019-01-07T13:46:43.4721010+07:00 0HLJKDELUMEN3:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T13:46:43.4738615+07:00 0HLJKDELUMEN3:00000001 [INF] Request finished in 173.3567ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-07T13:56:01.2893911+07:00 0HLJKDKNBHK3L:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Login application/json 58 (ca22a1cb)
+2019-01-07T13:56:01.5254303+07:00 0HLJKDKNBHK3L:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (500cc934)
+2019-01-07T13:56:01.6023877+07:00 0HLJKDKNBHK3L:00000001 [INF] Route matched with "{action = \"AuthenticationAsync\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" (a44c0341)
+2019-01-07T13:56:02.3169749+07:00 0HLJKDKNBHK3L:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-07T13:56:03.3782401+07:00 0HLJKDKNBHK3L:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-07T13:56:04.3641261+07:00 0HLJKDKNBHK3L:00000001 [INF] Executed DbCommand ("162"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-07T13:56:12.7447478+07:00 0HLJKDKNBHK3L:00000001 [INF] Executed DbCommand ("415"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-07T13:56:13.3716006+07:00 0HLJKDKNBHK3L:00000001 [INF] Executed DbCommand ("124"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T13:56:13.5729981+07:00 0HLJKDKNBHK3L:00000001 [INF] Executed DbCommand ("135"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-07T13:56:13.7564285+07:00 0HLJKDKNBHK3L:00000001 [INF] Executed DbCommand ("87"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-07T13:56:20.0773373+07:00 0HLJKDKNBHK3L:00000001 [INF] Executed DbCommand ("195"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T13:56:34.0205567+07:00 0HLJKDKNBHK3L:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-07T14:00:01.0469110+07:00 0HLJKDMUVD86R:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Login application/json 58 (ca22a1cb)
+2019-01-07T14:00:01.2480394+07:00 0HLJKDMUVD86R:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (500cc934)
+2019-01-07T14:00:01.3220208+07:00 0HLJKDMUVD86R:00000001 [INF] Route matched with "{action = \"AuthenticationAsync\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" (a44c0341)
+2019-01-07T14:00:02.2184037+07:00 0HLJKDMUVD86R:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-07T14:00:03.0868277+07:00 0HLJKDMUVD86R:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-07T14:00:04.2840255+07:00 0HLJKDMUVD86R:00000001 [INF] Executed DbCommand ("182"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-07T14:00:04.9515062+07:00 0HLJKDMUVD86R:00000001 [INF] Executed DbCommand ("190"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-07T14:00:05.3896013+07:00 0HLJKDMUVD86R:00000001 [INF] Executed DbCommand ("318"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T14:00:05.8478874+07:00 0HLJKDMUVD86R:00000001 [INF] Executed DbCommand ("298"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-07T14:00:06.0205877+07:00 0HLJKDMUVD86R:00000001 [INF] Executed DbCommand ("102"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-07T14:00:06.1898155+07:00 0HLJKDMUVD86R:00000001 [INF] Executed DbCommand ("151"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T14:00:06.2614285+07:00 0HLJKDMUVD86R:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-07T14:00:06.2726318+07:00 0HLJKDMUVD86R:00000001 [INF] User logged in. (fdce0db4)
+2019-01-07T14:00:06.2926611+07:00 0HLJKDMUVD86R:00000001 [INF] Executed action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 4061.0431ms. (50a9e262)
+2019-01-07T14:00:06.3272174+07:00 0HLJKDMUVD86R:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.GenericResult"'. (8a1b66c8)
+2019-01-07T14:00:06.4123469+07:00 0HLJKDMUVD86R:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" in 5050.6701ms (afa2e885)
+2019-01-07T14:00:06.4211778+07:00 0HLJKDMUVD86R:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T14:00:06.5094868+07:00 0HLJKDMUVD86R:00000001 [INF] Request finished in 5414.5919ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-07T14:00:42.9763815+07:00 0HLJKDMUVD86S:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5003/api/product/GetAllPaging?categoryId=1&keyword=pr&page=1&pageSize=2 application/json 0 (ca22a1cb)
+2019-01-07T14:00:43.0696068+07:00 0HLJKDMUVD86S:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.ProductController.GetAllPaging (NUShop.WebAPI)"' (500cc934)
+2019-01-07T14:00:43.1400174+07:00 0HLJKDMUVD86S:00000001 [INF] Route matched with "{action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebAPI.Controllers.ProductController.GetAllPaging (NUShop.WebAPI)" (a44c0341)
+2019-01-07T14:00:45.0736907+07:00 0HLJKDMUVD86S:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.ProductController.GetAllPaging (NUShop.WebAPI)" with arguments (["1", "pr", "1", "2"]) - Validation state: Valid (4e3479ed)
+2019-01-07T14:00:50.9880210+07:00 0HLJKDMUVD86S:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-07T14:00:51.4100527+07:00 0HLJKDMUVD86S:00000001 [INF] Executed DbCommand ("312"ms) [Parameters=["@__keyword_0='?' (Size = 4000), @__categoryId_Value_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE (([x].[Status] = 1) AND ((CHARINDEX(@__keyword_0, [x].[Name]) > 0) OR (@__keyword_0 = N''))) AND ([x].[CategoryId] = @__categoryId_Value_1)" (0723d8ff)
+2019-01-07T14:00:51.8500669+07:00 0HLJKDMUVD86S:00000001 [INF] Executed DbCommand ("185"ms) [Parameters=["@__keyword_0='?' (Size = 4000), @__categoryId_Value_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32), @__p_3='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE (([x].[Status] = 1) AND ((CHARINDEX(@__keyword_0, [x].[Name]) > 0) OR (@__keyword_0 = N''))) AND ([x].[CategoryId] = @__categoryId_Value_1)
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_2 ROWS FETCH NEXT @__p_3 ROWS ONLY" (0723d8ff)
+2019-01-07T14:00:55.4588582+07:00 0HLJKDMUVD86S:00000001 [INF] Executed action method "NUShop.WebAPI.Controllers.ProductController.GetAllPaging (NUShop.WebAPI)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 9916.78ms. (50a9e262)
+2019-01-07T14:00:55.6235859+07:00 0HLJKDMUVD86S:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-07T14:00:55.8470310+07:00 0HLJKDMUVD86S:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.ProductController.GetAllPaging (NUShop.WebAPI)" in 12538.5208ms (afa2e885)
+2019-01-07T14:00:55.9071613+07:00 0HLJKDMUVD86S:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.ProductController.GetAllPaging (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T14:00:55.9962122+07:00 0HLJKDMUVD86S:00000001 [INF] Request finished in 12946.6636ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-07T14:18:18.2948925+07:00 0HLJKE15M5ADB:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Login application/json 58 (ca22a1cb)
+2019-01-07T14:18:18.8095346+07:00 0HLJKE15M5ADB:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (500cc934)
+2019-01-07T14:18:19.3192986+07:00 0HLJKE15M5ADB:00000001 [INF] Route matched with "{action = \"AuthenticationAsync\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" (a44c0341)
+2019-01-07T14:19:37.3629637+07:00 0HLJKE15M5ADB:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-07T14:20:04.0256111+07:00 0HLJKE15M5ADB:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-07T14:20:06.7110626+07:00 0HLJKE15M5ADB:00000001 [INF] Executed DbCommand ("847"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-07T14:20:37.8478918+07:00 0HLJKE15M5ADB:00000001 [INF] Executed DbCommand ("353"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-07T14:20:38.2498998+07:00 0HLJKE15M5ADB:00000001 [INF] Executed DbCommand ("152"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T14:20:38.9938346+07:00 0HLJKE15M5ADB:00000001 [INF] Executed DbCommand ("352"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-07T14:20:40.4535294+07:00 0HLJKE15M5ADB:00000001 [INF] Executed DbCommand ("878"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-07T14:20:45.3357302+07:00 0HLJKE15M5ADB:00000001 [INF] Executed DbCommand ("143"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T14:21:16.0367037+07:00 0HLJKE15M5ADB:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-07T14:21:31.9442305+07:00 0HLJKE15M5ADB:00000001 [INF] User logged in. (fdce0db4)
+2019-01-07T14:21:42.7608865+07:00 0HLJKE15M5ADB:00000001 [INF] Executed action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 124730.3425ms. (50a9e262)
+2019-01-07T14:21:43.3520316+07:00 0HLJKE15M5ADB:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.GenericResult"'. (8a1b66c8)
+2019-01-07T14:21:47.6629998+07:00 0HLJKE15M5ADB:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" in 208317.0342ms (afa2e885)
+2019-01-07T14:21:47.6931108+07:00 0HLJKE15M5ADB:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T14:21:47.7885159+07:00 0HLJKE15M5ADB:00000001 [INF] Request finished in 209452.857ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-07T14:23:08.5643021+07:00 0HLJKE15M5ADC:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Login application/json 58 (ca22a1cb)
+2019-01-07T14:23:08.5825771+07:00 0HLJKE15M5ADC:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (500cc934)
+2019-01-07T14:23:08.5897854+07:00 0HLJKE15M5ADC:00000001 [INF] Route matched with "{action = \"AuthenticationAsync\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" (a44c0341)
+2019-01-07T14:23:18.5362450+07:00 0HLJKE15M5ADC:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-07T14:23:19.0764030+07:00 0HLJKE15M5ADC:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-07T14:23:21.9920223+07:00 0HLJKE15M5ADC:00000001 [INF] Executed DbCommand ("2,536"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-07T14:23:23.5215166+07:00 0HLJKE15M5ADC:00000001 [INF] Executed DbCommand ("1,377"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-07T14:23:25.1137832+07:00 0HLJKE15M5ADC:00000001 [INF] Executed DbCommand ("1,162"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T14:23:25.9635660+07:00 0HLJKE15M5ADC:00000001 [INF] Executed DbCommand ("705"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-07T14:23:26.3714074+07:00 0HLJKE15M5ADC:00000001 [INF] Executed DbCommand ("354"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-07T14:23:27.3089283+07:00 0HLJKE15M5ADC:00000001 [INF] Executed DbCommand ("500"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T14:23:27.6791556+07:00 0HLJKE15M5ADC:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-07T14:23:28.1729861+07:00 0HLJKE15M5ADC:00000001 [INF] User logged in. (fdce0db4)
+2019-01-07T14:23:28.4529726+07:00 0HLJKE15M5ADC:00000001 [INF] Executed action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 9636.8572ms. (50a9e262)
+2019-01-07T14:23:28.5691285+07:00 0HLJKE15M5ADC:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.GenericResult"'. (8a1b66c8)
+2019-01-07T14:23:28.6925750+07:00 0HLJKE15M5ADC:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" in 19987.4271ms (afa2e885)
+2019-01-07T14:23:28.7464566+07:00 0HLJKE15M5ADC:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T14:23:28.7764090+07:00 0HLJKE15M5ADC:00000001 [INF] Request finished in 20290.7519ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-07T14:23:33.2411357+07:00 0HLJKE15M5ADD:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Login application/json 58 (ca22a1cb)
+2019-01-07T14:23:33.6022033+07:00 0HLJKE15M5ADD:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (500cc934)
+2019-01-07T14:23:33.9031305+07:00 0HLJKE15M5ADD:00000001 [INF] Route matched with "{action = \"AuthenticationAsync\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" (a44c0341)
+2019-01-07T14:23:35.0797771+07:00 0HLJKE15M5ADD:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-07T14:23:35.2894182+07:00 0HLJKE15M5ADD:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-07T14:23:37.1518137+07:00 0HLJKE15M5ADD:00000001 [INF] Executed DbCommand ("1,624"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-07T14:23:38.0268825+07:00 0HLJKE15M5ADD:00000001 [INF] Executed DbCommand ("762"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-07T14:23:40.0145206+07:00 0HLJKE15M5ADD:00000001 [INF] Executed DbCommand ("1,359"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T14:23:46.2911970+07:00 0HLJKE15M5ADD:00000001 [INF] Executed DbCommand ("5,496"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-07T14:23:48.0129195+07:00 0HLJKE15M5ADD:00000001 [INF] Executed DbCommand ("1,187"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-07T14:23:49.5284759+07:00 0HLJKE15M5ADD:00000001 [INF] Executed DbCommand ("1,166"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T14:23:50.0075908+07:00 0HLJKE15M5ADD:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-07T14:23:50.4983069+07:00 0HLJKE15M5ADD:00000001 [INF] User logged in. (fdce0db4)
+2019-01-07T14:23:50.8478354+07:00 0HLJKE15M5ADD:00000001 [INF] Executed action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 15418.6675ms. (50a9e262)
+2019-01-07T14:23:50.9189382+07:00 0HLJKE15M5ADD:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.GenericResult"'. (8a1b66c8)
+2019-01-07T14:23:50.9700918+07:00 0HLJKE15M5ADD:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" in 17016.0762ms (afa2e885)
+2019-01-07T14:23:50.9790115+07:00 0HLJKE15M5ADD:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T14:23:50.9919567+07:00 0HLJKE15M5ADD:00000001 [INF] Request finished in 17992.8027ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-07T14:51:24.8495956+07:00 0HLJKEJM0DBVR:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Login application/json 58 (ca22a1cb)
+2019-01-07T14:51:24.9833336+07:00 0HLJKEJM0DBVR:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (500cc934)
+2019-01-07T14:51:25.0456837+07:00 0HLJKEJM0DBVR:00000001 [INF] Route matched with "{action = \"AuthenticationAsync\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" (a44c0341)
+2019-01-07T14:51:25.4854245+07:00 0HLJKEJM0DBVR:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" in 413.7924ms (afa2e885)
+2019-01-07T14:51:25.5043756+07:00 0HLJKEJM0DBVR:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T14:51:25.6826685+07:00 0HLJKEJM0DBVR:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.AspNetCore.Identity.UserClaimsPrincipalFactory`2[NUShop.Data.Entities.AppUser,NUShop.Data.Entities.AppRole]' while attempting to activate 'NUShop.WebAPI.Controllers.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-01-07T14:51:25.8271858+07:00 0HLJKEJM0DBVR:00000001 [INF] Request finished in 951.103ms 500 text/html; charset=utf-8 (791a596a)
+2019-01-07T14:51:25.8690760+07:00  [INF] Connection id ""0HLJKEJM0DBVR"", Request id ""0HLJKEJM0DBVR:00000001"": the application completed without reading the entire request body. (54ac9468)

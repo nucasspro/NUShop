@@ -18,19 +18,41 @@
                 <div class="table-responsive">
                     <table class="table table-hover progress-table text-center">
                         <thead class="text-uppercase">
-                            <tr>
-                                <th scope="col">Actions</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Name</th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Updated Date</th>
-                            </tr>
+                        <tr>
+                            <th scope="col">Actions</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Updated Date</th>
+                        </tr>
                         </thead>
                         <tbody id="table-content">
                            
                         </tbody>
                     </table>
+                   
+                </div>
+            </div>
+            <!--Pagination-->
+            <div class="row">
+                <div class="col-sm-5">
+                    <div class="dataTables_info" id="datatable-checkbox_info" role="status" aria-live="polite">
+                        <select id="select-page">
+                            <option value="10" selected="selected">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                        </select>
+                        <span class="item-per-page">
+                            Item/Page.
+                        </span>
+                        Total row: <strong id="lbl-totalrow"></strong>
+                    </div>
+                </div><div class="col-sm-7">
+                    <div class="dataTables_paginate paging_simple_numbers" id="datatable-checkbox_paginate">
+                        <ul id="paginationUL"></ul>
+                    </div>
                 </div>
             </div>
         </div>

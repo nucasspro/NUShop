@@ -1,7 +1,7 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,16 +11,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
 using NUShop.Data.EF;
 using NUShop.Data.Entities;
 using NUShop.Infrastructure.Interfaces;
-using NUShop.Service.Helpers;
 using NUShop.Service.Implements;
 using NUShop.Service.Interfaces;
 using NUShop.ViewModel.ViewModelConfiguration;
 using NUShop.ViewModel.ViewModels;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace NUShop.WebAPI
 {
@@ -41,7 +44,7 @@ namespace NUShop.WebAPI
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<AppDbContext>(options => 
+            services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<AppUser, AppRole>()
@@ -85,11 +88,40 @@ namespace NUShop.WebAPI
 
             #endregion Configure Identity
 
+            #region Authentication by JWT
+
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear(); // => remove default claims
+            services
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(options =>
+                {
+                    var parameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+                        ValidAudience = Configuration["Jwt:Issuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    };
+
+                    options.TokenValidationParameters = parameters;
+                    options.SaveToken = true;
+                });
+
+            #endregion Authentication by JWT
+
             services.AddTransient<DbSeeder>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient(typeof(IRepository<,>), typeof(Repository<,>));
 
-            services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipal>();
+            //services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipal>();
 
             #region Dependency Injection for Services
 
@@ -120,7 +152,7 @@ namespace NUShop.WebAPI
                     builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
                 options.AddPolicy("Localhost",
-                    builder => builder.WithOrigins("https://localhost:5001","http://localhost:5000").AllowAnyHeader().AllowAnyMethod());
+                    builder => builder.WithOrigins("https://localhost:5001", "http://localhost:5000").AllowAnyHeader().AllowAnyMethod());
             });
 
             services.AddCors();
@@ -144,6 +176,7 @@ namespace NUShop.WebAPI
             app.UseSwagger();
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Core API"); });
             app.UseCors("AllowAllOrigin");
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
