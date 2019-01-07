@@ -3,7 +3,6 @@ using NUShop.Service.Interfaces;
 using NUShop.Service.ViewModels;
 using NUShop.Utilities.Constants;
 using NUShop.WebMVC.Extensions;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;

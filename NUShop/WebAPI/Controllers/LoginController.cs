@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace NUShop.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/adasdasd/adasdasd")]
     [ApiController]
     public class LoginController : ControllerBase
     {
@@ -32,28 +32,26 @@ namespace NUShop.WebAPI.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> AuthenticationAsync(LoginViewModel loginViewModel)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                var result = await _signInManager.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, loginViewModel.RememberMe, lockoutOnFailure: true);
-                if (result.Succeeded)
-                {
-                    _logger.LogInformation("User logged in.");
-                    return new OkObjectResult(new GenericResult(true));
-                }
-
-                if (result.IsLockedOut)
-                {
-                    _logger.LogWarning("User account locked out.");
-                    return new OkObjectResult(new GenericResult(false, "User account locked out."));
-                }
-                else
-                {
-                    return new OkObjectResult(new GenericResult(false, "Wrong user or password."));
-                }
+                return new OkObjectResult(new GenericResult(false, loginViewModel));
             }
 
-            // If we got this far, something failed, redisplay form
-            return new OkObjectResult(new GenericResult(false, loginViewModel));
+            var result = await _signInManager.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, loginViewModel.RememberMe, true);
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("User logged in.");
+                return new OkObjectResult(new GenericResult(true));
+            }
+
+            if (!result.IsLockedOut)
+            {
+                return new OkObjectResult(new GenericResult(false, "Wrong user or password."));
+            }
+
+            _logger.LogWarning("User account locked out.");
+            return new OkObjectResult(new GenericResult(false, "User account locked out."));
+
         }
     }
 }

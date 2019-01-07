@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NUShop.Data.Entities;
+using NUShop.Service.ViewModels.AccountViewModels;
+using NUShop.Utilities.DTOs;
 
 namespace NUShop.WebAPI.Controllers
 {
@@ -26,7 +29,35 @@ namespace NUShop.WebAPI.Controllers
 
         #region API
 
-        [HttpPost]
+
+        [HttpPost("login")]
+        [AllowAnonymous]
+        public async Task<IActionResult> AuthenticationAsync(LoginViewModel loginViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return new OkObjectResult(new GenericResult(false, loginViewModel));
+            }
+
+            var result = await _signInManager.PasswordSignInAsync(loginViewModel.Username, loginViewModel.Password, loginViewModel.RememberMe, true);
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("User logged in.");
+                return new OkObjectResult(new GenericResult(true));
+            }
+
+            if (!result.IsLockedOut)
+            {
+                return new OkObjectResult(new GenericResult(false, "Wrong user or password."));
+            }
+
+            _logger.LogWarning("User account locked out.");
+            return new OkObjectResult(new GenericResult(false, "User account locked out."));
+
+        }
+
+
+        [HttpPost("logout")]
         public async Task<IActionResult> Logout()
         {
             if (!ModelState.IsValid)

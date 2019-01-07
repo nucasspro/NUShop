@@ -1,0 +1,92 @@
+2019-01-07T09:03:40.5143921+07:00 0HLJK8HBBK4E8:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/Login application/json 58 (ca22a1cb)
+2019-01-07T09:03:40.8031340+07:00 0HLJK8HBBK4E8:00000001 [INF] Request finished in 283.7467ms 404  (791a596a)
+2019-01-07T09:03:40.9121181+07:00  [INF] Connection id ""0HLJK8HBBK4E8"", Request id ""0HLJK8HBBK4E8:00000001"": the application completed without reading the entire request body. (54ac9468)
+2019-01-07T09:04:05.2003617+07:00 0HLJK8HBBK4E9:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/Login application/json 58 (ca22a1cb)
+2019-01-07T09:04:05.2444862+07:00 0HLJK8HBBK4E9:00000001 [INF] Request finished in 21.0654ms 404  (791a596a)
+2019-01-07T09:04:05.4403556+07:00  [INF] Connection id ""0HLJK8HBBK4E9"" bad request data: ""Invalid request line."" (86f1a409)
+Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException: Invalid request line.
+   at Microsoft.AspNetCore.Server.Kestrel.Core.BadHttpRequestException.Throw(RequestRejectionReason reason)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.Http1Connection.TryParseRequest(ReadResult result, Boolean& endConnection)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequestsAsync[TContext](IHttpApplication`1 application)
+2019-01-07T09:04:56.2215244+07:00 0HLJK8HBBK4EA:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger   (ca22a1cb)
+2019-01-07T09:04:56.2310749+07:00 0HLJK8HBBK4EA:00000001 [INF] Request finished in 7.371ms 301  (791a596a)
+2019-01-07T09:04:56.2819114+07:00 0HLJK8HBBK4EA:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html   (ca22a1cb)
+2019-01-07T09:04:56.5031387+07:00 0HLJK8HBBK4EA:00000002 [INF] Request finished in 221.6098ms 200 text/html (791a596a)
+2019-01-07T09:04:56.6932260+07:00 0HLJK8HBBK4EA:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/swagger-ui.css   (ca22a1cb)
+2019-01-07T09:04:56.9498349+07:00 0HLJK8HBBK4EC:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/swagger-ui-bundle.js   (ca22a1cb)
+2019-01-07T09:04:56.9866204+07:00 0HLJK8HBBK4EB:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/swagger-ui-standalone-preset.js   (ca22a1cb)
+2019-01-07T09:04:57.0694364+07:00 0HLJK8HBBK4EB:00000001 [INF] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"' (27b0a520)
+2019-01-07T09:04:57.1510549+07:00 0HLJK8HBBK4EA:00000003 [INF] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"' (27b0a520)
+2019-01-07T09:04:57.1837934+07:00 0HLJK8HBBK4EB:00000001 [INF] Request finished in 194.0657ms 200 application/javascript (791a596a)
+2019-01-07T09:04:57.2414440+07:00 0HLJK8HBBK4EA:00000003 [INF] Request finished in 518.4108ms 200 text/css (791a596a)
+2019-01-07T09:04:57.2626959+07:00 0HLJK8HBBK4EC:00000001 [INF] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"' (27b0a520)
+2019-01-07T09:04:57.3026325+07:00 0HLJK8HBBK4EC:00000001 [INF] Request finished in 483.3122ms 200 application/javascript (791a596a)
+2019-01-07T09:04:58.7548435+07:00 0HLJK8HBBK4EC:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json   (ca22a1cb)
+2019-01-07T09:04:59.2034759+07:00 0HLJK8HBBK4EC:00000002 [INF] Request finished in 531.5375ms 200 application/json;charset=utf-8 (791a596a)
+2019-01-07T09:08:14.0952891+07:00 0HLJK8JTCQJF8:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html   (ca22a1cb)
+2019-01-07T09:08:14.6464965+07:00 0HLJK8JTCQJF8:00000001 [INF] Request finished in 506.7305ms 200 text/html (791a596a)
+2019-01-07T09:08:15.5948116+07:00 0HLJK8JTCQJF8:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json   (ca22a1cb)
+2019-01-07T09:08:15.8732096+07:00 0HLJK8JTCQJF8:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.NotSupportedException: HTTP method "POST" & path "api/Account" overloaded by actions - NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI),NUShop.WebAPI.Controllers.AccountController.Logout (NUShop.WebAPI). Actions require unique method/path combination for Swagger 2.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.CreatePathItem(IEnumerable`1 apiDescriptions, ISchemaRegistry schemaRegistry)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.CreatePathItems(IEnumerable`1 apiDescriptions, ISchemaRegistry schemaRegistry)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwagger(String documentName, String host, String basePath, String[] schemes)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-01-07T09:08:16.0406186+07:00 0HLJK8JTCQJF8:00000002 [INF] Request finished in 380.8613ms 500 text/html; charset=utf-8 (791a596a)
+2019-01-07T09:09:33.6016906+07:00 0HLJK8KL5CTLU:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/index.html   (ca22a1cb)
+2019-01-07T09:09:33.9714132+07:00 0HLJK8KL5CTLU:00000001 [INF] Request finished in 289.9945ms 200 text/html (791a596a)
+2019-01-07T09:09:35.2609641+07:00 0HLJK8KL5CTLU:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5003/swagger/v1/swagger.json   (ca22a1cb)
+2019-01-07T09:09:35.6955413+07:00 0HLJK8KL5CTLU:00000002 [INF] Request finished in 436.2576ms 200 application/json;charset=utf-8 (791a596a)
+2019-01-07T09:09:51.1427877+07:00 0HLJK8KL5CTLV:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Login application/json 58 (ca22a1cb)
+2019-01-07T09:09:51.2366160+07:00 0HLJK8KL5CTLV:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (500cc934)
+2019-01-07T09:09:51.2928137+07:00 0HLJK8KL5CTLV:00000001 [INF] Route matched with "{action = \"AuthenticationAsync\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" (a44c0341)
+2019-01-07T09:09:52.9699582+07:00 0HLJK8KL5CTLV:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" with arguments (["NUShop.Service.ViewModels.AccountViewModels.LoginViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-07T09:10:06.8354989+07:00 0HLJK8KL5CTLV:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-07T09:10:08.1922710+07:00 0HLJK8KL5CTLV:00000001 [INF] Executed DbCommand ("177"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-07T09:10:08.8367431+07:00 0HLJK8KL5CTLV:00000001 [INF] Executed DbCommand ("178"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-07T09:10:08.9841646+07:00 0HLJK8KL5CTLV:00000001 [INF] Executed DbCommand ("53"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T09:10:09.1124021+07:00 0HLJK8KL5CTLV:00000001 [INF] Executed DbCommand ("78"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-07T09:10:09.2299366+07:00 0HLJK8KL5CTLV:00000001 [INF] Executed DbCommand ("62"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-07T09:10:09.3182786+07:00 0HLJK8KL5CTLV:00000001 [INF] Executed DbCommand ("69"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-07T09:10:09.3805659+07:00 0HLJK8KL5CTLV:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-07T09:10:16.4641172+07:00 0HLJK8KL5CTLV:00000001 [INF] User logged in. (fdce0db4)
+2019-01-07T09:10:20.2780345+07:00 0HLJK8KL5CTLV:00000001 [INF] Executed action method "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 27292.2047ms. (50a9e262)
+2019-01-07T09:10:20.3232305+07:00 0HLJK8KL5CTLV:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.GenericResult"'. (8a1b66c8)
+2019-01-07T09:10:28.6567131+07:00 0HLJK8KL5CTLV:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)" in 37230.5915ms (afa2e885)
+2019-01-07T09:10:28.9968833+07:00 0HLJK8KL5CTLV:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.AccountController.AuthenticationAsync (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T09:10:29.3692099+07:00 0HLJK8KL5CTLV:00000001 [INF] Request finished in 37898.0252ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-07T09:10:49.7777543+07:00 0HLJK8KL5CTM0:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5003/api/account/Logout application/json 0 (ca22a1cb)
+2019-01-07T09:10:49.7918827+07:00 0HLJK8KL5CTM0:00000001 [INF] Executing endpoint '"NUShop.WebAPI.Controllers.AccountController.Logout (NUShop.WebAPI)"' (500cc934)
+2019-01-07T09:10:49.8056649+07:00 0HLJK8KL5CTM0:00000001 [INF] Route matched with "{action = \"Logout\", controller = \"Account\"}". Executing action "NUShop.WebAPI.Controllers.AccountController.Logout (NUShop.WebAPI)" (a44c0341)
+2019-01-07T09:10:49.8849532+07:00 0HLJK8KL5CTM0:00000001 [INF] Executing action method "NUShop.WebAPI.Controllers.AccountController.Logout (NUShop.WebAPI)" - Validation state: Valid (dad538d7)
+2019-01-07T09:11:19.8017773+07:00 0HLJK8KL5CTM0:00000001 [INF] AuthenticationScheme: "Identity.Application" signed out. (d3f50c8d)
+2019-01-07T09:11:19.8106920+07:00 0HLJK8KL5CTM0:00000001 [INF] AuthenticationScheme: "Identity.External" signed out. (d3f50c8d)
+2019-01-07T09:11:19.8276788+07:00 0HLJK8KL5CTM0:00000001 [INF] AuthenticationScheme: "Identity.TwoFactorUserId" signed out. (d3f50c8d)
+2019-01-07T09:11:23.1764860+07:00 0HLJK8KL5CTM0:00000001 [INF] Executed action method "NUShop.WebAPI.Controllers.AccountController.Logout (NUShop.WebAPI)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 33287.6645ms. (50a9e262)
+2019-01-07T09:11:23.1874591+07:00 0HLJK8KL5CTM0:00000001 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200 (e28ccfae)
+2019-01-07T09:11:23.1927103+07:00 0HLJK8KL5CTM0:00000001 [INF] Executed action "NUShop.WebAPI.Controllers.AccountController.Logout (NUShop.WebAPI)" in 33381.8587ms (afa2e885)
+2019-01-07T09:11:23.1962513+07:00 0HLJK8KL5CTM0:00000001 [INF] Executed endpoint '"NUShop.WebAPI.Controllers.AccountController.Logout (NUShop.WebAPI)"' (99874f2b)
+2019-01-07T09:11:23.2022085+07:00 0HLJK8KL5CTM0:00000001 [INF] Request finished in 33425.0857ms 200  (791a596a)

@@ -18,7 +18,7 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Authentication(LoginViewModel loginViewModel)
         {
-            var client = new RestClient("https://localhost:5003/api/Login");
+            var client = new RestClient("https://localhost:5003/api/account/Login");
             var request = new RestRequest(Method.POST);
             request.AddHeader("Content-Type", "application/json");
             request.AddParameter("application/json", JsonConvert.SerializeObject(loginViewModel), ParameterType.RequestBody);
