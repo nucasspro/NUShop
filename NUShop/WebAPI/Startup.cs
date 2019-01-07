@@ -18,8 +18,8 @@ using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Helpers;
 using NUShop.Service.Implements;
 using NUShop.Service.Interfaces;
-using NUShop.Service.ViewModelConfiguration;
-using NUShop.Service.ViewModels;
+using NUShop.ViewModel.ViewModelConfiguration;
+using NUShop.ViewModel.ViewModels;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace NUShop.WebAPI

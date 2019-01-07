@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NUShop.Data.Entities;
-using NUShop.Service.ViewModels.AccountViewModels;
 using NUShop.Utilities.DTOs;
+using NUShop.ViewModel.ViewModels.AccountViewModels;
 
 namespace NUShop.WebAPI.Controllers
 {

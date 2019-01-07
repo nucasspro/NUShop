@@ -32,6 +32,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.0",
           "NUShop.Data.EF": "1.0.0",
           "NUShop.Service": "1.0.0",
+          "NUShop.ViewModel": "1.0.0",
           "Serilog.Extensions.Logging.File": "1.1.0",
           "Swashbuckle.AspNetCore": "4.0.1"
         },
@@ -822,7 +823,8 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.0.0",
           "FluentValidation.AspNetCore": "8.1.2",
           "NUShop.Data": "1.0.0",
-          "NUShop.Utilities": "1.0.0"
+          "NUShop.Utilities": "1.0.0",
+          "NUShop.ViewModel": "1.0.0"
         },
         "runtime": {
           "NUShop.Service.dll": {}
@@ -837,6 +839,18 @@
         },
         "compile": {
           "NUShop.Utilities.dll": {}
+        }
+      },
+      "NUShop.ViewModel/1.0.0": {
+        "dependencies": {
+          "FluentValidation.AspNetCore": "8.1.2",
+          "NUShop.Data": "1.0.0"
+        },
+        "runtime": {
+          "NUShop.ViewModel.dll": {}
+        },
+        "compile": {
+          "NUShop.ViewModel.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -4168,6 +4182,11 @@
       "sha512": ""
     },
     "NUShop.Utilities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NUShop.ViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

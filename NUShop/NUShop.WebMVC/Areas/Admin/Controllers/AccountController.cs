@@ -1,13 +1,22 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using NUShop.Data.Entities;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using RestSharp;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers
 {
     public class AccountController : BaseController
     {
+        #region Injections
+
+        private readonly ILogger<AccountController> _logger;
+
+        public AccountController(ILogger<AccountController> logger)
+        {
+            _logger = logger;
+        }
+
+        #endregion Injections
+
         public IActionResult Index()
         {
             return View();

@@ -24,3 +24,5 @@ D:\Fetch Training\DotnetProject\NUShop\NUShop\WebAPI\obj\Debug\netcoreapp2.2\NUS
 D:\Fetch Training\DotnetProject\NUShop\NUShop\WebAPI\obj\Debug\netcoreapp2.2\NUShop.WebAPI.csproj.CopyComplete
 D:\Fetch Training\DotnetProject\NUShop\NUShop\WebAPI\obj\Debug\netcoreapp2.2\NUShop.WebAPI.dll
 D:\Fetch Training\DotnetProject\NUShop\NUShop\WebAPI\obj\Debug\netcoreapp2.2\NUShop.WebAPI.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.ViewModel.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.ViewModel.pdb

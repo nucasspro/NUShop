@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using NUShop.Data.Entities;
-using NUShop.Service.ViewModels;
+using NUShop.ViewModel.ViewModels;
 using NUShop.Utilities.Helpers;
 
 namespace NUShop.Service.Mappings

@@ -2832,6 +2832,20 @@
         "runtime": {
           "bin/placeholder/NUShop.Utilities.dll": {}
         }
+      },
+      "NUShop.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "FluentValidation.AspNetCore": "8.1.2",
+          "NUShop.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NUShop.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NUShop.ViewModel.dll": {}
+        }
       }
     }
   },
@@ -8463,6 +8477,11 @@
       "type": "project",
       "path": "../NUShop.Utilities/NUShop.Utilities.csproj",
       "msbuildProject": "../NUShop.Utilities/NUShop.Utilities.csproj"
+    },
+    "NUShop.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../NUShop.ViewModel/NUShop.ViewModel.csproj",
+      "msbuildProject": "../NUShop.ViewModel/NUShop.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8471,7 +8490,8 @@
       "FluentValidation.AspNetCore >= 8.1.2",
       "Microsoft.NETCore.App >= 2.2.0",
       "NUShop.Data >= 1.0.0",
-      "NUShop.Utilities >= 1.0.0"
+      "NUShop.Utilities >= 1.0.0",
+      "NUShop.ViewModel >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8510,6 +8530,9 @@
             },
             "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj": {
               "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Utilities\\NUShop.Utilities.csproj"
+            },
+            "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.ViewModel\\NUShop.ViewModel.csproj": {
+              "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.ViewModel\\NUShop.ViewModel.csproj"
             }
           }
         }

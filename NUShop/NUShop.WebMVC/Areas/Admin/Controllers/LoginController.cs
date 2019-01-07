@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using NUShop.Service.ViewModels.AccountViewModels;
+using NUShop.ViewModel.ViewModels.AccountViewModels;
 using RestSharp;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers

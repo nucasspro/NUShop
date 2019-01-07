@@ -5006,7 +5006,8 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.0.0",
           "FluentValidation.AspNetCore": "8.1.2",
           "NUShop.Data": "1.0.0",
-          "NUShop.Utilities": "1.0.0"
+          "NUShop.Utilities": "1.0.0",
+          "NUShop.ViewModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/NUShop.Service.dll": {}
@@ -5023,6 +5024,20 @@
         },
         "runtime": {
           "bin/placeholder/NUShop.Utilities.dll": {}
+        }
+      },
+      "NUShop.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "FluentValidation.AspNetCore": "8.1.2",
+          "NUShop.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NUShop.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NUShop.ViewModel.dll": {}
         }
       }
     },
@@ -10063,7 +10078,8 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.0.0",
           "FluentValidation.AspNetCore": "8.1.2",
           "NUShop.Data": "1.0.0",
-          "NUShop.Utilities": "1.0.0"
+          "NUShop.Utilities": "1.0.0",
+          "NUShop.ViewModel": "1.0.0"
         },
         "compile": {
           "bin/placeholder/NUShop.Service.dll": {}
@@ -10080,6 +10096,20 @@
         },
         "runtime": {
           "bin/placeholder/NUShop.Utilities.dll": {}
+        }
+      },
+      "NUShop.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "FluentValidation.AspNetCore": "8.1.2",
+          "NUShop.Data": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/NUShop.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/NUShop.ViewModel.dll": {}
         }
       }
     }
@@ -18874,6 +18904,11 @@
       "type": "project",
       "path": "../NUShop.Utilities/NUShop.Utilities.csproj",
       "msbuildProject": "../NUShop.Utilities/NUShop.Utilities.csproj"
+    },
+    "NUShop.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../NUShop.ViewModel/NUShop.ViewModel.csproj",
+      "msbuildProject": "../NUShop.ViewModel/NUShop.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -18886,6 +18921,7 @@
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.0",
       "NUShop.Data.EF >= 1.0.0",
       "NUShop.Service >= 1.0.0",
+      "NUShop.ViewModel >= 1.0.0",
       "Serilog.Extensions.Logging.File >= 1.1.0",
       "Swashbuckle.AspNetCore >= 4.0.1"
     ]
@@ -18926,6 +18962,9 @@
             },
             "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Service\\NUShop.Service.csproj": {
               "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Service\\NUShop.Service.csproj"
+            },
+            "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.ViewModel\\NUShop.ViewModel.csproj": {
+              "projectPath": "D:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.ViewModel\\NUShop.ViewModel.csproj"
             }
           }
         }

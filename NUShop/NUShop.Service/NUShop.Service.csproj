@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NUShop.Data\NUShop.Data.csproj" />
     <ProjectReference Include="..\NUShop.Utilities\NUShop.Utilities.csproj" />
+    <ProjectReference Include="..\NUShop.ViewModel\NUShop.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

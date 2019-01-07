@@ -1,0 +1,14 @@
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\bin\Debug\netcoreapp3.0\NUShop.ViewModel.deps.json
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\bin\Debug\netcoreapp3.0\NUShop.ViewModel.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcoreapp3.0\NUShop.ViewModel.csprojAssemblyReference.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcoreapp3.0\NUShop.ViewModel.csproj.CoreCompileInputs.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcoreapp3.0\NUShop.ViewModel.AssemblyInfoInputs.cache
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcoreapp3.0\NUShop.ViewModel.AssemblyInfo.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\bin\Debug\netcoreapp3.0\NUShop.ViewModel.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\bin\Debug\netcoreapp3.0\NUShop.Data.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\bin\Debug\netcoreapp3.0\NUShop.Infrastructure.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\bin\Debug\netcoreapp3.0\NUShop.Data.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\bin\Debug\netcoreapp3.0\NUShop.Infrastructure.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcoreapp3.0\NUShop.ViewModel.csproj.CopyComplete
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcoreapp3.0\NUShop.ViewModel.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcoreapp3.0\NUShop.ViewModel.pdb

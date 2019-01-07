@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using NUShop.Service.Interfaces;
-using NUShop.Service.ViewModels;
 using NUShop.Utilities.Constants;
-using NUShop.WebMVC.Extensions;
+using NUShop.ViewModel.ViewModels;
+using RestSharp;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace NUShop.WebMVC.Areas.Admin.Components
@@ -25,11 +25,31 @@ namespace NUShop.WebMVC.Areas.Admin.Components
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var roles = ((ClaimsPrincipal)User).GetSpecificClaim("Roles");
+            //var roles = ((ClaimsPrincipal)User).GetSpecificClaim("Roles");
+            var roles = "Admin";
             List<FunctionViewModel> function;
+
             if (roles.Split(";").Contains(CommonConstants.AppRole.AdminRole))
             {
-                function = await _functionService.GetAll(string.Empty);
+                var client = new RestClient("https://localhost:5003/api/function");
+                var request = new RestRequest(Method.GET);
+                request.AddHeader("Content-Type", "application/json");
+                //IRestResponse response = null;
+                //client.ExecuteAsync(request, res => {
+                //    if (res.IsSuccessful)
+                //    {
+                //        response = res;
+                //    }
+                //});
+                var response = await client.ExecuteTaskAsync(request);
+                if (response.IsSuccessful)
+                {
+                    function = JsonConvert.DeserializeObject<List<FunctionViewModel>>(response.Content);
+                }
+                else
+                {
+                    function = new List<FunctionViewModel>().ToList();
+                }
             }
             else
             {

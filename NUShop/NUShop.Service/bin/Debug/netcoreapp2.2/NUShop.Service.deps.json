@@ -11,7 +11,8 @@
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "6.0.0",
           "FluentValidation.AspNetCore": "8.1.2",
           "NUShop.Data": "1.0.0",
-          "NUShop.Utilities": "1.0.0"
+          "NUShop.Utilities": "1.0.0",
+          "NUShop.ViewModel": "1.0.0"
         },
         "runtime": {
           "NUShop.Service.dll": {}
@@ -2030,6 +2031,15 @@
         "runtime": {
           "NUShop.Utilities.dll": {}
         }
+      },
+      "NUShop.ViewModel/1.0.0": {
+        "dependencies": {
+          "FluentValidation.AspNetCore": "8.1.2",
+          "NUShop.Data": "1.0.0"
+        },
+        "runtime": {
+          "NUShop.ViewModel.dll": {}
+        }
       }
     }
   },
@@ -3296,6 +3306,11 @@
       "sha512": ""
     },
     "NUShop.Utilities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NUShop.ViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

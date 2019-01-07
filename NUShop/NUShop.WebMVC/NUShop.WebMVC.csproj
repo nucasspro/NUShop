@@ -26,6 +26,7 @@
     <ProjectReference Include="..\NUShop.Data.EF\NUShop.Data.EF.csproj" />
     <ProjectReference Include="..\NUShop.Data\NUShop.Data.csproj" />
     <ProjectReference Include="..\NUShop.Service\NUShop.Service.csproj" />
+    <ProjectReference Include="..\NUShop.ViewModel\NUShop.ViewModel.csproj" />
   </ItemGroup>
 
 
