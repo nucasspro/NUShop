@@ -1,10 +1,9 @@
 ﻿var CategoryController = function () {
     this.Init = function () {
-        //loadCategories();
         loadCategories();
         registerEvents();
     }
-
+    var categories = [];
     function registerEvents() {
         $('#select-page-size').on('change', function () {
             NUShopConfig.configs.pageSize = parseInt($(this).val());
@@ -21,26 +20,48 @@
         $('#btn-search').on('click', function () {
 	        loadCategories();
         });
-    }
 
-    //function loadCategories() {
-    //    $.ajax({
-    //        type: 'GET',
-    //        dataType: 'json',
-    //        url: 'GetAllCategories',
-    //        success: function (response) {
-    //            console.log(response);
-    //            var render = "<option value=''>Select category</option>";
-    //            $.each(response, function (i, item) {
-    //                render += "<option value='" + item.id + "'>" + item.Name + "</option>";
-    //            });
-    //            $('#select-category').html(render);
-    //        },
-    //        error: function (status) {
-    //            console.log(status);
-    //        }
-    //    });
-    //}
+        $('#btn-create').off('click').on('click', function () {
+	        $('#category-modal').modal('show');
+        });
+
+
+        $('body').on('click', '.btn-edit', function(e) {
+            e.preventDefault();
+            var id = $(this).data("id");
+            var item = [];
+            for (var i = 0; i < categories.length; i += 1) {
+	            if (categories[i].Id == id) {
+		            item = categories[i];
+		            break;
+	            }
+            }
+            $('#hidden-id').val(id);
+            $('#txt-name').val(item.Name);
+            $('#txt-des').val(item.Description);
+            $('#txt-image').val(item.Image);
+            $('#txt-seo-keyword').val(item.SeoKeywords);
+            $('#txt-seo-des').val(item.SeoDescription);
+            $('#txt-seo-title').val(item.SeoPageTitle);
+            $('#txt-seo-alias').val(item.SeoAlias);
+            $('#checkbox-status').prop('checked', item.Status == 1);
+            $('#btn-home').prop('checked', item.HomeFlag);
+            $('#txt-sort-order').val(item.SortOrder);
+            $('#txt-home-order').val(item.HomeOrder);
+            $('#category-modal').modal('show');
+        });
+
+        $('body').on('click', '#btn-save', function() {
+
+        });
+
+        $('body').on('click', '#btn-close', function () {
+	        resetForm();
+        });
+
+
+        $('#btn-delete');
+    }
 
     function loadCategories(isPageChanged) {
         var template = $('#table-template').html();
@@ -58,6 +79,7 @@
             success: function (response) {
                 console.log(response);
                 $.each(response.Results, function (i, item) {
+	                categories.push(item);
                     render += Mustache.render(template, {
                         Id: item.Id,
                         Status: getStatus(item.Status),
@@ -65,7 +87,17 @@
                         Parent: item.ParentId,
                         UpdatedDate: item.DateModified
                     });
+
+                    var renderCategory = "<option value=''>Select category</option>";
+                    $.each(categories, function (i, item) {
+	                    renderCategory += "<option value='" + item.id + "'>" + item.Name + "</option>";
+                    });
+                    $('#select-category').html(renderCategory);
+                    $('#select-parent').html(renderCategory);
                 });
+
+
+                
                 $('#lbl-totalrow').text(response.RowCount);
                 if (render != null) {
                     $('#table-content').html(render);
@@ -105,5 +137,20 @@
                 }
             });
         }
+    }
+
+    function resetForm() {
+	    $('#hidden-id').val();
+	    $('#txt-name').val('');
+	    $('#txt-des').val('');
+	    $('#txt-image').val('');
+	    $('#txt-seo-keyword').val('');
+	    $('#txt-seo-des').val('');
+	    $('#txt-seo-title').val('');
+	    $('#txt-seo-alias').val('');
+	    $('#txt-sort-order').val('');
+	    $('#txt-home-order').val('');
+	    $('#checkbox-status').prop('checked', true);
+	    $('#checkbox-show-home').prop('checked', false);
     }
 }
