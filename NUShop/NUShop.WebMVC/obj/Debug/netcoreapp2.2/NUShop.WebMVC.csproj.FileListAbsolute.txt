@@ -109,3 +109,5 @@ D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\bin\Debug\netcoreapp
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\bin\Debug\netcoreapp2.2\NUShop.ViewModel.pdb
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\bin\Debug\netcoreapp2.2\NUShop.WebAPI.dll
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\bin\Debug\netcoreapp2.2\NUShop.WebAPI.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Category\_ActionsPartial.cshtml.g.cs
