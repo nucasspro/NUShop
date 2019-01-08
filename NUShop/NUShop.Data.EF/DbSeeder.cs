@@ -110,7 +110,7 @@ namespace NUShop.Data.EF
                     new Function() {Id = "SETTING"  , Name = "Configuration"    ,ParentId = "SYSTEM"    ,SortOrder = 6  ,Status = Status.Active ,URL = "/admin/setting/index"   ,IconCss = "fa-home"    },
 
                     new Function() {Id = "PRODUCT"          ,Name = "Product Management"    ,ParentId = null        ,SortOrder = 2  ,Status = Status.Active,    URL = "/"                               ,IconCss = "fa-chevron-down"  },
-                    new Function() {Id = "PRODUCT_CATEGORY" ,Name = "Category"              ,ParentId = "PRODUCT"   ,SortOrder = 1  ,Status = Status.Active,    URL = "/admin/productcategory/index"    ,IconCss = "fa-chevron-down"  },
+                    new Function() {Id = "CATEGORY" ,Name = "Category"              ,ParentId = "PRODUCT"   ,SortOrder = 1  ,Status = Status.Active,    URL = "/admin/category/index"    ,IconCss = "fa-chevron-down"  },
                     new Function() {Id = "PRODUCT_LIST"     ,Name = "Product"               ,ParentId = "PRODUCT"   ,SortOrder = 2  ,Status = Status.Active,    URL = "/admin/product/index"            ,IconCss = "fa-chevron-down"  },
                     new Function() {Id = "BILL"             ,Name = "Bill"                  ,ParentId = "PRODUCT"   ,SortOrder = 3  ,Status = Status.Active,    URL = "/admin/bill/index"               ,IconCss = "fa-chevron-down"  },
 
@@ -152,7 +152,7 @@ namespace NUShop.Data.EF
                 };
                 _context.Colors.AddRange(listColor);
             }
-           
+
             if (_context.Slides.Count() == 0)
             {
                 List<Slide> slides = new List<Slide>()

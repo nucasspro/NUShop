@@ -3,6 +3,7 @@ using NUShop.Data.Entities;
 using NUShop.Data.Enums;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Interfaces;
+using NUShop.Utilities.DTOs;
 using NUShop.ViewModel.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
@@ -71,6 +72,31 @@ namespace NUShop.Service.Implements
             var categories = _categoryRepository.GetAll(x => x.Status == Status.Active);
             var categoriesViewModel = _mapper.Map<List<CategoryViewModel>>(categories);
             return categoriesViewModel;
+        }
+
+        public PagedResult<CategoryViewModel> GetAllPaging(int? categoryId, string keyword, int page, int pageSize)
+        {
+            var query = _categoryRepository.GetAll(x => x.Status == Status.Active);
+            if (!string.IsNullOrEmpty(keyword))
+                query = query.Where(x => x.Name.Contains(keyword));
+            if (categoryId.HasValue)
+                query = query.Where(x => x.Id == categoryId.Value || x.ParentId == categoryId.Value);
+
+            var totalRow = query.Count();
+
+            query = query.OrderByDescending(x => x.DateCreated)
+                .Skip((page - 1) * pageSize).Take(pageSize);
+
+            var data = _mapper.Map<List<CategoryViewModel>>(query);
+
+            var paginationSet = new PagedResult<CategoryViewModel>()
+            {
+                Results = data,
+                CurrentPage = page,
+                RowCount = totalRow,
+                PageSize = pageSize
+            };
+            return paginationSet;
         }
 
         public CategoryViewModel GetById(int id)
