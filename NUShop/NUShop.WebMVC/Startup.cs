@@ -1,10 +1,9 @@
-﻿using AutoMapper;
-using FluentValidation;
+﻿using System;
+using AutoMapper;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,15 +12,13 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NUShop.Data.EF;
-using NUShop.Data.Entities;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Implements;
 using NUShop.Service.Interfaces;
-using NUShop.Service.ViewModelConfiguration;
-using NUShop.Service.ViewModels;
-using NUShop.WebMVC.Helpers;
-using System;
 using System.IO;
+using Microsoft.AspNetCore.Identity;
+using NUShop.Data.Entities;
+using NUShop.WebMVC.Extensions;
 
 namespace NUShop.WebMVC
 {
@@ -57,7 +54,7 @@ namespace NUShop.WebMVC
 
             #region Dependency Injection for Fluent Validators
 
-            services.AddTransient<IValidator<CategoryViewModel>, CategoryValidator>();
+            //services.AddTransient<IValidator<CategoryViewModel>, CategoryValidator>();
 
             #endregion Dependency Injection for Fluent Validators
 
@@ -96,6 +93,7 @@ namespace NUShop.WebMVC
 
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IFunctionService, FunctionService>();
+            services.AddTransient<IProductService, ProductService>();
 
             #endregion Dependency Injection for Services
 

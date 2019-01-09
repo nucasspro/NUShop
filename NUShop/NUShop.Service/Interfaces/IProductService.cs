@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using NUShop.Service.ViewModels;
+using NUShop.ViewModel.ViewModels;
 using NUShop.Utilities.DTOs;
 
 namespace NUShop.Service.Interfaces

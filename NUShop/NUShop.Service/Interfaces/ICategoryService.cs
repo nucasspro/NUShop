@@ -1,8 +1,9 @@
-﻿using NUShop.Service.ViewModels;
+﻿using NUShop.ViewModel.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using NUShop.Utilities.DTOs;
 
 namespace NUShop.Service.Interfaces
 {
@@ -17,6 +18,8 @@ namespace NUShop.Service.Interfaces
         List<CategoryViewModel> GetAll();
 
         List<CategoryViewModel> GetAll(string keyword);
+
+        PagedResult<CategoryViewModel> GetAllPaging(int? categoryId, string keyword, int page, int pageSize);
 
         List<CategoryViewModel> GetAllByParentId(int parentId);
 

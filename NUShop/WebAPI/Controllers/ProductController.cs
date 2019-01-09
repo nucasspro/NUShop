@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NUShop.Service.Interfaces;
-using NUShop.Service.ViewModels;
+using NUShop.ViewModel.ViewModels;
 using NUShop.Utilities.Helpers;
 using System.Linq;
 
@@ -44,6 +44,10 @@ namespace NUShop.WebAPI.Controllers
         [HttpGet("GetAllPaging")]
         public IActionResult GetAllPaging(int? categoryId, string keyword, int page, int pageSize)
         {
+            if (categoryId<=0)
+            {
+                categoryId = 1;
+            }
             var products = _productService.GetAllPaging(categoryId, keyword, page, pageSize);
             return new OkObjectResult(products);
         }

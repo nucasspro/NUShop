@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-animate.css@3.7.0:
+animate.css@^3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.0.tgz#5de25d1ee5fba11ba6a1e2c4fa568f512eb7d4da"
   integrity sha512-u3iMXDJr0cxMdQocIciDiou9Au4L5f9uT+/jCtprw3s1j3HcfCuI+khF+90Ps2KdsEhM2soF7SXB4WUvI3HlXg==
@@ -35,27 +35,12 @@ font-awesome@4.7.0:
   resolved "https://registry.yarnpkg.com/font-awesome/-/font-awesome-4.7.0.tgz#8fa8cf0411a1a31afd07b06d2902bb9fc815a133"
   integrity sha1-j6jPBBGhoxr9B7BtKQK7n8gVoTM=
 
-jquery-sparkline@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/jquery-sparkline/-/jquery-sparkline-2.4.0.tgz#1be8b7b704dd3857152708aefb1d4a4b3a69fb33"
-  integrity sha1-G+i3twTdOFcVJwiu+x1KSzpp+zM=
+jquery-easyui@1.5.21:
+  version "1.5.21"
+  resolved "https://registry.yarnpkg.com/jquery-easyui/-/jquery-easyui-1.5.21.tgz#536821a5d2befee778c1b6ae9ae2ef4a124b10bb"
+  integrity sha1-U2ghpdK+/ud4wbaumuLvShJLELs=
 
-jquery-validation-unobtrusive@3.2.11:
-  version "3.2.11"
-  resolved "https://registry.yarnpkg.com/jquery-validation-unobtrusive/-/jquery-validation-unobtrusive-3.2.11.tgz#175ee46380385a0e33ed320f255fad321f68f9f5"
-  integrity sha512-3FQPllaWdD+Aq55zJLGSW39+eXPDz1HhwAvrSwYi8zHQ8DVcu5IJ1HVeTiCl0BnCnrIBvfFU3zEB/DrGdcoRIQ==
-  dependencies:
-    jquery ">=1.8"
-    jquery-validation ">=1.16"
-
-jquery-validation@1.19.0, jquery-validation@>=1.16:
-  version "1.19.0"
-  resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.19.0.tgz#0fedf0c0483a030c4fff072398898ac18cfd6e40"
-  integrity sha512-i1ygcs9K9eI0jqQ8fiOZdT0Ofw941YII1zyPQDUkBS8t2G8SoSWz8UUEVT6gV1KvsaBbovtL8YxjLALACR0syQ==
-  dependencies:
-    jquery "^1.7 || ^2.0 || ^3.1"
-
-jquery@>=1.10, jquery@>=1.8, "jquery@^1.7 || ^2.0 || ^3.1", jquery@^3.3.1:
+jquery@>=1.10, jquery@>=1.7, jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
@@ -64,6 +49,11 @@ moment@^2.9.0:
   version "2.23.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
   integrity sha512-3IE39bHVqFbWWaPOMHZF98Q9c3LDKGTmypMiTM2QygGXXElkFWIH7GxfmlwmY2vwa+wmNsoYZmG2iusf1ZjJoA==
+
+mustache@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/mustache/-/mustache-3.0.1.tgz#873855f23aa8a95b150fb96d9836edbc5a1d248a"
+  integrity sha512-jFI/4UVRsRYdUbuDTKT7KzfOp7FiD5WzYmmwNwXyUVypC0xjoTL78Fqc0jHUPIvvGD+6DQSPHIt1NE7D1ArsqA==
 
 notifyjs@^3.0.0:
   version "3.0.0"
@@ -74,3 +64,10 @@ popper.js@1.14.6:
   version "1.14.6"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.6.tgz#ab20dd4edf9288b8b3b6531c47c361107b60b4b0"
   integrity sha512-AGwHGQBKumlk/MDfrSOf0JHhJCImdDMcGNoqKmKkU+68GFazv3CQ6q9r7Ja1sKDZmYWTckY/uLyEznheTDycnA==
+
+twbs-pagination@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/twbs-pagination/-/twbs-pagination-1.4.1.tgz#f17eb6db540fe051bc878665aa4dc628ee4fc81c"
+  integrity sha1-8X6221QP4FG8h4Zlqk3GKO5PyBw=
+  dependencies:
+    jquery ">=1.7"

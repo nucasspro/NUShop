@@ -1,4 +1,4 @@
-﻿using NUShop.Service.ViewModels;
+﻿using NUShop.ViewModel.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

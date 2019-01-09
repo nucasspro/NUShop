@@ -120,19 +120,19 @@
         }
     },
     unflattern: function (arr) {
-        var map = {};
-        var roots = [];
-        for (var i = 0; i < arr.length; i += 1) {
-            var node = arr[i];
-            node.children = [];
-            map[node.id] = i;
-            if (node.parentId !== null) {
-                arr[map[node.parentId]].children.push(node);
-            } else {
-                roots.push(node);
-            }
-        }
-        return roots;
+	    var map = {};
+	    var roots = [];
+	    for (var i = 0; i < arr.length; i += 1) {
+		    var node = arr[i];
+		    node.children = [];
+		    map[node.id] = i; // use map to look-up the parents
+		    if (node.parentId !== null) {
+			    arr[map[node.parentId]].children.push(node);
+		    } else {
+			    roots.push(node);
+		    }
+	    }
+	    return roots;
     }
 }
 
@@ -140,7 +140,7 @@
 // it will get token from form 
 // and add it to header to pass the security(CFRS)
 $(document).ajaxSend(function (e, xhr, options) {
-    if (options.type.toUpperCase() == 'POST' || options.type.toUpperCase() == 'PUT') {
+    if (options.type.toUpperCase() == 'POST') {
         var token = $('form').find("input[name='__RequestVerificationToken']").val();
         xhr.setRequestHeader("RequestVerificationToken", token);
     }

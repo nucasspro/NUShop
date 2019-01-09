@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using NUShop.Data.Entities;
 using NUShop.Utilities.DTOs;
-using NUShop.WebMVC.Models.AccountViewModels;
-using System.Threading.Tasks;
+using NUShop.ViewModel.ViewModels.AccountViewModels;
+using RestSharp;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers
 {
@@ -21,7 +23,6 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             _signInManager = signInManager;
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             return View();

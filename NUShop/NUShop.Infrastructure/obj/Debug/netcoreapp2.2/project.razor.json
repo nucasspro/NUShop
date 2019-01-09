@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "d:\\Fetch Training\\DotnetProject\\NUShop\\NUShop\\NUShop.Infrastructure\\NUShop.Infrastructure.csproj",
+  "TargetFramework": "netcoreapp2.2",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

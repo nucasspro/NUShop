@@ -1,21 +1,29 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
 using NUShop.Data.EF;
+using NUShop.Data.Entities;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Implements;
 using NUShop.Service.Interfaces;
-using NUShop.Service.ViewModelConfiguration;
-using NUShop.Service.ViewModels;
+using NUShop.ViewModel.ViewModelConfiguration;
+using NUShop.ViewModel.ViewModels;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace NUShop.WebAPI
 {
@@ -30,6 +38,19 @@ namespace NUShop.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+            services.AddDbContext<AppDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<AppUser, AppRole>()
+                .AddEntityFrameworkStores<AppDbContext>()
+                .AddDefaultTokenProviders();
+
             services
                 .AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
@@ -42,49 +63,65 @@ namespace NUShop.WebAPI
 
             #endregion Dependency Injection for Fluent Validators
 
-            services.AddDbContext<AppDbContext>(
-                options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            #region Configure Identity
 
-            #region Configure Identity I
+            // Configure Identity
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 2;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
 
-            //services
-            //    .AddIdentity<AppUser, AppRole>()
-            //    .AddEntityFrameworkStores<AppDbContext>()
-            //    .AddDefaultTokenProviders();
+                // Lockout settings
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+                options.Lockout.MaxFailedAccessAttempts = 10;
 
-            //// Configure Identity
-            //services.Configure<IdentityOptions>(options =>
-            //{
-            //    // Password settings
-            //    options.Password.RequireDigit = false;
-            //    options.Password.RequiredLength = 2;
-            //    options.Password.RequireNonAlphanumeric = false;
-            //    options.Password.RequireUppercase = false;
-            //    options.Password.RequireLowercase = false;
+                // User settings
+                options.User.RequireUniqueEmail = true;
+            });
 
-            //    // Lockout settings
-            //    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
-            //    options.Lockout.MaxFailedAccessAttempts = 10;
+            services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
+            services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
-            //    // User settings
-            //    options.User.RequireUniqueEmail = true;
-            //});
-            //services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
-            //services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+            #endregion Configure Identity
 
-            #endregion Configure Identity I
+            #region Authentication by JWT
 
-            //services.AddTransient<DbSeeder>();
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear(); // => remove default claims
+            services
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                })
+                .AddJwtBearer(options =>
+                {
+                    var parameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+                        ValidAudience = Configuration["Jwt:Issuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    };
+
+                    options.TokenValidationParameters = parameters;
+                    options.SaveToken = true;
+                });
+
+            #endregion Authentication by JWT
+
+            services.AddTransient<DbSeeder>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-
-            #region Dependency Injection for Repositories
-
-            //services.AddTransient<ICategoryRepository, CategoryRepository>();
-            //services.AddTransient<IFunctionRepository, FunctionRepository>();
-            //services.AddTransient<Iproducre, FunctionRepository>();
             services.AddTransient(typeof(IRepository<,>), typeof(Repository<,>));
 
-            #endregion Dependency Injection for Repositories
+            //services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipal>();
 
             #region Dependency Injection for Services
 
@@ -115,7 +152,7 @@ namespace NUShop.WebAPI
                     builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
                 options.AddPolicy("Localhost",
-                    builder => builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod());
+                    builder => builder.WithOrigins("https://localhost:5001", "http://localhost:5000").AllowAnyHeader().AllowAnyMethod());
             });
 
             services.AddCors();
@@ -139,6 +176,7 @@ namespace NUShop.WebAPI
             app.UseSwagger();
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Core API"); });
             app.UseCors("AllowAllOrigin");
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
