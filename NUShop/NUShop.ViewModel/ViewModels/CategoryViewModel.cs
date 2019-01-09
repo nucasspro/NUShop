@@ -1,5 +1,6 @@
 ﻿using System;
 using NUShop.Data.Enums;
+using NUShop.Utilities.Helpers;
 
 namespace NUShop.ViewModel.ViewModels
 {
@@ -12,7 +13,7 @@ namespace NUShop.ViewModel.ViewModels
         public int? HomeOrder { get; set; }
         public string Image { get; set; }
         public bool? HomeFlag { get; set; }
-        public DateTime DateCreated { set; get; }
+        public DateTime DateCreated { get; set; }
         public DateTime DateModified { set; get; }
         public int SortOrder { set; get; }
         public Status Status { set; get; }

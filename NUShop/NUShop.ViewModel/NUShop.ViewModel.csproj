@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NUShop.Data\NUShop.Data.csproj" />
+    <ProjectReference Include="..\NUShop.Utilities\NUShop.Utilities.csproj" />
   </ItemGroup>
 
   <ItemGroup>

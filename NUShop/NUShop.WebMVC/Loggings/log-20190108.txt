@@ -10154,3 +10154,72 @@ OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
 2019-01-08T22:47:55.7381485+07:00 0HLJLFATRD0KR:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)" in 2585.4854ms (afa2e885)
 2019-01-08T22:47:55.7490145+07:00 0HLJLFATRD0KR:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
 2019-01-08T22:47:55.7750081+07:00 0HLJLFATRD0KR:00000004 [INF] Request finished in 2640.4612ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-08T23:48:15.2792003+07:00 0HLJLH49U2GUS:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/category/index   (ca22a1cb)
+2019-01-08T23:48:15.6747699+07:00 0HLJLH49U2GUS:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-08T23:48:15.7817790+07:00 0HLJLH49U2GUS:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Category\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-08T23:48:17.2827903+07:00 0HLJLH49U2GUS:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-08T23:48:17.3131291+07:00 0HLJLH49U2GUS:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.0019ms. (50a9e262)
+2019-01-08T23:48:17.4127488+07:00 0HLJLH49U2GUS:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-08T23:48:18.8755516+07:00 0HLJLH49U2GUS:00000001 [INF] Executed ViewResult - view "Index" executed in 1409.5085ms. (f66409e9)
+2019-01-08T23:48:19.2361796+07:00 0HLJLH49U2GUS:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.Index (NUShop.WebMVC)" in 3095.457ms (afa2e885)
+2019-01-08T23:48:19.3383692+07:00 0HLJLH49U2GUS:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-08T23:48:19.3943866+07:00 0HLJLH49U2GUS:00000001 [INF] Request finished in 4133.2765ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-08T23:48:39.0292395+07:00 0HLJLH49U2GUS:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-08T23:48:39.0658897+07:00 0HLJLH49U2GUV:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-08T23:48:39.1156055+07:00 0HLJLH49U2GUT:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/category/index.js?v=DEJyREmR-T7XYJgc2XM1V5M5rv_8iQJRxlsO_p0HIqc   (ca22a1cb)
+2019-01-08T23:48:39.1300430+07:00 0HLJLH49U2GUV:00000001 [INF] Request finished in 59.6501ms 404  (791a596a)
+2019-01-08T23:48:39.1393687+07:00 0HLJLH49U2GUS:00000002 [INF] Request finished in 168.9881ms 404  (791a596a)
+2019-01-08T23:48:39.1446240+07:00 0HLJLH49U2GUU:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/shared/settings.js?v=l5IYZai1BvE2KKzvp-xJtuA0wsYMSXx7VX9w_fG0cXA   (ca22a1cb)
+2019-01-08T23:48:39.1637830+07:00 0HLJLH49U2GUU:00000001 [INF] The file "/app/shared/settings.js" was not modified (f1f8d725)
+2019-01-08T23:48:39.2327512+07:00 0HLJLH49U2GUT:00000001 [INF] Sending file. Request path: '"/app/controllers/category/index.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\controllers\category\index.js"' (27b0a520)
+2019-01-08T23:48:39.3310546+07:00 0HLJLH49U2GUU:00000001 [INF] Request finished in 150.0262ms 304 application/javascript (791a596a)
+2019-01-08T23:48:39.5341978+07:00 0HLJLH49U2GUT:00000001 [INF] Request finished in 202.2609ms 200 application/javascript (791a596a)
+2019-01-08T23:48:39.7165671+07:00 0HLJLH49U2GUU:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-08T23:48:41.8614994+07:00 0HLJLH49U2GUT:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-08T23:48:41.8621115+07:00 0HLJLH49U2GUU:00000002 [INF] Request finished in 260.0097ms 404  (791a596a)
+2019-01-08T23:48:42.5780196+07:00 0HLJLH49U2GUV:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-08T23:48:42.7303266+07:00 0HLJLH49U2GUT:00000002 [INF] Request finished in 2144.9235ms 404  (791a596a)
+2019-01-08T23:48:42.7345341+07:00 0HLJLH49U2GUV:00000002 [INF] Request finished in 1666.8426ms 404  (791a596a)
+2019-01-08T23:48:42.7408374+07:00 0HLJLH49U2GUU:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/category/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-08T23:48:42.7576230+07:00 0HLJLH49U2GUU:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-08T23:48:42.8046597+07:00 0HLJLH49U2GUU:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Category\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-08T23:48:42.9940097+07:00 0HLJLH49U2GUU:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-08T23:48:43.0280798+07:00 0HLJLH49U2GUU:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-08T23:48:44.0024949+07:00 0HLJLH49U2GUU:00000003 [INF] Executed DbCommand ("370"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Categories] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-08T23:48:44.0313958+07:00 0HLJLH49U2GUV:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico   (ca22a1cb)
+2019-01-08T23:48:44.0918007+07:00 0HLJLH49U2GUV:00000003 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\favicon.ico"' (27b0a520)
+2019-01-08T23:48:44.1957563+07:00 0HLJLH49U2GUV:00000003 [INF] Request finished in 660.0362ms 200 image/x-icon (791a596a)
+2019-01-08T23:48:44.4614207+07:00 0HLJLH49U2GUU:00000003 [INF] Executed DbCommand ("135"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-08T23:48:44.7549514+07:00 0HLJLH49U2GUU:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1641.2124ms. (50a9e262)
+2019-01-08T23:48:44.8428947+07:00 0HLJLH49U2GUU:00000003 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.CategoryViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-08T23:48:45.2804662+07:00 0HLJLH49U2GUU:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)" in 2458.9425ms (afa2e885)
+2019-01-08T23:48:45.2897068+07:00 0HLJLH49U2GUU:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-08T23:48:45.2997783+07:00 0HLJLH49U2GUU:00000003 [INF] Request finished in 3095.022ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-08T23:48:45.8130331+07:00 0HLJLH49U2GUU:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/category/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-08T23:48:45.8324607+07:00 0HLJLH49U2GUU:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-08T23:48:45.8567931+07:00 0HLJLH49U2GUU:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Category\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-08T23:48:45.9565454+07:00 0HLJLH49U2GUU:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-08T23:48:46.0774161+07:00 0HLJLH49U2GUU:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-08T23:48:46.2903439+07:00 0HLJLH49U2GUU:00000004 [INF] Executed DbCommand ("202"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Categories] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-08T23:48:46.4455446+07:00 0HLJLH49U2GUU:00000004 [INF] Executed DbCommand ("117"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-08T23:48:46.4814078+07:00 0HLJLH49U2GUU:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 489.5052ms. (50a9e262)
+2019-01-08T23:48:46.5209108+07:00 0HLJLH49U2GUU:00000004 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.CategoryViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-08T23:48:46.5564185+07:00 0HLJLH49U2GUU:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)" in 665.911ms (afa2e885)
+2019-01-08T23:48:46.5839094+07:00 0HLJLH49U2GUU:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-08T23:48:46.6657603+07:00 0HLJLH49U2GUU:00000004 [INF] Request finished in 921.1216ms 200 application/json; charset=utf-8 (791a596a)

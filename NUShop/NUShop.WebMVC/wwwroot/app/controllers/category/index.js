@@ -1,9 +1,16 @@
 ﻿var CategoryController = function () {
     this.Init = function () {
+        loadParents();
         loadCategories();
         registerEvents();
+        registerControls();
     }
     var categories = [];
+
+    function registerControls() {
+        CKEDITOR.replace('txtDescription', {});
+    }
+
     function registerEvents() {
         $('#select-page-size').on('change', function () {
             NUShopConfig.configs.pageSize = parseInt($(this).val());
@@ -13,54 +20,91 @@
 
         $('#search-input').on('keypress', function () {
             if (e.which === 13) {
-	            loadCategories();
+                loadCategories();
             }
         });
 
         $('#btn-search').on('click', function () {
-	        loadCategories();
+            loadCategories();
         });
 
         $('#btn-create').off('click').on('click', function () {
-	        $('#category-modal').modal('show');
+            $('#category-modal').modal('show');
+            $('#btn-save').hide();
+            $('#btn-add').show();
         });
 
-
-        $('body').on('click', '.btn-edit', function(e) {
+        $('body').on('click', '.btn-edit', function (e) {
             e.preventDefault();
             var id = $(this).data("id");
             var item = [];
             for (var i = 0; i < categories.length; i += 1) {
-	            if (categories[i].Id == id) {
-		            item = categories[i];
-		            break;
-	            }
+                if (categories[i].Id == id) {
+                    item = categories[i];
+                    break;
+                }
             }
-            $('#hidden-id').val(id);
+
+            $('#txt-hidden-id').val(id);
             $('#txt-name').val(item.Name);
-            $('#txt-des').val(item.Description);
+            $('#select-parent').val(item.ParentId);
             $('#txt-image').val(item.Image);
-            $('#txt-seo-keyword').val(item.SeoKeywords);
-            $('#txt-seo-des').val(item.SeoDescription);
-            $('#txt-seo-title').val(item.SeoPageTitle);
-            $('#txt-seo-alias').val(item.SeoAlias);
+            CKEDITOR.instances.txtDescription.setData(item.Description);
             $('#checkbox-status').prop('checked', item.Status == 1);
-            $('#btn-home').prop('checked', item.HomeFlag);
-            $('#txt-sort-order').val(item.SortOrder);
+            $('#checkbox-homeflag').prop('checked', item.HomeFlag);
+            $('#txt-seo-page-title').val(item.SeoPageTitle);
+            $('#txt-seo-alias').val(item.SeoAlias);
+            $('#txt-seo-keyword').val(item.SeoKeywords);
+            $('#txt-seo-description').val(item.SeoDescription);
             $('#txt-home-order').val(item.HomeOrder);
+            $('#txt-sort-order').val(item.SortOrder);
+
             $('#category-modal').modal('show');
+
+            $('#btn-add').hide();
+            $('#btn-save').show();
         });
 
-        $('body').on('click', '#btn-save', function() {
+        $('body').on('click', '#btn-add', function (e) {
+            e.preventDefault();
+            var data = collectData();
+        });
 
+        $('body').on('click', '#btn-save', function (e) {
+            e.preventDefault();
+            var data = collectData();
         });
 
         $('body').on('click', '#btn-close', function () {
-	        resetForm();
+            resetForm();
         });
 
-
         $('#btn-delete');
+    }
+
+    function loadParents() {
+        $.ajax({
+            type: 'GET',
+            dataType: 'json',
+            url: 'GetAll',
+            success: function (response) {
+                console.log(response);
+                $.each(response, function (i, item) {
+                    categories.push(item);
+
+                    var renderCategory = "<option value=''>Select category</option>";
+                    $.each(categories, function (i, item) {
+                        renderCategory += "<option value='" + item.Id + "'>" + item.Name + "</option>";
+                    });
+
+                    $('#select-category').html(renderCategory);
+                    $('#select-parent').html(renderCategory);
+                });
+            },
+            error: function (status) {
+                console.log(status);
+            }
+        });
     }
 
     function loadCategories(isPageChanged) {
@@ -79,7 +123,6 @@
             success: function (response) {
                 console.log(response);
                 $.each(response.Results, function (i, item) {
-	                categories.push(item);
                     render += Mustache.render(template, {
                         Id: item.Id,
                         Status: getStatus(item.Status),
@@ -87,23 +130,13 @@
                         Parent: item.ParentId,
                         UpdatedDate: item.DateModified
                     });
-
-                    var renderCategory = "<option value=''>Select category</option>";
-                    $.each(categories, function (i, item) {
-	                    renderCategory += "<option value='" + item.id + "'>" + item.Name + "</option>";
-                    });
-                    $('#select-category').html(renderCategory);
-                    $('#select-parent').html(renderCategory);
                 });
 
-
-                
-                $('#lbl-totalrow').text(response.RowCount);
                 if (render != null) {
                     $('#table-content').html(render);
                 }
                 wrapPaging(response.RowCount, function () {
-	                loadCategories();
+                    loadCategories();
                 }, isPageChanged);
             },
             error: function (status) {
@@ -139,18 +172,38 @@
         }
     }
 
+    function collectData() {
+        var data = {
+            Id: $('#txt-hidden-id').val(),
+            Name: $('#txt-name').val(),
+            ParentId: $('#select-parent').val(),
+            Image: $('#txt-image').val(),
+            Description: CKEDITOR.instances.txtDescription.setData(item.Description),
+            Status: $('#checkbox-status').is(':checked'),
+            HomeFlag: $('#checkbox-homeflag').is(':checked'),
+            SeoPageTitle: $('#txt-seo-page-title').val(),
+            seoAlias: $('#txt-seo-alias').val(),
+            SeoKeywords: $('#txt-seo-keyword').val(),
+            SeoDescription: $('#txt-seo-description').val(),
+            HomeOrder: $('#txt-home-order').val(),
+            SortOrder: $('#txt-sort-order').val()
+        };
+        return data;
+    }
+
     function resetForm() {
-	    $('#hidden-id').val();
-	    $('#txt-name').val('');
-	    $('#txt-des').val('');
-	    $('#txt-image').val('');
-	    $('#txt-seo-keyword').val('');
-	    $('#txt-seo-des').val('');
-	    $('#txt-seo-title').val('');
-	    $('#txt-seo-alias').val('');
-	    $('#txt-sort-order').val('');
-	    $('#txt-home-order').val('');
-	    $('#checkbox-status').prop('checked', true);
-	    $('#checkbox-show-home').prop('checked', false);
+        $('#txt-hidden-id').val('');
+        $('#txt-name').val('');
+        $('#select-parent').val('');
+        $('#txt-image').val('');
+        CKEDITOR.instances.txtDescription.setData('');
+        $('#checkbox-status').prop('checked', true);
+        $('#checkbox-homeflag').prop('checked', false);
+        $('#txt-seo-page-title').val('');
+        $('#txt-seo-alias').val('');
+        $('#txt-seo-keyword').val('');
+        $('#txt-seo-description').val('');
+        $('#txt-home-order').val('');
+        $('#txt-sort-order').val('');
     }
 }

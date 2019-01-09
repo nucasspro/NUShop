@@ -1,4 +1,3 @@
-D:\Fetch Training\DotnetProject\NUShop\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.WebAPI.exe
 D:\Fetch Training\DotnetProject\NUShop\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.WebAPI.deps.json
 D:\Fetch Training\DotnetProject\NUShop\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.WebAPI.runtimeconfig.json
 D:\Fetch Training\DotnetProject\NUShop\NUShop\WebAPI\bin\Debug\netcoreapp2.2\NUShop.WebAPI.runtimeconfig.dev.json

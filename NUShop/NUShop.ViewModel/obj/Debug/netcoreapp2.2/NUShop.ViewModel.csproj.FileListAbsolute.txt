@@ -12,3 +12,5 @@ D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcore
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcoreapp2.2\NUShop.ViewModel.csproj.CopyComplete
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcoreapp2.2\NUShop.ViewModel.dll
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\obj\Debug\netcoreapp2.2\NUShop.ViewModel.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\bin\Debug\netcoreapp2.2\NUShop.Utilities.dll
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.ViewModel\bin\Debug\netcoreapp2.2\NUShop.Utilities.pdb
