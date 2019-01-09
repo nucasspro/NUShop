@@ -42,7 +42,13 @@
                         </div>
                     </div>
 
-
+                    @*description*@
+                    <div class="form-group">
+                        <label for="txtDescription" class="col-sm-2 control-label no-padding-right">Description</label>
+                        <div class="col-sm-12">
+                            <textarea rows="3" name="txtDescription" class="form-control" id="txtDescription"></textarea>
+                        </div>
+                    </div>
 
                     @*Check box: home flag, active*@
                     <div class="form-group">
@@ -109,20 +115,12 @@
                             </div>
                         </div>
                     </div>
-
-                    @*description*@
-                    <div class="form-group">
-                        <label for="txtDescription" class="col-sm-2 control-label no-padding-right">Description</label>
-                        <div class="col-sm-12">
-                            <textarea rows="3" name="txtDescription" class="form-control" id="txtDescription"></textarea>
-                        </div>
-                    </div>
                 </form>
             </div>
             <div class="modal-footer" id="menu-context">
                 <button type="button" id="btn-close" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" id="btn-save" class="btn btn-primary">Save changes</button>
-                <button type="button" id="btn-add" class="btn btn-primary">Create</button>
+                <button type="button" id="btn-add" class="btn btn-primary" style="margin-right: 1rem;">Create</button>
             </div>
         </div>
     </div>

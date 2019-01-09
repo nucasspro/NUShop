@@ -28,6 +28,33 @@
             loadCategories();
         });
 
+        $('body').on('click', '#btn-select-image', function () {
+            $('#file-input-image').click();
+        });
+
+        $('#file-input-image').on('change', function () {
+            var fileUpload = $(this).get(0);
+            var files = fileUpload.files;
+            var data = new FormData();
+            for (var i = 0; i < files.length; i++) {
+                data.append(files[i].name, files[i]);
+            }
+
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Upload/UploadImage",
+                contentType: false,
+                processData: false,
+                data: data,
+                success: function (path) {
+                    $('#txt-image').val(path);
+                },
+                error: function (status) {
+                    console.log(status);
+                }
+            });
+        });
+
         $('#btn-create').off('click').on('click', function () {
             $('#category-modal').modal('show');
             $('#btn-save').hide();
@@ -67,12 +94,38 @@
 
         $('body').on('click', '#btn-add', function (e) {
             e.preventDefault();
-            var data = collectData();
+            var data = collectData('add');
+            $.ajax({
+                type: 'POST',
+                data: data,
+                url: '/Admin/Category/Add',
+                dataType: 'json',
+                success: function (response) {
+                    loadCategories();
+                    loadParents();
+                },
+                error: function (status) {
+                    console.log(status);
+                }
+            });
         });
 
         $('body').on('click', '#btn-save', function (e) {
             e.preventDefault();
-            var data = collectData();
+            var data = collectData('update');
+            $.ajax({
+                data: data,
+                type: 'PUT',
+                url:'/Admin/Category/Update',
+                dataType: 'json',
+                success: function (response) {
+                    loadCategories();
+                    loadParents();
+                },
+                error: function (status) {
+                    console.log(status);
+                }
+            });
         });
 
         $('body').on('click', '#btn-close', function () {
@@ -83,12 +136,12 @@
     }
 
     function loadParents() {
+        categories = [];
         $.ajax({
             type: 'GET',
             dataType: 'json',
-            url: 'GetAll',
+            url: '/Admin/Category/GetAll',
             success: function (response) {
-                console.log(response);
                 $.each(response, function (i, item) {
                     categories.push(item);
 
@@ -121,7 +174,6 @@
             dataType: 'json',
             url: 'GetAllPaging',
             success: function (response) {
-                console.log(response);
                 $.each(response.Results, function (i, item) {
                     render += Mustache.render(template, {
                         Id: item.Id,
@@ -172,14 +224,13 @@
         }
     }
 
-    function collectData() {
+    function collectData(action) {
         var data = {
-            Id: $('#txt-hidden-id').val(),
             Name: $('#txt-name').val(),
             ParentId: $('#select-parent').val(),
             Image: $('#txt-image').val(),
-            Description: CKEDITOR.instances.txtDescription.setData(item.Description),
-            Status: $('#checkbox-status').is(':checked'),
+            Description: CKEDITOR.instances.txtDescription.getData(),
+            Status: $('#checkbox-status').is(':checked') == true ? 1 : 0,
             HomeFlag: $('#checkbox-homeflag').is(':checked'),
             SeoPageTitle: $('#txt-seo-page-title').val(),
             seoAlias: $('#txt-seo-alias').val(),
@@ -188,6 +239,10 @@
             HomeOrder: $('#txt-home-order').val(),
             SortOrder: $('#txt-sort-order').val()
         };
+        if (action === 'update') {
+            data.Id = $('#txt-hidden-id').val();
+        }
+        
         return data;
     }
 

@@ -4,7 +4,9 @@ using NUShop.Data.Enums;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Interfaces;
 using NUShop.Utilities.DTOs;
+using NUShop.Utilities.Helpers;
 using NUShop.ViewModel.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -78,14 +80,18 @@ namespace NUShop.Service.Implements
         {
             var query = _categoryRepository.GetAll(x => x.Status == Status.Active);
             if (!string.IsNullOrEmpty(keyword))
+            {
                 query = query.Where(x => x.Name.Contains(keyword));
+            }
+
             if (categoryId.HasValue)
+            {
                 query = query.Where(x => x.Id == categoryId.Value || x.ParentId == categoryId.Value);
+            }
 
             var totalRow = query.Count();
 
-            query = query.OrderByDescending(x => x.DateCreated)
-                .Skip((page - 1) * pageSize).Take(pageSize);
+            query = query.OrderByDescending(x => x.DateCreated).Skip((page - 1) * pageSize).Take(pageSize);
 
             var data = _mapper.Map<List<CategoryViewModel>>(query);
 
@@ -139,6 +145,9 @@ namespace NUShop.Service.Implements
         public void Update(CategoryViewModel categoryViewModel)
         {
             var category = _mapper.Map<Category>(categoryViewModel);
+            var oldCategory = _mapper.Map<Category>(GetById(categoryViewModel.Id));
+            category.DateCreated = oldCategory.DateCreated;
+            category.DateModified = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
             _categoryRepository.Update(category);
             _unitOfWork.Commit();
         }

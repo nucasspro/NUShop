@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NUShop.Service.Interfaces;
+using NUShop.Utilities.Helpers;
+using NUShop.ViewModel.ViewModels;
 using System;
+using System.Linq;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers
 {
@@ -79,26 +82,47 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
         //    return new OkResult();
         //}
 
-        //[HttpPost]
-        //public IActionResult SaveEntity(CategoryViewModel categoryViewModel)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        var allErrors = ModelState.Values.SelectMany(v => v.Errors);
-        //        return new BadRequestObjectResult(allErrors);
-        //    }
+        [HttpPost]
+        public IActionResult Add(CategoryViewModel categoryViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new BadRequestObjectResult(allErrors);
+            }
 
-        //    categoryViewModel.SeoAlias = TextHelper.ToUnsignString(categoryViewModel.Name);
-        //    if (categoryViewModel.Id == 0)
-        //    {
-        //        _categoryService.Add(categoryViewModel);
-        //    }
-        //    else
-        //    {
-        //        _categoryService.Update(categoryViewModel);
-        //    }
-        //    return new OkObjectResult(categoryViewModel);
-        //}
+            try
+            {
+                categoryViewModel.SeoAlias = TextHelper.ToUnsignString(categoryViewModel.Name);
+                _categoryService.Add(categoryViewModel);
+                return new OkObjectResult(categoryViewModel);
+            }
+            catch (Exception e)
+            {
+                return new BadRequestObjectResult(e.InnerException.Message);
+            }
+        }
+
+        [HttpPut]
+        public IActionResult Update(CategoryViewModel categoryViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new BadRequestObjectResult(allErrors);
+            }
+
+            try
+            {
+                categoryViewModel.SeoAlias = TextHelper.ToUnsignString(categoryViewModel.Name);
+                _categoryService.Update(categoryViewModel);
+                return new OkObjectResult(categoryViewModel);
+            }
+            catch (Exception e)
+            {
+                return new BadRequestObjectResult(e.InnerException.Message);
+            }
+        }
 
         //[HttpPost]
         //public IActionResult ReOrder(int sourceId, int targetId)
