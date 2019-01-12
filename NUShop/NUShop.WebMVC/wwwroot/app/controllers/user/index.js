@@ -1,33 +1,28 @@
-﻿var ProductController = function () {
+﻿var UserController = function () {
     this.Init = function () {
-        loadCategories();
-        loadProducts();
+        loadUsers();
         registerEvents();
-        registerControls();
     }
 
-    var products = [];
-    var categories = [];
-    function registerControls() {
-        CKEDITOR.replace('txtDescription', {});
-        CKEDITOR.replace('txtContent', {});
 
-    }
+    var users = [];
+
+   
     function registerEvents() {
         $('#select-page-size').on('change', function () {
             NUShopConfig.configs.pageSize = parseInt($(this).val());
             NUShopConfig.configs.pageIndex = 1;
-            loadProducts(true);
+            loadUsers(true);
         });
 
-        $('#search-input').on('keypress', function() {
+        $('#search-input').on('keypress', function (e) {
             if (e.which === 13) {
-	            loadProducts();
+                loadUsers();
             }
         });
 
-        $('#btn-search').on('click', function() {
-	        loadProducts();
+        $('#btn-search').on('click', function () {
+            loadUsers();
         });
 
         $('body').on('click', '#btn-select-image', function () {
@@ -60,7 +55,7 @@
         });
 
         $('#btn-create').off('click').on('click', function () {
-            $('#product-modal').modal('show');
+            $('#user-modal').modal('show');
             $('#btn-save').hide();
             $('#btn-add').show();
         });
@@ -69,32 +64,29 @@
             e.preventDefault();
             var id = $(this).data("id");
             var item = [];
-            for (var i = 0; i < products.length; i += 1) {
-                if (products[i].Id == id) {
-                    item = products[i];
+            for (var i = 0; i < users.length; i += 1) {
+                if (users[i].Id == id) {
+                    item = users[i];
                     break;
                 }
             }
 
             $('#txt-hidden-id').val(id);
-            $('#txt-name').val(item.Name);
-            $('#select-category').val(item.CategoryId);
-            $('#txt-image').val(item.Image);
-            $('#txt-price').val(item.Price);
-            $('#txt-promotion-price').val(item.PromotionPrice);
-            $('#txt-original-price').val(item.OriginalPrice);
-            CKEDITOR.instances.txtDescription.setData(item.Description);
-            CKEDITOR.instances.txtContent.setData(item.Content);
-            $('#checkbox-status').prop('checked', item.Status == 1);
-            $('#checkbox-homeflag').prop('checked', item.HomeFlag);
-            $('#checkbox-hotflag').prop('checked', item.HotFlag);
-            $('#txt-view-count').val(item.ViewCount);
-            $('#txt-seo-page-title').val(item.SeoPageTitle);
-            $('#txt-seo-alias').val(item.SeoAlias);
-            $('#txt-seo-keyword').val(item.SeoKeywords);
-            $('#txt-seo-description').val(item.SeoDescription);
+            $('#txt-fullname').val(item.FullName);
+            $('#txt-username').val(item.FullName);
 
-            $('#product-modal').modal('show');
+            $('#txt-password').val('********');
+            $('#txt-password-confirm').val('********');
+            $('#txt-password').hide();
+            $('#txt-password-confirm').hide();
+
+            $('#txt-email').val(item.Email);
+            $('#txt-birthday').val(item.BirthDay);
+            $('#txt-phone').val(item.Phone);
+            $('#txt-image').val(item.Image);
+            $('#checkbox-status').prop('checked', item.Status == 1);
+
+            $('#user-modal').modal('show');
 
             $('#btn-add').hide();
             $('#btn-save').show();
@@ -103,39 +95,39 @@
         $('body').on('click', '#btn-add', function (e) {
             e.preventDefault();
             var data = collectData('add');
-            $.ajax({
-                type: 'POST',
-                data: data,
-                url: '/Admin/Product/Add',
-                dataType: 'json',
-                success: function (response) {
-                    loadProducts();
-                    NUShopConfig.toast("success", "Created.");
-                },
-                error: function (status) {
-                    console.log(status);
-                    NUShopConfig.toast("error", "Has an error.");
-                }
-            });
+            //$.ajax({
+            //    type: 'POST',
+            //    data: data,
+            //    url: '/Admin/Product/Add',
+            //    dataType: 'json',
+            //    success: function (response) {
+            //        loadProducts();
+            //        NUShopConfig.toast("success", "Created.");
+            //    },
+            //    error: function (status) {
+            //        console.log(status);
+            //        NUShopConfig.toast("error", "Has an error.");
+            //    }
+            //});
         });
 
         $('body').on('click', '#btn-save', function (e) {
             e.preventDefault();
             var data = collectData('update');
-            $.ajax({
-                data: data,
-                type: 'PUT',
-                url: '/Admin/Product/Update',
-                dataType: 'json',
-                success: function (response) {
-                    loadProducts();
-                    NUShopConfig.toast("success", "Saved.");
-                },
-                error: function (status) {
-                    console.log(status);
-                    NUShopConfig.toast("error", "Has an error.");
-                }
-            });
+            //$.ajax({
+            //    data: data,
+            //    type: 'PUT',
+            //    url: '/Admin/Product/Update',
+            //    dataType: 'json',
+            //    success: function (response) {
+            //        loadProducts();
+            //        NUShopConfig.toast("success", "Saved.");
+            //    },
+            //    error: function (status) {
+            //        console.log(status);
+            //        NUShopConfig.toast("error", "Has an error.");
+            //    }
+            //});
         });
 
         $('body').on('click', '#btn-close', function () {
@@ -145,64 +137,66 @@
         $('#btn-delete');
     }
 
-    
 
-    function loadCategories() {
+    function getRoles(selectedRoles) {
         $.ajax({
+            url: "/Admin/Role/GetAll",
             type: 'GET',
             dataType: 'json',
-            url: '/Admin/Category/GetAll',
+            async: false,
             success: function (response) {
-                var render = "<option value=''>Select category</option>";
-                $.each(response, function (i, item) {
-                    categories.push(item);
-                    render += "<option value='" + item.Id + "'>" + item.Name + "</option>";
+                var template = $('#role-template').html();
+                var data = response;
+                var render = '';
+                $.each(data, function (i, item) {
+                    var checked = '';
+                    if (selectedRoles !== undefined && selectedRoles.indexOf(item.Name) !== -1)
+                        checked = 'checked';
+                    render += Mustache.render(template,
+                        {
+                            Name: item.Name,
+                            Description: item.Description,
+                            Checked: checked
+                        });
                 });
-                $('#search-category').html(render);
-                $('#select-category').html(render);
-            },
-            error: function (status) {
-                console.log(status);
+                $('#list-roles').html(render);
             }
         });
     }
 
-    function loadProducts(isPageChanged) {
+    function loadUsers(isPageChanged) {
         var template = $('#table-template').html();
         var render = '';
         $.ajax({
             type: 'GET',
             data: {
                 keyword: $('#search-input').val(),
-                categoryId: $('#search-category').val(),
                 pageIndex: NUShopConfig.configs.pageIndex,
                 pageSize: NUShopConfig.configs.pageSize
             },
             dataType: 'json',
-            url: '/Admin/Product/GetAllPaging',
+            url: '/Admin/User/GetAllPaging',
             success: function (response) {
                 $.each(response.Results, function (i, item) {
-                    products.push(item);
+                    users.push(item);
                     render += Mustache.render(template, {
                         Id: item.Id,
                         Status: getStatus(item.Status),
-                        Quantity: item.Quantity,
-                        Name: item.Name,
-                        Price: item.Price,
+                        UserName: item.UserName,
+                        Avatar: item.Avatar,
                         UpdatedDate: item.DateModified
                     });
                 });
-                $('#lbl-totalrow').text(response.RowCount);
                 if (render != null) {
                     $('#table-content').html(render);
                 }
                 wrapPaging(response.RowCount, function () {
-                    loadProducts();
+                    loadUsers();
                 }, isPageChanged);
             },
             error: function (status) {
                 console.log(status);
-                NUShopConfig.toast('error', 'Has an error.')
+                NUShopConfig.toast('error', 'Has an error.');
             }
         });
     }
@@ -216,12 +210,12 @@
 
     function wrapPaging(totalRow, callback, changePageSize) {
         var totalPage = Math.ceil(totalRow / NUShopConfig.configs.pageSize);
-        if ($('#product-pagination').length === 0 || changePageSize === true) {
-            $('#product-pagination').empty();
-            $('#product-pagination').removeData("twbs-pagination");
-            $('#product-pagination').unbind("page");
+        if ($('#user-pagination').length === 0 || changePageSize === true) {
+            $('#user-pagination').empty();
+            $('#user-pagination').removeData("twbs-pagination");
+            $('#user-pagination').unbind("page");
         } else {
-            $('#product-pagination').twbsPagination({
+            $('#user-pagination').twbsPagination({
                 totalPages: totalPage,
                 visiblePages: 5,
                 next: 'Next',
@@ -242,8 +236,6 @@
             Price: $('#txt-price').val(),
             PromotionPrice: $('#txt-promotion-price').val(),
             OriginalPrice: $('#txt-original-price').val(),
-            Description: CKEDITOR.instances.txtDescription.getData(),
-            Content: CKEDITOR.instances.txtContent.getData(),
             Status: $('#checkbox-status').is(':checked') == true ? 1 : 0,
             HomeFlag: $('#checkbox-homeflag').is(':checked'),
             HotFlag: $('#checkbox-hotflag').is(':checked'),
@@ -271,8 +263,6 @@
         $('#txt-original-price').val();
         $('#txt-tags').val();
         $('#txt-unit').val();
-        CKEDITOR.instances.txtDescription.setData('');
-        CKEDITOR.instances.txtContent.setData('');
         $('#checkbox-status').prop('checked', true);
         $('#checkbox-homeflag').prop('checked', false);
         $('#checkbox-hotflag').prop('checked', false);
@@ -282,4 +272,6 @@
         $('#txt-seo-keyword').val('');
         $('#txt-seo-description').val('');
     }
-}
+
+};
+

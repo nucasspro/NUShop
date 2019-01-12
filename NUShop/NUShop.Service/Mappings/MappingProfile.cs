@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using NUShop.Data.Entities;
-using NUShop.ViewModel.ViewModels;
 using NUShop.Utilities.Helpers;
+using NUShop.ViewModel.ViewModels;
 
 namespace NUShop.Service.Mappings
 {
@@ -87,6 +87,28 @@ namespace NUShop.Service.Mappings
             CreateMap<WholePrice, WholePriceViewModel>();
 
             #endregion WholePrice
+
+            #region AppUser
+
+            CreateMap<AppUserViewModel, AppUser>()
+                .ForMember(model => model.DateCreated,
+                    opt => opt.MapFrom(viewmodel => ConvertDatetime.ConvertToTimeSpan(viewmodel.DateCreated)))
+                .ForMember(model => model.DateModified,
+                    opt => opt.MapFrom(viewmodel => ConvertDatetime.ConvertToTimeSpan(viewmodel.DateModified)));
+            CreateMap<AppUser, AppUserViewModel>()
+                .ForMember(viewmodel => viewmodel.DateCreated,
+                    opt => opt.MapFrom(model => ConvertDatetime.UnixTimestampToDateTime(model.DateCreated)))
+                .ForMember(viewmodel => viewmodel.DateCreated,
+                    opt => opt.MapFrom(model => ConvertDatetime.UnixTimestampToDateTime(model.DateModified)));
+
+            #endregion AppUser
+
+            #region AppRole
+
+            CreateMap<AppRoleViewModel, AppRole>();
+            CreateMap<AppRole, AppRoleViewModel>();
+
+            #endregion AppRole
         }
     }
 }

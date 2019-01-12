@@ -19,7 +19,6 @@ using System.IO;
 using Microsoft.AspNetCore.Identity;
 using NUShop.Data.Entities;
 using NUShop.WebMVC.Extensions;
-using ReflectionIT.Mvc.Paging;
 
 namespace NUShop.WebMVC
 {
@@ -95,6 +94,8 @@ namespace NUShop.WebMVC
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IFunctionService, FunctionService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IRoleService, RoleService>();
 
             #endregion Dependency Injection for Services
 
