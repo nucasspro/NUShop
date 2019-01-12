@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="~/admin-site/css/default-css.css">
     <link rel="stylesheet" href="~/admin-site/css/styles.css">
     <link rel="stylesheet" href="~/admin-site/css/responsive.css">
-    <!-- notifyjs css -->
+    <!-- toastr css -->
+    <link href="~/node_modules/toastr/build/toastr.css" rel="stylesheet" />
     <!-- modernizr css -->
     <script src="~/admin-site/js/vendor/modernizr-2.8.3.min.js"></script>
 
@@ -469,9 +470,7 @@
 
     <!-- ckeditor -->
     <script src="~/lib/ckeditor/ckeditor.js"></script>
-    <!-- notifyjs-->
-    @*<script src="~/node_modules/notifyjs/dist/notify.js"></script>*@
-    <script src="~/lib/notifyjs/dist/notify.js"></script>
+
     <!-- bootbox -->
     @*<script src="~/node_modules/bootbox/bootbox.js"></script>*@
     <script src="~/lib/bootbox/bootbox.js"></script>
@@ -482,6 +481,8 @@
     <script src="~/lib/mustache/mustache.js"></script>
     @*<script src="~/node_modules/twbs-pagination/jquery.twbsPagination.js"></script>*@
     <script src="~/lib/twbs-pagination/jquery.twbsPagination.js"></script>
+    <!-- toastr -->
+    <script src="~/node_modules/toastr/toastr.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

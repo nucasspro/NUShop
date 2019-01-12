@@ -2852,3 +2852,918 @@ OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
 2019-01-12T13:11:23.9069110+07:00 0HLJOAI4V7TJ1:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 229.5092ms (afa2e885)
 2019-01-12T13:11:23.9167169+07:00 0HLJOAI4V7TJ1:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
 2019-01-12T13:11:23.9370674+07:00 0HLJOAI4V7TJ1:00000005 [INF] Request finished in 266.5207ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:37:56.2265253+07:00 0HLJOB1U1ICSM:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/product/index   (ca22a1cb)
+2019-01-12T13:37:56.6419698+07:00 0HLJOB1U1ICSM:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:37:56.6876125+07:00 0HLJOB1U1ICSM:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:37:58.9225254+07:00 0HLJOB1U1ICSM:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T13:37:58.9441231+07:00 0HLJOB1U1ICSM:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.7756ms. (50a9e262)
+2019-01-12T13:37:59.0455443+07:00 0HLJOB1U1ICSM:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-12T13:38:00.1191679+07:00 0HLJOB1U1ICSM:00000001 [INF] Executed ViewResult - view "Index" executed in 969.5463ms. (f66409e9)
+2019-01-12T13:38:03.1085614+07:00 0HLJOB1U1ICSM:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" in 3432.3677ms (afa2e885)
+2019-01-12T13:38:03.3361199+07:00 0HLJOB1U1ICSM:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:38:03.3881637+07:00 0HLJOB1U1ICSP:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-12T13:38:03.4369831+07:00 0HLJOB1U1ICSO:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-12T13:38:03.5059460+07:00 0HLJOB1U1ICSP:00000001 [INF] Request finished in 107.7664ms 404  (791a596a)
+2019-01-12T13:38:03.5530453+07:00 0HLJOB1U1ICSM:00000001 [INF] Request finished in 7189.9097ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-12T13:38:03.5783411+07:00 0HLJOB1U1ICSO:00000001 [INF] Request finished in 110.732ms 404  (791a596a)
+2019-01-12T13:38:03.8683806+07:00 0HLJOB1U1ICSM:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-12T13:38:04.0305198+07:00 0HLJOB1U1ICSN:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/product/index.js?v=26DZ8_vFOkG0SbwKoV5gT9dzBliJStd_fkipw3Iw7w8   (ca22a1cb)
+2019-01-12T13:38:04.0792414+07:00 0HLJOB1U1ICSM:00000002 [INF] Request finished in 315.171ms 404  (791a596a)
+2019-01-12T13:38:04.1847838+07:00 0HLJOB1U1ICSP:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-12T13:38:04.2370251+07:00 0HLJOB1U1ICSR:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/shared/settings.js?v=Py8HrSkny5Bp8SrlRluw7uZvoahuRoKAOIl5CPkXGKU   (ca22a1cb)
+2019-01-12T13:38:04.3963142+07:00 0HLJOB1U1ICSP:00000002 [INF] Request finished in 471.1816ms 404  (791a596a)
+2019-01-12T13:38:04.6369434+07:00 0HLJOB1U1ICSN:00000001 [INF] Sending file. Request path: '"/app/controllers/product/index.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\controllers\product\index.js"' (27b0a520)
+2019-01-12T13:38:04.7187441+07:00 0HLJOB1U1ICSR:00000001 [INF] Sending file. Request path: '"/app/shared/settings.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\shared\settings.js"' (27b0a520)
+2019-01-12T13:38:04.9269321+07:00 0HLJOB1U1ICSP:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:38:05.1044311+07:00 0HLJOB1U1ICSR:00000001 [INF] Request finished in 1391.285ms 200 application/javascript (791a596a)
+2019-01-12T13:38:05.3347351+07:00 0HLJOB1U1ICSP:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:38:05.5977028+07:00 0HLJOB1U1ICSR:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Category/GetAll   (ca22a1cb)
+2019-01-12T13:38:05.9786945+07:00 0HLJOB1U1ICSN:00000001 [INF] Request finished in 1336.4627ms 200 application/javascript (791a596a)
+2019-01-12T13:38:06.3075849+07:00 0HLJOB1U1ICSP:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:38:06.4741099+07:00 0HLJOB1U1ICSR:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:38:06.5088260+07:00 0HLJOB1U1ICSQ:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-12T13:38:06.5954504+07:00 0HLJOB1U1ICSR:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Category\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:38:06.6289235+07:00 0HLJOB1U1ICSQ:00000001 [INF] Request finished in 3204.2742ms 404  (791a596a)
+2019-01-12T13:38:07.1580690+07:00 0HLJOB1U1ICSR:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T13:38:07.1897038+07:00 0HLJOB1U1ICSR:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:38:07.2469457+07:00 0HLJOB1U1ICSP:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:38:07.2775231+07:00 0HLJOB1U1ICSP:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:38:07.4206712+07:00 0HLJOB1U1ICSP:00000003 [INF] Executed DbCommand ("95"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:38:07.7862371+07:00 0HLJOB1U1ICSR:00000002 [INF] Executed DbCommand ("171"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-12T13:38:07.9357396+07:00 0HLJOB1U1ICSR:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 643.8206ms. (50a9e262)
+2019-01-12T13:38:07.9919689+07:00 0HLJOB1U1ICSR:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.CategoryViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:38:09.1418795+07:00 0HLJOB1U1ICSP:00000003 [INF] Executed DbCommand ("578"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:38:09.3916932+07:00 0HLJOB1U1ICSP:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1930.3141ms. (50a9e262)
+2019-01-12T13:38:09.4858242+07:00 0HLJOB1U1ICSP:00000003 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:38:09.6120215+07:00 0HLJOB1U1ICSR:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" in 2955.6061ms (afa2e885)
+2019-01-12T13:38:09.6234296+07:00 0HLJOB1U1ICSP:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 3289.6707ms (afa2e885)
+2019-01-12T13:38:09.6268117+07:00 0HLJOB1U1ICSR:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:38:09.6775349+07:00 0HLJOB1U1ICSP:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:38:09.7250793+07:00 0HLJOB1U1ICSR:00000002 [INF] Request finished in 4524.6327ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:38:09.7620236+07:00 0HLJOB1U1ICSP:00000003 [INF] Request finished in 5164.6294ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:38:09.9316975+07:00 0HLJOB1U1ICSP:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:38:09.9370396+07:00 0HLJOB1U1ICSP:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:38:09.9482896+07:00 0HLJOB1U1ICSP:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:38:10.0121137+07:00 0HLJOB1U1ICSP:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:38:10.0214331+07:00 0HLJOB1U1ICSP:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:38:10.1139150+07:00 0HLJOB1U1ICSP:00000004 [INF] Executed DbCommand ("81"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:38:10.2161600+07:00 0HLJOB1U1ICSP:00000004 [INF] Executed DbCommand ("91"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:38:10.2216357+07:00 0HLJOB1U1ICSP:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 204.5553ms. (50a9e262)
+2019-01-12T13:38:10.2265017+07:00 0HLJOB1U1ICSP:00000004 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:38:10.2380443+07:00 0HLJOB1U1ICSP:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 279.1211ms (afa2e885)
+2019-01-12T13:38:10.2573345+07:00 0HLJOB1U1ICSP:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:38:10.2757730+07:00 0HLJOB1U1ICSP:00000004 [INF] Request finished in 331.4034ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:38:56.6653861+07:00 0HLJOB1U1ICSP:00000005 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 218 (ca22a1cb)
+2019-01-12T13:38:56.6786042+07:00 0HLJOB1U1ICSP:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:38:56.7477442+07:00 0HLJOB1U1ICSP:00000005 [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:38:56.8854574+07:00 0HLJOB1U1ICSP:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:38:56.9115481+07:00 0HLJOB1U1ICSP:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:38:57.0424857+07:00 0HLJOB1U1ICSP:00000005 [INF] Executed DbCommand ("92"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T13:38:58.2147353+07:00 0HLJOB1U1ICSP:00000005 [INF] Executed DbCommand ("201"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T13:38:58.2940313+07:00 0HLJOB1U1ICSP:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1402.1027ms. (50a9e262)
+2019-01-12T13:38:58.3049656+07:00 0HLJOB1U1ICSP:00000005 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T13:38:58.3153267+07:00 0HLJOB1U1ICSP:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 1558.2001ms (afa2e885)
+2019-01-12T13:38:58.3249029+07:00 0HLJOB1U1ICSP:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:38:58.3693719+07:00 0HLJOB1U1ICSP:00000005 [INF] Request finished in 1676.3303ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:38:58.3962572+07:00 0HLJOB1U1ICSP:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:38:58.4462847+07:00 0HLJOB1U1ICSP:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:38:58.4582794+07:00 0HLJOB1U1ICSP:00000006 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:38:58.5367588+07:00 0HLJOB1U1ICSP:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:38:58.5444400+07:00 0HLJOB1U1ICSP:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:38:58.6438928+07:00 0HLJOB1U1ICSP:00000006 [INF] Executed DbCommand ("88"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:38:58.7381823+07:00 0HLJOB1U1ICSP:00000006 [INF] Executed DbCommand ("86"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:38:58.7438470+07:00 0HLJOB1U1ICSP:00000006 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 201.7839ms. (50a9e262)
+2019-01-12T13:38:58.7531292+07:00 0HLJOB1U1ICSP:00000006 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:38:58.7617860+07:00 0HLJOB1U1ICSP:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 295.8489ms (afa2e885)
+2019-01-12T13:38:58.7747711+07:00 0HLJOB1U1ICSP:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:38:58.7822035+07:00 0HLJOB1U1ICSP:00000006 [INF] Request finished in 396.5896ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:43:55.7524741+07:00 0HLJOB1U1ICSP:00000007 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 218 (ca22a1cb)
+2019-01-12T13:43:55.7594536+07:00 0HLJOB1U1ICSP:00000007 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:43:55.7663573+07:00 0HLJOB1U1ICSP:00000007 [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:43:55.8658807+07:00 0HLJOB1U1ICSP:00000007 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:43:55.8772448+07:00 0HLJOB1U1ICSP:00000007 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:43:55.9552754+07:00 0HLJOB1U1ICSP:00000007 [INF] Executed DbCommand ("71"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T13:43:56.1060540+07:00 0HLJOB1U1ICSP:00000007 [INF] Executed DbCommand ("99"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T13:43:56.1572126+07:00 0HLJOB1U1ICSP:00000007 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 286.898ms. (50a9e262)
+2019-01-12T13:43:56.1632485+07:00 0HLJOB1U1ICSP:00000007 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T13:43:56.1722757+07:00 0HLJOB1U1ICSP:00000007 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 397.372ms (afa2e885)
+2019-01-12T13:43:56.1777598+07:00 0HLJOB1U1ICSP:00000007 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:43:56.1855022+07:00 0HLJOB1U1ICSP:00000007 [INF] Request finished in 483.1002ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:43:56.2146315+07:00 0HLJOB1U1ICSP:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:43:56.2215616+07:00 0HLJOB1U1ICSP:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:43:56.2261229+07:00 0HLJOB1U1ICSP:00000008 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:43:56.3039821+07:00 0HLJOB1U1ICSP:00000008 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:43:56.3408670+07:00 0HLJOB1U1ICSP:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:43:56.4218322+07:00 0HLJOB1U1ICSP:00000008 [INF] Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:43:56.4895117+07:00 0HLJOB1U1ICSP:00000008 [INF] Executed DbCommand ("63"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:43:56.4957898+07:00 0HLJOB1U1ICSP:00000008 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 186.428ms. (50a9e262)
+2019-01-12T13:43:56.5028505+07:00 0HLJOB1U1ICSP:00000008 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:43:56.5189755+07:00 0HLJOB1U1ICSP:00000008 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 277.7038ms (afa2e885)
+2019-01-12T13:43:56.5264256+07:00 0HLJOB1U1ICSP:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:43:56.5428930+07:00 0HLJOB1U1ICSP:00000008 [INF] Request finished in 333.5755ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:44:09.2751543+07:00 0HLJOB1U1ICSP:00000009 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 218 (ca22a1cb)
+2019-01-12T13:44:09.2798557+07:00 0HLJOB1U1ICSP:00000009 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:44:09.2854276+07:00 0HLJOB1U1ICSP:00000009 [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:44:09.3543016+07:00 0HLJOB1U1ICSP:00000009 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:44:09.3782814+07:00 0HLJOB1U1ICSP:00000009 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:44:09.4680003+07:00 0HLJOB1U1ICSP:00000009 [INF] Executed DbCommand ("84"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T13:44:09.8425140+07:00 0HLJOB1U1ICSP:00000009 [INF] Executed DbCommand ("287"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T13:44:09.8649524+07:00 0HLJOB1U1ICSP:00000009 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 496.4914ms. (50a9e262)
+2019-01-12T13:44:09.8946934+07:00 0HLJOB1U1ICSP:00000009 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T13:44:09.9169138+07:00 0HLJOB1U1ICSP:00000009 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 609.5726ms (afa2e885)
+2019-01-12T13:44:09.9328331+07:00 0HLJOB1U1ICSP:00000009 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:44:09.9472299+07:00 0HLJOB1U1ICSP:00000009 [INF] Request finished in 723.4592ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:44:09.9759410+07:00 0HLJOB1U1ICSP:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:44:09.9875874+07:00 0HLJOB1U1ICSP:0000000A [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:44:09.9989244+07:00 0HLJOB1U1ICSP:0000000A [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:44:10.1002010+07:00 0HLJOB1U1ICSP:0000000A [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:44:10.1142278+07:00 0HLJOB1U1ICSP:0000000A [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:44:10.1892109+07:00 0HLJOB1U1ICSP:0000000A [INF] Executed DbCommand ("68"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:44:10.2761956+07:00 0HLJOB1U1ICSP:0000000A [INF] Executed DbCommand ("77"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:44:10.2820825+07:00 0HLJOB1U1ICSP:0000000A [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 176.415ms. (50a9e262)
+2019-01-12T13:44:10.2910334+07:00 0HLJOB1U1ICSP:0000000A [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:44:10.3089157+07:00 0HLJOB1U1ICSP:0000000A [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 292.5934ms (afa2e885)
+2019-01-12T13:44:10.3168778+07:00 0HLJOB1U1ICSP:0000000A [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:44:10.3297589+07:00 0HLJOB1U1ICSP:0000000A [INF] Request finished in 350.7948ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:44:15.1255048+07:00 0HLJOB1U1ICSP:0000000B [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 218 (ca22a1cb)
+2019-01-12T13:44:15.1327372+07:00 0HLJOB1U1ICSP:0000000B [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:44:15.1389130+07:00 0HLJOB1U1ICSP:0000000B [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:44:15.2157130+07:00 0HLJOB1U1ICSP:0000000B [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:44:15.2252120+07:00 0HLJOB1U1ICSP:0000000B [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:44:15.3065882+07:00 0HLJOB1U1ICSP:0000000B [INF] Executed DbCommand ("76"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T13:44:15.4950679+07:00 0HLJOB1U1ICSP:0000000B [INF] Executed DbCommand ("90"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T13:44:15.6039371+07:00 0HLJOB1U1ICSP:0000000B [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 341.7174ms. (50a9e262)
+2019-01-12T13:44:15.9002990+07:00 0HLJOB1U1ICSP:0000000B [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T13:44:15.9649743+07:00 0HLJOB1U1ICSP:0000000B [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 761.6367ms (afa2e885)
+2019-01-12T13:44:15.9891767+07:00 0HLJOB1U1ICSP:0000000B [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:44:16.1134939+07:00 0HLJOB1U1ICSP:0000000B [INF] Request finished in 867.5691ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:44:16.1434557+07:00 0HLJOB1U1ICSP:0000000C [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:44:16.1562265+07:00 0HLJOB1U1ICSP:0000000C [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:44:16.1757927+07:00 0HLJOB1U1ICSP:0000000C [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:44:16.2536143+07:00 0HLJOB1U1ICSP:0000000C [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:44:16.2623396+07:00 0HLJOB1U1ICSP:0000000C [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:44:16.3560948+07:00 0HLJOB1U1ICSP:0000000C [INF] Executed DbCommand ("76"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:44:16.4318605+07:00 0HLJOB1U1ICSP:0000000C [INF] Executed DbCommand ("70"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:44:16.4362682+07:00 0HLJOB1U1ICSP:0000000C [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 178.6201ms. (50a9e262)
+2019-01-12T13:44:16.4427918+07:00 0HLJOB1U1ICSP:0000000C [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:44:16.4531180+07:00 0HLJOB1U1ICSP:0000000C [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 267.5309ms (afa2e885)
+2019-01-12T13:44:16.4570045+07:00 0HLJOB1U1ICSP:0000000C [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:44:16.4715401+07:00 0HLJOB1U1ICSP:0000000C [INF] Request finished in 343.9156ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:47:27.6221350+07:00 0HLJOB1U1ICSS:00000001 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 218 (ca22a1cb)
+2019-01-12T13:47:27.6303212+07:00 0HLJOB1U1ICSS:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:47:27.6428894+07:00 0HLJOB1U1ICSS:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:47:27.7171767+07:00 0HLJOB1U1ICSS:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:47:27.7256006+07:00 0HLJOB1U1ICSS:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:47:27.8444771+07:00 0HLJOB1U1ICSS:00000001 [INF] Executed DbCommand ("113"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T13:47:27.9926663+07:00 0HLJOB1U1ICSS:00000001 [INF] Executed DbCommand ("140"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T13:47:28.0040684+07:00 0HLJOB1U1ICSS:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 276.2491ms. (50a9e262)
+2019-01-12T13:47:28.0266519+07:00 0HLJOB1U1ICSS:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T13:47:28.0339826+07:00 0HLJOB1U1ICSS:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 384.0403ms (afa2e885)
+2019-01-12T13:47:28.0388232+07:00 0HLJOB1U1ICSS:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:47:28.0602849+07:00 0HLJOB1U1ICSS:00000001 [INF] Request finished in 423.2145ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:47:28.0760304+07:00 0HLJOB1U1ICSS:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:47:28.0827894+07:00 0HLJOB1U1ICSS:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:47:28.0893027+07:00 0HLJOB1U1ICSS:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:47:28.1836240+07:00 0HLJOB1U1ICSS:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:47:28.2035262+07:00 0HLJOB1U1ICSS:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:47:28.3048029+07:00 0HLJOB1U1ICSS:00000002 [INF] Executed DbCommand ("94"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:47:28.4181764+07:00 0HLJOB1U1ICSS:00000002 [INF] Executed DbCommand ("105"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:47:28.4241003+07:00 0HLJOB1U1ICSS:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 235.487ms. (50a9e262)
+2019-01-12T13:47:28.4291023+07:00 0HLJOB1U1ICSS:00000002 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:47:28.4467788+07:00 0HLJOB1U1ICSS:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 340.5876ms (afa2e885)
+2019-01-12T13:47:28.4555871+07:00 0HLJOB1U1ICSS:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:47:28.4729983+07:00 0HLJOB1U1ICSS:00000002 [INF] Request finished in 397.8827ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:49:32.9578458+07:00 0HLJOB1U1ICSS:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/product/index   (ca22a1cb)
+2019-01-12T13:49:33.0042203+07:00 0HLJOB1U1ICSS:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:49:33.0171298+07:00 0HLJOB1U1ICSS:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:49:33.0888454+07:00 0HLJOB1U1ICSS:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T13:49:33.0943088+07:00 0HLJOB1U1ICSS:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.1166ms. (50a9e262)
+2019-01-12T13:49:33.1003525+07:00 0HLJOB1U1ICSS:00000003 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-12T13:49:55.1519479+07:00 0HLJOB1U1ICSS:00000003 [INF] Executed ViewResult - view "Index" executed in 21503.4954ms. (f66409e9)
+2019-01-12T13:49:55.3043262+07:00 0HLJOB1U1ICSS:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" in 22181.9607ms (afa2e885)
+2019-01-12T13:49:56.3825248+07:00 0HLJOB1U1ICSS:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:49:56.4499786+07:00 0HLJOB1U1ICST:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/product/index.js?v=26DZ8_vFOkG0SbwKoV5gT9dzBliJStd_fkipw3Iw7w8   (ca22a1cb)
+2019-01-12T13:49:56.5774108+07:00 0HLJOB1U1ICSS:00000003 [INF] Request finished in 23744.0939ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-12T13:49:56.8119169+07:00 0HLJOB1U1ICSV:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-12T13:49:56.8398491+07:00 0HLJOB1U1ICST:00000001 [INF] The file "/app/controllers/product/index.js" was not modified (f1f8d725)
+2019-01-12T13:49:56.8481797+07:00 0HLJOB1U1ICSV:00000001 [INF] Request finished in 395.2113ms 404  (791a596a)
+2019-01-12T13:49:56.8614658+07:00 0HLJOB1U1ICT0:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-12T13:49:56.8701737+07:00 0HLJOB1U1ICST:00000001 [INF] Request finished in 1042.6073ms 304 application/javascript (791a596a)
+2019-01-12T13:49:56.9137240+07:00 0HLJOB1U1ICT0:00000001 [INF] Request finished in 27.3372ms 404  (791a596a)
+2019-01-12T13:49:56.9264610+07:00 0HLJOB1U1ICSU:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/shared/settings.js?v=Py8HrSkny5Bp8SrlRluw7uZvoahuRoKAOIl5CPkXGKU   (ca22a1cb)
+2019-01-12T13:49:56.9608626+07:00 0HLJOB1U1ICSU:00000001 [INF] The file "/app/shared/settings.js" was not modified (f1f8d725)
+2019-01-12T13:49:57.0698352+07:00 0HLJOB1U1ICSV:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-12T13:49:57.1101754+07:00 0HLJOB1U1ICSS:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-12T13:49:57.1245718+07:00 0HLJOB1U1ICSV:00000002 [INF] Request finished in 137.4221ms 404  (791a596a)
+2019-01-12T13:49:57.1403725+07:00 0HLJOB1U1ICSS:00000004 [INF] Request finished in 177.9728ms 404  (791a596a)
+2019-01-12T13:49:57.1740206+07:00 0HLJOB1U1ICT0:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-12T13:49:57.1886524+07:00 0HLJOB1U1ICSU:00000001 [INF] Request finished in 620.1008ms 304 application/javascript (791a596a)
+2019-01-12T13:49:57.2010890+07:00 0HLJOB1U1ICSV:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:49:57.2611431+07:00 0HLJOB1U1ICSS:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Category/GetAll   (ca22a1cb)
+2019-01-12T13:49:57.3370192+07:00 0HLJOB1U1ICSV:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:49:57.3561989+07:00 0HLJOB1U1ICSS:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:49:57.3708716+07:00 0HLJOB1U1ICSV:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:49:57.3930516+07:00 0HLJOB1U1ICSS:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Category\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:49:57.6724137+07:00 0HLJOB1U1ICT0:00000002 [INF] Request finished in 239.3691ms 404  (791a596a)
+2019-01-12T13:49:57.6899208+07:00 0HLJOB1U1ICSV:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:49:57.7031414+07:00 0HLJOB1U1ICSS:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T13:49:57.7163154+07:00 0HLJOB1U1ICSV:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:49:57.8855472+07:00 0HLJOB1U1ICSS:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:49:58.0366124+07:00 0HLJOB1U1ICSV:00000003 [INF] Executed DbCommand ("186"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:49:58.9519165+07:00 0HLJOB1U1ICSV:00000003 [INF] Executed DbCommand ("793"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:49:59.0191022+07:00 0HLJOB1U1ICSV:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1262.3713ms. (50a9e262)
+2019-01-12T13:49:59.0331998+07:00 0HLJOB1U1ICSS:00000005 [INF] Executed DbCommand ("210"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-12T13:49:59.0454025+07:00 0HLJOB1U1ICSV:00000003 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:49:59.0567014+07:00 0HLJOB1U1ICSS:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1328.2509ms. (50a9e262)
+2019-01-12T13:49:59.0640365+07:00 0HLJOB1U1ICSV:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 1672.8507ms (afa2e885)
+2019-01-12T13:49:59.0750357+07:00 0HLJOB1U1ICSS:00000005 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.CategoryViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:49:59.0770728+07:00 0HLJOB1U1ICSV:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:49:59.0906674+07:00 0HLJOB1U1ICSS:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" in 1684.1095ms (afa2e885)
+2019-01-12T13:49:59.1003074+07:00 0HLJOB1U1ICSV:00000003 [INF] Request finished in 1905.8188ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:49:59.1030177+07:00 0HLJOB1U1ICSS:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:49:59.1142104+07:00 0HLJOB1U1ICSS:00000005 [INF] Request finished in 1932.9688ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:49:59.4211238+07:00 0HLJOB1U1ICSS:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:49:59.5173858+07:00 0HLJOB1U1ICSS:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:49:59.5351474+07:00 0HLJOB1U1ICSS:00000006 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:49:59.6009832+07:00 0HLJOB1U1ICSS:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:49:59.6067045+07:00 0HLJOB1U1ICSS:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:49:59.6797797+07:00 0HLJOB1U1ICSS:00000006 [INF] Executed DbCommand ("67"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:49:59.7693132+07:00 0HLJOB1U1ICSS:00000006 [INF] Executed DbCommand ("84"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:49:59.7740402+07:00 0HLJOB1U1ICSS:00000006 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 168.8562ms. (50a9e262)
+2019-01-12T13:49:59.7810073+07:00 0HLJOB1U1ICSS:00000006 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:49:59.7904064+07:00 0HLJOB1U1ICSS:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 246.3074ms (afa2e885)
+2019-01-12T13:49:59.8011486+07:00 0HLJOB1U1ICSS:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:49:59.8092067+07:00 0HLJOB1U1ICSS:00000006 [INF] Request finished in 449.7057ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:50:07.7793048+07:00 0HLJOB1U1ICSS:00000007 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 225 (ca22a1cb)
+2019-01-12T13:50:08.1665308+07:00 0HLJOB1U1ICSS:00000007 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:50:08.4500037+07:00 0HLJOB1U1ICSS:00000007 [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:50:08.5972907+07:00 0HLJOB1U1ICSS:00000007 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:50:08.6553921+07:00 0HLJOB1U1ICSS:00000007 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:50:08.7420761+07:00 0HLJOB1U1ICSS:00000007 [INF] Executed DbCommand ("81"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T13:50:08.8637976+07:00 0HLJOB1U1ICSS:00000007 [INF] Executed DbCommand ("109"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T13:50:08.8986699+07:00 0HLJOB1U1ICSS:00000007 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 274.7524ms. (50a9e262)
+2019-01-12T13:50:08.9324939+07:00 0HLJOB1U1ICSS:00000007 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T13:50:08.9903801+07:00 0HLJOB1U1ICSS:00000007 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 482.6833ms (afa2e885)
+2019-01-12T13:50:08.9987170+07:00 0HLJOB1U1ICSS:00000007 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:50:09.1189256+07:00 0HLJOB1U1ICSS:00000007 [INF] Request finished in 1399.5615ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:50:09.5240340+07:00 0HLJOB1U1ICSS:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:50:09.6158001+07:00 0HLJOB1U1ICSS:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:50:09.6774139+07:00 0HLJOB1U1ICSS:00000008 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:50:10.0187702+07:00 0HLJOB1U1ICSS:00000008 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:50:10.4159551+07:00 0HLJOB1U1ICSS:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:50:11.2150194+07:00 0HLJOB1U1ICSS:00000008 [INF] Executed DbCommand ("603"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:50:11.4846036+07:00 0HLJOB1U1ICSS:00000008 [INF] Executed DbCommand ("248"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:50:11.5025582+07:00 0HLJOB1U1ICSS:00000008 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1466.2284ms. (50a9e262)
+2019-01-12T13:50:11.5276925+07:00 0HLJOB1U1ICSS:00000008 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:50:11.5374440+07:00 0HLJOB1U1ICSS:00000008 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 1850.6965ms (afa2e885)
+2019-01-12T13:50:11.5864507+07:00 0HLJOB1U1ICSS:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:50:11.7778277+07:00 0HLJOB1U1ICSS:00000008 [INF] Request finished in 2467.5853ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:53:17.1597882+07:00 0HLJOB1U1ICSS:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/product/index   (ca22a1cb)
+2019-01-12T13:53:17.1658647+07:00 0HLJOB1U1ICSS:00000009 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:53:17.1719216+07:00 0HLJOB1U1ICSS:00000009 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:53:17.2517963+07:00 0HLJOB1U1ICSS:00000009 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T13:53:17.2561905+07:00 0HLJOB1U1ICSS:00000009 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0252ms. (50a9e262)
+2019-01-12T13:53:17.2852710+07:00 0HLJOB1U1ICSS:00000009 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-12T13:53:17.3685523+07:00 0HLJOB1U1ICSS:00000009 [INF] Executed ViewResult - view "Index" executed in 82.4257ms. (f66409e9)
+2019-01-12T13:53:17.4397019+07:00 0HLJOB1U1ICSS:00000009 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" in 196.5819ms (afa2e885)
+2019-01-12T13:53:17.7886154+07:00 0HLJOB1U1ICSS:00000009 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:53:18.1137139+07:00 0HLJOB1U1ICSV:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/product/index.js?v=5CR5Apax3wjroUZ7iuTA07jjeNE5mcvp4_7Kw40rtIs   (ca22a1cb)
+2019-01-12T13:53:18.5415868+07:00 0HLJOB1U1ICSS:00000009 [INF] Request finished in 734.2509ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-12T13:53:18.9412035+07:00 0HLJOB1U1ICT0:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/shared/settings.js?v=Py8HrSkny5Bp8SrlRluw7uZvoahuRoKAOIl5CPkXGKU   (ca22a1cb)
+2019-01-12T13:53:19.1731750+07:00 0HLJOB1U1ICSS:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-12T13:53:19.2366151+07:00 0HLJOB1U1ICT0:00000003 [INF] The file "/app/shared/settings.js" was not modified (f1f8d725)
+2019-01-12T13:53:19.2371915+07:00 0HLJOB1U1ICSS:0000000A [INF] Request finished in 540.6641ms 404  (791a596a)
+2019-01-12T13:53:19.2566448+07:00 0HLJOB1U1ICSV:00000004 [INF] Sending file. Request path: '"/app/controllers/product/index.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\controllers\product\index.js"' (27b0a520)
+2019-01-12T13:53:19.2982262+07:00 0HLJOB1U1ICT0:00000003 [INF] Request finished in 1303.2828ms 304 application/javascript (791a596a)
+2019-01-12T13:53:19.3227601+07:00 0HLJOB1U1ICSV:00000004 [INF] Request finished in 1518.2908ms 200 application/javascript (791a596a)
+2019-01-12T13:53:19.3333028+07:00 0HLJOB1U1ICST:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-12T13:53:19.3842327+07:00 0HLJOB1U1ICT0:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-12T13:53:19.4549169+07:00 0HLJOB1U1ICSV:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-12T13:53:19.9450977+07:00 0HLJOB1U1ICST:00000002 [INF] Request finished in 27.8513ms 404  (791a596a)
+2019-01-12T13:53:21.0578712+07:00 0HLJOB1U1ICT0:00000004 [INF] Request finished in 66.0725ms 404  (791a596a)
+2019-01-12T13:53:21.5549709+07:00 0HLJOB1U1ICSV:00000005 [INF] Request finished in 132.5249ms 404  (791a596a)
+2019-01-12T13:53:21.9001261+07:00 0HLJOB1U1ICT0:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:53:21.9689252+07:00 0HLJOB1U1ICSV:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Category/GetAll   (ca22a1cb)
+2019-01-12T13:53:22.1587122+07:00 0HLJOB1U1ICT0:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:53:22.2742170+07:00 0HLJOB1U1ICSV:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:53:22.3508977+07:00 0HLJOB1U1ICT0:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:53:22.4155981+07:00 0HLJOB1U1ICSV:00000006 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Category\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:53:22.5755141+07:00 0HLJOB1U1ICSU:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-12T13:53:22.6265178+07:00 0HLJOB1U1ICT0:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:53:22.6336851+07:00 0HLJOB1U1ICSV:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T13:53:22.6414609+07:00 0HLJOB1U1ICT0:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:53:22.6637054+07:00 0HLJOB1U1ICSV:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:53:22.8202339+07:00 0HLJOB1U1ICSU:00000002 [INF] Request finished in 4070.2849ms 404  (791a596a)
+2019-01-12T13:53:22.8234087+07:00 0HLJOB1U1ICT0:00000005 [INF] Executed DbCommand ("150"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:53:22.9564072+07:00 0HLJOB1U1ICSV:00000006 [INF] Executed DbCommand ("152"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-12T13:53:23.0355346+07:00 0HLJOB1U1ICSV:00000006 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 322.951ms. (50a9e262)
+2019-01-12T13:53:23.0698896+07:00 0HLJOB1U1ICT0:00000005 [INF] Executed DbCommand ("147"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:53:23.0886814+07:00 0HLJOB1U1ICSV:00000006 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.CategoryViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:53:23.1407624+07:00 0HLJOB1U1ICT0:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 445.7909ms. (50a9e262)
+2019-01-12T13:53:23.1826426+07:00 0HLJOB1U1ICSV:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" in 673.5019ms (afa2e885)
+2019-01-12T13:53:23.2296801+07:00 0HLJOB1U1ICT0:00000005 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:53:23.2647795+07:00 0HLJOB1U1ICSV:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:53:23.3866533+07:00 0HLJOB1U1ICT0:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 881.2138ms (afa2e885)
+2019-01-12T13:53:23.7341702+07:00 0HLJOB1U1ICSV:00000006 [INF] Request finished in 1719.8685ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:53:24.0829239+07:00 0HLJOB1U1ICT0:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:53:24.5181830+07:00 0HLJOB1U1ICT0:00000005 [INF] Request finished in 3025.1525ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:53:24.9112860+07:00 0HLJOB1U1ICT0:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:53:25.0268578+07:00 0HLJOB1U1ICT0:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:53:25.1155812+07:00 0HLJOB1U1ICT0:00000006 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:53:25.3295550+07:00 0HLJOB1U1ICT0:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:53:25.3956378+07:00 0HLJOB1U1ICT0:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:53:25.5681795+07:00 0HLJOB1U1ICT0:00000006 [INF] Executed DbCommand ("121"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:53:26.2678085+07:00 0HLJOB1U1ICT0:00000006 [INF] Executed DbCommand ("232"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:53:26.6993196+07:00 0HLJOB1U1ICT0:00000006 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 939.4295ms. (50a9e262)
+2019-01-12T13:53:27.0809317+07:00 0HLJOB1U1ICT0:00000006 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:53:27.2034760+07:00 0HLJOB1U1ICT0:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 1965.9398ms (afa2e885)
+2019-01-12T13:53:27.3579846+07:00 0HLJOB1U1ICT0:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:53:27.6175739+07:00 0HLJOB1U1ICT0:00000006 [INF] Request finished in 2775.512ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:53:49.5114218+07:00 0HLJOB1U1ICT0:00000007 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 230 (ca22a1cb)
+2019-01-12T13:53:49.5436106+07:00 0HLJOB1U1ICT0:00000007 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:53:49.5487605+07:00 0HLJOB1U1ICT0:00000007 [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:53:49.6570870+07:00 0HLJOB1U1ICT0:00000007 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:53:49.6652247+07:00 0HLJOB1U1ICT0:00000007 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:53:49.8354692+07:00 0HLJOB1U1ICT0:00000007 [INF] Executed DbCommand ("113"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T13:53:50.0002139+07:00 0HLJOB1U1ICT0:00000007 [INF] Executed DbCommand ("118"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T13:53:50.0604525+07:00 0HLJOB1U1ICT0:00000007 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 390.5969ms. (50a9e262)
+2019-01-12T13:53:50.0678585+07:00 0HLJOB1U1ICT0:00000007 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T13:53:50.0828154+07:00 0HLJOB1U1ICT0:00000007 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 519.5426ms (afa2e885)
+2019-01-12T13:53:50.0936255+07:00 0HLJOB1U1ICT0:00000007 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:53:50.1399258+07:00 0HLJOB1U1ICT0:00000007 [INF] Request finished in 593.2865ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T13:53:50.1899668+07:00 0HLJOB1U1ICT0:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T13:53:50.1990335+07:00 0HLJOB1U1ICT0:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T13:53:50.2152402+07:00 0HLJOB1U1ICT0:00000008 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T13:53:50.3171325+07:00 0HLJOB1U1ICT0:00000008 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T13:53:50.3281525+07:00 0HLJOB1U1ICT0:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T13:53:50.5052013+07:00 0HLJOB1U1ICT0:00000008 [INF] Executed DbCommand ("112"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T13:53:50.6291198+07:00 0HLJOB1U1ICT0:00000008 [INF] Executed DbCommand ("102"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T13:53:50.6907873+07:00 0HLJOB1U1ICT0:00000008 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 312.4721ms. (50a9e262)
+2019-01-12T13:53:50.8070184+07:00 0HLJOB1U1ICT0:00000008 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T13:53:50.8579364+07:00 0HLJOB1U1ICT0:00000008 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 592.5127ms (afa2e885)
+2019-01-12T13:53:50.8646791+07:00 0HLJOB1U1ICT0:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T13:53:50.8765798+07:00 0HLJOB1U1ICT0:00000008 [INF] Request finished in 682.9733ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:00:03.7098685+07:00 0HLJOBE9KJNIN:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/product/index   (ca22a1cb)
+2019-01-12T14:00:04.4413671+07:00 0HLJOBE9KJNIN:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:00:04.6626041+07:00 0HLJOBE9KJNIN:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:00:06.2518386+07:00 0HLJOBE9KJNIN:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T14:00:06.3339143+07:00 0HLJOBE9KJNIN:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.506ms. (50a9e262)
+2019-01-12T14:00:06.4942054+07:00 0HLJOBE9KJNIN:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-12T14:00:08.4506387+07:00 0HLJOBE9KJNIN:00000001 [INF] Executed ViewResult - view "Index" executed in 1954.8114ms. (f66409e9)
+2019-01-12T14:00:09.1914690+07:00 0HLJOBE9KJNIN:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" in 3793.7454ms (afa2e885)
+2019-01-12T14:00:09.3183167+07:00 0HLJOBE9KJNIN:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:00:09.5734956+07:00 0HLJOBE9KJNIO:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/node_modules/toastr/build/toastr.css   (ca22a1cb)
+2019-01-12T14:00:09.6676913+07:00 0HLJOBE9KJNIN:00000001 [INF] Request finished in 5664.048ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-12T14:00:10.0797504+07:00 0HLJOBE9KJNIQ:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/product/index.js?v=5CR5Apax3wjroUZ7iuTA07jjeNE5mcvp4_7Kw40rtIs   (ca22a1cb)
+2019-01-12T14:00:10.3518187+07:00 0HLJOBE9KJNIP:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/node_modules/toastr/toastr.js   (ca22a1cb)
+2019-01-12T14:00:12.9972717+07:00 0HLJOBE9KJNIO:00000001 [INF] Sending file. Request path: '"/toastr/build/toastr.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\node_modules\toastr\build\toastr.css"' (27b0a520)
+2019-01-12T14:00:13.5405667+07:00 0HLJOBE9KJNIN:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-12T14:00:14.0596253+07:00 0HLJOBE9KJNIP:00000001 [INF] Sending file. Request path: '"/toastr/toastr.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\node_modules\toastr\toastr.js"' (27b0a520)
+2019-01-12T14:00:14.3577905+07:00 0HLJOBE9KJNIN:00000002 [INF] Request finished in 2379.8927ms 404  (791a596a)
+2019-01-12T14:00:14.4738329+07:00 0HLJOBE9KJNIP:00000001 [INF] Request finished in 4435.2192ms 200 application/javascript (791a596a)
+2019-01-12T14:00:14.6293177+07:00 0HLJOBE9KJNIS:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-12T14:00:14.6974071+07:00 0HLJOBE9KJNIP:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-12T14:00:14.8000890+07:00 0HLJOBE9KJNIR:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-12T14:00:14.9392416+07:00 0HLJOBE9KJNIP:00000002 [INF] Request finished in 223.181ms 404  (791a596a)
+2019-01-12T14:00:15.0578907+07:00 0HLJOBE9KJNIS:00000001 [INF] Request finished in 303.343ms 404  (791a596a)
+2019-01-12T14:00:15.2877060+07:00 0HLJOBE9KJNIR:00000001 [INF] Request finished in 330.9586ms 404  (791a596a)
+2019-01-12T14:00:15.3579674+07:00 0HLJOBE9KJNIN:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-12T14:00:15.3891185+07:00 0HLJOBE9KJNIO:00000001 [INF] Request finished in 3729.3236ms 200 text/css (791a596a)
+2019-01-12T14:00:15.4154741+07:00 0HLJOBE9KJNIN:00000003 [INF] Request finished in 309.1863ms 404  (791a596a)
+2019-01-12T14:00:15.6627665+07:00 0HLJOBE9KJNIO:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/shared/settings.js?v=dcoflAdwPxu-0tCKn_qaZ80-g1lqr8TEhF7v4OMzdig   (ca22a1cb)
+2019-01-12T14:00:15.7272068+07:00 0HLJOBE9KJNIQ:00000001 [INF] The file "/app/controllers/product/index.js" was not modified (f1f8d725)
+2019-01-12T14:00:16.1054219+07:00 0HLJOBE9KJNIO:00000002 [INF] Sending file. Request path: '"/app/shared/settings.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\shared\settings.js"' (27b0a520)
+2019-01-12T14:00:16.3213089+07:00 0HLJOBE9KJNIQ:00000001 [INF] Request finished in 6224.9044ms 304 application/javascript (791a596a)
+2019-01-12T14:00:16.4818973+07:00 0HLJOBE9KJNIO:00000002 [INF] Request finished in 771.762ms 200 application/javascript (791a596a)
+2019-01-12T14:00:16.5881085+07:00 0HLJOBE9KJNIQ:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Category/GetAll   (ca22a1cb)
+2019-01-12T14:00:16.6006699+07:00 0HLJOBE9KJNIO:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T14:00:16.6425421+07:00 0HLJOBE9KJNIQ:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:00:16.6581128+07:00 0HLJOBE9KJNIO:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:00:16.6678987+07:00 0HLJOBE9KJNIQ:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Category\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:00:17.1062324+07:00 0HLJOBE9KJNIQ:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T14:00:17.1459612+07:00 0HLJOBE9KJNIO:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:00:17.2054711+07:00 0HLJOBE9KJNIQ:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:00:17.4667501+07:00 0HLJOBE9KJNIO:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:00:17.5467087+07:00 0HLJOBE9KJNIO:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:00:17.7231471+07:00 0HLJOBE9KJNIO:00000003 [INF] Executed DbCommand ("121"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T14:00:18.5868588+07:00 0HLJOBE9KJNIQ:00000002 [INF] Executed DbCommand ("686"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-12T14:00:18.6114053+07:00 0HLJOBE9KJNIQ:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1489.9454ms. (50a9e262)
+2019-01-12T14:00:18.6146026+07:00 0HLJOBE9KJNIO:00000003 [INF] Executed DbCommand ("242"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T14:00:18.6323202+07:00 0HLJOBE9KJNIQ:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.CategoryViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:00:18.6538996+07:00 0HLJOBE9KJNIO:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1167.0544ms. (50a9e262)
+2019-01-12T14:00:18.6647500+07:00 0HLJOBE9KJNIO:00000003 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:00:18.8204757+07:00 0HLJOBE9KJNIO:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 1657.6385ms (afa2e885)
+2019-01-12T14:00:18.8271870+07:00 0HLJOBE9KJNIQ:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" in 2139.5272ms (afa2e885)
+2019-01-12T14:00:18.8390103+07:00 0HLJOBE9KJNIO:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:00:18.8423029+07:00 0HLJOBE9KJNIQ:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:00:18.8540199+07:00 0HLJOBE9KJNIO:00000003 [INF] Request finished in 2357.3114ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:00:18.8646142+07:00 0HLJOBE9KJNIQ:00000002 [INF] Request finished in 2524.2386ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:00:19.0841953+07:00 0HLJOBE9KJNIQ:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T14:00:19.0895479+07:00 0HLJOBE9KJNIQ:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:00:19.0974197+07:00 0HLJOBE9KJNIQ:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:00:19.1646710+07:00 0HLJOBE9KJNIQ:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:00:19.1738771+07:00 0HLJOBE9KJNIQ:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:00:19.2725816+07:00 0HLJOBE9KJNIQ:00000003 [INF] Executed DbCommand ("88"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T14:00:19.3537432+07:00 0HLJOBE9KJNIQ:00000003 [INF] Executed DbCommand ("67"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T14:00:19.3806067+07:00 0HLJOBE9KJNIQ:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 189.4564ms. (50a9e262)
+2019-01-12T14:00:19.3902263+07:00 0HLJOBE9KJNIQ:00000003 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:00:19.5043180+07:00 0HLJOBE9KJNIQ:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 293.2512ms (afa2e885)
+2019-01-12T14:00:19.5128596+07:00 0HLJOBE9KJNIQ:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:00:19.5334761+07:00 0HLJOBE9KJNIQ:00000003 [INF] Request finished in 433.6196ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:00:31.2028664+07:00 0HLJOBE9KJNIQ:00000004 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 237 (ca22a1cb)
+2019-01-12T14:00:31.2263814+07:00 0HLJOBE9KJNIQ:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:00:31.2677218+07:00 0HLJOBE9KJNIQ:00000004 [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:00:31.3831009+07:00 0HLJOBE9KJNIQ:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:00:31.4066659+07:00 0HLJOBE9KJNIQ:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:00:31.6054969+07:00 0HLJOBE9KJNIQ:00000004 [INF] Executed DbCommand ("128"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T14:00:32.6368807+07:00 0HLJOBE9KJNIQ:00000004 [INF] Executed DbCommand ("347"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T14:00:32.6791750+07:00 0HLJOBE9KJNIQ:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1291.33ms. (50a9e262)
+2019-01-12T14:00:32.6852543+07:00 0HLJOBE9KJNIQ:00000004 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T14:00:32.6920469+07:00 0HLJOBE9KJNIQ:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 1417.9246ms (afa2e885)
+2019-01-12T14:00:32.7029803+07:00 0HLJOBE9KJNIQ:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:00:32.7231542+07:00 0HLJOBE9KJNIQ:00000004 [INF] Request finished in 1549.9245ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:00:32.7692618+07:00 0HLJOBE9KJNIQ:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T14:00:32.7780984+07:00 0HLJOBE9KJNIQ:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:00:32.7893723+07:00 0HLJOBE9KJNIQ:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:00:32.8961940+07:00 0HLJOBE9KJNIQ:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:00:32.9273367+07:00 0HLJOBE9KJNIQ:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:00:33.0620652+07:00 0HLJOBE9KJNIQ:00000005 [INF] Executed DbCommand ("102"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T14:00:33.1933872+07:00 0HLJOBE9KJNIQ:00000005 [INF] Executed DbCommand ("119"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T14:00:33.3042153+07:00 0HLJOBE9KJNIQ:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 297.7251ms. (50a9e262)
+2019-01-12T14:00:33.3109647+07:00 0HLJOBE9KJNIQ:00000005 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:00:33.3938385+07:00 0HLJOBE9KJNIQ:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 522.3087ms (afa2e885)
+2019-01-12T14:00:33.6405309+07:00 0HLJOBE9KJNIQ:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:00:33.7215871+07:00 0HLJOBE9KJNIQ:00000005 [INF] Request finished in 910.5158ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:03:34.2130639+07:00 0HLJOBE9KJNIQ:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/product/index   (ca22a1cb)
+2019-01-12T14:03:34.2452889+07:00 0HLJOBE9KJNIQ:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:03:34.2770662+07:00 0HLJOBE9KJNIQ:00000006 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:03:34.3472716+07:00 0HLJOBE9KJNIQ:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T14:03:34.3634952+07:00 0HLJOBE9KJNIQ:00000006 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.5778ms. (50a9e262)
+2019-01-12T14:03:34.3794617+07:00 0HLJOBE9KJNIQ:00000006 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-12T14:03:41.8108110+07:00 0HLJOBE9KJNIQ:00000006 [INF] Executed ViewResult - view "Index" executed in 7422.9199ms. (f66409e9)
+2019-01-12T14:03:42.0651995+07:00 0HLJOBE9KJNIQ:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" in 7534.392ms (afa2e885)
+2019-01-12T14:03:43.2994388+07:00 0HLJOBE9KJNIQ:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:03:43.4530308+07:00 0HLJOBE9KJNIP:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-12T14:03:43.5418139+07:00 0HLJOBE9KJNIO:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/product/index.js?v=3mq6oOymV1PyIlPujc4D_9Y192Nb_0sbIhypLO080HE   (ca22a1cb)
+2019-01-12T14:03:43.5637393+07:00 0HLJOBE9KJNIQ:00000006 [INF] Request finished in 9174.6141ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-12T14:03:43.5637353+07:00 0HLJOBE9KJNIP:00000003 [INF] Request finished in 867.9135ms 404  (791a596a)
+2019-01-12T14:03:43.7632907+07:00 0HLJOBE9KJNIN:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/shared/settings.js?v=dcoflAdwPxu-0tCKn_qaZ80-g1lqr8TEhF7v4OMzdig   (ca22a1cb)
+2019-01-12T14:03:43.7787498+07:00 0HLJOBE9KJNIR:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-12T14:03:43.7869978+07:00 0HLJOBE9KJNIO:00000004 [INF] Sending file. Request path: '"/app/controllers/product/index.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\controllers\product\index.js"' (27b0a520)
+2019-01-12T14:03:43.7993656+07:00 0HLJOBE9KJNIN:00000004 [INF] The file "/app/shared/settings.js" was not modified (f1f8d725)
+2019-01-12T14:03:43.8218779+07:00 0HLJOBE9KJNIO:00000004 [INF] Request finished in 1631.6825ms 200 application/javascript (791a596a)
+2019-01-12T14:03:43.8340912+07:00 0HLJOBE9KJNIN:00000004 [INF] Request finished in 1568.1826ms 304 application/javascript (791a596a)
+2019-01-12T14:03:43.8585888+07:00 0HLJOBE9KJNIO:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-12T14:03:43.8728954+07:00 0HLJOBE9KJNIP:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-12T14:03:43.8767700+07:00 0HLJOBE9KJNIO:00000005 [INF] Request finished in 37.6369ms 404  (791a596a)
+2019-01-12T14:03:43.8870010+07:00 0HLJOBE9KJNIP:00000004 [INF] Request finished in 101.3325ms 404  (791a596a)
+2019-01-12T14:03:43.8928298+07:00 0HLJOBE9KJNIR:00000002 [INF] Request finished in 909.7866ms 404  (791a596a)
+2019-01-12T14:03:43.8984055+07:00 0HLJOBE9KJNIQ:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-12T14:03:43.9041837+07:00 0HLJOBE9KJNIQ:00000007 [INF] Request finished in 127.2756ms 404  (791a596a)
+2019-01-12T14:03:44.5605638+07:00 0HLJOBE9KJNIQ:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Category/GetAll   (ca22a1cb)
+2019-01-12T14:03:44.5784375+07:00 0HLJOBE9KJNIP:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T14:03:44.6695799+07:00 0HLJOBE9KJNIQ:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:03:44.8354171+07:00 0HLJOBE9KJNIP:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:03:44.8482543+07:00 0HLJOBE9KJNIQ:00000008 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Category\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:03:45.2695561+07:00 0HLJOBE9KJNIP:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:03:45.7603504+07:00 0HLJOBE9KJNIQ:00000008 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T14:03:46.8254213+07:00 0HLJOBE9KJNIP:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:03:47.4577970+07:00 0HLJOBE9KJNIQ:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:03:48.3002395+07:00 0HLJOBE9KJNIP:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:03:49.4513254+07:00 0HLJOBE9KJNIQ:00000008 [INF] Executed DbCommand ("1,575"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-12T14:03:49.4580286+07:00 0HLJOBE9KJNIP:00000005 [INF] Executed DbCommand ("1,141"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T14:03:49.5412123+07:00 0HLJOBE9KJNIQ:00000008 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3691.5127ms. (50a9e262)
+2019-01-12T14:03:49.5706320+07:00 0HLJOBE9KJNIQ:00000008 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.CategoryViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:03:49.6494291+07:00 0HLJOBE9KJNIP:00000005 [INF] Executed DbCommand ("89"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T14:03:49.6555503+07:00 0HLJOBE9KJNIQ:00000008 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" in 4717.6648ms (afa2e885)
+2019-01-12T14:03:49.6635220+07:00 0HLJOBE9KJNIP:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2824.3548ms. (50a9e262)
+2019-01-12T14:03:49.7002015+07:00 0HLJOBE9KJNIQ:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:03:49.7771026+07:00 0HLJOBE9KJNIP:00000005 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:03:50.1100876+07:00 0HLJOBE9KJNIQ:00000008 [INF] Request finished in 5379.3638ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:03:50.5743736+07:00 0HLJOBE9KJNIP:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 4508.0968ms (afa2e885)
+2019-01-12T14:03:51.4093350+07:00 0HLJOBE9KJNIP:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:03:52.3805115+07:00 0HLJOBE9KJNIP:00000005 [INF] Request finished in 6959.0933ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:03:53.0773085+07:00 0HLJOBE9KJNIP:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T14:03:53.2195927+07:00 0HLJOBE9KJNIP:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:03:53.3633313+07:00 0HLJOBE9KJNIP:00000006 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:03:53.6974409+07:00 0HLJOBE9KJNIP:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:03:54.0903409+07:00 0HLJOBE9KJNIP:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:03:54.2688915+07:00 0HLJOBE9KJNIP:00000006 [INF] Executed DbCommand ("80"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T14:03:54.5444364+07:00 0HLJOBE9KJNIP:00000006 [INF] Executed DbCommand ("268"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T14:03:54.5861616+07:00 0HLJOBE9KJNIP:00000006 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 847.5093ms. (50a9e262)
+2019-01-12T14:03:54.7194281+07:00 0HLJOBE9KJNIP:00000006 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:03:55.7733251+07:00 0HLJOBE9KJNIP:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 1356.6272ms (afa2e885)
+2019-01-12T14:03:56.5278119+07:00 0HLJOBE9KJNIP:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:03:56.8260905+07:00 0HLJOBE9KJNIP:00000006 [INF] Request finished in 3946.7228ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:04:03.9298672+07:00 0HLJOBE9KJNIP:00000007 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 231 (ca22a1cb)
+2019-01-12T14:04:04.1876114+07:00 0HLJOBE9KJNIP:00000007 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:04:04.2213988+07:00 0HLJOBE9KJNIP:00000007 [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:04:04.3190542+07:00 0HLJOBE9KJNIP:00000007 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:04:04.3275100+07:00 0HLJOBE9KJNIP:00000007 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:04:04.7084364+07:00 0HLJOBE9KJNIP:00000007 [INF] Executed DbCommand ("295"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T14:04:04.9379561+07:00 0HLJOBE9KJNIP:00000007 [INF] Executed DbCommand ("216"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T14:04:04.9477376+07:00 0HLJOBE9KJNIP:00000007 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 622.3498ms. (50a9e262)
+2019-01-12T14:04:04.9533124+07:00 0HLJOBE9KJNIP:00000007 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T14:04:04.9615049+07:00 0HLJOBE9KJNIP:00000007 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 732.1496ms (afa2e885)
+2019-01-12T14:04:04.9664279+07:00 0HLJOBE9KJNIP:00000007 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:04:04.9914253+07:00 0HLJOBE9KJNIP:00000007 [INF] Request finished in 1123.4053ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:04:05.0145163+07:00 0HLJOBE9KJNIP:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T14:04:05.0218534+07:00 0HLJOBE9KJNIP:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:04:05.0331958+07:00 0HLJOBE9KJNIP:00000008 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:04:05.1209172+07:00 0HLJOBE9KJNIP:00000008 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:04:05.1464528+07:00 0HLJOBE9KJNIP:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:04:05.4162647+07:00 0HLJOBE9KJNIP:00000008 [INF] Executed DbCommand ("251"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T14:04:05.5058334+07:00 0HLJOBE9KJNIP:00000008 [INF] Executed DbCommand ("63"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T14:04:05.5164695+07:00 0HLJOBE9KJNIP:00000008 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 385.3927ms. (50a9e262)
+2019-01-12T14:04:05.5215434+07:00 0HLJOBE9KJNIP:00000008 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:04:05.5357462+07:00 0HLJOBE9KJNIP:00000008 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 489.1471ms (afa2e885)
+2019-01-12T14:04:05.5444886+07:00 0HLJOBE9KJNIP:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:04:05.5538120+07:00 0HLJOBE9KJNIP:00000008 [INF] Request finished in 553.2646ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:04:27.4116935+07:00 0HLJOBE9KJNIP:00000009 [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 232 (ca22a1cb)
+2019-01-12T14:04:27.4167829+07:00 0HLJOBE9KJNIP:00000009 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:04:27.5977665+07:00 0HLJOBE9KJNIP:00000009 [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:04:27.6564226+07:00 0HLJOBE9KJNIP:00000009 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:04:27.6622081+07:00 0HLJOBE9KJNIP:00000009 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:04:27.7390868+07:00 0HLJOBE9KJNIP:00000009 [INF] Executed DbCommand ("68"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T14:04:27.8355296+07:00 0HLJOBE9KJNIP:00000009 [INF] Executed DbCommand ("82"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T14:04:27.8643761+07:00 0HLJOBE9KJNIP:00000009 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 192.2492ms. (50a9e262)
+2019-01-12T14:04:27.8836775+07:00 0HLJOBE9KJNIP:00000009 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T14:04:27.8992242+07:00 0HLJOBE9KJNIP:00000009 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 286.3912ms (afa2e885)
+2019-01-12T14:04:27.9113495+07:00 0HLJOBE9KJNIP:00000009 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:04:27.9281770+07:00 0HLJOBE9KJNIP:00000009 [INF] Request finished in 588.0399ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:04:27.9553343+07:00 0HLJOBE9KJNIP:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T14:04:27.9671717+07:00 0HLJOBE9KJNIP:0000000A [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:04:27.9830147+07:00 0HLJOBE9KJNIP:0000000A [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:04:28.0798119+07:00 0HLJOBE9KJNIP:0000000A [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:04:28.0941410+07:00 0HLJOBE9KJNIP:0000000A [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:04:28.1755570+07:00 0HLJOBE9KJNIP:0000000A [INF] Executed DbCommand ("71"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T14:04:28.2666709+07:00 0HLJOBE9KJNIP:0000000A [INF] Executed DbCommand ("84"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T14:04:28.2769838+07:00 0HLJOBE9KJNIP:0000000A [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 187.3966ms. (50a9e262)
+2019-01-12T14:04:28.3069861+07:00 0HLJOBE9KJNIP:0000000A [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:04:28.3227146+07:00 0HLJOBE9KJNIP:0000000A [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 324.3788ms (afa2e885)
+2019-01-12T14:04:28.3430708+07:00 0HLJOBE9KJNIP:0000000A [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:04:28.3551583+07:00 0HLJOBE9KJNIP:0000000A [INF] Request finished in 395.8787ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:07:34.4792741+07:00 0HLJOBE9KJNIP:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/product/index   (ca22a1cb)
+2019-01-12T14:07:34.5566006+07:00 0HLJOBE9KJNIP:0000000B [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:07:34.6177301+07:00 0HLJOBE9KJNIP:0000000B [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:07:34.6958555+07:00 0HLJOBE9KJNIP:0000000B [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T14:07:34.7500234+07:00 0HLJOBE9KJNIP:0000000B [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0237ms. (50a9e262)
+2019-01-12T14:07:34.7595710+07:00 0HLJOBE9KJNIP:0000000B [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-12T14:07:34.8778915+07:00 0HLJOBE9KJNIP:0000000B [INF] Executed ViewResult - view "Index" executed in 24.258ms. (f66409e9)
+2019-01-12T14:07:36.1554859+07:00 0HLJOBE9KJNIP:0000000B [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)" in 260.2149ms (afa2e885)
+2019-01-12T14:07:36.7513000+07:00 0HLJOBE9KJNIO:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/shared/settings.js?v=HH6KfU5z7RRroPtY7WL1D7e_PAhrFYlcJkQA5XbmA34   (ca22a1cb)
+2019-01-12T14:07:37.2486945+07:00 0HLJOBE9KJNIP:0000000B [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:07:37.9665941+07:00 0HLJOBE9KJNIR:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-12T14:07:39.4057332+07:00 0HLJOBE9KJNIP:0000000B [INF] Request finished in 2844.5651ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-12T14:07:39.5807261+07:00 0HLJOBE9KJNIR:00000003 [INF] Request finished in 1518.2635ms 404  (791a596a)
+2019-01-12T14:07:39.5896177+07:00 0HLJOBE9KJNIP:0000000C [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-12T14:07:39.6484466+07:00 0HLJOBE9KJNIR:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-12T14:07:39.6961321+07:00 0HLJOBE9KJNIP:0000000C [INF] Request finished in 190.6493ms 404  (791a596a)
+2019-01-12T14:07:39.7065120+07:00 0HLJOBE9KJNIR:00000004 [INF] Request finished in 67.8292ms 404  (791a596a)
+2019-01-12T14:07:39.7139863+07:00 0HLJOBE9KJNIN:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-12T14:07:39.7330867+07:00 0HLJOBE9KJNIO:00000006 [INF] Sending file. Request path: '"/app/shared/settings.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\shared\settings.js"' (27b0a520)
+2019-01-12T14:07:39.7389636+07:00 0HLJOBE9KJNIN:00000005 [INF] Request finished in 3512.1265ms 404  (791a596a)
+2019-01-12T14:07:39.7437003+07:00 0HLJOBE9KJNIO:00000006 [INF] Request finished in 4210.2374ms 200 application/javascript (791a596a)
+2019-01-12T14:07:39.7558956+07:00 0HLJOBE9KJNIQ:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/product/index.js?v=vOvac4W7hPAuyhHGIkd6M1_UhGAdk1qq78XqbNqivXw   (ca22a1cb)
+2019-01-12T14:07:39.7628145+07:00 0HLJOBE9KJNIO:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-12T14:07:39.7804520+07:00 0HLJOBE9KJNIQ:00000009 [INF] Sending file. Request path: '"/app/controllers/product/index.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\controllers\product\index.js"' (27b0a520)
+2019-01-12T14:07:39.8099978+07:00 0HLJOBE9KJNIO:00000007 [INF] Request finished in 22.9804ms 404  (791a596a)
+2019-01-12T14:07:39.8299973+07:00 0HLJOBE9KJNIQ:00000009 [INF] Request finished in 4016.1547ms 200 application/javascript (791a596a)
+2019-01-12T14:07:40.1425591+07:00 0HLJOBE9KJNIO:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Category/GetAll   (ca22a1cb)
+2019-01-12T14:07:40.3923048+07:00 0HLJOBE9KJNIQ:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T14:07:40.6731832+07:00 0HLJOBE9KJNIO:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:07:41.3203523+07:00 0HLJOBE9KJNIQ:0000000A [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:07:41.5722634+07:00 0HLJOBE9KJNIO:00000008 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Category\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:07:41.6492255+07:00 0HLJOBE9KJNIQ:0000000A [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:07:42.2947866+07:00 0HLJOBE9KJNIO:00000008 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T14:07:42.3454562+07:00 0HLJOBE9KJNIQ:0000000A [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:07:42.3522178+07:00 0HLJOBE9KJNIO:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:07:42.3578404+07:00 0HLJOBE9KJNIQ:0000000A [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:07:42.5682075+07:00 0HLJOBE9KJNIO:00000008 [INF] Executed DbCommand ("191"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-12T14:07:42.5788478+07:00 0HLJOBE9KJNIQ:0000000A [INF] Executed DbCommand ("203"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T14:07:42.5851418+07:00 0HLJOBE9KJNIO:00000008 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 274.0457ms. (50a9e262)
+2019-01-12T14:07:42.7030696+07:00 0HLJOBE9KJNIO:00000008 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.CategoryViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:07:42.7153865+07:00 0HLJOBE9KJNIQ:0000000A [INF] Executed DbCommand ("112"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T14:07:42.7216987+07:00 0HLJOBE9KJNIO:00000008 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)" in 1131.8247ms (afa2e885)
+2019-01-12T14:07:42.7267270+07:00 0HLJOBE9KJNIQ:0000000A [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 370.2352ms. (50a9e262)
+2019-01-12T14:07:42.7319584+07:00 0HLJOBE9KJNIO:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.CategoryController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:07:42.8306816+07:00 0HLJOBE9KJNIQ:0000000A [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:07:42.8581215+07:00 0HLJOBE9KJNIO:00000008 [INF] Request finished in 2918.6721ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:07:42.8628656+07:00 0HLJOBE9KJNIQ:0000000A [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 1181.8355ms (afa2e885)
+2019-01-12T14:07:42.8735811+07:00 0HLJOBE9KJNIQ:0000000A [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:07:42.9786915+07:00 0HLJOBE9KJNIQ:0000000A [INF] Request finished in 3043.6195ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:07:43.1284499+07:00 0HLJOBE9KJNIQ:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T14:07:43.1446024+07:00 0HLJOBE9KJNIQ:0000000B [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:07:43.1578154+07:00 0HLJOBE9KJNIQ:0000000B [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:07:43.5496877+07:00 0HLJOBE9KJNIQ:0000000B [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:07:43.5841264+07:00 0HLJOBE9KJNIQ:0000000B [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:07:43.7278193+07:00 0HLJOBE9KJNIQ:0000000B [INF] Executed DbCommand ("98"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T14:07:43.8585704+07:00 0HLJOBE9KJNIQ:0000000B [INF] Executed DbCommand ("124"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T14:07:43.8707643+07:00 0HLJOBE9KJNIQ:0000000B [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 309.3855ms. (50a9e262)
+2019-01-12T14:07:43.8791943+07:00 0HLJOBE9KJNIQ:0000000B [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:07:43.8910353+07:00 0HLJOBE9KJNIQ:0000000B [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 721.954ms (afa2e885)
+2019-01-12T14:07:43.9056317+07:00 0HLJOBE9KJNIQ:0000000B [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:07:44.0105484+07:00 0HLJOBE9KJNIQ:0000000B [INF] Request finished in 791.8098ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:08:13.9703368+07:00 0HLJOBE9KJNIQ:0000000C [INF] Request starting HTTP/1.1 PUT https://localhost:5001/Admin/Product/Update application/x-www-form-urlencoded; charset=UTF-8 225 (ca22a1cb)
+2019-01-12T14:08:13.9754047+07:00 0HLJOBE9KJNIQ:0000000C [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:08:13.9874950+07:00 0HLJOBE9KJNIQ:0000000C [INF] Route matched with "{area = \"Admin\", action = \"Update\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:08:14.0621955+07:00 0HLJOBE9KJNIQ:0000000C [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.ProductViewModel"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:08:14.0715503+07:00 0HLJOBE9KJNIQ:0000000C [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:08:14.1412843+07:00 0HLJOBE9KJNIQ:0000000C [INF] Executed DbCommand ("65"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-12T14:08:14.2161051+07:00 0HLJOBE9KJNIQ:0000000C [INF] Executed DbCommand ("68"ms) [Parameters=["@p20='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (Size = 255) (DbType = AnsiString), @p3='?' (Size = 255) (DbType = AnsiString), @p4='?' (Size = 8000) (DbType = AnsiString), @p5='?' (DbType = Boolean), @p6='?' (DbType = Boolean), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 255), @p9='?' (DbType = Decimal), @p10='?' (DbType = Decimal), @p11='?' (DbType = Decimal), @p12='?' (Size = 255), @p13='?' (Size = 255), @p14='?' (Size = 255), @p15='?' (Size = 255), @p16='?' (DbType = Int32), @p17='?' (Size = 255), @p18='?' (Size = 255), @p19='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+UPDATE [Products] SET [CategoryId] = @p0, [Content] = @p1, [DateCreated] = @p2, [DateModified] = @p3, [Description] = @p4, [HomeFlag] = @p5, [HotFlag] = @p6, [Image] = @p7, [Name] = @p8, [OriginalPrice] = @p9, [Price] = @p10, [PromotionPrice] = @p11, [SeoAlias] = @p12, [SeoDescription] = @p13, [SeoKeywords] = @p14, [SeoPageTitle] = @p15, [Status] = @p16, [Tags] = @p17, [Unit] = @p18, [ViewCount] = @p19
+WHERE [Id] = @p20;
+SELECT @@ROWCOUNT;" (0723d8ff)
+2019-01-12T14:08:14.2361721+07:00 0HLJOBE9KJNIQ:0000000C [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 169.3703ms. (50a9e262)
+2019-01-12T14:08:14.2464097+07:00 0HLJOBE9KJNIQ:0000000C [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.ProductViewModel"'. (8a1b66c8)
+2019-01-12T14:08:14.2531651+07:00 0HLJOBE9KJNIQ:0000000C [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)" in 259.2925ms (afa2e885)
+2019-01-12T14:08:14.2598350+07:00 0HLJOBE9KJNIQ:0000000C [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.Update (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:08:14.2811924+07:00 0HLJOBE9KJNIQ:0000000C [INF] Request finished in 294.0036ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T14:08:14.2859443+07:00 0HLJOBE9KJNIQ:0000000D [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Product/GetAllPaging?keyword=&categoryId=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T14:08:14.2920733+07:00 0HLJOBE9KJNIQ:0000000D [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T14:08:14.3005217+07:00 0HLJOBE9KJNIQ:0000000D [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Product\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T14:08:14.4316597+07:00 0HLJOBE9KJNIQ:0000000D [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T14:08:14.4395598+07:00 0HLJOBE9KJNIQ:0000000D [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T14:08:14.8029116+07:00 0HLJOBE9KJNIQ:0000000D [INF] Executed DbCommand ("231"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1" (0723d8ff)
+2019-01-12T14:08:15.4002559+07:00 0HLJOBE9KJNIQ:0000000D [INF] Executed DbCommand ("503"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T14:08:15.4342517+07:00 0HLJOBE9KJNIQ:0000000D [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 968.9712ms. (50a9e262)
+2019-01-12T14:08:15.5051094+07:00 0HLJOBE9KJNIQ:0000000D [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.ProductViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T14:08:15.7026709+07:00 0HLJOBE9KJNIQ:0000000D [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)" in 1205.2348ms (afa2e885)
+2019-01-12T14:08:15.9428105+07:00 0HLJOBE9KJNIQ:0000000D [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.ProductController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T14:08:16.1203266+07:00 0HLJOBE9KJNIQ:0000000D [INF] Request finished in 1661.7325ms 200 application/json; charset=utf-8 (791a596a)

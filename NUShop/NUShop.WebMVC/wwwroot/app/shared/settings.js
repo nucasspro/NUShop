@@ -3,38 +3,26 @@
         pageSize: 10,
         pageIndex: 1
     },
-    notify: function (message, type) {
-        $.notify(message, {
-            // whether to hide the notification on click
-            clickToHide: true,
-            // whether to auto-hide the notification
-            autoHide: true,
-            // if autoHide, hide after milliseconds
-            autoHideDelay: 5000,
-            // show the arrow pointing at the element
-            arrowShow: true,
-            // arrow size in pixels
-            arrowSize: 5,
-            // position defines the notification position though uses the defaults below
-            position: '...',
-            // default positions
-            elementPosition: 'top right',
-            globalPosition: 'top right',
-            // default style
-            style: 'bootstrap',
-            // default class (string or [string])
-            className: type,
-            // show animation
-            showAnimation: 'slideDown',
-            // show animation duration
-            showDuration: 400,
-            // hide animation
-            hideAnimation: 'slideUp',
-            // hide animation duration
-            hideDuration: 200,
-            // padding between element and notification
-            gap: 2
-        });
+    toast: function (type,message) {
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        },
+        toastr[type](message)
+
     },
     confirm: function (message, okCallback) {
         bootbox.confirm({
@@ -107,8 +95,7 @@
             $('.dv-loading').addClass('hide');
         }
     },
-    //getStatus: function (status) {
-    //},
+   
     formatNumber: function (number, precision) {
         if (!isFinite(number)) {
             return number.toString();
@@ -118,22 +105,22 @@
             a[0] = a[0].replace(/\d(?=(\d{3})+$)/g, '$&,');
             return a.join('.');
         }
-    },
-    unflattern: function (arr) {
-	    var map = {};
-	    var roots = [];
-	    for (var i = 0; i < arr.length; i += 1) {
-		    var node = arr[i];
-		    node.children = [];
-		    map[node.id] = i; // use map to look-up the parents
-		    if (node.parentId !== null) {
-			    arr[map[node.parentId]].children.push(node);
-		    } else {
-			    roots.push(node);
-		    }
-	    }
-	    return roots;
     }
+    //unflattern: function (arr) {
+	   // var map = {};
+	   // var roots = [];
+	   // for (var i = 0; i < arr.length; i += 1) {
+		  //  var node = arr[i];
+		  //  node.children = [];
+		  //  map[node.id] = i; // use map to look-up the parents
+		  //  if (node.parentId !== null) {
+			 //   arr[map[node.parentId]].children.push(node);
+		  //  } else {
+			 //   roots.push(node);
+		  //  }
+	   // }
+	   // return roots;
+    //}
 }
 
 // If ajax has type is POST or PUT, 

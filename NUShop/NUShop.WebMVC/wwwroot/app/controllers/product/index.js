@@ -50,9 +50,12 @@
                 data: data,
                 success: function (path) {
                     $('#txt-image').val(path);
+                    NUShopConfig.toast("success", "Upload successfully.");
                 },
                 error: function (status) {
                     console.log(status);
+                    NUShopConfig.toast("error", "Has an error while uploading.");
+
                 }
             });
         });
@@ -108,9 +111,11 @@
                 dataType: 'json',
                 success: function (response) {
                     loadProducts();
+                    NUShopConfig.toast("success", "Created.");
                 },
                 error: function (status) {
                     console.log(status);
+                    NUShopConfig.toast("error", "Has an error.");
                 }
             });
         });
@@ -125,9 +130,11 @@
                 dataType: 'json',
                 success: function (response) {
                     loadProducts();
+                    NUShopConfig.toast("success", "Saved.");
                 },
                 error: function (status) {
                     console.log(status);
+                    NUShopConfig.toast("error", "Has an error.");
                 }
             });
         });
