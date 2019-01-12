@@ -24,7 +24,7 @@ namespace NUShop.Data.EF
 
         public IQueryable<T> GetAll(params Expression<Func<T, object>>[] includeProperties)
         {
-            IQueryable<T> items = _context.Set<T>();
+            IQueryable<T> items = _context.Set<T>().AsNoTracking();
             if (includeProperties != null)
             {
                 foreach (var property in includeProperties)
@@ -43,7 +43,7 @@ namespace NUShop.Data.EF
 
         public T GetById(K id, params Expression<Func<T, object>>[] includeProperties)
         {
-            return GetAll(includeProperties).SingleOrDefault(x => x.Id.Equals(id));
+            return GetAll(includeProperties).AsNoTracking().SingleOrDefault(x => x.Id.Equals(id));
         }
 
         public T GetSingle(Expression<Func<T, bool>> predicate, params Expression<Func<T, object>>[] includeProperties)

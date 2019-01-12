@@ -3,10 +3,11 @@ using NUShop.Data.Entities;
 using NUShop.Data.Enums;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Interfaces;
-using NUShop.ViewModel.ViewModels;
 using NUShop.Utilities.Constants;
 using NUShop.Utilities.DTOs;
 using NUShop.Utilities.Helpers;
+using NUShop.ViewModel.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -14,6 +15,8 @@ namespace NUShop.Service.Implements
 {
     public class ProductService : IProductService
     {
+        #region Injections
+
         private readonly IRepository<Product, int> _productRepository;
         private readonly IRepository<Tag, string> _tagRepository;
         private readonly IRepository<ProductTag, int> _productTagRepository;
@@ -21,13 +24,16 @@ namespace NUShop.Service.Implements
         private readonly IRepository<ProductImage, int> _productImageRepository;
         private readonly IRepository<WholePrice, int> _wholePriceRepository;
         private readonly IMapper _mapper;
-
         private readonly IUnitOfWork _unitOfWork;
 
-        public ProductService(IRepository<Product, int> productRepository, IRepository<Tag, string> tagRepository,
-                            IRepository<ProductQuantity, int> productQuantityRepository, IRepository<ProductImage, int> productImageRepository,
-                            IRepository<WholePrice, int> wholePriceRepository, IRepository<ProductTag, int> productTagRepository,
-                            IUnitOfWork unitOfWork, IMapper mapper)
+        public ProductService(
+            IRepository<Product, int> productRepository,
+            IRepository<Tag, string> tagRepository,
+            IRepository<ProductQuantity, int> productQuantityRepository,
+            IRepository<ProductImage, int> productImageRepository,
+            IRepository<WholePrice, int> wholePriceRepository,
+            IRepository<ProductTag, int> productTagRepository,
+            IUnitOfWork unitOfWork, IMapper mapper)
         {
             _productRepository = productRepository;
             _tagRepository = tagRepository;
@@ -38,6 +44,10 @@ namespace NUShop.Service.Implements
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
+
+        #endregion Injections
+
+        #region C
 
         public ProductViewModel Add(ProductViewModel productViewModel)
         {
@@ -68,6 +78,9 @@ namespace NUShop.Service.Implements
             }
 
             var product = _mapper.Map<Product>(productViewModel);
+            var datimeNow = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
+            product.DateCreated = datimeNow;
+            product.DateModified = datimeNow;
             foreach (var productTag in productTags)
             {
                 product.ProductTags.Add(productTag);
@@ -93,11 +106,40 @@ namespace NUShop.Service.Implements
             _unitOfWork.Commit();
         }
 
-        public void Delete(int id)
+        public void AddImages(int productId, string[] images)
         {
-            _productRepository.Remove(id);
+            _productImageRepository.RemoveMultiple(_productImageRepository.GetAll(x => x.ProductId == productId).ToList());
+            foreach (var image in images)
+            {
+                _productImageRepository.Add(new ProductImage()
+                {
+                    Path = image,
+                    ProductId = productId,
+                    Caption = string.Empty
+                });
+            }
             _unitOfWork.Commit();
         }
+
+        public void AddWholePrice(int productId, List<WholePriceViewModel> wholePrices)
+        {
+            _wholePriceRepository.RemoveMultiple(_wholePriceRepository.GetAll(x => x.ProductId == productId).ToList());
+            foreach (var wholePrice in wholePrices)
+            {
+                _wholePriceRepository.Add(new WholePrice()
+                {
+                    ProductId = productId,
+                    FromQuantity = wholePrice.FromQuantity,
+                    ToQuantity = wholePrice.ToQuantity,
+                    Price = wholePrice.Price
+                });
+            }
+            _unitOfWork.Commit();
+        }
+
+        #endregion C
+
+        #region R
 
         public List<ProductViewModel> GetAll()
         {
@@ -145,80 +187,11 @@ namespace NUShop.Service.Implements
             return productQuantitiesViewModel;
         }
 
-        public void Update(ProductViewModel productViewModel)
-        {
-            var productTags = new List<ProductTag>();
-
-            if (!string.IsNullOrEmpty(productViewModel.Tags))
-            {
-                var tags = productViewModel.Tags.Split(',');
-                foreach (var t in tags)
-                {
-                    var tagId = TextHelper.ToUnsignString(t);
-                    if (!_tagRepository.GetAll(x => x.Id == tagId).Any())
-                    {
-                        var tag = new Tag
-                        {
-                            Id = tagId,
-                            Name = t,
-                            Type = CommonConstants.ProductTag
-                        };
-                        _tagRepository.Add(tag);
-                    }
-                    _productTagRepository.RemoveMultiple(_productTagRepository.GetAll(x => x.Id == productViewModel.Id).ToList());
-                    var productTag = new ProductTag
-                    {
-                        TagId = tagId
-                    };
-                    productTags.Add(productTag);
-                }
-            }
-
-            var product = _mapper.Map<Product>(productViewModel);
-            foreach (var productTag in productTags)
-            {
-                product.ProductTags.Add(productTag);
-            }
-            _productRepository.Update(product);
-            _unitOfWork.Commit();
-        }
-
         public List<ProductImageViewModel> GetImages(int productId)
         {
             var productImages = _productImageRepository.GetAll(x => x.ProductId == productId);
             var productImagesViewModel = _mapper.Map<List<ProductImageViewModel>>(productImages);
             return productImagesViewModel;
-        }
-
-        public void AddImages(int productId, string[] images)
-        {
-            _productImageRepository.RemoveMultiple(_productImageRepository.GetAll(x => x.ProductId == productId).ToList());
-            foreach (var image in images)
-            {
-                _productImageRepository.Add(new ProductImage()
-                {
-                    Path = image,
-                    ProductId = productId,
-                    Caption = string.Empty
-                });
-            }
-            _unitOfWork.Commit();
-        }
-
-        public void AddWholePrice(int productId, List<WholePriceViewModel> wholePrices)
-        {
-            _wholePriceRepository.RemoveMultiple(_wholePriceRepository.GetAll(x => x.ProductId == productId).ToList());
-            foreach (var wholePrice in wholePrices)
-            {
-                _wholePriceRepository.Add(new WholePrice()
-                {
-                    ProductId = productId,
-                    FromQuantity = wholePrice.FromQuantity,
-                    ToQuantity = wholePrice.ToQuantity,
-                    Price = wholePrice.Price
-                });
-            }
-            _unitOfWork.Commit();
         }
 
         public List<WholePriceViewModel> GetWholePrices(int productId)
@@ -283,6 +256,64 @@ namespace NUShop.Service.Implements
                         };
             return query.ToList();
         }
+
+        #endregion R
+
+        #region U
+
+        public void Update(ProductViewModel productViewModel)
+        {
+            var productTags = new List<ProductTag>();
+            if (!string.IsNullOrEmpty(productViewModel.Tags))
+            {
+                var tags = productViewModel.Tags.Split(',');
+                foreach (var t in tags)
+                {
+                    var tagId = TextHelper.ToUnsignString(t);
+                    if (!_tagRepository.GetAll(x => x.Id == tagId).Any())
+                    {
+                        var tag = new Tag
+                        {
+                            Id = tagId,
+                            Name = t,
+                            Type = CommonConstants.ProductTag
+                        };
+                        _tagRepository.Add(tag);
+                    }
+                    _productTagRepository.RemoveMultiple(_productTagRepository.GetAll(x => x.Id == productViewModel.Id).ToList());
+                    var productTag = new ProductTag
+                    {
+                        TagId = tagId
+                    };
+                    productTags.Add(productTag);
+                }
+            }
+
+            var oldProduct = _mapper.Map<Product>(GetById(productViewModel.Id));
+
+            var product = _mapper.Map<Product>(productViewModel);
+            product.DateCreated = oldProduct.DateCreated;
+            product.DateModified = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
+            foreach (var item in productTags)
+            {
+                product.ProductTags.Add(item);
+            }
+
+            _productRepository.Update(product);
+            _unitOfWork.Commit();
+        }
+
+        #endregion U
+
+        #region D
+
+        public void Delete(int id)
+        {
+            _productRepository.Remove(id);
+            _unitOfWork.Commit();
+        }
+
+        #endregion D
 
         public bool CheckAvailability(int productId, int size, int color)
         {

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NUShop.Service.Interfaces;
-using RestSharp;
+using NUShop.Utilities.Helpers;
+using NUShop.ViewModel.ViewModels;
+using System;
+using System.Linq;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers
 {
@@ -27,10 +24,12 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
         }
 
         #endregion Injections
+
         public IActionResult Index()
         {
             return View();
         }
+
         #region AJAX API
 
         [HttpGet]
@@ -47,10 +46,11 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             return new OkObjectResult(model);
         }
 
-       [ HttpGet]
+        [HttpGet]
         public IActionResult GetAllPaging(int? categoryId, string keyword, int pageSize, int pageIndex = 1)
         {
             var model = _productService.GetAllPaging(categoryId, keyword, pageIndex, pageSize);
+
             return new OkObjectResult(model);
         }
 
@@ -62,43 +62,59 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             return new OkObjectResult(model);
         }
 
-        //[HttpPost]
-        //public IActionResult SaveEntity(ProductViewModel productVm)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        IEnumerable<ModelError> allErrors = ModelState.Values.SelectMany(v => v.Errors);
-        //        return new BadRequestObjectResult(allErrors);
-        //    }
-        //    else
-        //    {
-        //        productVm.SeoAlias = TextHelper.ToUnsignString(productVm.Name);
-        //        if (productVm.Id == 0)
-        //        {
-        //            _productService.Add(productVm);
-        //        }
-        //        else
-        //        {
-        //            _productService.Update(productVm);
-        //        }
-        //        return new OkObjectResult(productVm);
-        //    }
-        //}
+        [HttpPost]
+        public IActionResult Add(ProductViewModel productViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new BadRequestObjectResult(allErrors);
+            }
+            try
+            {
+                productViewModel.SeoAlias = TextHelper.ToUnsignString(productViewModel.Name);
+                _productService.Add(productViewModel);
+                return new OkObjectResult(productViewModel);
+            }
+            catch (Exception e)
+            {
+                return new BadRequestObjectResult(e.InnerException.Message);
+            }
+        }
 
-        //[HttpPost]
-        //public IActionResult Delete(int id)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return new BadRequestObjectResult(ModelState);
-        //    }
-        //    else
-        //    {
-        //        _productService.Delete(id);
+        [HttpPut]
+        public IActionResult Update(ProductViewModel productViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new BadRequestObjectResult(allErrors);
+            }
+            try
+            {
+                productViewModel.SeoAlias = TextHelper.ToUnsignString(productViewModel.Name);
+                _productService.Update(productViewModel);
+                return new OkObjectResult(productViewModel);
+            }
+            catch (Exception e)
+            {
+                return new BadRequestObjectResult(e.InnerException.Message);
+            }
+        }
 
-        //        return new OkObjectResult(id);
-        //    }
-        //}
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return new BadRequestObjectResult(ModelState);
+            }
+            else
+            {
+                _productService.Delete(id);
+                return new OkObjectResult(id);
+            }
+        }
 
         //[HttpPost]
         //public IActionResult SaveQuantities(int productId, List<ProductQuantityViewModel> quantities)

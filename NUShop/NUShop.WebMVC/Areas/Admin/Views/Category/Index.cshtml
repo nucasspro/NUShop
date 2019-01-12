@@ -53,16 +53,16 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
 </div>
 <script id="table-template" type="x-tmpl-mustache">
     <tr>
         <th scope="row">
             <ul class="d-flex justify-content-center">
                 <li class="mr-3">
-                    <button class="btn-edit" data-id="{{Id}}" ><i class="fa fa-edit"></i></button>
+                    <button class="btn-edit" data-id="{{Id}}" id="btn-edit" ><i class="fa fa-edit"></i></button>
                 </li>
-                <li><a href="#" class="text-danger" data-id="{{Id}}" id="btn-delete"><i class="ti-trash"></i></a></li>
+                <li><button class="btn-delete" data-id="{{Id}}" id="btn-delete"><i class="ti-trash"></i></button></li>
             </ul>
         </th>
         <td>{{{Status}}}</td>
@@ -72,4 +72,4 @@
     </tr>
 </script>
 
-@Html.Partial("_ActionsPartial")
+@await Html.PartialAsync("_ActionsPartial")

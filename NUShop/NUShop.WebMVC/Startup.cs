@@ -19,6 +19,7 @@ using System.IO;
 using Microsoft.AspNetCore.Identity;
 using NUShop.Data.Entities;
 using NUShop.WebMVC.Extensions;
+using ReflectionIT.Mvc.Paging;
 
 namespace NUShop.WebMVC
 {

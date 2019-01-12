@@ -132,7 +132,20 @@
             resetForm();
         });
 
-        $('#btn-delete');
+        $('body').on('click', '.btn-delete', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'DELETE',
+                url: '/Admin/Category/Delete/' + $(this).data('id'),
+                success: function (response) {
+                    loadCategories();
+                    loadParents();
+                },
+                error: function (status) {
+                    console.log(status);
+                }
+            });
+        });
     }
 
     function loadParents() {

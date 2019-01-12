@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NUShop.Data.EF.Extensions;
 using NUShop.Data.Entities;
+using NUShop.Data.Enums;
 
 namespace NUShop.Data.EF.EntityConfigurations
 {
