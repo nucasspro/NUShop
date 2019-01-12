@@ -42,8 +42,8 @@ namespace NUShop.Service.Implements
             }
             int totalRow = users.Count();
 
-            users = users.Skip((pageIndex - 1) * pageSize).Take(pageSize);
-            var usersViewModel = _mapper.Map<List<AppUserViewModel>>(users);
+            var users2 = users.Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            var usersViewModel = _mapper.Map<List<AppUserViewModel>>(users2);
 
             var paginationSet = new PagedResult<AppUserViewModel>()
             {

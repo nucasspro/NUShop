@@ -1,11 +1,13 @@
 ﻿var UserController = function () {
     this.Init = function () {
         loadUsers();
+        getRoles();
         registerEvents();
     }
 
 
     var users = [];
+    var roles = [];
 
    
     function registerEvents() {
@@ -149,6 +151,7 @@
                 var data = response;
                 var render = '';
                 $.each(data, function (i, item) {
+                    roles.push(item);
                     var checked = '';
                     if (selectedRoles !== undefined && selectedRoles.indexOf(item.Name) !== -1)
                         checked = 'checked';

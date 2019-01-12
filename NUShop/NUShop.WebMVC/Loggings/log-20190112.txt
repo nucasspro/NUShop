@@ -5795,3 +5795,311 @@ OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
 2019-01-12T21:21:06.8510710+07:00 0HLJOICF4OO01:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging (NUShop.WebMVC)" in 1364.9402ms (afa2e885)
 2019-01-12T21:21:07.0718884+07:00 0HLJOICF4OO01:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
 2019-01-12T21:21:07.2177224+07:00 0HLJOICF4OO01:00000002 [INF] Request finished in 2148.2751ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T23:50:13.1576526+07:00 0HLJOLO2HTUER:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/user/index   (ca22a1cb)
+2019-01-12T23:50:13.3891919+07:00 0HLJOLO2HTUER:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T23:50:14.9107600+07:00 0HLJOLO2HTUER:00000001 [INF] Executed DbCommand ("1,228"ms) [Parameters=["@__get_Item_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Avatar], [e].[Balance], [e].[BirthDay], [e].[ConcurrencyStamp], [e].[DateCreated], [e].[DateModified], [e].[Email], [e].[EmailConfirmed], [e].[FullName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Status], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AppUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-01-12T23:50:15.7956902+07:00 0HLJOLO2HTUER:00000001 [INF] Executed DbCommand ("225"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-12T23:50:16.0570416+07:00 0HLJOLO2HTUER:00000001 [INF] Executed DbCommand ("139"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-12T23:50:16.1957707+07:00 0HLJOLO2HTUER:00000001 [INF] Executed DbCommand ("96"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-12T23:50:16.3675268+07:00 0HLJOLO2HTUER:00000001 [INF] Executed DbCommand ("92"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-12T23:50:16.5111809+07:00 0HLJOLO2HTUER:00000001 [INF] Executed DbCommand ("115"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-12T23:50:16.6253359+07:00 0HLJOLO2HTUER:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-12T23:50:16.7071281+07:00 0HLJOLO2HTUER:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"User\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-12T23:50:18.2920306+07:00 0HLJOLO2HTUER:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T23:50:18.3119781+07:00 0HLJOLO2HTUER:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.1007ms. (50a9e262)
+2019-01-12T23:50:18.3983863+07:00 0HLJOLO2HTUER:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-12T23:50:19.5652403+07:00 0HLJOLO2HTUER:00000001 [INF] Executed DbCommand ("616"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-12T23:50:20.3107403+07:00 0HLJOLO2HTUER:00000001 [INF] Executed ViewResult - view "Index" executed in 1932.8211ms. (f66409e9)
+2019-01-12T23:50:20.8237780+07:00 0HLJOLO2HTUER:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)" in 4100.8505ms (afa2e885)
+2019-01-12T23:50:20.8309295+07:00 0HLJOLO2HTUET:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/font-awesome.min.css   (ca22a1cb)
+2019-01-12T23:50:20.8568923+07:00 0HLJOLO2HTUES:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css   (ca22a1cb)
+2019-01-12T23:50:20.8568923+07:00 0HLJOLO2HTUEU:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/themify-icons.css   (ca22a1cb)
+2019-01-12T23:50:20.8620077+07:00 0HLJOLO2HTUF0:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/owl.carousel.min.css   (ca22a1cb)
+2019-01-12T23:50:20.8637648+07:00 0HLJOLO2HTUER:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T23:50:20.9467004+07:00 0HLJOLO2HTUER:00000001 [INF] Request finished in 7760.5759ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-12T23:50:20.9987021+07:00 0HLJOLO2HTUEU:00000001 [INF] Sending file. Request path: '"/admin-site/css/themify-icons.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\css\themify-icons.css"' (27b0a520)
+2019-01-12T23:50:21.0174483+07:00 0HLJOLO2HTUEV:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css   (ca22a1cb)
+2019-01-12T23:50:21.0202720+07:00 0HLJOLO2HTUET:00000001 [INF] Sending file. Request path: '"/admin-site/css/font-awesome.min.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\css\font-awesome.min.css"' (27b0a520)
+2019-01-12T23:50:21.0365046+07:00 0HLJOLO2HTUEU:00000001 [INF] Request finished in 170.5671ms 200 text/css (791a596a)
+2019-01-12T23:50:21.0397218+07:00 0HLJOLO2HTUET:00000001 [INF] Request finished in 199.0143ms 200 text/css (791a596a)
+2019-01-12T23:50:21.0879072+07:00 0HLJOLO2HTUF0:00000001 [INF] Sending file. Request path: '"/admin-site/css/owl.carousel.min.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\css\owl.carousel.min.css"' (27b0a520)
+2019-01-12T23:50:21.1977761+07:00 0HLJOLO2HTUF0:00000001 [INF] Request finished in 267.2981ms 200 text/css (791a596a)
+2019-01-12T23:50:21.7079682+07:00 0HLJOLO2HTUEV:00000001 [INF] Sending file. Request path: '"/admin-site/css/metisMenu.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\css\metisMenu.css"' (27b0a520)
+2019-01-12T23:50:22.2091544+07:00 0HLJOLO2HTUER:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/slicknav.min.css   (ca22a1cb)
+2019-01-12T23:50:22.7378375+07:00 0HLJOLO2HTUEU:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/default-css.css   (ca22a1cb)
+2019-01-12T23:50:22.8788367+07:00 0HLJOLO2HTUET:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/styles.css   (ca22a1cb)
+2019-01-12T23:50:22.9012329+07:00 0HLJOLO2HTUER:00000002 [INF] Sending file. Request path: '"/admin-site/css/slicknav.min.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\css\slicknav.min.css"' (27b0a520)
+2019-01-12T23:50:23.3101625+07:00 0HLJOLO2HTUF0:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/typography.css   (ca22a1cb)
+2019-01-12T23:50:23.4629289+07:00 0HLJOLO2HTUER:00000002 [INF] Request finished in 1737.5677ms 200 text/css (791a596a)
+2019-01-12T23:50:23.5294390+07:00 0HLJOLO2HTUEU:00000002 [INF] Sending file. Request path: '"/admin-site/css/default-css.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\css\default-css.css"' (27b0a520)
+2019-01-12T23:50:23.5870402+07:00 0HLJOLO2HTUEV:00000001 [INF] Request finished in 744.329ms 200 text/css (791a596a)
+2019-01-12T23:50:23.6654423+07:00 0HLJOLO2HTUEU:00000002 [INF] Request finished in 2018.6742ms 200 text/css (791a596a)
+2019-01-12T23:50:23.6654340+07:00 0HLJOLO2HTUET:00000002 [INF] Sending file. Request path: '"/admin-site/css/styles.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\css\styles.css"' (27b0a520)
+2019-01-12T23:50:23.7397474+07:00 0HLJOLO2HTUF0:00000002 [INF] Sending file. Request path: '"/admin-site/css/typography.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\css\typography.css"' (27b0a520)
+2019-01-12T23:50:23.7620255+07:00 0HLJOLO2HTUER:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/node_modules/toastr/build/toastr.css   (ca22a1cb)
+2019-01-12T23:50:23.7579739+07:00 0HLJOLO2HTUET:00000002 [INF] Request finished in 1761.0581ms 200 text/css (791a596a)
+2019-01-12T23:50:23.7730630+07:00 0HLJOLO2HTUF0:00000002 [INF] Request finished in 2542.0111ms 200 text/css (791a596a)
+2019-01-12T23:50:23.7857899+07:00 0HLJOLO2HTUEV:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/responsive.css   (ca22a1cb)
+2019-01-12T23:50:23.8127860+07:00 0HLJOLO2HTUEU:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/ckeditor/skins/moono-lisa/editor.css   (ca22a1cb)
+2019-01-12T23:50:24.0277417+07:00 0HLJOLO2HTUF0:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/vendor/modernizr-2.8.3.min.js   (ca22a1cb)
+2019-01-12T23:50:24.1689503+07:00 0HLJOLO2HTUES:00000001 [INF] Sending file. Request path: '"/admin-site/css/bootstrap.min.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\css\bootstrap.min.css"' (27b0a520)
+2019-01-12T23:50:24.1771683+07:00 0HLJOLO2HTUET:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/images/icon/logo.png   (ca22a1cb)
+2019-01-12T23:50:24.1934355+07:00 0HLJOLO2HTUES:00000001 [INF] Request finished in 3348.8856ms 200 text/css (791a596a)
+2019-01-12T23:50:24.1934819+07:00 0HLJOLO2HTUEU:00000003 [INF] Sending file. Request path: '"/lib/ckeditor/skins/moono-lisa/editor.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\lib\ckeditor\skins\moono-lisa\editor.css"' (27b0a520)
+2019-01-12T23:50:24.2007859+07:00 0HLJOLO2HTUF0:00000003 [INF] Sending file. Request path: '"/admin-site/js/vendor/modernizr-2.8.3.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\vendor\modernizr-2.8.3.min.js"' (27b0a520)
+2019-01-12T23:50:24.2573480+07:00 0HLJOLO2HTUEU:00000003 [INF] Request finished in 410.9816ms 200 text/css (791a596a)
+2019-01-12T23:50:24.2600830+07:00 0HLJOLO2HTUF0:00000003 [INF] Request finished in 376.9496ms 200 application/javascript (791a596a)
+2019-01-12T23:50:24.2646573+07:00 0HLJOLO2HTUEV:00000002 [INF] Sending file. Request path: '"/admin-site/css/responsive.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\css\responsive.css"' (27b0a520)
+2019-01-12T23:50:24.3119113+07:00 0HLJOLO2HTUET:00000003 [INF] Sending file. Request path: '"/admin-site/images/icon/logo.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\images\icon\logo.png"' (27b0a520)
+2019-01-12T23:50:25.0586431+07:00 0HLJOLO2HTUER:00000003 [INF] Sending file. Request path: '"/toastr/build/toastr.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\node_modules\toastr\build\toastr.css"' (27b0a520)
+2019-01-12T23:50:26.0077283+07:00 0HLJOLO2HTUET:00000003 [INF] Request finished in 322.728ms 200 image/png (791a596a)
+2019-01-12T23:50:28.0501094+07:00 0HLJOLO2HTUEV:00000002 [INF] Request finished in 1173.1918ms 200 text/css (791a596a)
+2019-01-12T23:50:26.8266669+07:00 0HLJOLO2HTUER:00000003 [INF] Request finished in 1321.9453ms 200 text/css (791a596a)
+2019-01-12T23:50:28.9758435+07:00 0HLJOLO2HTUES:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-12T23:50:29.1777280+07:00 0HLJOLO2HTUEU:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/images/author/author1.jpg   (ca22a1cb)
+2019-01-12T23:50:29.8545220+07:00 0HLJOLO2HTUES:00000002 [INF] Request finished in 4414.1352ms 404  (791a596a)
+2019-01-12T23:50:30.2261541+07:00 0HLJOLO2HTUET:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/vendor/jquery-2.2.4.min.js   (ca22a1cb)
+2019-01-12T23:50:30.3050882+07:00 0HLJOLO2HTUEV:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js   (ca22a1cb)
+2019-01-12T23:50:31.6109921+07:00 0HLJOLO2HTUEU:00000004 [INF] Sending file. Request path: '"/admin-site/images/author/author1.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\images\author\author1.jpg"' (27b0a520)
+2019-01-12T23:50:32.4503505+07:00 0HLJOLO2HTUES:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/owl.carousel.min.js   (ca22a1cb)
+2019-01-12T23:50:32.6217555+07:00 0HLJOLO2HTUEV:00000003 [INF] Sending file. Request path: '"/admin-site/js/popper.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\popper.min.js"' (27b0a520)
+2019-01-12T23:50:33.1500661+07:00 0HLJOLO2HTUEU:00000004 [INF] Request finished in 4784.5096ms 200 image/jpeg (791a596a)
+2019-01-12T23:50:33.2102206+07:00 0HLJOLO2HTUEV:00000003 [INF] Request finished in 4153.1788ms 200 application/javascript (791a596a)
+2019-01-12T23:50:33.3127110+07:00 0HLJOLO2HTUEU:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/images/author/author2.jpg   (ca22a1cb)
+2019-01-12T23:50:33.3708001+07:00 0HLJOLO2HTUEV:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js   (ca22a1cb)
+2019-01-12T23:50:33.4086658+07:00 0HLJOLO2HTUEU:00000005 [INF] Sending file. Request path: '"/admin-site/images/author/author2.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\images\author\author2.jpg"' (27b0a520)
+2019-01-12T23:50:33.4191398+07:00 0HLJOLO2HTUES:00000003 [INF] Sending file. Request path: '"/admin-site/js/owl.carousel.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\owl.carousel.min.js"' (27b0a520)
+2019-01-12T23:50:33.4796054+07:00 0HLJOLO2HTUEU:00000005 [INF] Request finished in 258.6262ms 200 image/jpeg (791a596a)
+2019-01-12T23:50:33.5092916+07:00 0HLJOLO2HTUES:00000003 [INF] Request finished in 3366.3326ms 200 application/javascript (791a596a)
+2019-01-12T23:50:33.5186815+07:00 0HLJOLO2HTUEU:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/line-chart.js   (ca22a1cb)
+2019-01-12T23:50:33.5243144+07:00 0HLJOLO2HTUES:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/jquery.slicknav.min.js   (ca22a1cb)
+2019-01-12T23:50:33.5492069+07:00 0HLJOLO2HTUF0:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js   (ca22a1cb)
+2019-01-12T23:50:33.5699375+07:00 0HLJOLO2HTUER:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-12T23:50:33.6394218+07:00 0HLJOLO2HTUET:00000004 [INF] Sending file. Request path: '"/admin-site/js/vendor/jquery-2.2.4.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\vendor\jquery-2.2.4.min.js"' (27b0a520)
+2019-01-12T23:50:33.7046044+07:00 0HLJOLO2HTUER:00000004 [INF] Request finished in 3624.4293ms 404  (791a596a)
+2019-01-12T23:50:33.8101141+07:00 0HLJOLO2HTUET:00000004 [INF] Request finished in 5184.937ms 200 application/javascript (791a596a)
+2019-01-12T23:50:33.8203710+07:00 0HLJOLO2HTUES:00000004 [INF] Sending file. Request path: '"/admin-site/js/jquery.slicknav.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\jquery.slicknav.min.js"' (27b0a520)
+2019-01-12T23:50:33.8374632+07:00 0HLJOLO2HTUER:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/pie-chart.js   (ca22a1cb)
+2019-01-12T23:50:33.9288072+07:00 0HLJOLO2HTUES:00000004 [INF] Request finished in 311.5725ms 200 application/javascript (791a596a)
+2019-01-12T23:50:33.9495437+07:00 0HLJOLO2HTUF0:00000004 [INF] Sending file. Request path: '"/admin-site/js/bootstrap.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\bootstrap.min.js"' (27b0a520)
+2019-01-12T23:50:33.9620666+07:00 0HLJOLO2HTUES:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-12T23:50:33.9794584+07:00 0HLJOLO2HTUER:00000005 [INF] Sending file. Request path: '"/admin-site/js/pie-chart.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\pie-chart.js"' (27b0a520)
+2019-01-12T23:50:33.9903493+07:00 0HLJOLO2HTUES:00000005 [INF] Request finished in 34.001ms 404  (791a596a)
+2019-01-12T23:50:34.0056509+07:00 0HLJOLO2HTUER:00000005 [INF] Request finished in 274.9046ms 200 application/javascript (791a596a)
+2019-01-12T23:50:34.0098787+07:00 0HLJOLO2HTUES:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/scripts.js   (ca22a1cb)
+2019-01-12T23:50:34.0435070+07:00 0HLJOLO2HTUER:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/plugins.js   (ca22a1cb)
+2019-01-12T23:50:34.1204445+07:00 0HLJOLO2HTUF0:00000004 [INF] Request finished in 4014.9829ms 200 application/javascript (791a596a)
+2019-01-12T23:50:34.1879562+07:00 0HLJOLO2HTUEU:00000006 [INF] Sending file. Request path: '"/admin-site/js/line-chart.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\line-chart.js"' (27b0a520)
+2019-01-12T23:50:34.2234373+07:00 0HLJOLO2HTUER:00000006 [INF] Sending file. Request path: '"/admin-site/js/plugins.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\plugins.js"' (27b0a520)
+2019-01-12T23:50:34.2525307+07:00 0HLJOLO2HTUES:00000006 [INF] Sending file. Request path: '"/admin-site/js/scripts.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\scripts.js"' (27b0a520)
+2019-01-12T23:50:34.2955282+07:00 0HLJOLO2HTUER:00000006 [INF] Request finished in 217.796ms 200 application/javascript (791a596a)
+2019-01-12T23:50:34.3333957+07:00 0HLJOLO2HTUES:00000006 [INF] Request finished in 265.7819ms 200 application/javascript (791a596a)
+2019-01-12T23:50:34.3518620+07:00 0HLJOLO2HTUER:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/mustache/mustache.js   (ca22a1cb)
+2019-01-12T23:50:34.7895182+07:00 0HLJOLO2HTUES:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-12T23:50:34.8330874+07:00 0HLJOLO2HTUF0:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootbox/bootbox.js   (ca22a1cb)
+2019-01-12T23:50:34.8436781+07:00 0HLJOLO2HTUER:00000007 [INF] Sending file. Request path: '"/lib/mustache/mustache.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\lib\mustache\mustache.js"' (27b0a520)
+2019-01-12T23:50:34.8610689+07:00 0HLJOLO2HTUES:00000007 [INF] Request finished in 453.7649ms 404  (791a596a)
+2019-01-12T23:50:34.9759531+07:00 0HLJOLO2HTUER:00000007 [INF] Request finished in 537.9688ms 200 application/javascript (791a596a)
+2019-01-12T23:50:35.0294301+07:00 0HLJOLO2HTUES:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/twbs-pagination/jquery.twbsPagination.js   (ca22a1cb)
+2019-01-12T23:50:35.2572817+07:00 0HLJOLO2HTUER:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-12T23:50:35.3696021+07:00 0HLJOLO2HTUF0:00000005 [INF] Sending file. Request path: '"/lib/bootbox/bootbox.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\lib\bootbox\bootbox.js"' (27b0a520)
+2019-01-12T23:50:35.4045996+07:00 0HLJOLO2HTUF0:00000005 [INF] Request finished in 1249.1788ms 200 application/javascript (791a596a)
+2019-01-12T23:50:35.4040796+07:00 0HLJOLO2HTUES:00000008 [INF] Sending file. Request path: '"/lib/twbs-pagination/jquery.twbsPagination.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\lib\twbs-pagination\jquery.twbsPagination.js"' (27b0a520)
+2019-01-12T23:50:35.4886503+07:00 0HLJOLO2HTUER:00000008 [INF] Request finished in 270.4092ms 404  (791a596a)
+2019-01-12T23:50:35.5121557+07:00 0HLJOLO2HTUES:00000008 [INF] Request finished in 547.4343ms 200 application/javascript (791a596a)
+2019-01-12T23:50:35.5384647+07:00 0HLJOLO2HTUF0:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/node_modules/toastr/toastr.js   (ca22a1cb)
+2019-01-12T23:50:35.6530758+07:00 0HLJOLO2HTUES:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/shared/settings.js?v=ch612e6ZOolgZW90amQALHvBUKV6wrA8yFgPiVrFbTM   (ca22a1cb)
+2019-01-12T23:50:35.7498598+07:00 0HLJOLO2HTUER:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/user/index.js?v=mVpq4FW6FolMwPl9uEqRDhTgircVz1IQF75nvWXAIEc   (ca22a1cb)
+2019-01-12T23:50:35.8235117+07:00 0HLJOLO2HTUES:00000009 [INF] Sending file. Request path: '"/app/shared/settings.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\shared\settings.js"' (27b0a520)
+2019-01-12T23:50:35.9491752+07:00 0HLJOLO2HTUF0:00000006 [INF] Sending file. Request path: '"/toastr/toastr.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\node_modules\toastr\toastr.js"' (27b0a520)
+2019-01-12T23:50:35.9732939+07:00 0HLJOLO2HTUES:00000009 [INF] Request finished in 311.2842ms 200 application/javascript (791a596a)
+2019-01-12T23:50:36.1207561+07:00 0HLJOLO2HTUF0:00000006 [INF] Request finished in 540.4262ms 200 application/javascript (791a596a)
+2019-01-12T23:50:36.1607566+07:00 0HLJOLO2HTUES:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/images/author/author4.jpg   (ca22a1cb)
+2019-01-12T23:50:36.1607673+07:00 0HLJOLO2HTUF0:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/images/author/author3.jpg   (ca22a1cb)
+2019-01-12T23:50:36.1848936+07:00 0HLJOLO2HTUER:00000009 [INF] Sending file. Request path: '"/app/controllers/user/index.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\controllers\user\index.js"' (27b0a520)
+2019-01-12T23:50:36.1970289+07:00 0HLJOLO2HTUEU:00000006 [INF] Request finished in 709.1124ms 200 application/javascript (791a596a)
+2019-01-12T23:50:36.2088738+07:00 0HLJOLO2HTUER:00000009 [INF] Request finished in 694.1743ms 200 application/javascript (791a596a)
+2019-01-12T23:50:36.2866793+07:00 0HLJOLO2HTUEU:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/ckeditor/ckeditor.js   (ca22a1cb)
+2019-01-12T23:50:36.4885498+07:00 0HLJOLO2HTUER:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/fonts/fontawesome-webfont.woff2?v=4.6.3   (ca22a1cb)
+2019-01-12T23:50:37.0106048+07:00 0HLJOLO2HTUF0:00000007 [INF] Sending file. Request path: '"/admin-site/images/author/author3.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\images\author\author3.jpg"' (27b0a520)
+2019-01-12T23:50:37.0653650+07:00 0HLJOLO2HTUES:0000000A [INF] Sending file. Request path: '"/admin-site/images/author/author4.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\images\author\author4.jpg"' (27b0a520)
+2019-01-12T23:50:37.1496446+07:00 0HLJOLO2HTUF0:00000007 [INF] Request finished in 889.7691ms 200 image/jpeg (791a596a)
+2019-01-12T23:50:37.2380884+07:00 0HLJOLO2HTUES:0000000A [INF] Request finished in 1092.0542ms 200 image/jpeg (791a596a)
+2019-01-12T23:50:37.3200219+07:00 0HLJOLO2HTUF0:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/fonts/themify.woff?-fvbane   (ca22a1cb)
+2019-01-12T23:50:37.4727475+07:00 0HLJOLO2HTUER:0000000A [INF] Sending file. Request path: '"/admin-site/fonts/fontawesome-webfont.woff2"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\fonts\fontawesome-webfont.woff2"' (27b0a520)
+2019-01-12T23:50:37.6523615+07:00 0HLJOLO2HTUET:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/jquery.slimscroll.min.js   (ca22a1cb)
+2019-01-12T23:50:37.8357563+07:00 0HLJOLO2HTUF0:00000008 [INF] Sending file. Request path: '"/admin-site/fonts/themify.woff"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\fonts\themify.woff"' (27b0a520)
+2019-01-12T23:50:38.1602140+07:00 0HLJOLO2HTUER:0000000A [INF] Request finished in 1263.852ms 200 font/woff2 (791a596a)
+2019-01-12T23:50:38.2432272+07:00 0HLJOLO2HTUF0:00000008 [INF] Request finished in 681.0167ms 200 application/font-woff (791a596a)
+2019-01-12T23:50:38.4669351+07:00 0HLJOLO2HTUET:00000005 [INF] Sending file. Request path: '"/admin-site/js/jquery.slimscroll.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\jquery.slimscroll.min.js"' (27b0a520)
+2019-01-12T23:50:39.3737875+07:00 0HLJOLO2HTUEV:00000004 [INF] Sending file. Request path: '"/admin-site/js/metisMenu.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\metisMenu.min.js"' (27b0a520)
+2019-01-12T23:50:40.1315223+07:00 0HLJOLO2HTUET:00000005 [INF] Request finished in 4656.6314ms 200 application/javascript (791a596a)
+2019-01-12T23:50:40.1576476+07:00 0HLJOLO2HTUEV:00000004 [INF] Request finished in 6163.5257ms 200 application/javascript (791a596a)
+2019-01-12T23:50:40.2039300+07:00 0HLJOLO2HTUEV:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bar-chart.js   (ca22a1cb)
+2019-01-12T23:50:40.6391062+07:00 0HLJOLO2HTUEU:00000007 [INF] Sending file. Request path: '"/lib/ckeditor/ckeditor.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\lib\ckeditor\ckeditor.js"' (27b0a520)
+2019-01-12T23:50:40.6849276+07:00 0HLJOLO2HTUEV:00000005 [INF] Sending file. Request path: '"/admin-site/js/bar-chart.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\admin-site\js\bar-chart.js"' (27b0a520)
+2019-01-12T23:50:40.9412875+07:00 0HLJOLO2HTUEU:00000007 [INF] Request finished in 4442.0667ms 200 application/javascript (791a596a)
+2019-01-12T23:50:40.9501427+07:00 0HLJOLO2HTUEV:00000005 [INF] Request finished in 527.315ms 200 application/javascript (791a596a)
+2019-01-12T23:50:40.9902620+07:00 0HLJOLO2HTUEU:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Role/GetAll   (ca22a1cb)
+2019-01-12T23:50:40.9903992+07:00 0HLJOLO2HTUEV:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/User/GetAllPaging?keyword=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T23:50:41.0404804+07:00 0HLJOLO2HTUEU:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-12T23:50:41.0406081+07:00 0HLJOLO2HTUEV:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T23:50:41.0645005+07:00 0HLJOLO2HTUEU:00000008 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-12T23:50:41.2438983+07:00 0HLJOLO2HTUEU:00000008 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T23:50:41.2439026+07:00 0HLJOLO2HTUEV:00000006 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"User\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T23:50:41.2756204+07:00 0HLJOLO2HTUEU:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T23:50:42.2563525+07:00 0HLJOLO2HTUEU:00000008 [INF] Executed DbCommand ("338"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-12T23:50:42.2853087+07:00 0HLJOLO2HTUEU:00000008 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1014.8066ms. (50a9e262)
+2019-01-12T23:50:42.2915969+07:00 0HLJOLO2HTUEV:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T23:50:42.5342485+07:00 0HLJOLO2HTUEV:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T23:50:43.2382167+07:00 0HLJOLO2HTUEU:00000008 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T23:50:43.3851884+07:00 0HLJOLO2HTUEV:00000006 [INF] Executed DbCommand ("694"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppUsers] AS [a]" (0723d8ff)
+2019-01-12T23:50:43.4820014+07:00 0HLJOLO2HTUEV:00000006 [WRN] Query: '"(from AppUser <generated>_2 in DbSet<AppUser> select [<generated>_2]).Skip(__p_0).Take(__p_1)"' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results. (32148ccc)
+2019-01-12T23:50:43.6703728+07:00 0HLJOLO2HTUEV:00000006 [INF] Executed DbCommand ("123"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[Balance], [a].[BirthDay], [a].[ConcurrencyStamp], [a].[DateCreated], [a].[DateModified], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Status], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AppUsers] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-12T23:51:50.5845252+07:00 0HLJOLO2HTUEV:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging (NUShop.WebMVC)" in 69255.1589ms (afa2e885)
+2019-01-12T23:51:50.5968229+07:00 0HLJOLO2HTUEU:00000008 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)" in 69505.2671ms (afa2e885)
+2019-01-12T23:51:50.6091375+07:00 0HLJOLO2HTUEU:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T23:51:50.6091673+07:00 0HLJOLO2HTUEV:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T23:51:50.8775373+07:00 0HLJOLO2HTUEU:00000008 [INF] Request finished in 69668.4516ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T23:51:51.0730599+07:00 0HLJOLO2HTUEV:00000006 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+EntityQueryable`1 -> List`1
+Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[[NUShop.Data.Entities.AppUser, NUShop.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.AppUserViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] ---> AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+AppUser -> AppUserViewModel
+NUShop.Data.Entities.AppUser -> NUShop.ViewModel.ViewModels.AppUserViewModel
+
+Type Map configuration:
+AppUser -> AppUserViewModel
+NUShop.Data.Entities.AppUser -> NUShop.ViewModel.ViewModels.AppUserViewModel
+
+Destination Member:
+DateModified
+ ---> System.FormatException: 1546595937 is not a valid value for DateTime. ---> System.FormatException: String '1546595937' was not recognized as a valid DateTime.
+   at System.DateTimeParse.Parse(ReadOnlySpan`1 s, DateTimeFormatInfo dtfi, DateTimeStyles styles)
+   at System.DateTime.Parse(String s, IFormatProvider provider)
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   --- End of inner exception stack trace ---
+   at System.ComponentModel.DateTimeConverter.ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, Object value)
+   at AutoMapper.Mappers.TypeConverterMapper.Map[TSource,TDestination](TSource source) in C:\projects\automapper\src\AutoMapper\Mappers\TypeConverterMapper.cs:line 22
+   at lambda_method(Closure , EntityQueryable`1 , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , EntityQueryable`1 , List`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method(Closure , EntityQueryable`1 , List`1 , ResolutionContext )
+   at lambda_method(Closure , Object , Object , ResolutionContext )
+   at AutoMapper.Mapper.AutoMapper.IMapper.Map[TDestination](Object source) in C:\projects\automapper\src\AutoMapper\Mapper.cs:line 211
+   at NUShop.Service.Implements.UserService.GetAllPaging(String keyword, Int32 pageSize, Int32 pageIndex) in D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.Service\Implements\UserService.cs:line 46
+   at NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging(String keyword, Int32 pageSize, Int32 pageIndex) in D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\Areas\Admin\Controllers\UserController.cs:line 45
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-01-12T23:51:51.5313403+07:00 0HLJOLO2HTUEV:00000006 [INF] Request finished in 70479.4189ms 500 text/html; charset=utf-8 (791a596a)
+2019-01-12T23:52:51.7380660+07:00 0HLJOLO2HTUEV:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/user/index   (ca22a1cb)
+2019-01-12T23:52:51.7597289+07:00 0HLJOLO2HTUEV:00000007 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-12T23:52:51.7903793+07:00 0HLJOLO2HTUEV:00000007 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"User\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-12T23:52:51.9013905+07:00 0HLJOLO2HTUEV:00000007 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T23:52:51.9058998+07:00 0HLJOLO2HTUEV:00000007 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.1753ms. (50a9e262)
+2019-01-12T23:52:51.9199132+07:00 0HLJOLO2HTUEV:00000007 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-12T23:52:51.9821385+07:00 0HLJOLO2HTUEV:00000007 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T23:52:52.2926960+07:00 0HLJOLO2HTUEV:00000007 [INF] Executed DbCommand ("303"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-12T23:52:53.0026174+07:00 0HLJOLO2HTUEV:00000007 [INF] Executed ViewResult - view "Index" executed in 395.2391ms. (f66409e9)
+2019-01-12T23:52:53.0670353+07:00 0HLJOLO2HTUEU:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/user/index.js?v=mVpq4FW6FolMwPl9uEqRDhTgircVz1IQF75nvWXAIEc   (ca22a1cb)
+2019-01-12T23:52:53.3370334+07:00 0HLJOLO2HTUEV:00000007 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)" in 1212.4498ms (afa2e885)
+2019-01-12T23:52:53.5241321+07:00 0HLJOLO2HTUF0:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-12T23:52:54.0087900+07:00 0HLJOLO2HTUEU:00000009 [INF] The file "/app/controllers/user/index.js" was not modified (f1f8d725)
+2019-01-12T23:52:54.5410892+07:00 0HLJOLO2HTUEV:00000007 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.UserController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T23:52:54.5845345+07:00 0HLJOLO2HTUEU:00000009 [INF] Request finished in 1611.4631ms 304 application/javascript (791a596a)
+2019-01-12T23:52:54.6024303+07:00 0HLJOLO2HTUF0:00000009 [INF] Request finished in 273.2003ms 404  (791a596a)
+2019-01-12T23:52:54.6054645+07:00 0HLJOLO2HTUEV:00000007 [INF] Request finished in 2824.8362ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-12T23:52:54.6194648+07:00 0HLJOLO2HTUEU:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-12T23:52:54.6427397+07:00 0HLJOLO2HTUF0:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-12T23:52:54.7315539+07:00 0HLJOLO2HTUEU:0000000A [INF] Request finished in 35.7458ms 404  (791a596a)
+2019-01-12T23:52:54.7501920+07:00 0HLJOLO2HTUF0:0000000A [INF] Request finished in 41.6217ms 404  (791a596a)
+2019-01-12T23:52:54.7569122+07:00 0HLJOLO2HTUER:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-12T23:52:54.7802633+07:00 0HLJOLO2HTUET:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-12T23:52:54.8233526+07:00 0HLJOLO2HTUER:0000000B [INF] Request finished in 424.1873ms 404  (791a596a)
+2019-01-12T23:52:54.8826543+07:00 0HLJOLO2HTUF0:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Role/GetAll   (ca22a1cb)
+2019-01-12T23:52:54.9593159+07:00 0HLJOLO2HTUER:0000000C [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/User/GetAllPaging?keyword=&pageIndex=1&pageSize=10   (ca22a1cb)
+2019-01-12T23:52:54.9707043+07:00 0HLJOLO2HTUF0:0000000B [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-12T23:52:54.9733239+07:00 0HLJOLO2HTUER:0000000C [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-12T23:52:54.9840730+07:00 0HLJOLO2HTUF0:0000000B [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-12T23:52:54.9920897+07:00 0HLJOLO2HTUER:0000000C [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"User\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-12T23:52:55.1331901+07:00 0HLJOLO2HTUET:00000006 [INF] Request finished in 1447.2054ms 404  (791a596a)
+2019-01-12T23:52:55.1357851+07:00 0HLJOLO2HTUF0:0000000B [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-12T23:52:55.1522769+07:00 0HLJOLO2HTUER:0000000C [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.UserController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-12T23:52:55.1543332+07:00 0HLJOLO2HTUF0:0000000B [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T23:52:55.3344498+07:00 0HLJOLO2HTUER:0000000C [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-12T23:52:55.3459664+07:00 0HLJOLO2HTUF0:0000000B [INF] Executed DbCommand ("165"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-12T23:52:55.8649464+07:00 0HLJOLO2HTUF0:0000000B [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 206.3527ms. (50a9e262)
+2019-01-12T23:52:56.4451362+07:00 0HLJOLO2HTUF0:0000000B [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-12T23:52:56.4541129+07:00 0HLJOLO2HTUER:0000000C [INF] Executed DbCommand ("711"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppUsers] AS [a]" (0723d8ff)
+2019-01-12T23:52:56.4705521+07:00 0HLJOLO2HTUF0:0000000B [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)" in 1459.7602ms (afa2e885)
+2019-01-12T23:53:05.6208674+07:00 0HLJOLO2HTUF0:0000000B [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-12T23:53:06.1341633+07:00 0HLJOLO2HTUF0:0000000B [INF] Request finished in 10818.9039ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-12T23:53:55.1860520+07:00 0HLJOLO2HTUER:0000000C [INF] Executed DbCommand ("69"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[AccessFailedCount], [a].[Avatar], [a].[Balance], [a].[BirthDay], [a].[ConcurrencyStamp], [a].[DateCreated], [a].[DateModified], [a].[Email], [a].[EmailConfirmed], [a].[FullName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Status], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AppUsers] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)

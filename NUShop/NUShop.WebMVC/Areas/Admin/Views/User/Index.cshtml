@@ -63,20 +63,13 @@
     </tr>
 </script>
 
-<script id="table-template" type="x-tmpl-mustache">
-    <tr>
-        <th scope="row">
-            <ul class="d-flex justify-content-center">
-                <li class="mr-3">
-                    <button class="btn-edit" data-id="{{Id}}" id="btn-edit"><i class="fa fa-edit"></i></button>
-                <li><button class="btn-delete" data-id="{{Id}}" id="btn-delete"><i class="ti-trash"></i></button></li>
-            </ul>
-        </th>
-        <td>{{{Status}}}</td>
-        <td>{{UserName}}</td>
-        <td><img src="{{Avatar}}" width="50" height="50"></td>
-        <td>{{UpdatedDate}}</td>
-    </tr>
+<script id="role-template" type="x-tmpl-mustache">
+    <div class="ti-check-box">
+        <label>
+            <input type="checkbox" {{Checked}} value="{{Name}}" name="ckRoles">
+            <span class="text">{{Description}}</span>
+        </label>
+    </div>
 </script>
 
 @await Html.PartialAsync("_ActionsPartial")
