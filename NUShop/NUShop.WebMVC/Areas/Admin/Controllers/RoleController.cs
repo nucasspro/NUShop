@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Logging;
 using NUShop.Service.Interfaces;
 using NUShop.ViewModel.ViewModels;
+using NUShop.WebMVC.Extensions;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -27,7 +29,6 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
         {
             return View();
         }
-
 
         [HttpGet]
         public IActionResult GetAll()
@@ -71,6 +72,12 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             }
         }
 
+        [HttpPost]
+        public IActionResult GetAllFunction(Guid roleId)
+        {
+            var functions = _roleService.GetAllFunction(roleId);
+            return new OkObjectResult(functions);
+        }
 
         [HttpPut]
         public async Task<IActionResult> Update(AppRoleViewModel appRoleViewModel)
@@ -91,6 +98,59 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             }
         }
 
-        
+        [HttpPost]
+        public IActionResult UpdatePermission(List<PermissionViewModel> listPermmission, Guid roleId)
+        {
+            _roleService.UpdatePermission(listPermmission, roleId);
+            return new OkResult();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Add(AppRoleViewModel appRoleViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new BadRequestObjectResult(allErrors);
+            }
+            if (!appRoleViewModel.Id.HasValue)
+            {
+                var notificationId = Guid.NewGuid().ToString();
+                var announcement = new AnnouncementViewModel()
+                {
+                    Title = "Role created",
+                    DateCreated = DateTime.Now,
+                    Content = $"Role {appRoleViewModel.Name} has been created",
+                    Id = notificationId,
+                    UserId = User.GetUserId()
+                };
+                var announcementUsers = new List<AnnouncementUserViewModel>()
+                {
+                    new AnnouncementUserViewModel(){AnnouncementId = notificationId,HasRead = false,UserId = User.GetUserId()}
+                };
+                await _roleService.AddAsync(announcement, announcementUsers, appRoleViewModel);
+            }
+            return new OkObjectResult(appRoleViewModel);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete(Guid roleId)
+        {
+            if (!ModelState.IsValid)
+            {
+                var allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new BadRequestObjectResult(allErrors);
+            }
+            try
+            {
+                await _roleService.DeleteAsync(roleId);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return new BadRequestObjectResult(e.InnerException.Message);
+            }
+
+        }
     }
 }

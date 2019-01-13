@@ -98,7 +98,7 @@ namespace NUShop.Service.Mappings
             CreateMap<AppUser, AppUserViewModel>()
                 .ForMember(viewmodel => viewmodel.DateCreated,
                     opt => opt.MapFrom(model => ConvertDatetime.UnixTimestampToDateTime(model.DateCreated)))
-                .ForMember(viewmodel => viewmodel.DateCreated,
+                .ForMember(viewmodel => viewmodel.DateModified,
                     opt => opt.MapFrom(model => ConvertDatetime.UnixTimestampToDateTime(model.DateModified)));
 
             #endregion AppUser
@@ -109,6 +109,24 @@ namespace NUShop.Service.Mappings
             CreateMap<AppRole, AppRoleViewModel>();
 
             #endregion AppRole
+
+            #region AnnouncementUser
+            CreateMap<AnnouncementUserViewModel, AnnouncementUser>();
+            CreateMap<AnnouncementUser, AnnouncementUserViewModel>();
+            #endregion
+
+            #region Announcement
+            CreateMap<AnnouncementViewModel, Announcement>()
+                .ForMember(model => model.DateCreated,
+                    opt => opt.MapFrom(viewmodel => ConvertDatetime.ConvertToTimeSpan(viewmodel.DateCreated)))
+                .ForMember(model => model.DateModified,
+                    opt => opt.MapFrom(viewmodel => ConvertDatetime.ConvertToTimeSpan(viewmodel.DateModified)));
+            CreateMap<Announcement, AnnouncementViewModel>()
+                .ForMember(viewmodel => viewmodel.DateCreated,
+                    opt => opt.MapFrom(model => ConvertDatetime.UnixTimestampToDateTime(model.DateCreated)))
+                .ForMember(viewmodel => viewmodel.DateModified,
+                    opt => opt.MapFrom(model => ConvertDatetime.UnixTimestampToDateTime(model.DateModified)));
+            #endregion
         }
     }
 }

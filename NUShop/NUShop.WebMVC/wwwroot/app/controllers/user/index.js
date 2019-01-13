@@ -57,6 +57,7 @@
         });
 
         $('#btn-create').off('click').on('click', function () {
+            disableFieldEdit(false);
             $('#user-modal').modal('show');
             $('#btn-save').hide();
             $('#btn-add').show();
@@ -79,8 +80,7 @@
 
             $('#txt-password').val('********');
             $('#txt-password-confirm').val('********');
-            $('#txt-password').hide();
-            $('#txt-password-confirm').hide();
+            disableFieldEdit(true);
 
             $('#txt-email').val(item.Email);
             $('#txt-birthday').val(item.BirthDay);
@@ -97,39 +97,46 @@
         $('body').on('click', '#btn-add', function (e) {
             e.preventDefault();
             var data = collectData('add');
-            //$.ajax({
-            //    type: 'POST',
-            //    data: data,
-            //    url: '/Admin/Product/Add',
-            //    dataType: 'json',
-            //    success: function (response) {
-            //        loadProducts();
-            //        NUShopConfig.toast("success", "Created.");
-            //    },
-            //    error: function (status) {
-            //        console.log(status);
-            //        NUShopConfig.toast("error", "Has an error.");
-            //    }
-            //});
+            $.ajax({
+                type: 'POST',
+                data: data,
+                url: '/Admin/User/Add',
+                dataType: 'json',
+                success: function (response) {
+                    loadUsers();
+                    NUShopConfig.toast("success", "Created.");
+                },
+                error: function (status) {
+                    console.log(status);
+                    NUShopConfig.toast("error", "Has an error.");
+                }
+            });
         });
 
         $('body').on('click', '#btn-save', function (e) {
             e.preventDefault();
             var data = collectData('update');
-            //$.ajax({
-            //    data: data,
-            //    type: 'PUT',
-            //    url: '/Admin/Product/Update',
-            //    dataType: 'json',
-            //    success: function (response) {
-            //        loadProducts();
-            //        NUShopConfig.toast("success", "Saved.");
-            //    },
-            //    error: function (status) {
-            //        console.log(status);
-            //        NUShopConfig.toast("error", "Has an error.");
-            //    }
-            //});
+            $.ajax({
+                type: "PUT",
+                url: "/Admin/User/Update",
+                data: data,
+                dataType: "json",
+                beforeSend: function () {
+                    NUShopConfig.startLoading();
+                },
+                success: function () {
+                    NUShopConfig.toast('success', 'Save user succesful');
+                    $('#user-modal').modal('hide');
+                    resetForm();
+
+                    NUShopConfig.stopLoading();
+                    loadUsers(true);
+                },
+                error: function () {
+                    NUShopConfig.toast('error', 'Has an error');
+                    NUShopConfig.stopLoading();
+                }
+            });
         });
 
         $('body').on('click', '#btn-close', function () {
@@ -180,6 +187,7 @@
             dataType: 'json',
             url: '/Admin/User/GetAllPaging',
             success: function (response) {
+                users = [];
                 $.each(response.Results, function (i, item) {
                     users.push(item);
                     render += Mustache.render(template, {
@@ -232,23 +240,22 @@
     }
 
     function collectData(action) {
+        var roles = [];
+        $.each($('input[name="checkbox-role"]'), function (i, item) {
+            if ($(item).prop('checked') === true)
+                roles.push($(item).prop('value'));
+        });
+
         var data = {
-            Name: $('#txt-name').val(),
-            CategoryId: $('#select-category').val(),
-            Image: $('#txt-image').val(),
-            Price: $('#txt-price').val(),
-            PromotionPrice: $('#txt-promotion-price').val(),
-            OriginalPrice: $('#txt-original-price').val(),
+            Fullname: $('#txt-fullname').val(),
+            Username: $('#txt-username').val(),
+            Password: $('#txt-password').val(),
+            Email: $('#txt-email').val(),
+            BirthDay: $('#txt-birthday').val(),
+            PhoneNumber: $('#txt-phone').val(),
+            Avatar: $('#txt-image').val(),
+            Roles: roles,
             Status: $('#checkbox-status').is(':checked') == true ? 1 : 0,
-            HomeFlag: $('#checkbox-homeflag').is(':checked'),
-            HotFlag: $('#checkbox-hotflag').is(':checked'),
-            ViewCount: $('#txt-view-count').val(),
-            Tags: $('#txt-tags').val(),
-            Unit: $('#txt-unit').val(),
-            SeoPageTitle: $('#txt-seo-page-title').val(),
-            seoAlias: $('#txt-seo-alias').val(),
-            SeoKeywords: $('#txt-seo-keyword').val(),
-            SeoDescription: $('#txt-seo-description').val(),
         };
         if (action === 'update') {
             data.Id = $('#txt-hidden-id').val();
@@ -258,22 +265,26 @@
 
     function resetForm() {
         $('#txt-hidden-id').val('');
-        $('#txt-name').val('');
-        $('#select-category').val('');
+        $('#txt-fullname').val('');
+        disableFieldEdit(false);
+        $('#txt-username').val('');
+        $('#txt-password').val('');
+        $('#txt-txt-password-confirm').val('');
+        $('#txt-email').val('');
+        $('#txt-birthday').val('');
+        $('#txt-phone').val('');
         $('#txt-image').val('');
-        $('#txt-price').val();
-        $('#txt-promotion-price').val();
-        $('#txt-original-price').val();
-        $('#txt-tags').val();
-        $('#txt-unit').val();
+        $.each($('input[name="checkbox-role"]'), function (i, item) {
+            $(item).prop('checked', false);
+        });
         $('#checkbox-status').prop('checked', true);
-        $('#checkbox-homeflag').prop('checked', false);
-        $('#checkbox-hotflag').prop('checked', false);
-        $('#txt-view-count').val();
-        $('#txt-seo-page-title').val('');
-        $('#txt-seo-alias').val('');
-        $('#txt-seo-keyword').val('');
-        $('#txt-seo-description').val('');
+
+    }
+
+    function disableFieldEdit(disabled) {
+        $('#txt-username').prop('disabled', disabled);
+        $('#txt-password').prop('disabled', disabled);
+        $('#txt-txt-password-confirm').prop('disabled', disabled);
     }
 
 };

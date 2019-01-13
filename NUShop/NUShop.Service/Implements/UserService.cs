@@ -5,6 +5,7 @@ using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Interfaces;
 using NUShop.Utilities.DTOs;
 using NUShop.ViewModel.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -68,6 +69,9 @@ namespace NUShop.Service.Implements
         {
             try
             {
+                var dateTimeNow = DateTime.Now;
+                appUserViewModel.DateCreated = dateTimeNow;
+                appUserViewModel.DateModified = dateTimeNow;
                 var user = _mapper.Map<AppUser>(appUserViewModel);
                 var result = await _userManager.CreateAsync(user, appUserViewModel.Password);
                 if (result.Succeeded && appUserViewModel.Roles.Count > 0)
@@ -81,7 +85,7 @@ namespace NUShop.Service.Implements
                 await _unitOfWork.CommitAsync();
                 return true;
             }
-            catch (System.Exception)
+            catch (Exception)
             {
                 return false;
             }

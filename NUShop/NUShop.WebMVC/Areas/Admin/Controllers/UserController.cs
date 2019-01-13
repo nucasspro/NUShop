@@ -58,7 +58,7 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             return new OkObjectResult(appuserviewmodel);
         }
 
-        [HttpPut]
+        [HttpPost]
         public async Task<IActionResult> Add(AppUserViewModel appuserviewmodel)
         {
             if (!ModelState.IsValid)
@@ -70,6 +70,7 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             return new OkObjectResult(appuserviewmodel);
         }
 
+        [HttpDelete]
         public async Task<IActionResult> Delete(string id)
         {
             if (!ModelState.IsValid)

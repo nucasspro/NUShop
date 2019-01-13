@@ -12,12 +12,11 @@ namespace NUShop.Service.Interfaces
         List<AppRoleViewModel> GetAll();
         Task<AppRoleViewModel> GetByIdAsync(Guid id);
         PagedResult<AppRoleViewModel> GetAllPaging(string keyword, int pageSize, int pageIndex = 1);
+        List<PermissionViewModel> GetAllFunction(Guid roleId);
+        Task<bool> AddAsync(AnnouncementViewModel announcement, List<AnnouncementUserViewModel> announcementUsers, AppRoleViewModel roleVm);
         Task UpdateAsync(AppRoleViewModel userVm);
+        void UpdatePermission(List<PermissionViewModel> permissions, Guid roleId);
         Task DeleteAsync(Guid id);
-
-        //Task<bool> AddAsync(AnnouncementViewModel announcement, List<AnnouncementUserViewModel> announcementUsers, AppRoleViewModel userVm);
-        //List<PermissionViewModel> GetListFunctionWithRole(Guid roleId);
-        //void SavePermission(List<PermissionViewModel> permissions, Guid roleId);
         Task<bool> CheckPermission(string functionId, string action, string[] roles);
     }
 }

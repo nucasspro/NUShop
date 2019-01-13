@@ -60,6 +60,7 @@
         });
 
         $('#btn-create').off('click').on('click', function () {
+            resetForm();
             $('#product-modal').modal('show');
             $('#btn-save').hide();
             $('#btn-add').show();
@@ -128,6 +129,7 @@
                 url: '/Admin/Product/Update',
                 dataType: 'json',
                 success: function (response) {
+                    $('#product-modal').modal('hide');
                     loadProducts();
                     NUShopConfig.toast("success", "Saved.");
                 },
@@ -192,7 +194,6 @@
                         UpdatedDate: item.DateModified
                     });
                 });
-                $('#lbl-totalrow').text(response.RowCount);
                 if (render != null) {
                     $('#table-content').html(render);
                 }
