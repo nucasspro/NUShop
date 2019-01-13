@@ -133,8 +133,8 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             return new OkObjectResult(appRoleViewModel);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> Delete(Guid roleId)
+        [HttpPost]
+        public async Task<IActionResult> Delete(Guid id)
         {
             if (!ModelState.IsValid)
             {
@@ -143,14 +143,13 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             }
             try
             {
-                await _roleService.DeleteAsync(roleId);
+                await _roleService.DeleteAsync(id);
                 return Ok();
             }
             catch (Exception e)
             {
                 return new BadRequestObjectResult(e.InnerException.Message);
             }
-
         }
     }
 }

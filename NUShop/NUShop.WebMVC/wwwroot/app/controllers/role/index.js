@@ -113,12 +113,17 @@
             resetForm();
         });
 
-        $('body').on('click', '.btn-delete', function (e) {
+        $('body').on('click', '#btn-delete', function (e) {
             e.preventDefault();
+            var roleId = $(this).data('id');
             NUShopConfig.confirm('Are you sure to delete?', function () {
                 $.ajax({
-                    type: "DELETE",
-                    url: "/Admin/Role/Delete/" + $(this).data('id'),
+                    type: "POST",
+                    url: "/Admin/Role/Delete",
+                    dataType: "json",
+                    data: {
+                        id: roleId
+                    },
                     beforeSend: function () {
                         NUShopConfig.startLoading();
                     },
