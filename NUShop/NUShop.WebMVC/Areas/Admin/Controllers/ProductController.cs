@@ -1,10 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using NUShop.Service.Interfaces;
 using NUShop.Utilities.Helpers;
 using NUShop.ViewModel.ViewModels;
+using OfficeOpenXml;
+using OfficeOpenXml.Table;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
 
 namespace NUShop.WebMVC.Areas.Admin.Controllers
 {
@@ -14,12 +22,17 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
 
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
+        private readonly IHostingEnvironment _hostingEnviroment;
         private readonly ILogger<ProductController> _logger;
 
-        public ProductController(IProductService productService, ICategoryService categoryService, ILogger<ProductController> logger)
+        public ProductController(IProductService productService,
+            ICategoryService categoryService,
+            IHostingEnvironment hostingEnvironment,
+            ILogger<ProductController> logger)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _hostingEnviroment = hostingEnvironment;
             _logger = logger;
         }
 
@@ -158,63 +171,63 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
         //    return new OkObjectResult(wholePrices);
         //}
 
-        //[HttpPost]
-        //public IActionResult ImportExcel(IList<IFormFile> files, int categoryId)
-        //{
-        //    if (files != null && files.Count > 0)
-        //    {
-        //        var file = files[0];
-        //        var filename = ContentDispositionHeaderValue
-        //                           .Parse(file.ContentDisposition)
-        //                           .FileName
-        //                           .Trim('"');
+        [HttpPost]
+        public async Task<IActionResult> ImportExcelAsync(IList<IFormFile> files, int categoryId)
+        {
+            if (files != null && files.Count > 0)
+            {
+                var file = files[0];
+                var filename = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
 
-        //        string folder = _hostingEnvironment.WebRootPath + $@"\uploaded\excels";
-        //        if (!Directory.Exists(folder))
-        //        {
-        //            Directory.CreateDirectory(folder);
-        //        }
-        //        string filePath = Path.Combine(folder, filename);
+                string folder = _hostingEnviroment.WebRootPath + $@"\uploaded\excels";
+                if (!Directory.Exists(folder))
+                {
+                    Directory.CreateDirectory(folder);
+                }
+                string filePath = Path.Combine(folder, filename);
 
-        //        using (FileStream fs = System.IO.File.Create(filePath))
-        //        {
-        //            file.CopyTo(fs);
-        //            fs.Flush();
-        //        }
-        //        _productService.ImportExcel(filePath, categoryId);
-        //        _productService.Save();
-        //        return new OkObjectResult(filePath);
-        //    }
-        //    return new NoContentResult();
-        //}
-        //[HttpPost]
-        //public IActionResult ExportExcel()
-        //{
-        //    string sWebRootFolder = _hostingEnvironment.WebRootPath;
-        //    string directory = Path.Combine(sWebRootFolder, "export-files");
-        //    if (!Directory.Exists(directory))
-        //    {
-        //        Directory.CreateDirectory(directory);
-        //    }
-        //    string sFileName = $"Product_{DateTime.Now:yyyyMMddhhmmss}.xlsx";
-        //    string fileUrl = $"{Request.Scheme}://{Request.Host}/export-files/{sFileName}";
-        //    FileInfo file = new FileInfo(Path.Combine(directory, sFileName));
-        //    if (file.Exists)
-        //    {
-        //        file.Delete();
-        //        file = new FileInfo(Path.Combine(sWebRootFolder, sFileName));
-        //    }
-        //    var products = _productService.GetAll();
-        //    using (ExcelPackage package = new ExcelPackage(file))
-        //    {
-        //        // add a new worksheet to the empty workbook
-        //        ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Products");
-        //        worksheet.Cells["A1"].LoadFromCollection(products, true, TableStyles.Light1);
-        //        worksheet.Cells.AutoFitColumns();
-        //        package.Save(); //Save the workbook.
-        //    }
-        //    return new OkObjectResult(fileUrl);
-        //}
+                using (FileStream fs = System.IO.File.Create(filePath))
+                {
+                    file.CopyTo(fs);
+                    fs.Flush();
+                }
+                await _productService.ImportExcelAsync(filePath, categoryId);
+                return new OkObjectResult(filePath);
+            }
+            return new NoContentResult();
+        }
+
+        [HttpPost]
+        public IActionResult ExportExcel()
+        {
+            var webRootFolder = _hostingEnviroment.WebRootPath;
+            var directory = Path.Combine(webRootFolder, "export-files");
+
+            if (!Directory.Exists(directory))
+            {
+                Directory.CreateDirectory(directory);
+            }
+
+            var fileName = $"Product_{DateTime.Now:yyyyMMddhhmmss}.xlsx";
+            var fileUrl = $"{Request.Scheme}://{Request.Host}/export-files/{fileName}";
+            var file = new FileInfo(Path.Combine(directory, fileName));
+            if (file.Exists)
+            {
+                file.Delete();
+                file = new FileInfo(Path.Combine(webRootFolder, fileName));
+            }
+
+            var products = _productService.GetAll();
+            using (ExcelPackage package = new ExcelPackage(file))
+            {
+                // add a new worksheet to the empty workbook
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Products");
+                worksheet.Cells["A1"].LoadFromCollection(products, true, TableStyles.Light1);
+                worksheet.Cells.AutoFitColumns();
+                package.Save(); //Save the workbook.
+            }
+            return new OkObjectResult(fileUrl);
+        }
 
         #endregion AJAX API
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using NUShop.ViewModel.ViewModels;
 using NUShop.Utilities.DTOs;
+using System.Threading.Tasks;
 
 namespace NUShop.Service.Interfaces
 {
@@ -35,6 +36,7 @@ namespace NUShop.Service.Interfaces
         List<ProductViewModel> GetLastest(int top);
 
         List<ProductViewModel> GetHotProduct(int top);
+
         List<ProductViewModel> GetRelatedProducts(int id, int top);
 
         List<ProductViewModel> GetUpSellProducts(int top);
@@ -42,5 +44,7 @@ namespace NUShop.Service.Interfaces
         List<TagViewModel> GetProductTags(int productId);
 
         bool CheckAvailability(int productId, int size, int color);
+
+        Task ImportExcelAsync(string filePath, int categoryId);
     }
 }

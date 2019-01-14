@@ -14,6 +14,9 @@
         <div class="card-body">
             <h4 class="header-title">Product List</h4>
             <button type="button" class="btn btn-primary mb-3" id="btn-create">Add new</button>
+            <a class="btn btn-danger mb-3" href="~/template/ProductImportTemplate.xlsx">Download Template</a>
+            <button type="button" class="btn btn-primary mb-3" id="btn-import">Import</button>
+            <button type="button" class="btn btn-primary mb-3" id="btn-export">Export</button>
             <div class="row">
                 <select class="custom-select col-2" id="search-category"></select>
                 <input class="form-control col-4" type="text" placeholder="Search" id="search-input" style="margin-bottom: 10px; margin-right: 5px;">
@@ -67,3 +70,4 @@
 </script>
 
 @await Html.PartialAsync("_ActionsPartial")
+@await Html.PartialAsync("_ExcelPartial")

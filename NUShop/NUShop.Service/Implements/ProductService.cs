@@ -7,9 +7,12 @@ using NUShop.Utilities.Constants;
 using NUShop.Utilities.DTOs;
 using NUShop.Utilities.Helpers;
 using NUShop.ViewModel.ViewModels;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace NUShop.Service.Implements
 {
@@ -321,6 +324,71 @@ namespace NUShop.Service.Implements
             if (quantity == null)
                 return false;
             return quantity.Quantity > 0;
+        }
+
+        public async Task ImportExcelAsync(string filePath, int categoryId)
+        {
+            using (var package = new ExcelPackage(new FileInfo(filePath)))
+            {
+                ExcelWorksheet workSheet = package.Workbook.Worksheets[1];
+                for (int i = workSheet.Dimension.Start.Row + 1; i <= workSheet.Dimension.End.Row; i++)
+                {
+                    var product = new Product();
+                    product.CategoryId = categoryId;
+                    product.Name = workSheet.Cells[i, 1].Value.ToString();
+                    product.Description = workSheet.Cells[i, 2].Value.ToString();
+                    product.Status = Status.Active;
+
+                    try
+                    {
+                        product.Content = workSheet.Cells[i, 6].Value.ToString();
+                    }
+                    catch (Exception)
+                    {
+                        product.Content = "";
+                    }
+
+                    try
+                    {
+                        product.SeoKeywords = workSheet.Cells[i, 7].Value.ToString();
+                    }
+                    catch (Exception)
+                    {
+                        product.SeoKeywords = "";
+                    }
+
+                    try
+                    {
+                        product.SeoDescription = workSheet.Cells[i, 8].Value.ToString();
+                    }
+                    catch (Exception)
+                    {
+                        product.SeoDescription = "";
+                    }
+
+                    decimal.TryParse(workSheet.Cells[i, 3].Value.ToString(), out var originalPrice);
+                    product.OriginalPrice = originalPrice;
+
+                    decimal.TryParse(workSheet.Cells[i, 4].Value.ToString(), out var price);
+                    product.Price = price;
+
+                    decimal.TryParse(workSheet.Cells[i, 5].Value.ToString(), out var promotionPrice);
+                    product.PromotionPrice = promotionPrice;
+
+                    bool.TryParse(workSheet.Cells[i, 9].Value.ToString(), out var hotFlag);
+                    product.HotFlag = hotFlag;
+
+                    bool.TryParse(workSheet.Cells[i, 10].Value.ToString(), out var homeFlag);
+                    product.HomeFlag = homeFlag;
+
+                    var dateTimeNow = DateTime.Now;
+                    product.DateCreated = ConvertDatetime.ConvertToTimeSpan(dateTimeNow);
+                    product.DateModified= ConvertDatetime.ConvertToTimeSpan(dateTimeNow);
+
+                    _productRepository.Add(product);
+                    await _unitOfWork.CommitAsync();
+                }
+            }
         }
     }
 }

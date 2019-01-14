@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using NUShop.Service.Interfaces;
 using NUShop.ViewModel.ViewModels;
+using NUShop.WebMVC.Authorization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,16 +14,23 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
         #region Injections
 
         private readonly IUserService _userService;
+        private readonly IAuthorizationService _authorizationService;
+        private readonly ILogger<UserController> _logger;
 
-        public UserController(IUserService userService)
+        public UserController(IUserService userService, IAuthorizationService authorizationService, ILogger<UserController> logger)
         {
             _userService = userService;
+            _authorizationService = authorizationService;
+            _logger = logger;
         }
 
         #endregion Injections
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var result = await _authorizationService.AuthorizeAsync(User, "USER", Operations.Read);
+            if (result.Succeeded == false)
+                return new RedirectResult("/Admin/Login/Index");
             return View();
         }
 

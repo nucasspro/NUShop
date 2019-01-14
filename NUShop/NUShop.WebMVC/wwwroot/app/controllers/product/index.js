@@ -14,6 +14,8 @@
 
     }
     function registerEvents() {
+
+        // search, paging
         $('#select-page-size').on('change', function () {
             NUShopConfig.configs.pageSize = parseInt($(this).val());
             NUShopConfig.configs.pageIndex = 1;
@@ -30,6 +32,7 @@
 	        loadProducts();
         });
 
+        // upload image
         $('body').on('click', '#btn-select-image', function () {
             $('#file-input-image').click();
         });
@@ -59,6 +62,7 @@
             });
         });
 
+        // button create
         $('#btn-create').off('click').on('click', function () {
             resetForm();
             $('#product-modal').modal('show');
@@ -66,6 +70,26 @@
             $('#btn-add').show();
         });
 
+        $('body').on('click', '#btn-add', function (e) {
+            e.preventDefault();
+            var data = collectData('add');
+            $.ajax({
+                type: 'POST',
+                data: data,
+                url: '/Admin/Product/Add',
+                dataType: 'json',
+                success: function (response) {
+                    loadProducts();
+                    NUShopConfig.toast("success", "Created.");
+                },
+                error: function (status) {
+                    console.log(status);
+                    NUShopConfig.toast("error", "Has an error.");
+                }
+            });
+        });
+
+        // button edit
         $('body').on('click', '.btn-edit', function (e) {
             e.preventDefault();
             var id = $(this).data("id");
@@ -101,25 +125,6 @@
             $('#btn-save').show();
         });
 
-        $('body').on('click', '#btn-add', function (e) {
-            e.preventDefault();
-            var data = collectData('add');
-            $.ajax({
-                type: 'POST',
-                data: data,
-                url: '/Admin/Product/Add',
-                dataType: 'json',
-                success: function (response) {
-                    loadProducts();
-                    NUShopConfig.toast("success", "Created.");
-                },
-                error: function (status) {
-                    console.log(status);
-                    NUShopConfig.toast("error", "Has an error.");
-                }
-            });
-        });
-
         $('body').on('click', '#btn-save', function (e) {
             e.preventDefault();
             var data = collectData('update');
@@ -144,10 +149,72 @@
             resetForm();
         });
 
-        $('#btn-delete');
-    }
+        // button import
+        $('#btn-import').on('click', function () {
+            $('#excel-modal').modal('show');
+        });
 
-    
+        $('#btn-save-import').on('click', function () {
+            var fileUpload = $("#btn-select-import").get(0);
+            var files = fileUpload.files;
+
+            // Create FormData object  
+            var fileData = new FormData();
+
+            // Looping over all files and add it to FormData object  
+            if (files.length <= 0) {
+                NUShopConfig.toast('error', "Select file please.");
+                return false;
+            }
+            for (var i = 0; i < files.length; i++) {
+                fileData.append("files", files[i]);
+            }
+            // Adding one more key to FormData object
+            if ($('#select-category-excel').val() == "") {
+                NUShopConfig.toast('error', "Select category please.");
+                return false;
+            }
+            else {
+                fileData.append('categoryId');
+
+                $.ajax({
+                    url: '/Admin/Product/ImportExcelAsync',
+                    type: 'POST',
+                    data: fileData,
+                    processData: false,  // tell jQuery not to process the data
+                    contentType: false,  // tell jQuery not to set contentType
+                    success: function (data) {
+                        $('#excel-modal').modal('hide');
+                        NUShopConfig.toast('success', "Upload successful.");
+                        loadProducts();
+                    },
+                    error: function () {
+                        NUShopConfig.toast('error', "Has an error.");
+                    }
+                });
+                return true;
+            }
+        });
+
+        //button export
+        $('#btn-export').on('click', function () {
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Product/ExportExcel",
+                beforeSend: function () {
+                    NUShopConfig.startLoading();
+                },
+                success: function (response) {
+                    window.location.href = response;
+                    NUShopConfig.stopLoading();
+                },
+                error: function () {
+                    NUShopConfig.toast('error', 'Has an error in progress');
+                    NUShopConfig.stopLoading();
+                }
+            });
+        });
+    }
 
     function loadCategories() {
         $.ajax({
@@ -162,6 +229,7 @@
                 });
                 $('#search-category').html(render);
                 $('#select-category').html(render);
+                $('#select-category-excel').html(render);
             },
             error: function (status) {
                 console.log(status);
