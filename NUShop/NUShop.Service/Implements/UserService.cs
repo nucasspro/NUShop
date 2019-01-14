@@ -81,9 +81,13 @@ namespace NUShop.Service.Implements
                     {
                         await _userManager.AddToRolesAsync(appUser, appUserViewModel.Roles);
                     }
+                    await _unitOfWork.CommitAsync();
+                    return true;
                 }
-                await _unitOfWork.CommitAsync();
-                return true;
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception)
             {

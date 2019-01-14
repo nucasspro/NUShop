@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="~/favicon.ico">
     <link rel="stylesheet" href="~/admin-site/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="~/admin-site/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/admin-site/css/themify-icons.css">
     <link rel="stylesheet" href="~/admin-site/css/metisMenu.css">
@@ -22,7 +21,8 @@
     <link rel="stylesheet" href="~/admin-site/css/styles.css">
     <link rel="stylesheet" href="~/admin-site/css/responsive.css">
     <!-- toastr css -->
-    <link href="~/node_modules/toastr/build/toastr.css" rel="stylesheet" />
+    @*<link href="~/node_modules/toastr/build/toastr.css" rel="stylesheet" />*@
+    <link href="~/lib/toastr/build/toastr.css" rel="stylesheet" />
     <!-- modernizr css -->
     <script src="~/admin-site/js/vendor/modernizr-2.8.3.min.js"></script>
 
@@ -482,7 +482,8 @@
     @*<script src="~/node_modules/twbs-pagination/jquery.twbsPagination.js"></script>*@
     <script src="~/lib/twbs-pagination/jquery.twbsPagination.js"></script>
     <!-- toastr -->
-    <script src="~/node_modules/toastr/toastr.js"></script>
+    @*<script src="~/node_modules/toastr/toastr.js"></script>*@
+    <script src="~/lib/toastr/toastr.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

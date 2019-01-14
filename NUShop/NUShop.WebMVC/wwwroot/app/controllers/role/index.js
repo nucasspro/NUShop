@@ -6,7 +6,6 @@
         registerEvents();
     }
 
-
     function registerEvents() {
         $("#select-page-size").on('change', function () {
             NUShopConfig.configs.pageSize = $(this).val();
@@ -147,41 +146,40 @@
             $('#modal-grantpermission').modal('show');
         });
 
-        
 
-        //$("#btnSavePermission").off('click').on('click', function () {
-        //    var listPermmission = [];
-        //    $.each($('#tblFunction tbody tr'), function (i, item) {
-        //        listPermmission.push({
-        //            RoleId: $('#txt-hidden-id').val(),
-        //            FunctionId: $(item).data('id'),
-        //            CanRead: $(item).find('.ckView').first().prop('checked'),
-        //            CanCreate: $(item).find('.ckAdd').first().prop('checked'),
-        //            CanUpdate: $(item).find('.ckEdit').first().prop('checked'),
-        //            CanDelete: $(item).find('.ckDelete').first().prop('checked'),
-        //        });
-        //    });
-        //    $.ajax({
-        //        type: "POST",
-        //        url: "/Admin/Role/UpdatePermission",
-        //        data: {
-        //            listPermmission: listPermmission,
-        //            roleId: $('#txt-hidden-id').val()
-        //        },
-        //        beforeSend: function () {
-        //            tedu.startLoading();
-        //        },
-        //        success: function (response) {
-        //            tedu.notify('Save permission successful', 'success');
-        //            $('#modal-grantpermission').modal('hide');
-        //            tedu.stopLoading();
-        //        },
-        //        error: function () {
-        //            tedu.notify('Has an error in save permission progress', 'error');
-        //            tedu.stopLoading();
-        //        }
-        //    });
-        //});
+        $("#btnSavePermission").off('click').on('click', function () {
+            var listPermmission = [];
+            $.each($('#tblFunction tbody tr'), function (i, item) {
+                listPermmission.push({
+                    RoleId: $('#txt-hidden-id').val(),
+                    FunctionId: $(item).data('id'),
+                    CanRead: $(item).find('.ckView').first().prop('checked'),
+                    CanCreate: $(item).find('.ckAdd').first().prop('checked'),
+                    CanUpdate: $(item).find('.ckEdit').first().prop('checked'),
+                    CanDelete: $(item).find('.ckDelete').first().prop('checked'),
+                });
+            });
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Role/UpdatePermission",
+                data: {
+                    listPermmission: listPermmission,
+                    roleId: $('#txt-hidden-id').val()
+                },
+                beforeSend: function () {
+                    NUShopConfig.startLoading();
+                },
+                success: function (response) {
+                    NUShopConfig.toast('success', 'Save permission successful');
+                    $('#modal-grantpermission').modal('hide');
+                    NUShopConfig.stopLoading();
+                },
+                error: function () {
+                    NUShopConfig.toast('error', 'Has an error in save permission progress');
+                    NUShopConfig.stopLoading();
+                }
+            });
+        });
     };
 
     function loadFunctions(callback) {
@@ -204,7 +202,7 @@
                         AllowEdit: item.AllowEdit ? "checked" : "",
                         AllowView: item.AllowView ? "checked" : "",
                         AllowDelete: item.AllowDelete ? "checked" : "",
-                        Status: tedu.getStatus(item.Status),
+                        Status: getStatus(item.Status)
                     });
                 });
                 if (render != undefined) {
@@ -219,12 +217,15 @@
                 $('#ckCheckAllCreate').on('click', function () {
                     $('.ckAdd').prop('checked', $(this).prop('checked'));
                 });
+
                 $('#ckCheckAllEdit').on('click', function () {
                     $('.ckEdit').prop('checked', $(this).prop('checked'));
                 });
+
                 $('#ckCheckAllDelete').on('click', function () {
                     $('.ckDelete').prop('checked', $(this).prop('checked'));
                 });
+
 
                 $('.ckView').on('click', function () {
                     if ($('.ckView:checked').length == response.length) {
@@ -233,6 +234,7 @@
                         $('#ckCheckAllView').prop('checked', false);
                     }
                 });
+
                 $('.ckAdd').on('click', function () {
                     if ($('.ckAdd:checked').length == response.length) {
                         $('#ckCheckAllCreate').prop('checked', true);
@@ -240,6 +242,7 @@
                         $('#ckCheckAllCreate').prop('checked', false);
                     }
                 });
+
                 $('.ckEdit').on('click', function () {
                     if ($('.ckEdit:checked').length == response.length) {
                         $('#ckCheckAllEdit').prop('checked', true);
@@ -247,6 +250,7 @@
                         $('#ckCheckAllEdit').prop('checked', false);
                     }
                 });
+
                 $('.ckDelete').on('click', function () {
                     if ($('.ckDelete:checked').length == response.length) {
                         $('#ckCheckAllDelete').prop('checked', true);
@@ -254,6 +258,7 @@
                         $('#ckCheckAllDelete').prop('checked', false);
                     }
                 });
+
                 if (callback != undefined) {
                     callback();
                 }
@@ -294,21 +299,25 @@
                 } else {
                     $('#ckCheckAllView').prop('checked', false);
                 }
+
                 if ($('.ckAdd:checked').length == $('#tblFunction tbody tr .ckAdd').length) {
                     $('#ckCheckAllCreate').prop('checked', true);
                 } else {
                     $('#ckCheckAllCreate').prop('checked', false);
                 }
+
                 if ($('.ckEdit:checked').length == $('#tblFunction tbody tr .ckEdit').length) {
                     $('#ckCheckAllEdit').prop('checked', true);
                 } else {
                     $('#ckCheckAllEdit').prop('checked', false);
                 }
+
                 if ($('.ckDelete:checked').length == $('#tblFunction tbody tr .ckDelete').length) {
                     $('#ckCheckAllDelete').prop('checked', true);
                 } else {
                     $('#ckCheckAllDelete').prop('checked', false);
                 }
+
                 NUShopConfig.stopLoading();
             },
             error: function (status) {
@@ -382,6 +391,13 @@
                 setTimeout(callBack(), 200);
             }
         });
+    }
+
+    function getStatus(status) {
+        if (status == 1)
+            return '<span class="status-p bg-primary">Activated</span>';
+        else
+            return '<span class="status-p bg-danger">Deactivated</span>';
     }
 
     function collectData(action) {

@@ -19,6 +19,8 @@ using System.IO;
 using Microsoft.AspNetCore.Identity;
 using NUShop.Data.Entities;
 using NUShop.WebMVC.Extensions;
+using Microsoft.AspNetCore.Authorization;
+using NUShop.WebMVC.Authorization;
 
 namespace NUShop.WebMVC
 {
@@ -100,6 +102,8 @@ namespace NUShop.WebMVC
             #endregion Dependency Injection for Services
 
             services.AddAutoMapper();
+            services.AddTransient<IAuthorizationHandler, ResourceAuthorizationHandler>();
+
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

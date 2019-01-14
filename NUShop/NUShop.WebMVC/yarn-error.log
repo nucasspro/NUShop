@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --modules-folder=wwwroot\lib jquery
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --modules-folder=wwwroot\lib jquery-treegrid
 
 PATH: 
-  c:\program files (x86)\microsoft visual studio\2019\preview\common7\ide\extensions\github\github\lib\win32\x86;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Yarn\bin\;C:\Users\nucas\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\nucas\AppData\Local\Programs\Python\Python37-32\;C:\Users\nucas\AppData\Local\Microsoft\WindowsApps;;C:\Users\nucas\AppData\Roaming\npm;C:\Users\nucas\.dotnet\tools;C:\Users\nucas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\nucas\AppData\Local\Programs\Fiddler;C:\Users\nucas\AppData\Local\Yarn\bin
+  C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2017\ENTERPRISE\COMMON7\IDE\EXTENSIONS\GITHUB\GITHUB\lib\win32\x86;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Yarn\bin\;C:\Users\nucas\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\nucas\AppData\Local\Programs\Python\Python37-32\;C:\Users\nucas\AppData\Local\Microsoft\WindowsApps;;C:\Users\nucas\AppData\Roaming\npm;C:\Users\nucas\.dotnet\tools;C:\Users\nucas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\nucas\AppData\Local\Programs\Fiddler;C:\Users\nucas\AppData\Local\Yarn\bin
 
 Yarn version: 
   1.12.3
@@ -28,9 +28,10 @@ npm manifest:
       "font-awesome": "4.7.0",
       "jquery": "^3.3.1",
       "jquery-easyui": "1.5.21",
+      "jquery-treegrid": "0.3.0",
       "mustache": "3.0.1",
-      "notifyjs": "^3.0.0",
       "popper.js": "1.14.6",
+      "toastr": "2.1.4",
       "twbs-pagination": "1.4.1"
     },
     "description": "",

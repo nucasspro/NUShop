@@ -5106,3 +5106,1213 @@ OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
 2019-01-13T21:02:45.6551772+07:00 0HLJPBSNRB5F5:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 1790.2531ms (afa2e885)
 2019-01-13T21:02:45.6967635+07:00 0HLJPBSNRB5F5:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
 2019-01-13T21:02:45.8060103+07:00 0HLJPBSNRB5F5:00000005 [INF] Request finished in 2059.8884ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:17:34.2277105+07:00 0HLJPD8UGHV6A:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/role/index   (ca22a1cb)
+2019-01-13T22:17:38.5462993+07:00 0HLJPD8UGHV6A:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:17:40.4267224+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed DbCommand ("284"ms) [Parameters=["@__get_Item_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Avatar], [e].[Balance], [e].[BirthDay], [e].[ConcurrencyStamp], [e].[DateCreated], [e].[DateModified], [e].[Email], [e].[EmailConfirmed], [e].[FullName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Status], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AppUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-01-13T22:17:41.8360450+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed DbCommand ("561"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-13T22:17:42.5785065+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed DbCommand ("452"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-13T22:17:42.8788801+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed DbCommand ("222"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-13T22:17:43.1719166+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed DbCommand ("189"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-13T22:17:43.3030560+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed DbCommand ("102"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-13T22:17:43.4744828+07:00 0HLJPD8UGHV6A:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:17:43.5238866+07:00 0HLJPD8UGHV6A:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:17:46.0660646+07:00 0HLJPD8UGHV6A:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:17:46.2612337+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2.1784ms. (50a9e262)
+2019-01-13T22:17:46.3847498+07:00 0HLJPD8UGHV6A:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-13T22:17:47.9909190+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed DbCommand ("511"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:17:49.1996507+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed ViewResult - view "Index" executed in 2650.7815ms. (f66409e9)
+2019-01-13T22:17:49.7278901+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" in 5714.4837ms (afa2e885)
+2019-01-13T22:17:51.0918961+07:00 0HLJPD8UGHV6B:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/role/index.js?v=GNKwdq3mZkgsBNy2WeC6qC011gFpbHN6e2fYB6AuweI   (ca22a1cb)
+2019-01-13T22:17:51.1047212+07:00 0HLJPD8UGHV6D:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:17:51.1712057+07:00 0HLJPD8UGHV6C:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:17:51.3084908+07:00 0HLJPD8UGHV6D:00000001 [INF] Request finished in 46.6073ms 404  (791a596a)
+2019-01-13T22:17:51.8340839+07:00 0HLJPD8UGHV6C:00000001 [INF] Request finished in 84.6553ms 404  (791a596a)
+2019-01-13T22:17:52.8692146+07:00 0HLJPD8UGHV6A:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:17:52.9170132+07:00 0HLJPD8UGHV6D:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:17:53.0330180+07:00 0HLJPD8UGHV6B:00000001 [INF] The file "/app/controllers/role/index.js" was not modified (f1f8d725)
+2019-01-13T22:17:54.0538839+07:00 0HLJPD8UGHV6D:00000002 [INF] Request finished in 1064.349ms 404  (791a596a)
+2019-01-13T22:17:54.2391852+07:00 0HLJPD8UGHV6B:00000001 [INF] Request finished in 1982.5291ms 304 application/javascript (791a596a)
+2019-01-13T22:17:54.2579727+07:00 0HLJPD8UGHV6C:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:17:54.2751771+07:00 0HLJPD8UGHV6B:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:17:54.3046319+07:00 0HLJPD8UGHV6C:00000002 [INF] Request finished in 1840.6539ms 404  (791a596a)
+2019-01-13T22:17:54.3215715+07:00 0HLJPD8UGHV6B:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:17:54.3483700+07:00 0HLJPD8UGHV6E:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:17:54.4895765+07:00 0HLJPD8UGHV6E:00000001 [INF] Request finished in 2282.2329ms 404  (791a596a)
+2019-01-13T22:17:54.5008125+07:00 0HLJPD8UGHV6B:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:17:55.2146513+07:00 0HLJPD8UGHV6A:00000001 [INF] Request finished in 20346.6708ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-13T22:17:55.2742296+07:00 0HLJPD8UGHV6B:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:17:55.3992624+07:00 0HLJPD8UGHV6B:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:17:55.7057806+07:00 0HLJPD8UGHV6B:00000002 [INF] Executed DbCommand ("232"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:17:56.0165380+07:00 0HLJPD8UGHV6B:00000002 [WRN] Query: '"(from AppRole <generated>_2 in DbSet<AppRole> select [<generated>_2]).Skip(__p_0).Take(__p_1)"' uses a row limiting operation (Skip/Take) without OrderBy which may lead to unpredictable results. (32148ccc)
+2019-01-13T22:17:56.5539786+07:00 0HLJPD8UGHV6B:00000002 [INF] Executed DbCommand ("275"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:17:56.7666178+07:00 0HLJPD8UGHV6B:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1290.6888ms. (50a9e262)
+2019-01-13T22:17:56.8903791+07:00 0HLJPD8UGHV6B:00000002 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:17:57.2669635+07:00 0HLJPD8UGHV6B:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 2601.0463ms (afa2e885)
+2019-01-13T22:17:57.4495745+07:00 0HLJPD8UGHV6B:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:17:57.4876219+07:00 0HLJPD8UGHV6B:00000002 [INF] Request finished in 3211.9362ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:17:57.7890035+07:00 0HLJPD8UGHV6B:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:17:58.2908165+07:00 0HLJPD8UGHV6B:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:17:58.7205091+07:00 0HLJPD8UGHV6B:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:17:58.8167572+07:00 0HLJPD8UGHV6B:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:17:58.8333846+07:00 0HLJPD8UGHV6B:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:17:58.9371886+07:00 0HLJPD8UGHV6B:00000003 [INF] Executed DbCommand ("95"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:17:59.0549492+07:00 0HLJPD8UGHV6B:00000003 [INF] Executed DbCommand ("99"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:17:59.0671847+07:00 0HLJPD8UGHV6B:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 238.5198ms. (50a9e262)
+2019-01-13T22:17:59.0841776+07:00 0HLJPD8UGHV6B:00000003 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:17:59.2834796+07:00 0HLJPD8UGHV6B:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 364.2394ms (afa2e885)
+2019-01-13T22:17:59.4574512+07:00 0HLJPD8UGHV6B:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:17:59.6224715+07:00 0HLJPD8UGHV6B:00000003 [INF] Request finished in 1849.2849ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:18:10.1024399+07:00 0HLJPD8UGHV6B:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:18:10.1024527+07:00 0HLJPD8UGHV6A:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:18:10.1184340+07:00 0HLJPD8UGHV6A:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:18:10.1370796+07:00 0HLJPD8UGHV6B:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:18:10.1677898+07:00 0HLJPD8UGHV6A:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:18:10.2026661+07:00 0HLJPD8UGHV6B:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:18:10.2960441+07:00 0HLJPD8UGHV6B:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:18:10.3138918+07:00 0HLJPD8UGHV6B:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:18:10.5018157+07:00 0HLJPD8UGHV6B:00000004 [INF] Executed DbCommand ("113"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:18:10.5074487+07:00 0HLJPD8UGHV6A:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:18:10.5200063+07:00 0HLJPD8UGHV6B:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 220.0924ms. (50a9e262)
+2019-01-13T22:18:10.5305344+07:00 0HLJPD8UGHV6A:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:18:10.5572946+07:00 0HLJPD8UGHV6B:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:18:10.7031099+07:00 0HLJPD8UGHV6B:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 365.3879ms (afa2e885)
+2019-01-13T22:18:10.9702191+07:00 0HLJPD8UGHV6B:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:18:11.5081411+07:00 0HLJPD8UGHV6B:00000004 [INF] Request finished in 1065.6173ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:18:11.7142645+07:00 0HLJPD8UGHV6A:00000002 [INF] Executed DbCommand ("611"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:18:11.8797349+07:00 0HLJPD8UGHV6A:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1209.7792ms. (50a9e262)
+2019-01-13T22:18:12.0691469+07:00 0HLJPD8UGHV6A:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:18:12.2964727+07:00 0HLJPD8UGHV6A:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 1912.4512ms (afa2e885)
+2019-01-13T22:18:12.4688668+07:00 0HLJPD8UGHV6A:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:18:12.9523954+07:00 0HLJPD8UGHV6A:00000002 [INF] Request finished in 2474.5572ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:18:13.1791845+07:00 0HLJPD8UGHV6E:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:18:13.2292032+07:00 0HLJPD8UGHV6B:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:18:13.2489175+07:00 0HLJPD8UGHV6E:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:18:13.2616412+07:00 0HLJPD8UGHV6B:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:18:13.2652924+07:00 0HLJPD8UGHV6E:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:18:13.2749897+07:00 0HLJPD8UGHV6B:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:18:13.4395335+07:00 0HLJPD8UGHV6B:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:18:13.4490179+07:00 0HLJPD8UGHV6E:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:18:13.6372232+07:00 0HLJPD8UGHV6B:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:18:13.6515831+07:00 0HLJPD8UGHV6E:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:18:14.0243573+07:00 0HLJPD8UGHV6B:00000005 [INF] Executed DbCommand ("237"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:18:14.0336404+07:00 0HLJPD8UGHV6E:00000002 [INF] Executed DbCommand ("143"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:18:14.0572757+07:00 0HLJPD8UGHV6B:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 585.7304ms. (50a9e262)
+2019-01-13T22:18:14.0752228+07:00 0HLJPD8UGHV6E:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 584.7935ms. (50a9e262)
+2019-01-13T22:18:14.0784628+07:00 0HLJPD8UGHV6B:00000005 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:18:14.1109935+07:00 0HLJPD8UGHV6E:00000002 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:18:14.2435507+07:00 0HLJPD8UGHV6B:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 806.4907ms (afa2e885)
+2019-01-13T22:18:14.3786910+07:00 0HLJPD8UGHV6E:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 843.706ms (afa2e885)
+2019-01-13T22:18:14.3940513+07:00 0HLJPD8UGHV6B:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:18:14.4588101+07:00 0HLJPD8UGHV6E:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:18:14.6605110+07:00 0HLJPD8UGHV6B:00000005 [INF] Request finished in 1246.2322ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:18:15.0296462+07:00 0HLJPD8UGHV6E:00000002 [INF] Request finished in 1852.8079ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:18:32.7971427+07:00 0HLJPD8UGHV6E:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:18:32.9859350+07:00 0HLJPD8UGHV6B:00000006 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:18:33.0712414+07:00 0HLJPD8UGHV6E:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:18:33.0921310+07:00 0HLJPD8UGHV6B:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:18:33.1093834+07:00 0HLJPD8UGHV6E:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:18:33.1275929+07:00 0HLJPD8UGHV6B:00000006 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:18:33.5785288+07:00 0HLJPD8UGHV6E:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:18:33.9100277+07:00 0HLJPD8UGHV6B:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:18:33.9123542+07:00 0HLJPD8UGHV6E:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:18:33.9292477+07:00 0HLJPD8UGHV6B:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:18:34.0752081+07:00 0HLJPD8UGHV6E:00000003 [INF] Executed DbCommand ("139"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:18:34.0777960+07:00 0HLJPD8UGHV6B:00000006 [INF] Executed DbCommand ("139"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:18:34.0841706+07:00 0HLJPD8UGHV6B:00000006 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 167.914ms. (50a9e262)
+2019-01-13T22:18:34.0925019+07:00 0HLJPD8UGHV6E:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 505.1126ms. (50a9e262)
+2019-01-13T22:18:34.0956523+07:00 0HLJPD8UGHV6B:00000006 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:18:34.1196355+07:00 0HLJPD8UGHV6E:00000003 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:18:34.1197030+07:00 0HLJPD8UGHV6B:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 972.7329ms (afa2e885)
+2019-01-13T22:18:34.1536895+07:00 0HLJPD8UGHV6B:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:18:34.1646369+07:00 0HLJPD8UGHV6E:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 1014.6557ms (afa2e885)
+2019-01-13T22:18:34.1776021+07:00 0HLJPD8UGHV6B:00000006 [INF] Request finished in 1413.6141ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:18:34.1795383+07:00 0HLJPD8UGHV6E:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:18:34.1894380+07:00 0HLJPD8UGHV6E:00000003 [INF] Request finished in 1443.1961ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:18:39.0467932+07:00 0HLJPD8UGHV6E:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:18:39.0467932+07:00 0HLJPD8UGHV6B:00000007 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:18:39.0868177+07:00 0HLJPD8UGHV6B:00000007 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:18:39.0958229+07:00 0HLJPD8UGHV6E:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:18:39.1143685+07:00 0HLJPD8UGHV6B:00000007 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:18:39.1241181+07:00 0HLJPD8UGHV6E:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:18:39.2891906+07:00 0HLJPD8UGHV6E:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:18:39.2892233+07:00 0HLJPD8UGHV6B:00000007 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:18:39.3111408+07:00 0HLJPD8UGHV6B:00000007 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:18:39.3502377+07:00 0HLJPD8UGHV6E:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:18:39.7277473+07:00 0HLJPD8UGHV6B:00000007 [INF] Executed DbCommand ("120"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:18:39.8024953+07:00 0HLJPD8UGHV6B:00000007 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 438.756ms. (50a9e262)
+2019-01-13T22:18:39.8165825+07:00 0HLJPD8UGHV6E:00000004 [INF] Executed DbCommand ("304"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:18:39.8195666+07:00 0HLJPD8UGHV6B:00000007 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:18:39.8317015+07:00 0HLJPD8UGHV6E:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 530.6065ms. (50a9e262)
+2019-01-13T22:18:39.8370435+07:00 0HLJPD8UGHV6B:00000007 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 705.5022ms (afa2e885)
+2019-01-13T22:18:39.8424043+07:00 0HLJPD8UGHV6E:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:18:39.8470101+07:00 0HLJPD8UGHV6B:00000007 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:18:39.8627397+07:00 0HLJPD8UGHV6E:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 718.7117ms (afa2e885)
+2019-01-13T22:18:39.8687788+07:00 0HLJPD8UGHV6B:00000007 [INF] Request finished in 844.5725ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:18:39.8712486+07:00 0HLJPD8UGHV6E:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:18:39.8886390+07:00 0HLJPD8UGHV6E:00000004 [INF] Request finished in 868.0408ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:18:43.4163266+07:00 0HLJPD8UGHV6B:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:18:43.4220744+07:00 0HLJPD8UGHV6D:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:18:43.4515654+07:00 0HLJPD8UGHV6C:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:18:43.4684157+07:00 0HLJPD8UGHV6D:00000003 [INF] Request finished in 81.5796ms 404  (791a596a)
+2019-01-13T22:18:43.4841478+07:00 0HLJPD8UGHV6C:00000003 [INF] Request finished in 111.1341ms 404  (791a596a)
+2019-01-13T22:18:43.4866841+07:00 0HLJPD8UGHV6B:00000008 [INF] Request finished in 85.014ms 404  (791a596a)
+2019-01-13T22:18:43.5202433+07:00 0HLJPD8UGHV6E:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:18:43.5420950+07:00 0HLJPD8UGHV6A:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:18:43.5520453+07:00 0HLJPD8UGHV6E:00000005 [INF] Request finished in 32.2675ms 404  (791a596a)
+2019-01-13T22:18:43.5590569+07:00 0HLJPD8UGHV6A:00000003 [INF] Request finished in 57.699ms 404  (791a596a)
+2019-01-13T22:20:01.1317284+07:00 0HLJPD8UGHV6A:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/role/index   (ca22a1cb)
+2019-01-13T22:20:01.1416828+07:00 0HLJPD8UGHV6A:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:01.1714751+07:00 0HLJPD8UGHV6A:00000004 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:01.3211622+07:00 0HLJPD8UGHV6A:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:20:01.4334333+07:00 0HLJPD8UGHV6A:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.1525ms. (50a9e262)
+2019-01-13T22:20:01.5044564+07:00 0HLJPD8UGHV6A:00000004 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-13T22:20:01.5391115+07:00 0HLJPD8UGHV6A:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:02.4990585+07:00 0HLJPD8UGHV6A:00000004 [INF] Executed DbCommand ("675"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:20:02.8494206+07:00 0HLJPD8UGHV6A:00000004 [INF] Executed ViewResult - view "Index" executed in 1071.8342ms. (f66409e9)
+2019-01-13T22:20:02.9531332+07:00 0HLJPD8UGHV6E:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/role/index.js?v=6p9yYZFgODCZzgf1ARl8bokeOL2mRpTL4y2hIVfL7yA   (ca22a1cb)
+2019-01-13T22:20:03.6203587+07:00 0HLJPD8UGHV6A:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" in 1781.5786ms (afa2e885)
+2019-01-13T22:20:03.6867459+07:00 0HLJPD8UGHV6C:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:20:03.8017705+07:00 0HLJPD8UGHV6A:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:03.8125581+07:00 0HLJPD8UGHV6B:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:20:03.8208911+07:00 0HLJPD8UGHV6C:00000004 [INF] Request finished in 101.6441ms 404  (791a596a)
+2019-01-13T22:20:03.8395844+07:00 0HLJPD8UGHV6A:00000004 [INF] Request finished in 2829.7602ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-13T22:20:03.8478870+07:00 0HLJPD8UGHV6B:00000009 [INF] Request finished in 222.8612ms 404  (791a596a)
+2019-01-13T22:20:03.8550470+07:00 0HLJPD8UGHV6E:00000006 [INF] Sending file. Request path: '"/app/controllers/role/index.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\controllers\role\index.js"' (27b0a520)
+2019-01-13T22:20:03.8708885+07:00 0HLJPD8UGHV6E:00000006 [INF] Request finished in 1164.4383ms 200 application/javascript (791a596a)
+2019-01-13T22:20:06.1360913+07:00 0HLJPD8UGHV6B:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:20:06.3500232+07:00 0HLJPD8UGHV6E:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:20:06.6484376+07:00 0HLJPD8UGHV6C:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:20:06.7406294+07:00 0HLJPD8UGHV6E:00000007 [INF] Request finished in 739.1384ms 404  (791a596a)
+2019-01-13T22:20:06.8897903+07:00 0HLJPD8UGHV6C:00000005 [INF] Request finished in 1039.6186ms 404  (791a596a)
+2019-01-13T22:20:06.9333182+07:00 0HLJPD8UGHV6B:0000000A [INF] Request finished in 1137.6013ms 404  (791a596a)
+2019-01-13T22:20:06.9362198+07:00 0HLJPD8UGHV6A:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:20:06.9686355+07:00 0HLJPD8UGHV6A:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:06.9880134+07:00 0HLJPD8UGHV6A:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:07.0879812+07:00 0HLJPD8UGHV6A:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:20:07.0972346+07:00 0HLJPD8UGHV6A:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:07.3355328+07:00 0HLJPD8UGHV6A:00000005 [INF] Executed DbCommand ("164"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:20:07.7343796+07:00 0HLJPD8UGHV6A:00000005 [INF] Executed DbCommand ("153"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:20:07.8054914+07:00 0HLJPD8UGHV6A:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 647.0736ms. (50a9e262)
+2019-01-13T22:20:07.8388143+07:00 0HLJPD8UGHV6A:00000005 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:20:07.8553081+07:00 0HLJPD8UGHV6A:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 851.2427ms (afa2e885)
+2019-01-13T22:20:07.8908435+07:00 0HLJPD8UGHV6A:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:07.9351314+07:00 0HLJPD8UGHV6A:00000005 [INF] Request finished in 1566.2894ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:20:08.3680248+07:00 0HLJPD8UGHV6A:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:20:08.5560306+07:00 0HLJPD8UGHV6A:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:08.5733291+07:00 0HLJPD8UGHV6A:00000006 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:08.7355591+07:00 0HLJPD8UGHV6A:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:20:08.7724130+07:00 0HLJPD8UGHV6A:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:08.9359455+07:00 0HLJPD8UGHV6A:00000006 [INF] Executed DbCommand ("127"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:20:09.0547509+07:00 0HLJPD8UGHV6A:00000006 [INF] Executed DbCommand ("112"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:20:09.0636554+07:00 0HLJPD8UGHV6A:00000006 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 319.5613ms. (50a9e262)
+2019-01-13T22:20:09.0700482+07:00 0HLJPD8UGHV6A:00000006 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:20:09.0889825+07:00 0HLJPD8UGHV6A:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 497.1146ms (afa2e885)
+2019-01-13T22:20:09.1030413+07:00 0HLJPD8UGHV6A:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:09.1227531+07:00 0HLJPD8UGHV6A:00000006 [INF] Request finished in 1084.3964ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:20:09.7599042+07:00 0HLJPD8UGHV6C:00000006 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:20:09.7624339+07:00 0HLJPD8UGHV6A:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:20:09.7691484+07:00 0HLJPD8UGHV6C:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:09.8548012+07:00 0HLJPD8UGHV6C:00000006 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:09.8569886+07:00 0HLJPD8UGHV6A:00000007 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:09.9374383+07:00 0HLJPD8UGHV6A:00000007 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:09.9712672+07:00 0HLJPD8UGHV6C:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:20:10.1067540+07:00 0HLJPD8UGHV6C:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:10.2505856+07:00 0HLJPD8UGHV6A:00000007 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:20:10.5722874+07:00 0HLJPD8UGHV6A:00000007 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:10.5855221+07:00 0HLJPD8UGHV6C:00000006 [INF] Executed DbCommand ("155"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:20:10.8735243+07:00 0HLJPD8UGHV6C:00000006 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 615.0572ms. (50a9e262)
+2019-01-13T22:20:10.8877970+07:00 0HLJPD8UGHV6C:00000006 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:20:10.8966062+07:00 0HLJPD8UGHV6A:00000007 [INF] Executed DbCommand ("308"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:20:10.9003711+07:00 0HLJPD8UGHV6C:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 1033.2509ms (afa2e885)
+2019-01-13T22:20:10.9051757+07:00 0HLJPD8UGHV6A:00000007 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 646.9302ms. (50a9e262)
+2019-01-13T22:20:10.9151224+07:00 0HLJPD8UGHV6C:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:10.9221325+07:00 0HLJPD8UGHV6A:00000007 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:20:10.9822096+07:00 0HLJPD8UGHV6C:00000006 [INF] Request finished in 1166.9853ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:20:10.9877943+07:00 0HLJPD8UGHV6A:00000007 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 988.998ms (afa2e885)
+2019-01-13T22:20:11.0118815+07:00 0HLJPD8UGHV6A:00000007 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:11.0192105+07:00 0HLJPD8UGHV6A:00000007 [INF] Request finished in 1262.046ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:20:38.6323668+07:00 0HLJPD8UGHV6A:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:20:38.6585159+07:00 0HLJPD8UGHV6C:00000007 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:20:38.6623715+07:00 0HLJPD8UGHV6A:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:38.6803018+07:00 0HLJPD8UGHV6C:00000007 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:38.8026320+07:00 0HLJPD8UGHV6A:00000008 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:39.6573045+07:00 0HLJPD8UGHV6C:00000007 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:39.6813097+07:00 0HLJPD8UGHV6A:00000008 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:20:39.9151068+07:00 0HLJPD8UGHV6A:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:40.0451789+07:00 0HLJPD8UGHV6C:00000007 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:20:41.2289510+07:00 0HLJPD8UGHV6C:00000007 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:42.8055614+07:00 0HLJPD8UGHV6A:00000008 [INF] Executed DbCommand ("1,492"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:20:43.7029210+07:00 0HLJPD8UGHV6C:00000007 [INF] Executed DbCommand ("1,110"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:20:44.2149069+07:00 0HLJPD8UGHV6A:00000008 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 3263.4502ms. (50a9e262)
+2019-01-13T22:20:44.3058162+07:00 0HLJPD8UGHV6E:00000008 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:20:44.5581923+07:00 0HLJPD8UGHV6A:00000008 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:20:44.9640363+07:00 0HLJPD8UGHV6E:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:45.5042668+07:00 0HLJPD8UGHV6A:00000008 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 5736.686ms (afa2e885)
+2019-01-13T22:20:46.5735316+07:00 0HLJPD8UGHV6E:00000008 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:48.2634897+07:00 0HLJPD8UGHV6A:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:48.4302800+07:00 0HLJPD8UGHV6E:00000008 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:20:48.5707064+07:00 0HLJPD8UGHV6A:00000008 [INF] Request finished in 9648.8688ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:20:48.8608903+07:00 0HLJPD8UGHV6E:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:49.2227260+07:00 0HLJPD8UGHV6C:00000007 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3658.0916ms. (50a9e262)
+2019-01-13T22:20:49.6397824+07:00 0HLJPD8UGHV6B:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:20:49.8578248+07:00 0HLJPD8UGHV6C:00000007 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:20:49.9000122+07:00 0HLJPD8UGHV6E:00000008 [INF] Executed DbCommand ("746"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:20:49.9678047+07:00 0HLJPD8UGHV6D:00000004 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:20:50.1298076+07:00 0HLJPD8UGHV6E:00000008 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1469.8604ms. (50a9e262)
+2019-01-13T22:20:50.4016336+07:00 0HLJPD8UGHV6D:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:50.7799427+07:00 0HLJPD8UGHV6E:00000008 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:20:50.9345760+07:00 0HLJPD8UGHV6D:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:51.3752716+07:00 0HLJPD8UGHV6C:00000007 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 10200.6726ms (afa2e885)
+2019-01-13T22:20:51.6630013+07:00 0HLJPD8UGHV6E:00000008 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 4206.7245ms (afa2e885)
+2019-01-13T22:20:51.7344639+07:00 0HLJPD8UGHV6D:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:20:51.7885654+07:00 0HLJPD8UGHV6E:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:51.8390531+07:00 0HLJPD8UGHV6D:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:52.0060844+07:00 0HLJPD8UGHV6E:00000008 [INF] Request finished in 9007.1798ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:20:52.1621055+07:00 0HLJPD8UGHV6C:00000007 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:52.1852328+07:00 0HLJPD8UGHV6B:0000000B [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:52.1953712+07:00 0HLJPD8UGHV6D:00000004 [INF] Executed DbCommand ("281"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:20:52.2245983+07:00 0HLJPD8UGHV6C:00000007 [INF] Request finished in 13537.6343ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:20:52.2345180+07:00 0HLJPD8UGHV6D:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 461.0913ms. (50a9e262)
+2019-01-13T22:20:52.2429556+07:00 0HLJPD8UGHV6B:0000000B [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:52.2569490+07:00 0HLJPD8UGHV6D:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:20:52.3615472+07:00 0HLJPD8UGHV6D:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 1322.5422ms (afa2e885)
+2019-01-13T22:20:52.3702391+07:00 0HLJPD8UGHV6B:0000000B [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:20:52.3727121+07:00 0HLJPD8UGHV6D:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:52.3909825+07:00 0HLJPD8UGHV6D:00000004 [INF] Request finished in 2561.8558ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:20:52.3930008+07:00 0HLJPD8UGHV6B:0000000B [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:52.4946918+07:00 0HLJPD8UGHV6B:0000000B [INF] Executed DbCommand ("96"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:20:52.5107581+07:00 0HLJPD8UGHV6B:0000000B [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 125.6841ms. (50a9e262)
+2019-01-13T22:20:52.5219251+07:00 0HLJPD8UGHV6B:0000000B [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:20:52.6225072+07:00 0HLJPD8UGHV6B:0000000B [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 279.5789ms (afa2e885)
+2019-01-13T22:20:52.6943323+07:00 0HLJPD8UGHV6D:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:20:52.7430859+07:00 0HLJPD8UGHV6B:0000000B [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:52.7533598+07:00 0HLJPD8UGHV6D:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:20:52.7702652+07:00 0HLJPD8UGHV6B:0000000B [INF] Request finished in 7965.5177ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:20:52.7741894+07:00 0HLJPD8UGHV6D:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:20:52.9928590+07:00 0HLJPD8UGHV6D:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:20:53.0287496+07:00 0HLJPD8UGHV6D:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:20:53.8382103+07:00 0HLJPD8UGHV6D:00000005 [INF] Executed DbCommand ("262"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:20:54.8228929+07:00 0HLJPD8UGHV6D:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 847.9851ms. (50a9e262)
+2019-01-13T22:20:54.9336225+07:00 0HLJPD8UGHV6D:00000005 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:20:55.1932257+07:00 0HLJPD8UGHV6D:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 2160.4147ms (afa2e885)
+2019-01-13T22:20:55.6590692+07:00 0HLJPD8UGHV6D:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:20:56.0435994+07:00 0HLJPD8UGHV6D:00000005 [INF] Request finished in 3080.52ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:22:10.8487672+07:00 0HLJPD8UGHV6G:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:22:10.8741034+07:00 0HLJPD8UGHV6F:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/role/index   (ca22a1cb)
+2019-01-13T22:22:10.8920772+07:00 0HLJPD8UGHV6G:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:22:10.9327986+07:00 0HLJPD8UGHV6H:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:22:10.9633757+07:00 0HLJPD8UGHV6G:00000001 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:22:10.9824820+07:00 0HLJPD8UGHV6H:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:22:11.1205682+07:00 0HLJPD8UGHV6F:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:22:11.1335046+07:00 0HLJPD8UGHV6H:00000001 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:22:11.1409088+07:00 0HLJPD8UGHV6G:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:22:11.2588195+07:00 0HLJPD8UGHV6F:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:22:11.3003799+07:00 0HLJPD8UGHV6G:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:22:12.1747548+07:00 0HLJPD8UGHV6H:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:22:12.2893180+07:00 0HLJPD8UGHV6F:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:22:12.3620982+07:00 0HLJPD8UGHV6G:00000001 [INF] Executed DbCommand ("887"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:22:12.3896085+07:00 0HLJPD8UGHV6H:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:22:12.7560528+07:00 0HLJPD8UGHV6F:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0201ms. (50a9e262)
+2019-01-13T22:22:12.8751916+07:00 0HLJPD8UGHV6G:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 1248.6391ms. (50a9e262)
+2019-01-13T22:22:13.0018194+07:00 0HLJPD8UGHV6H:00000001 [INF] Executed DbCommand ("423"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:22:13.0718361+07:00 0HLJPD8UGHV6G:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:22:13.1356887+07:00 0HLJPD8UGHV6H:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 827.1986ms. (50a9e262)
+2019-01-13T22:22:13.3250201+07:00 0HLJPD8UGHV6G:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 2104.2588ms (afa2e885)
+2019-01-13T22:22:13.4710218+07:00 0HLJPD8UGHV6H:00000001 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:22:13.8152920+07:00 0HLJPD8UGHV6G:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:22:13.8442800+07:00 0HLJPD8UGHV6H:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 2348.794ms (afa2e885)
+2019-01-13T22:22:13.9490244+07:00 0HLJPD8UGHV6F:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-13T22:22:14.1237969+07:00 0HLJPD8UGHV6G:00000001 [INF] Request finished in 3206.2078ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:22:14.2485085+07:00 0HLJPD8UGHV6H:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:22:14.4337407+07:00 0HLJPD8UGHV6F:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:22:14.4874274+07:00 0HLJPD8UGHV6H:00000001 [INF] Request finished in 3412.2632ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:22:14.7222548+07:00 0HLJPD8UGHV6F:00000001 [INF] Executed DbCommand ("270"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:22:15.0403846+07:00 0HLJPD8UGHV6F:00000001 [INF] Executed ViewResult - view "Index" executed in 1976.3211ms. (f66409e9)
+2019-01-13T22:22:15.1245858+07:00 0HLJPD8UGHV6F:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" in 3776.1361ms (afa2e885)
+2019-01-13T22:22:15.1810312+07:00 0HLJPD8UGHV6F:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:22:15.2545199+07:00 0HLJPD8UGHV6F:00000001 [INF] Request finished in 4511.8591ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-13T22:22:15.6790433+07:00 0HLJPD8UGHV6F:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:22:16.0674248+07:00 0HLJPD8UGHV6H:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:22:17.2321187+07:00 0HLJPD8UGHV6G:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/role/index.js?v=6p9yYZFgODCZzgf1ARl8bokeOL2mRpTL4y2hIVfL7yA   (ca22a1cb)
+2019-01-13T22:22:17.6408729+07:00 0HLJPD8UGHV6F:00000002 [INF] Request finished in 310.4632ms 404  (791a596a)
+2019-01-13T22:22:18.0528305+07:00 0HLJPD8UGHV6H:00000002 [INF] Request finished in 1842.792ms 404  (791a596a)
+2019-01-13T22:22:18.0686620+07:00 0HLJPD8UGHV6I:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:22:18.0798889+07:00 0HLJPD8UGHV6H:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:22:18.0866322+07:00 0HLJPD8UGHV6G:00000002 [INF] The file "/app/controllers/role/index.js" was not modified (f1f8d725)
+2019-01-13T22:22:18.1508096+07:00 0HLJPD8UGHV6H:00000003 [INF] Request finished in 27.7726ms 404  (791a596a)
+2019-01-13T22:22:18.3180730+07:00 0HLJPD8UGHV6I:00000001 [INF] Request finished in 61.8597ms 404  (791a596a)
+2019-01-13T22:22:19.0619232+07:00 0HLJPD8UGHV6G:00000002 [INF] Request finished in 2455.1585ms 304 application/javascript (791a596a)
+2019-01-13T22:22:19.9045751+07:00 0HLJPD8UGHV6F:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:22:19.9342894+07:00 0HLJPD8UGHV6H:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:22:19.9842600+07:00 0HLJPD8UGHV6F:00000003 [INF] Request finished in 2046.5503ms 404  (791a596a)
+2019-01-13T22:22:19.9953876+07:00 0HLJPD8UGHV6H:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:22:20.0550828+07:00 0HLJPD8UGHV6H:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:22:20.3966291+07:00 0HLJPD8UGHV6H:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:22:20.5897030+07:00 0HLJPD8UGHV6H:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:22:20.7815388+07:00 0HLJPD8UGHV6H:00000004 [INF] Executed DbCommand ("108"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:22:20.9041656+07:00 0HLJPD8UGHV6H:00000004 [INF] Executed DbCommand ("117"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:22:20.9191461+07:00 0HLJPD8UGHV6H:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 508.0398ms. (50a9e262)
+2019-01-13T22:22:20.9339328+07:00 0HLJPD8UGHV6H:00000004 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:22:20.9698164+07:00 0HLJPD8UGHV6H:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 879.1616ms (afa2e885)
+2019-01-13T22:22:20.9850153+07:00 0HLJPD8UGHV6H:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:22:20.9989624+07:00 0HLJPD8UGHV6H:00000004 [INF] Request finished in 1299.2234ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:22:21.1220342+07:00 0HLJPD8UGHV6H:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:22:21.1395153+07:00 0HLJPD8UGHV6H:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:22:21.3715624+07:00 0HLJPD8UGHV6H:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:22:21.5544074+07:00 0HLJPD8UGHV6H:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:22:21.5854248+07:00 0HLJPD8UGHV6H:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:22:22.2703535+07:00 0HLJPD8UGHV6H:00000005 [INF] Executed DbCommand ("118"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:22:22.9525304+07:00 0HLJPD8UGHV6H:00000005 [INF] Executed DbCommand ("630"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:22:22.9659364+07:00 0HLJPD8UGHV6H:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1398.601ms. (50a9e262)
+2019-01-13T22:22:22.9718422+07:00 0HLJPD8UGHV6H:00000005 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:22:22.9934348+07:00 0HLJPD8UGHV6H:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 1600.1831ms (afa2e885)
+2019-01-13T22:22:22.9997574+07:00 0HLJPD8UGHV6H:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:22:23.0129981+07:00 0HLJPD8UGHV6H:00000005 [INF] Request finished in 1896.0967ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:22:25.6561976+07:00 0HLJPD8UGHV6H:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:22:25.7047774+07:00 0HLJPD8UGHV6F:00000004 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:22:25.7293293+07:00 0HLJPD8UGHV6H:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:22:25.7357936+07:00 0HLJPD8UGHV6F:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:22:25.7510308+07:00 0HLJPD8UGHV6H:00000006 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:22:25.8931312+07:00 0HLJPD8UGHV6F:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:22:25.9035418+07:00 0HLJPD8UGHV6H:00000006 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:22:25.9857639+07:00 0HLJPD8UGHV6H:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:22:26.0664056+07:00 0HLJPD8UGHV6F:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:22:26.1060832+07:00 0HLJPD8UGHV6H:00000006 [INF] Executed DbCommand ("85"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:22:26.1187282+07:00 0HLJPD8UGHV6F:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:22:26.1252133+07:00 0HLJPD8UGHV6H:00000006 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 207.1274ms. (50a9e262)
+2019-01-13T22:22:26.1351479+07:00 0HLJPD8UGHV6H:00000006 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:22:26.2191758+07:00 0HLJPD8UGHV6H:00000006 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 450.4468ms (afa2e885)
+2019-01-13T22:22:26.2261513+07:00 0HLJPD8UGHV6F:00000004 [INF] Executed DbCommand ("83"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:22:26.2316802+07:00 0HLJPD8UGHV6H:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:22:26.2476351+07:00 0HLJPD8UGHV6F:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 159.9976ms. (50a9e262)
+2019-01-13T22:22:26.3839891+07:00 0HLJPD8UGHV6H:00000006 [INF] Request finished in 1148.0565ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:22:26.3930673+07:00 0HLJPD8UGHV6F:00000004 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:22:26.4032644+07:00 0HLJPD8UGHV6F:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 496.0638ms (afa2e885)
+2019-01-13T22:22:26.4185946+07:00 0HLJPD8UGHV6F:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:22:26.4288284+07:00 0HLJPD8UGHV6F:00000004 [INF] Request finished in 847.1598ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:23:00.7172648+07:00 0HLJPD8UGHV6F:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Function/GetAll   (ca22a1cb)
+2019-01-13T22:23:00.8272418+07:00 0HLJPD8UGHV6H:00000007 [INF] Request starting HTTP/1.1 POST https://localhost:5001/Admin/Role/GetAllFunction application/x-www-form-urlencoded; charset=UTF-8 43 (ca22a1cb)
+2019-01-13T22:23:00.9992469+07:00 0HLJPD8UGHV6F:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:23:01.1684670+07:00 0HLJPD8UGHV6H:00000007 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:23:01.1742835+07:00 0HLJPD8UGHV6F:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAll\", controller = \"Function\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:23:01.2108086+07:00 0HLJPD8UGHV6H:00000007 [INF] Route matched with "{area = \"Admin\", action = \"GetAllFunction\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:23:01.4715686+07:00 0HLJPD8UGHV6F:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:23:01.4744278+07:00 0HLJPD8UGHV6H:00000007 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:23:01.4874678+07:00 0HLJPD8UGHV6F:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:23:01.4920574+07:00 0HLJPD8UGHV6H:00000007 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:23:02.2788796+07:00 0HLJPD8UGHV6F:00000005 [INF] Executed DbCommand ("666"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:23:02.2945875+07:00 0HLJPD8UGHV6H:00000007 [INF] Executed DbCommand ("117"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT @__roleId_0 AS [RoleId], [f].[Id] AS [FunctionId], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanCreate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanCreate], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanDelete] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanDelete], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanRead] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanRead], CASE
+    WHEN [p].[Id] IS NOT NULL AND ([p].[CanUpdate] = 1)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END AS [CanUpdate]
+FROM [Functions] AS [f]
+LEFT JOIN [Permissions] AS [p] ON [f].[Id] = [p].[FunctionId]
+WHERE [p].[Id] IS NOT NULL AND ([p].[RoleId] = @__roleId_0)" (0723d8ff)
+2019-01-13T22:23:02.3027278+07:00 0HLJPD8UGHV6F:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ObjectResult" in 815.5773ms. (50a9e262)
+2019-01-13T22:23:02.3083837+07:00 0HLJPD8UGHV6H:00000007 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 820.3576ms. (50a9e262)
+2019-01-13T22:23:02.3206244+07:00 0HLJPD8UGHV6F:00000005 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.FunctionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:23:02.3740664+07:00 0HLJPD8UGHV6H:00000007 [INF] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[NUShop.ViewModel.ViewModels.PermissionViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:23:02.4099357+07:00 0HLJPD8UGHV6F:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)" in 1134.4097ms (afa2e885)
+2019-01-13T22:23:02.4245218+07:00 0HLJPD8UGHV6H:00000007 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)" in 1185.0489ms (afa2e885)
+2019-01-13T22:23:02.6698135+07:00 0HLJPD8UGHV6F:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.FunctionController.GetAll (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:23:03.0053687+07:00 0HLJPD8UGHV6H:00000007 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllFunction (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:23:03.3385243+07:00 0HLJPD8UGHV6F:00000005 [INF] Request finished in 2332.0497ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:23:03.6422968+07:00 0HLJPD8UGHV6H:00000007 [INF] Request finished in 2721.9731ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:23:31.0192208+07:00 0HLJPD8UGHV6H:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/role/index   (ca22a1cb)
+2019-01-13T22:23:31.0282664+07:00 0HLJPD8UGHV6H:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:23:31.0440062+07:00 0HLJPD8UGHV6H:00000008 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:23:31.1131679+07:00 0HLJPD8UGHV6H:00000008 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:23:31.1167505+07:00 0HLJPD8UGHV6H:00000008 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0188ms. (50a9e262)
+2019-01-13T22:23:31.1278752+07:00 0HLJPD8UGHV6H:00000008 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-13T22:23:31.1472115+07:00 0HLJPD8UGHV6H:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:23:31.2660535+07:00 0HLJPD8UGHV6H:00000008 [INF] Executed DbCommand ("110"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:23:31.5157057+07:00 0HLJPD8UGHV6H:00000008 [INF] Executed ViewResult - view "Index" executed in 168.9215ms. (f66409e9)
+2019-01-13T22:23:32.1074590+07:00 0HLJPD8UGHV6F:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/role/index.js?v=m0JCH97aiguBOTz-i7JDewfDZBZUaErU8M2eGoyzRZY   (ca22a1cb)
+2019-01-13T22:23:32.8406549+07:00 0HLJPD8UGHV6H:00000008 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" in 471.8127ms (afa2e885)
+2019-01-13T22:23:33.0437408+07:00 0HLJPD8UGHV6G:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:23:33.2365752+07:00 0HLJPD8UGHV6H:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:23:34.4235430+07:00 0HLJPD8UGHV6F:00000006 [INF] Sending file. Request path: '"/app/controllers/role/index.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\app\controllers\role\index.js"' (27b0a520)
+2019-01-13T22:23:34.5239812+07:00 0HLJPD8UGHV6H:00000008 [INF] Request finished in 2253.9471ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-13T22:23:34.7823159+07:00 0HLJPD8UGHV6F:00000006 [INF] Request finished in 3029.104ms 200 application/javascript (791a596a)
+2019-01-13T22:23:35.7729378+07:00 0HLJPD8UGHV6G:00000003 [INF] Request finished in 742.852ms 404  (791a596a)
+2019-01-13T22:23:36.0062600+07:00 0HLJPD8UGHV6K:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:23:36.2034803+07:00 0HLJPD8UGHV6G:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:23:36.3827957+07:00 0HLJPD8UGHV6H:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:23:36.4269239+07:00 0HLJPD8UGHV6K:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:23:36.4792748+07:00 0HLJPD8UGHV6H:00000009 [INF] Request finished in 376.527ms 404  (791a596a)
+2019-01-13T22:23:36.5060360+07:00 0HLJPD8UGHV6K:00000001 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:23:36.6080637+07:00 0HLJPD8UGHV6G:00000004 [INF] Request finished in 431.6183ms 404  (791a596a)
+2019-01-13T22:23:37.2942968+07:00 0HLJPD8UGHV6I:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:23:37.4845484+07:00 0HLJPD8UGHV6K:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:23:37.6995833+07:00 0HLJPD8UGHV6F:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:23:37.7280635+07:00 0HLJPD8UGHV6K:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:23:37.7327358+07:00 0HLJPD8UGHV6F:00000007 [INF] Request finished in 489.3816ms 404  (791a596a)
+2019-01-13T22:23:37.8497294+07:00 0HLJPD8UGHV6I:00000002 [INF] Request finished in 4846.3041ms 404  (791a596a)
+2019-01-13T22:23:37.8681157+07:00 0HLJPD8UGHV6K:00000001 [INF] Executed DbCommand ("120"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:23:38.0088528+07:00 0HLJPD8UGHV6K:00000001 [INF] Executed DbCommand ("131"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:23:38.0164977+07:00 0HLJPD8UGHV6K:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 524.7129ms. (50a9e262)
+2019-01-13T22:23:38.0249211+07:00 0HLJPD8UGHV6K:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:23:38.0352700+07:00 0HLJPD8UGHV6K:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 1508.9818ms (afa2e885)
+2019-01-13T22:23:38.0468456+07:00 0HLJPD8UGHV6K:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:23:38.0591977+07:00 0HLJPD8UGHV6K:00000001 [INF] Request finished in 2581.6078ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:23:38.2856500+07:00 0HLJPD8UGHV6K:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:23:38.3312635+07:00 0HLJPD8UGHV6K:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:23:38.6857869+07:00 0HLJPD8UGHV6K:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:23:39.0584655+07:00 0HLJPD8UGHV6K:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:23:39.0839703+07:00 0HLJPD8UGHV6K:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:23:39.3699748+07:00 0HLJPD8UGHV6K:00000002 [INF] Executed DbCommand ("254"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:23:39.4621109+07:00 0HLJPD8UGHV6K:00000002 [INF] Executed DbCommand ("77"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:23:39.4777125+07:00 0HLJPD8UGHV6K:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 404.0875ms. (50a9e262)
+2019-01-13T22:23:39.4855059+07:00 0HLJPD8UGHV6K:00000002 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:23:39.5028262+07:00 0HLJPD8UGHV6K:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 803.6961ms (afa2e885)
+2019-01-13T22:23:39.5178286+07:00 0HLJPD8UGHV6K:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:23:39.5257821+07:00 0HLJPD8UGHV6K:00000002 [INF] Request finished in 1348.4034ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:23:59.4943979+07:00 0HLJPD8UGHV6M:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/role/index   (ca22a1cb)
+2019-01-13T22:23:59.5220352+07:00 0HLJPD8UGHV6M:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:23:59.5429252+07:00 0HLJPD8UGHV6M:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:23:59.6943871+07:00 0HLJPD8UGHV6M:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:23:59.7469393+07:00 0HLJPD8UGHV6M:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0179ms. (50a9e262)
+2019-01-13T22:24:08.4600563+07:00 0HLJPD8UGHV6M:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-13T22:24:08.5190901+07:00 0HLJPD8UGHV6M:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:24:09.5028362+07:00 0HLJPD8UGHV6M:00000001 [INF] Executed DbCommand ("531"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:24:10.7149796+07:00 0HLJPD8UGHV6M:00000001 [INF] Executed ViewResult - view "Index" executed in 9772.1215ms. (f66409e9)
+2019-01-13T22:24:10.7944264+07:00 0HLJPD8UGHV6M:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" in 11172.2575ms (afa2e885)
+2019-01-13T22:24:10.8257589+07:00 0HLJPD8UGHV6M:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:24:10.8866041+07:00 0HLJPD8UGHV6P:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:24:10.9697855+07:00 0HLJPD8UGHV6M:00000001 [INF] Request finished in 11364.5968ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-13T22:24:11.0905356+07:00 0HLJPD8UGHV6N:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:24:12.2036628+07:00 0HLJPD8UGHV6P:00000001 [INF] Request finished in 65.8254ms 404  (791a596a)
+2019-01-13T22:24:12.7598658+07:00 0HLJPD8UGHV6N:00000001 [INF] Request finished in 208.1805ms 404  (791a596a)
+2019-01-13T22:24:13.1318230+07:00 0HLJPD8UGHV6P:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:24:13.2980424+07:00 0HLJPD8UGHV6N:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:24:13.4200379+07:00 0HLJPD8UGHV6P:00000002 [INF] Request finished in 929.9755ms 404  (791a596a)
+2019-01-13T22:24:13.5763314+07:00 0HLJPD8UGHV6N:00000002 [INF] Request finished in 538.9422ms 404  (791a596a)
+2019-01-13T22:24:13.8043083+07:00 0HLJPD8UGHV6O:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/role/index.js?v=m0JCH97aiguBOTz-i7JDewfDZBZUaErU8M2eGoyzRZY   (ca22a1cb)
+2019-01-13T22:24:13.8532747+07:00 0HLJPD8UGHV6M:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:24:13.8672234+07:00 0HLJPD8UGHV6O:00000001 [INF] The file "/app/controllers/role/index.js" was not modified (f1f8d725)
+2019-01-13T22:24:13.8866569+07:00 0HLJPD8UGHV6M:00000002 [INF] Request finished in 1817.4211ms 404  (791a596a)
+2019-01-13T22:24:13.8997271+07:00 0HLJPD8UGHV6O:00000001 [INF] Request finished in 2984.2711ms 304 application/javascript (791a596a)
+2019-01-13T22:24:13.9234956+07:00 0HLJPD8UGHV6M:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:24:14.0576224+07:00 0HLJPD8UGHV6M:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:24:14.4928622+07:00 0HLJPD8UGHV6M:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:24:15.1307677+07:00 0HLJPD8UGHV6M:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:24:15.6666068+07:00 0HLJPD8UGHV6M:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:24:15.9550248+07:00 0HLJPD8UGHV6M:00000003 [INF] Executed DbCommand ("240"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:24:16.3705582+07:00 0HLJPD8UGHV6M:00000003 [INF] Executed DbCommand ("260"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:24:16.5215832+07:00 0HLJPD8UGHV6M:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1240.0781ms. (50a9e262)
+2019-01-13T22:24:16.5542350+07:00 0HLJPD8UGHV6M:00000003 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:24:16.6518869+07:00 0HLJPD8UGHV6M:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 2061.786ms (afa2e885)
+2019-01-13T22:24:16.9029949+07:00 0HLJPD8UGHV6M:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:24:17.3554849+07:00 0HLJPD8UGHV6M:00000003 [INF] Request finished in 2992.79ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:24:17.8562533+07:00 0HLJPD8UGHV6M:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:24:18.5412708+07:00 0HLJPD8UGHV6M:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:24:18.8474555+07:00 0HLJPD8UGHV6M:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:24:20.1493305+07:00 0HLJPD8UGHV6M:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:24:20.7203091+07:00 0HLJPD8UGHV6M:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:24:21.0337707+07:00 0HLJPD8UGHV6M:00000004 [INF] Executed DbCommand ("203"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:24:21.6655550+07:00 0HLJPD8UGHV6M:00000004 [INF] Executed DbCommand ("203"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:24:22.5520120+07:00 0HLJPD8UGHV6M:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1517.0594ms. (50a9e262)
+2019-01-13T22:24:23.2723267+07:00 0HLJPD8UGHV6M:00000004 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:24:23.6463745+07:00 0HLJPD8UGHV6M:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 4424.9948ms (afa2e885)
+2019-01-13T22:24:23.8657366+07:00 0HLJPD8UGHV6M:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:24:24.1061167+07:00 0HLJPD8UGHV6M:00000004 [INF] Request finished in 6510.3177ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:24:28.4764498+07:00 0HLJPD8UGHV6M:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/role/index   (ca22a1cb)
+2019-01-13T22:24:28.5059239+07:00 0HLJPD8UGHV6M:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:24:28.5199687+07:00 0HLJPD8UGHV6M:00000005 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:24:28.6001374+07:00 0HLJPD8UGHV6M:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:24:28.6061514+07:00 0HLJPD8UGHV6M:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0227ms. (50a9e262)
+2019-01-13T22:24:28.6171044+07:00 0HLJPD8UGHV6M:00000005 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-13T22:24:28.6451152+07:00 0HLJPD8UGHV6M:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:24:29.5174138+07:00 0HLJPD8UGHV6M:00000005 [INF] Executed DbCommand ("805"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:24:29.8037900+07:00 0HLJPD8UGHV6M:00000005 [INF] Executed ViewResult - view "Index" executed in 915.509ms. (f66409e9)
+2019-01-13T22:24:29.9391912+07:00 0HLJPD8UGHV6M:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" in 1284.3097ms (afa2e885)
+2019-01-13T22:24:29.9623247+07:00 0HLJPD8UGHV6M:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:24:29.9815047+07:00 0HLJPD8UGHV6Q:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/role/index.js?v=m0JCH97aiguBOTz-i7JDewfDZBZUaErU8M2eGoyzRZY   (ca22a1cb)
+2019-01-13T22:24:29.9837780+07:00 0HLJPD8UGHV6M:00000005 [INF] Request finished in 1497.4079ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-13T22:24:29.9952475+07:00 0HLJPD8UGHV6Q:00000001 [INF] The file "/app/controllers/role/index.js" was not modified (f1f8d725)
+2019-01-13T22:24:30.4130927+07:00 0HLJPD8UGHV6Q:00000001 [INF] Request finished in 31.874ms 304 application/javascript (791a596a)
+2019-01-13T22:24:30.8171137+07:00 0HLJPD8UGHV6M:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:24:31.0044958+07:00 0HLJPD8UGHV6Q:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:24:33.4906070+07:00 0HLJPD8UGHV6M:00000006 [INF] Request finished in 720.9209ms 404  (791a596a)
+2019-01-13T22:24:33.5858967+07:00 0HLJPD8UGHV6Q:00000002 [INF] Request finished in 592.0365ms 404  (791a596a)
+2019-01-13T22:24:34.0374781+07:00 0HLJPD8UGHV6M:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:24:34.3515080+07:00 0HLJPD8UGHV6S:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:24:34.6146435+07:00 0HLJPD8UGHV6M:00000007 [INF] Request finished in 552.8214ms 404  (791a596a)
+2019-01-13T22:24:34.6350961+07:00 0HLJPD8UGHV6S:00000001 [INF] Request finished in 941.9308ms 404  (791a596a)
+2019-01-13T22:24:34.6455040+07:00 0HLJPD8UGHV6Q:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:24:34.6565553+07:00 0HLJPD8UGHV6R:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:24:34.7384153+07:00 0HLJPD8UGHV6Q:00000003 [INF] Request finished in 1060.6923ms 404  (791a596a)
+2019-01-13T22:24:34.7504379+07:00 0HLJPD8UGHV6R:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:24:34.7615223+07:00 0HLJPD8UGHV6R:00000001 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:24:34.9321470+07:00 0HLJPD8UGHV6R:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:24:35.3614399+07:00 0HLJPD8UGHV6R:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:24:36.3649537+07:00 0HLJPD8UGHV6R:00000001 [INF] Executed DbCommand ("659"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:24:37.2674589+07:00 0HLJPD8UGHV6R:00000001 [INF] Executed DbCommand ("514"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:24:37.7648020+07:00 0HLJPD8UGHV6R:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2337.9201ms. (50a9e262)
+2019-01-13T22:24:38.0105889+07:00 0HLJPD8UGHV6R:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:24:38.4334599+07:00 0HLJPD8UGHV6R:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 3249.3401ms (afa2e885)
+2019-01-13T22:24:38.6999731+07:00 0HLJPD8UGHV6R:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:24:38.8063439+07:00 0HLJPD8UGHV6R:00000001 [INF] Request finished in 5613.1622ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:24:38.8261581+07:00 0HLJPD8UGHV6R:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:24:39.7460985+07:00 0HLJPD8UGHV6R:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:24:40.5248055+07:00 0HLJPD8UGHV6R:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:24:40.9577261+07:00 0HLJPD8UGHV6R:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:24:40.9803472+07:00 0HLJPD8UGHV6R:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:24:41.3147378+07:00 0HLJPD8UGHV6R:00000002 [INF] Executed DbCommand ("239"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:24:42.1768750+07:00 0HLJPD8UGHV6R:00000002 [INF] Executed DbCommand ("563"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:24:42.2020685+07:00 0HLJPD8UGHV6R:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1219.5911ms. (50a9e262)
+2019-01-13T22:24:42.2303177+07:00 0HLJPD8UGHV6R:00000002 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:24:42.2705131+07:00 0HLJPD8UGHV6R:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 1705.7192ms (afa2e885)
+2019-01-13T22:24:42.5528437+07:00 0HLJPD8UGHV6R:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:24:42.9634101+07:00 0HLJPD8UGHV6R:00000002 [INF] Request finished in 3746.6047ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:25:58.7103326+07:00 0HLJPD8UGHV6R:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/role/index   (ca22a1cb)
+2019-01-13T22:25:59.0463269+07:00 0HLJPD8UGHV6R:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:25:59.1104218+07:00 0HLJPD8UGHV6R:00000003 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:25:59.5660035+07:00 0HLJPD8UGHV6R:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:25:59.7479638+07:00 0HLJPD8UGHV6R:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0165ms. (50a9e262)
+2019-01-13T22:26:01.2600113+07:00 0HLJPD8UGHV6R:00000003 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-13T22:26:01.3197945+07:00 0HLJPD8UGHV6R:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:26:01.4554615+07:00 0HLJPD8UGHV6R:00000003 [INF] Executed DbCommand ("122"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:26:01.9572309+07:00 0HLJPD8UGHV6R:00000003 [INF] Executed ViewResult - view "Index" executed in 1732.2062ms. (f66409e9)
+2019-01-13T22:26:02.6061449+07:00 0HLJPD8UGHV6R:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" in 2846.9841ms (afa2e885)
+2019-01-13T22:26:03.5918371+07:00 0HLJPD8UGHV6Q:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/role/index.js?v=m0JCH97aiguBOTz-i7JDewfDZBZUaErU8M2eGoyzRZY   (ca22a1cb)
+2019-01-13T22:26:03.7773111+07:00 0HLJPD8UGHV6M:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:26:04.0631506+07:00 0HLJPD8UGHV6Q:00000004 [INF] The file "/app/controllers/role/index.js" was not modified (f1f8d725)
+2019-01-13T22:26:04.3114492+07:00 0HLJPD8UGHV6M:00000008 [INF] Request finished in 1173.2524ms 404  (791a596a)
+2019-01-13T22:26:04.6770970+07:00 0HLJPD8UGHV6Q:00000004 [INF] Request finished in 2000.0714ms 304 application/javascript (791a596a)
+2019-01-13T22:26:04.8436755+07:00 0HLJPD8UGHV6S:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:26:04.9225054+07:00 0HLJPD8UGHV6R:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:26:05.0083514+07:00 0HLJPD8UGHV6S:00000002 [INF] Request finished in 2274.0776ms 404  (791a596a)
+2019-01-13T22:26:05.1789816+07:00 0HLJPD8UGHV6U:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:26:05.2282694+07:00 0HLJPD8UGHV6Q:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:26:05.2412853+07:00 0HLJPD8UGHV6U:00000001 [INF] Request finished in 273.8172ms 404  (791a596a)
+2019-01-13T22:26:05.2564747+07:00 0HLJPD8UGHV6M:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:26:05.3955603+07:00 0HLJPD8UGHV6Q:00000005 [INF] Request finished in 237.1984ms 404  (791a596a)
+2019-01-13T22:26:05.9305293+07:00 0HLJPD8UGHV6M:00000009 [INF] Request finished in 127.8367ms 404  (791a596a)
+2019-01-13T22:26:06.6401847+07:00 0HLJPD8UGHV6T:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:26:07.0448437+07:00 0HLJPD8UGHV6R:00000003 [INF] Request finished in 6674.9279ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-13T22:26:07.3236847+07:00 0HLJPD8UGHV6T:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:26:07.6071944+07:00 0HLJPD8UGHV6T:00000001 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:26:08.2137290+07:00 0HLJPD8UGHV6T:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:26:08.3957834+07:00 0HLJPD8UGHV6T:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:26:08.6067739+07:00 0HLJPD8UGHV6T:00000001 [INF] Executed DbCommand ("201"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:26:08.7604002+07:00 0HLJPD8UGHV6T:00000001 [INF] Executed DbCommand ("137"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:26:08.7738693+07:00 0HLJPD8UGHV6T:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 547.1377ms. (50a9e262)
+2019-01-13T22:26:08.8282756+07:00 0HLJPD8UGHV6T:00000001 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:26:09.0730062+07:00 0HLJPD8UGHV6T:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 1244.7598ms (afa2e885)
+2019-01-13T22:26:09.3379699+07:00 0HLJPD8UGHV6T:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:26:09.5450949+07:00 0HLJPD8UGHV6T:00000001 [INF] Request finished in 4029.2366ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:26:09.6638014+07:00 0HLJPD8UGHV6T:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:26:10.2035063+07:00 0HLJPD8UGHV6T:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:26:10.4951039+07:00 0HLJPD8UGHV6T:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:26:10.7380882+07:00 0HLJPD8UGHV6T:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:26:10.8227045+07:00 0HLJPD8UGHV6T:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:26:11.1116293+07:00 0HLJPD8UGHV6T:00000002 [INF] Executed DbCommand ("273"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:26:11.2713479+07:00 0HLJPD8UGHV6T:00000002 [INF] Executed DbCommand ("150"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:26:11.2767224+07:00 0HLJPD8UGHV6T:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 533.6675ms. (50a9e262)
+2019-01-13T22:26:11.2944432+07:00 0HLJPD8UGHV6T:00000002 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:26:11.3271998+07:00 0HLJPD8UGHV6T:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 799.3005ms (afa2e885)
+2019-01-13T22:26:11.3433053+07:00 0HLJPD8UGHV6T:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:26:11.3579885+07:00 0HLJPD8UGHV6T:00000002 [INF] Request finished in 1797.943ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:26:13.9752047+07:00 0HLJPD8UGHV6T:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Role/GetById?id=2dc9140d-5a70-4280-543d-08d6722b41ba   (ca22a1cb)
+2019-01-13T22:26:14.0058871+07:00 0HLJPD8UGHV6T:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:26:14.0378928+07:00 0HLJPD8UGHV6T:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetById\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:26:14.5680717+07:00 0HLJPD8UGHV6T:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)" with arguments (["2dc9140d-5a70-4280-543d-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:26:14.7360431+07:00 0HLJPD8UGHV6T:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:26:15.0758739+07:00 0HLJPD8UGHV6T:00000003 [INF] Executed DbCommand ("286"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[ConcurrencyStamp], [u].[Description], [u].[Name], [u].[NormalizedName]
+FROM [AppRoles] AS [u]
+WHERE [u].[Id] = @__roleId_0" (0723d8ff)
+2019-01-13T22:26:15.1082816+07:00 0HLJPD8UGHV6T:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 528.0687ms. (50a9e262)
+2019-01-13T22:26:15.1255952+07:00 0HLJPD8UGHV6T:00000003 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.AppRoleViewModel"'. (8a1b66c8)
+2019-01-13T22:26:15.1928719+07:00 0HLJPD8UGHV6T:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)" in 1088.2759ms (afa2e885)
+2019-01-13T22:26:15.3433780+07:00 0HLJPD8UGHV6T:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:26:15.6234806+07:00 0HLJPD8UGHV6T:00000003 [INF] Request finished in 1414.5228ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:26:18.4383544+07:00 0HLJPD8UGHV6T:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/Role/GetById?id=53302d25-ebcf-47c8-543e-08d6722b41ba   (ca22a1cb)
+2019-01-13T22:26:18.4738065+07:00 0HLJPD8UGHV6T:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:26:18.6605505+07:00 0HLJPD8UGHV6T:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetById\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:26:19.1564762+07:00 0HLJPD8UGHV6T:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)" with arguments (["53302d25-ebcf-47c8-543e-08d6722b41ba"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:26:19.2034580+07:00 0HLJPD8UGHV6T:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:26:19.7537365+07:00 0HLJPD8UGHV6T:00000004 [INF] Executed DbCommand ("512"ms) [Parameters=["@__roleId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[ConcurrencyStamp], [u].[Description], [u].[Name], [u].[NormalizedName]
+FROM [AppRoles] AS [u]
+WHERE [u].[Id] = @__roleId_0" (0723d8ff)
+2019-01-13T22:26:19.7679415+07:00 0HLJPD8UGHV6T:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 598.1048ms. (50a9e262)
+2019-01-13T22:26:19.7742287+07:00 0HLJPD8UGHV6T:00000004 [INF] Executing ObjectResult, writing value of type '"NUShop.ViewModel.ViewModels.AppRoleViewModel"'. (8a1b66c8)
+2019-01-13T22:26:19.8026215+07:00 0HLJPD8UGHV6T:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)" in 1114.2416ms (afa2e885)
+2019-01-13T22:26:19.8095829+07:00 0HLJPD8UGHV6T:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetById (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:26:19.8229127+07:00 0HLJPD8UGHV6T:00000004 [INF] Request finished in 1409.4018ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:46:20.8471015+07:00 0HLJPD8UGHV70:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:46:20.9713198+07:00 0HLJPD8UGHV72:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:46:21.5216646+07:00 0HLJPD8UGHV73:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:46:22.1586414+07:00 0HLJPD8UGHV6V:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:46:22.6582915+07:00 0HLJPD8UGHV72:00000001 [INF] Request finished in 149.3162ms 404  (791a596a)
+2019-01-13T22:46:22.9806291+07:00 0HLJPD8UGHV6V:00000001 [INF] Request finished in 1282.2282ms 404  (791a596a)
+2019-01-13T22:46:23.3543793+07:00 0HLJPD8UGHV73:00000001 [INF] Request finished in 678.078ms 404  (791a596a)
+2019-01-13T22:46:23.4529490+07:00 0HLJPD8UGHV70:00000001 [INF] Request finished in 61.463ms 404  (791a596a)
+2019-01-13T22:46:23.5554960+07:00 0HLJPD8UGHV71:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:46:23.5681771+07:00 0HLJPD8UGHV71:00000001 [INF] Request finished in 2712.1698ms 404  (791a596a)
+2019-01-13T22:49:04.0982626+07:00 0HLJPD8UGHV71:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/role/index   (ca22a1cb)
+2019-01-13T22:49:04.3685651+07:00 0HLJPD8UGHV71:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:49:07.6274484+07:00 0HLJPD8UGHV71:00000002 [INF] Executed DbCommand ("930"ms) [Parameters=["@__get_Item_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Avatar], [e].[Balance], [e].[BirthDay], [e].[ConcurrencyStamp], [e].[DateCreated], [e].[DateModified], [e].[Email], [e].[EmailConfirmed], [e].[FullName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Status], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AppUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0" (0723d8ff)
+2019-01-13T22:49:09.3723437+07:00 0HLJPD8UGHV71:00000002 [INF] Executed DbCommand ("1,284"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-13T22:49:10.2934465+07:00 0HLJPD8UGHV71:00000002 [INF] Executed DbCommand ("648"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-13T22:49:12.3805696+07:00 0HLJPD8UGHV71:00000002 [INF] Executed DbCommand ("924"ms) [Parameters=["@__normalizedName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Description], [r].[Name], [r].[NormalizedName]
+FROM [AppRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0" (0723d8ff)
+2019-01-13T22:49:14.6636432+07:00 0HLJPD8UGHV71:00000002 [INF] Executed DbCommand ("1,718"ms) [Parameters=["@__role_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AppRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0" (0723d8ff)
+2019-01-13T22:49:15.9267540+07:00 0HLJPD8UGHV71:00000002 [INF] Executed DbCommand ("952"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-13T22:49:16.4321088+07:00 0HLJPD8UGHV71:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:49:16.6624337+07:00 0HLJPD8UGHV71:00000002 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:49:17.4660778+07:00 0HLJPD8UGHV71:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:49:17.9254973+07:00 0HLJPD8UGHV71:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0216ms. (50a9e262)
+2019-01-13T22:49:21.8926475+07:00 0HLJPD8UGHV71:00000002 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-13T22:49:23.2374971+07:00 0HLJPD8UGHV71:00000002 [INF] Executed DbCommand ("1,149"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:49:23.5745960+07:00 0HLJPD8UGHV71:00000002 [INF] Executed ViewResult - view "Index" executed in 5327.03ms. (f66409e9)
+2019-01-13T22:49:23.8782758+07:00 0HLJPD8UGHV6V:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/role/index.js?v=m0JCH97aiguBOTz-i7JDewfDZBZUaErU8M2eGoyzRZY   (ca22a1cb)
+2019-01-13T22:49:24.4125790+07:00 0HLJPD8UGHV71:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" in 6912.2624ms (afa2e885)
+2019-01-13T22:49:25.6633854+07:00 0HLJPD8UGHV72:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:49:26.0964910+07:00 0HLJPD8UGHV73:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:49:26.4296650+07:00 0HLJPD8UGHV72:00000002 [INF] Request finished in 1634.6485ms 404  (791a596a)
+2019-01-13T22:49:27.1564001+07:00 0HLJPD8UGHV73:00000002 [INF] Request finished in 2136.8852ms 404  (791a596a)
+2019-01-13T22:49:27.8445722+07:00 0HLJPD8UGHV6V:00000002 [INF] The file "/app/controllers/role/index.js" was not modified (f1f8d725)
+2019-01-13T22:49:28.0639772+07:00 0HLJPD8UGHV70:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:49:28.3892942+07:00 0HLJPD8UGHV74:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:49:29.0768280+07:00 0HLJPD8UGHV6V:00000002 [INF] Request finished in 4479.0089ms 304 application/javascript (791a596a)
+2019-01-13T22:49:29.4772304+07:00 0HLJPD8UGHV74:00000001 [INF] Request finished in 746.4215ms 404  (791a596a)
+2019-01-13T22:49:29.5221667+07:00 0HLJPD8UGHV70:00000002 [INF] Request finished in 484.2019ms 404  (791a596a)
+2019-01-13T22:49:29.5319997+07:00 0HLJPD8UGHV72:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:49:29.5487253+07:00 0HLJPD8UGHV74:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:49:29.5700935+07:00 0HLJPD8UGHV72:00000003 [INF] Request finished in 29.4118ms 404  (791a596a)
+2019-01-13T22:49:29.5775604+07:00 0HLJPD8UGHV74:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:49:29.5946575+07:00 0HLJPD8UGHV71:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:49:29.6635370+07:00 0HLJPD8UGHV74:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:49:29.9306971+07:00 0HLJPD8UGHV71:00000002 [INF] Request finished in 25715.3495ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-13T22:49:30.8551161+07:00 0HLJPD8UGHV74:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:49:30.8787415+07:00 0HLJPD8UGHV74:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:49:31.2393276+07:00 0HLJPD8UGHV74:00000002 [INF] Executed DbCommand ("233"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:49:31.5121317+07:00 0HLJPD8UGHV74:00000002 [INF] Executed DbCommand ("175"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:49:31.6427036+07:00 0HLJPD8UGHV74:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 657.3199ms. (50a9e262)
+2019-01-13T22:49:31.6647487+07:00 0HLJPD8UGHV74:00000002 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:49:31.6970282+07:00 0HLJPD8UGHV74:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 2001.487ms (afa2e885)
+2019-01-13T22:49:31.8398685+07:00 0HLJPD8UGHV74:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:49:32.3778856+07:00 0HLJPD8UGHV74:00000002 [INF] Request finished in 2331.1208ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:49:32.5722994+07:00 0HLJPD8UGHV74:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:49:32.6644099+07:00 0HLJPD8UGHV74:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:49:32.7111167+07:00 0HLJPD8UGHV74:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:49:32.8396376+07:00 0HLJPD8UGHV74:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:49:32.8482924+07:00 0HLJPD8UGHV74:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:49:32.9637649+07:00 0HLJPD8UGHV74:00000003 [INF] Executed DbCommand ("102"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:49:33.6075819+07:00 0HLJPD8UGHV74:00000003 [INF] Executed DbCommand ("426"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:49:33.6729841+07:00 0HLJPD8UGHV74:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 768.5284ms. (50a9e262)
+2019-01-13T22:49:33.7433289+07:00 0HLJPD8UGHV74:00000003 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:49:33.8609179+07:00 0HLJPD8UGHV74:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 1031.7876ms (afa2e885)
+2019-01-13T22:49:33.9324946+07:00 0HLJPD8UGHV74:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:49:33.9965785+07:00 0HLJPD8UGHV74:00000003 [INF] Request finished in 1556.6357ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:51:01.8197260+07:00 0HLJPD8UGHV74:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/role/index   (ca22a1cb)
+2019-01-13T22:51:02.0259778+07:00 0HLJPD8UGHV74:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:51:02.1162103+07:00 0HLJPD8UGHV74:00000004 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:51:02.2075892+07:00 0HLJPD8UGHV74:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T22:51:02.2376672+07:00 0HLJPD8UGHV74:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0217ms. (50a9e262)
+2019-01-13T22:51:04.6674884+07:00 0HLJPD8UGHV74:00000004 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-13T22:51:04.7395432+07:00 0HLJPD8UGHV74:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:51:04.9732029+07:00 0HLJPD8UGHV74:00000004 [INF] Executed DbCommand ("180"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T22:51:05.5858753+07:00 0HLJPD8UGHV74:00000004 [INF] Executed ViewResult - view "Index" executed in 2758.0572ms. (f66409e9)
+2019-01-13T22:51:06.6200256+07:00 0HLJPD8UGHV74:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" in 3469.8648ms (afa2e885)
+2019-01-13T22:51:06.9951459+07:00 0HLJPD8UGHV71:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T22:51:08.4837110+07:00 0HLJPD8UGHV72:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T22:51:08.9340284+07:00 0HLJPD8UGHV71:00000003 [INF] Request finished in 585.6416ms 404  (791a596a)
+2019-01-13T22:51:09.2139633+07:00 0HLJPD8UGHV70:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T22:51:09.2873809+07:00 0HLJPD8UGHV72:00000004 [INF] Request finished in 1864.8436ms 404  (791a596a)
+2019-01-13T22:51:09.3060618+07:00 0HLJPD8UGHV70:00000003 [INF] Request finished in 1222.4346ms 404  (791a596a)
+2019-01-13T22:51:09.3210518+07:00 0HLJPD8UGHV73:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T22:51:09.4125165+07:00 0HLJPD8UGHV74:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:51:09.5778553+07:00 0HLJPD8UGHV73:00000003 [INF] Request finished in 128.8016ms 404  (791a596a)
+2019-01-13T22:51:09.7070104+07:00 0HLJPD8UGHV74:00000004 [INF] Request finished in 7607.8855ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-13T22:51:09.7358536+07:00 0HLJPD8UGHV6V:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T22:51:09.7706996+07:00 0HLJPD8UGHV71:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:51:09.9068240+07:00 0HLJPD8UGHV6V:00000003 [INF] Request finished in 1702.3478ms 404  (791a596a)
+2019-01-13T22:51:09.9172265+07:00 0HLJPD8UGHV71:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:51:09.9655496+07:00 0HLJPD8UGHV71:00000004 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:51:10.4949845+07:00 0HLJPD8UGHV71:00000004 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:51:11.0370920+07:00 0HLJPD8UGHV71:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:51:11.6550462+07:00 0HLJPD8UGHV71:00000004 [INF] Executed DbCommand ("579"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:51:11.8051825+07:00 0HLJPD8UGHV71:00000004 [INF] Executed DbCommand ("128"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:51:11.8633142+07:00 0HLJPD8UGHV71:00000004 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1310.7063ms. (50a9e262)
+2019-01-13T22:51:11.9059540+07:00 0HLJPD8UGHV71:00000004 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:51:11.9391002+07:00 0HLJPD8UGHV71:00000004 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 1940.7844ms (afa2e885)
+2019-01-13T22:51:11.9650873+07:00 0HLJPD8UGHV71:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:51:12.0872701+07:00 0HLJPD8UGHV71:00000004 [INF] Request finished in 2684.45ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T22:51:12.1506068+07:00 0HLJPD8UGHV71:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?keyword=&pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T22:51:12.1629075+07:00 0HLJPD8UGHV71:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T22:51:12.1698725+07:00 0HLJPD8UGHV71:00000005 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T22:51:12.5992960+07:00 0HLJPD8UGHV71:00000005 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T22:51:12.7850282+07:00 0HLJPD8UGHV71:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T22:51:13.1546284+07:00 0HLJPD8UGHV71:00000005 [INF] Executed DbCommand ("250"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T22:51:13.8050318+07:00 0HLJPD8UGHV71:00000005 [INF] Executed DbCommand ("329"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T22:51:13.9397144+07:00 0HLJPD8UGHV71:00000005 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1206.1582ms. (50a9e262)
+2019-01-13T22:51:13.9613457+07:00 0HLJPD8UGHV71:00000005 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T22:51:13.9812598+07:00 0HLJPD8UGHV71:00000005 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 1792.2803ms (afa2e885)
+2019-01-13T22:51:13.9979000+07:00 0HLJPD8UGHV71:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T22:51:14.0526824+07:00 0HLJPD8UGHV71:00000005 [INF] Request finished in 1910.5778ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T23:00:41.5827807+07:00 0HLJPD8UGHV75:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin/role/index   (ca22a1cb)
+2019-01-13T23:00:42.0186033+07:00 0HLJPD8UGHV75:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-13T23:00:42.1560320+07:00 0HLJPD8UGHV75:00000001 [INF] Route matched with "{area = \"Admin\", action = \"Index\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-13T23:00:42.7856926+07:00 0HLJPD8UGHV75:00000001 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-13T23:00:42.9363618+07:00 0HLJPD8UGHV75:00000001 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.0319ms. (50a9e262)
+2019-01-13T23:00:44.4782100+07:00 0HLJPD8UGHV75:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-13T23:00:44.5525958+07:00 0HLJPD8UGHV75:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T23:00:45.8962316+07:00 0HLJPD8UGHV75:00000001 [INF] Executed DbCommand ("832"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[IconCss], [x].[Name], [x].[ParentId], [x].[SortOrder], [x].[Status], [x].[URL]
+FROM [Functions] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-13T23:00:45.9631386+07:00 0HLJPD8UGHV75:00000001 [INF] Executed ViewResult - view "Index" executed in 2982.0457ms. (f66409e9)
+2019-01-13T23:00:46.1320379+07:00 0HLJPD8UGHV75:00000001 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)" in 3807.4273ms (afa2e885)
+2019-01-13T23:00:46.6671852+07:00 0HLJPD8UGHV75:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T23:00:47.2201125+07:00 0HLJPD8UGHV76:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/app/controllers/role/index.js?v=m0JCH97aiguBOTz-i7JDewfDZBZUaErU8M2eGoyzRZY   (ca22a1cb)
+2019-01-13T23:00:49.8200257+07:00 0HLJPD8UGHV75:00000001 [INF] Request finished in 5421.9279ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-13T23:00:49.9210049+07:00 0HLJPD8UGHV78:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/metisMenu.css.map   (ca22a1cb)
+2019-01-13T23:00:49.9820466+07:00 0HLJPD8UGHV75:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-13T23:00:50.0165789+07:00 0HLJPD8UGHV78:00000001 [INF] Request finished in 219.9945ms 404  (791a596a)
+2019-01-13T23:00:50.0851469+07:00 0HLJPD8UGHV75:00000002 [INF] Request finished in 163.8149ms 404  (791a596a)
+2019-01-13T23:00:50.2147034+07:00 0HLJPD8UGHV77:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/metisMenu.min.js.map   (ca22a1cb)
+2019-01-13T23:00:50.4094609+07:00 0HLJPD8UGHV7A:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/bootstrap.min.js.map   (ca22a1cb)
+2019-01-13T23:00:50.5273787+07:00 0HLJPD8UGHV77:00000001 [INF] Request finished in 310.9442ms 404  (791a596a)
+2019-01-13T23:00:51.0308029+07:00 0HLJPD8UGHV7A:00000001 [INF] Request finished in 637.9982ms 404  (791a596a)
+2019-01-13T23:00:51.4829433+07:00 0HLJPD8UGHV76:00000001 [INF] The file "/app/controllers/role/index.js" was not modified (f1f8d725)
+2019-01-13T23:00:51.8166627+07:00 0HLJPD8UGHV79:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/admin-site/js/popper.min.js.map   (ca22a1cb)
+2019-01-13T23:00:52.0886914+07:00 0HLJPD8UGHV76:00000001 [INF] Request finished in 4966.2953ms 304 application/javascript (791a596a)
+2019-01-13T23:00:52.2159964+07:00 0HLJPD8UGHV79:00000001 [INF] Request finished in 2103.0472ms 404  (791a596a)
+2019-01-13T23:00:52.6163674+07:00 0HLJPD8UGHV76:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T23:00:52.9691422+07:00 0HLJPD8UGHV76:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T23:00:53.1851952+07:00 0HLJPD8UGHV76:00000002 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T23:00:53.5320822+07:00 0HLJPD8UGHV76:00000002 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T23:00:53.6832480+07:00 0HLJPD8UGHV76:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T23:00:55.1339475+07:00 0HLJPD8UGHV76:00000002 [INF] Executed DbCommand ("1,226"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T23:00:55.3033527+07:00 0HLJPD8UGHV76:00000002 [INF] Executed DbCommand ("160"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T23:00:55.3164879+07:00 0HLJPD8UGHV76:00000002 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1773.3236ms. (50a9e262)
+2019-01-13T23:00:55.3314229+07:00 0HLJPD8UGHV76:00000002 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T23:00:55.3647215+07:00 0HLJPD8UGHV76:00000002 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 2147.6531ms (afa2e885)
+2019-01-13T23:00:55.3849520+07:00 0HLJPD8UGHV76:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T23:00:55.4158096+07:00 0HLJPD8UGHV76:00000002 [INF] Request finished in 3295.8032ms 200 application/json; charset=utf-8 (791a596a)
+2019-01-13T23:00:55.5319347+07:00 0HLJPD8UGHV76:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Admin/role/GetAllPaging?pageSize=10&pageIndex=1   (ca22a1cb)
+2019-01-13T23:00:55.7914851+07:00 0HLJPD8UGHV76:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (500cc934)
+2019-01-13T23:00:55.8263329+07:00 0HLJPD8UGHV76:00000003 [INF] Route matched with "{area = \"Admin\", action = \"GetAllPaging\", controller = \"Role\"}". Executing action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" (a44c0341)
+2019-01-13T23:00:56.0173826+07:00 0HLJPD8UGHV76:00000003 [INF] Executing action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" with arguments (["", "10", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-13T23:00:56.0312989+07:00 0HLJPD8UGHV76:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-13T23:00:56.1661404+07:00 0HLJPD8UGHV76:00000003 [INF] Executed DbCommand ("129"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [AppRoles] AS [a]" (0723d8ff)
+2019-01-13T23:00:56.2940141+07:00 0HLJPD8UGHV76:00000003 [INF] Executed DbCommand ("117"ms) [Parameters=["@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AppRoles] AS [a]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-13T23:00:56.3136724+07:00 0HLJPD8UGHV76:00000003 [INF] Executed action method "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 276.99ms. (50a9e262)
+2019-01-13T23:00:56.3342444+07:00 0HLJPD8UGHV76:00000003 [INF] Executing ObjectResult, writing value of type '"NUShop.Utilities.DTOs.PagedResult`1[[NUShop.ViewModel.ViewModels.AppRoleViewModel, NUShop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'. (8a1b66c8)
+2019-01-13T23:00:56.5521578+07:00 0HLJPD8UGHV76:00000003 [INF] Executed action "NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)" in 508.2993ms (afa2e885)
+2019-01-13T23:00:56.8267933+07:00 0HLJPD8UGHV76:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Areas.Admin.Controllers.RoleController.GetAllPaging (NUShop.WebMVC)"' (99874f2b)
+2019-01-13T23:00:57.0868769+07:00 0HLJPD8UGHV76:00000003 [INF] Request finished in 1372.1175ms 200 application/json; charset=utf-8 (791a596a)

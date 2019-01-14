@@ -40,7 +40,12 @@ jquery-easyui@1.5.21:
   resolved "https://registry.yarnpkg.com/jquery-easyui/-/jquery-easyui-1.5.21.tgz#536821a5d2befee778c1b6ae9ae2ef4a124b10bb"
   integrity sha1-U2ghpdK+/ud4wbaumuLvShJLELs=
 
-jquery@>=1.10, jquery@>=1.7, jquery@^3.3.1:
+jquery-treegrid@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/jquery-treegrid/-/jquery-treegrid-0.3.0.tgz#e445d4e789cbd85ec045ed467192d70b2ab189d3"
+  integrity sha1-5EXU54nL2F7ARe1GcZLXCyqxidM=
+
+jquery@>=1.10, jquery@>=1.12.0, jquery@>=1.7, jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
@@ -55,15 +60,17 @@ mustache@3.0.1:
   resolved "https://registry.yarnpkg.com/mustache/-/mustache-3.0.1.tgz#873855f23aa8a95b150fb96d9836edbc5a1d248a"
   integrity sha512-jFI/4UVRsRYdUbuDTKT7KzfOp7FiD5WzYmmwNwXyUVypC0xjoTL78Fqc0jHUPIvvGD+6DQSPHIt1NE7D1ArsqA==
 
-notifyjs@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/notifyjs/-/notifyjs-3.0.0.tgz#7418c9d6c0533aebaa643414214af53b521d1b28"
-  integrity sha1-dBjJ1sBTOuuqZDQUIUr1O1IdGyg=
-
 popper.js@1.14.6:
   version "1.14.6"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.6.tgz#ab20dd4edf9288b8b3b6531c47c361107b60b4b0"
   integrity sha512-AGwHGQBKumlk/MDfrSOf0JHhJCImdDMcGNoqKmKkU+68GFazv3CQ6q9r7Ja1sKDZmYWTckY/uLyEznheTDycnA==
+
+toastr@2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/toastr/-/toastr-2.1.4.tgz#8b43be64fb9d0c414871446f2db8e8ca4e95f181"
+  integrity sha1-i0O+ZPudDEFIcURvLbjoyk6V8YE=
+  dependencies:
+    jquery ">=1.12.0"
 
 twbs-pagination@1.4.1:
   version "1.4.1"

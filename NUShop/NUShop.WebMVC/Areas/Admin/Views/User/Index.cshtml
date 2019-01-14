@@ -1,4 +1,9 @@
-﻿@section Styles{
+﻿@using Microsoft.AspNetCore.Authorization
+@using NUShop.WebMVC.Authorization
+@inject IAuthorizationService AuthorizationService
+
+@section Styles{
+
 }
 
 @section Scripts{
@@ -13,7 +18,10 @@
     <div class="card">
         <div class="card-body">
             <h4 class="header-title">User List</h4>
-            <button type="button" class="btn btn-primary mb-3" id="btn-create">Add new</button>
+            @if ((await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Create)).Succeeded)
+            {
+                <button type="button" class="btn btn-primary mb-3" id="btn-create">Add new</button>
+            }
             <div class="row">
                 <input class="form-control col-4" type="text" placeholder="Search" id="search-input" style="margin-bottom: 10px; margin-right: 5px;">
                 <button type="button" class="btn btn-primary mb-3" id="btn-search">Search</button>
@@ -51,9 +59,16 @@
     <tr>
         <th scope="row">
             <ul class="d-flex justify-content-center">
-                <li class="mr-3">
-                    <button class="btn-edit" data-id="{{Id}}" id="btn-edit"><i class="fa fa-edit"></i></button>
-                <li><button class="btn-delete" data-id="{{Id}}" id="btn-delete"><i class="ti-trash"></i></button></li>
+                @if ((await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Update)).Succeeded)
+                {
+                    <li class="mr-3">
+                        <button class="btn-edit" data-id="{{Id}}" id="btn-edit"><i class="fa fa-edit"></i></button>
+                    </li>
+                }
+                @if ((await AuthorizationService.AuthorizeAsync(User, "USER", Operations.Delete)).Succeeded)
+                {
+                    <li><button class="btn-delete" data-id="{{Id}}" id="btn-delete"><i class="ti-trash"></i></button></li>
+                }
             </ul>
         </th>
         <td>{{{Status}}}</td>
