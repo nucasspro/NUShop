@@ -98,6 +98,8 @@ namespace NUShop.WebMVC
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IRoleService, RoleService>();
+            services.AddTransient<IBillService, BillService>();
+
 
             #endregion Dependency Injection for Services
 
