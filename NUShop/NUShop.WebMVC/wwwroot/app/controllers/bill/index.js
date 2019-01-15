@@ -17,9 +17,8 @@
             loadProducts())
         .done(function () {
             loadBills();
+            registerEvents();
         });
-
-        registerEvents();
     }
 
     function registerEvents() {
@@ -43,188 +42,35 @@
         // button create
         $("#btn-create").off('click').on('click', function () {
             resetForm();
-            $('#bill-modal').modal('show');
             $('#btn-save').hide();
+            $('#btn-confirm').hide();
+            $('#btn-pending').hide();
+            $('#btn-cancel').hide();
+            $('#btn-export').hide();
             $('#btn-add').show();
+            $('#bill-modal').modal('show');
         });
 
         $('#btn-add').on('click', function (e) {
             e.preventDefault();
-            var id = $('#txt-hidden-id').val();
-            var customerName = $('#txt-customer-name').val();
-            var customerAddress = $('#txt-customer-address').val();
-            var customerId = $('#ddlCustomerId').val();
-            var customerMobile = $('#txt-customer-phone').val();
-            var customerMessage = $('#txt-customer-message').val();
-            var paymentMethod = $('#select-payment-method').val();
-            var billStatus = $('#select-bill-status').val();
-            //bill detail
-
-            var billDetails = [];
-            $.each($('#table-bill-details tr'), function (i, item) {
-                billDetails.push({
-                    Id: $(item).data('id'),
-                    ProductId: $(item).find('select.select-product').first().val(),
-                    Quantity: $(item).find('input.txt-quantity').first().val(),
-                    ColorId: $(item).find('select.select-color').first().val(),
-                    SizeId: $(item).find('select.select-size').first().val(),
-                    BillId: id
-                });
-            });
-
-            $.ajax({
-                type: "POST",
-                url: "/Admin/Bill/Create",
-                data: {
-                    Id: id,
-                    BillStatus: billStatus,
-                    CustomerAddress: customerAddress,
-                    CustomerId: customerId,
-                    CustomerMessage: customerMessage,
-                    CustomerMobile: customerMobile,
-                    CustomerName: customerName,
-                    PaymentMethod: paymentMethod,
-                    Status: 1,
-                    BillDetails: billDetails
-                },
-                dataType: "json",
-                beforeSend: function () {
-                    NUShopConfig.startLoading();
-                },
-                success: function (response) {
-                    NUShopConfig.toast('success', 'Save order successful.');
-                    $('#modal-detail').modal('hide');
-                    resetForm();
-                    NUShopConfig.stopLoading();
-                    loadBills(true);
-                },
-                error: function () {
-                    NUShopConfig.toast('error', 'Has an error in progress.');
-                    NUShopConfig.stopLoading();
-                }
-            });
+            createBill();
             return false;
-
         });
 
         // button edit
         $('body').on('click', '.btn-edit', function (e) {
             e.preventDefault();
             var id = $(this).data('id');
-            $.ajax({
-                type: "GET",
-                url: "/Admin/Bill/GetById",
-                data: {
-                    id: id
-                },
-                beforeSend: function () {
-                    NUShopConfig.startLoading();
-                },
-                success: function (response) {
-                    var data = response;
-                    $('#txt-hidden-id').val(data.Id);
-                    $('#txt-customer-name').val(data.CustomerName);
-                    $('#txt-customer-address').val(data.CustomerAddress);
-                    $('#txt-customer-phone').val(data.CustomerMobile);
-                    $('#txt-customer-message').val(data.CustomerMessage);
-                    $('#select-payment-method').val(data.PaymentMethod);
-                    $('#ddlCustomerId').val(data.CustomerId);
-                    $('#select-bill-status').val(data.BillStatus);
-
-                    var billDetails = data.BillDetails;
-                    if (data.BillDetails != null && data.BillDetails.length > 0) {
-                        var render = '';
-                        var templateDetails = $('#template-table-bill-details').html();
-
-                        $.each(billDetails, function (i, item) {
-                            var products = getProductOptions(item.ProductId);
-                            var colors = getColorOptions(item.ColorId);
-                            var sizes = getSizeOptions(item.SizeId);
-
-                            render += Mustache.render(templateDetails,
-                                {
-                                    Id: item.Id,
-                                    Products: products,
-                                    Colors: colors,
-                                    Sizes: sizes,
-                                    Quantity: item.Quantity
-                                });
-                        });
-                        $('#table-bill-details').html(render);
-                    }
-                    $('#modal-detail').modal('show');
-                    NUShopConfig.stopLoading();
-
-                },
-                error: function (e) {
-                    NUShopConfig.toast('error', 'Has an error in progress.');
-                    NUShopConfig.stopLoading();
-                }
-            });
+            getBillById(id);
         });
 
         $('#btn-save').on('click', function (e) {
             e.preventDefault();
-            var id = $('#txt-hidden-id').val();
-            var customerName = $('#txt-customer-name').val();
-            var customerAddress = $('#txt-customer-address').val();
-            var customerId = $('#ddlCustomerId').val();
-            var customerMobile = $('#txt-customer-phone').val();
-            var customerMessage = $('#txt-customer-message').val();
-            var paymentMethod = $('#select-payment-method').val();
-            var billStatus = $('#select-bill-status').val();
-            //bill detail
-
-            var billDetails = [];
-            $.each($('#table-bill-details tr'), function (i, item) {
-                billDetails.push({
-                    Id: $(item).data('id'),
-                    ProductId: $(item).find('select.select-product').first().val(),
-                    Quantity: $(item).find('input.txt-quantity').first().val(),
-                    ColorId: $(item).find('select.select-color').first().val(),
-                    SizeId: $(item).find('select.select-size').first().val(),
-                    BillId: id
-                });
-            });
-
-            $.ajax({
-                type: "PUT",
-                url: "/Admin/Bill/Update",
-                data: {
-                    Id: id,
-                    BillStatus: billStatus,
-                    CustomerAddress: customerAddress,
-                    CustomerId: customerId,
-                    CustomerMessage: customerMessage,
-                    CustomerMobile: customerMobile,
-                    CustomerName: customerName,
-                    PaymentMethod: paymentMethod,
-                    Status: 1,
-                    BillDetails: billDetails
-                },
-                dataType: "json",
-                beforeSend: function () {
-                    NUShopConfig.startLoading();
-                },
-                success: function (response) {
-                    NUShopConfig.toast('success', 'Save order successful.');
-                    $('#modal-detail').modal('hide');
-                    resetForm();
-                    NUShopConfig.stopLoading();
-                    loadBills(true);
-                },
-                error: function () {
-                    NUShopConfig.toast('error', 'Has an error in progress.');
-                    NUShopConfig.stopLoading();
-                }
-            });
+            updateBill();
             return false;
 
         });
 
-
-        
-        
         $('#btn-add-detail').on('click', function () {
             var template = $('#template-table-bill-details').html();
             var products = getProductOptions(null);
@@ -242,26 +88,13 @@
             $('#table-bill-details').append(render);
         });
 
-        // modal
+        // button delete detail
         $('body').on('click', '.btn-delete-detail', function () {
             $(this).parent().parent().remove();
         });
 
-        // modal
         $("#btn-export").on('click', function () {
-            var that = $('#txt-hidden-id').val();
-            $.ajax({
-                type: "POST",
-                url: "/Admin/Bill/ExportExcel",
-                data: { billId: that },
-                beforeSend: function () {
-                    NUShopConfig.startLoading();
-                },
-                success: function (response) {
-                    window.location.href = response;
-                    NUShopConfig.stopLoading();
-                }
-            });
+            exportBill();
         });
     }
 
@@ -304,18 +137,20 @@
         });
     }
 
-    function loadProducts() {
-        return $.ajax({
-            type: "GET",
-            url: "/Admin/Product/GetAll",
-            dataType: "json",
-            success: function (response) {
-                console.log('product');
-                console.log(response);
-                cachedObj.products = response;
+    function exportBill() {
+        var that = $('#txt-hidden-id').val();
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Bill/ExportExcel",
+            data: {
+                billId: that
             },
-            error: function () {
-                NUShopConfig.toast('error', 'Has an error in progress.');
+            beforeSend: function () {
+                NUShopConfig.startLoading();
+            },
+            success: function (response) {
+                window.location.href = response;
+                NUShopConfig.stopLoading();
             }
         });
     }
@@ -352,42 +187,21 @@
         });
     }
 
-    function getProductOptions(selectedId) {
-        var products = "<select class='form-control select-product'>";
-        $.each(cachedObj.products, function (i, product) {
-            if (selectedId === product.Id)
-                products += '<option value="' + product.Id + '" selected="select">' + product.Name + '</option>';
-            else
-                products += '<option value="' + product.Id + '">' + product.Name + '</option>';
+    function loadProducts() {
+        return $.ajax({
+            type: "GET",
+            url: "/Admin/Product/GetAll",
+            dataType: "json",
+            success: function (response) {
+                console.log('product');
+                console.log(response);
+                cachedObj.products = response;
+            },
+            error: function () {
+                NUShopConfig.toast('error', 'Has an error in progress.');
+            }
         });
-        products += "</select>";
-        return products;
     }
-
-    function getColorOptions(selectedId) {
-        var colors = "<select class='form-control select-color'>";
-        $.each(cachedObj.colors, function (i, color) {
-            if (selectedId === color.Id)
-                colors += '<option value="' + color.Id + '" selected="select">' + color.Name + '</option>';
-            else
-                colors += '<option value="' + color.Id + '">' + color.Name + '</option>';
-        });
-        colors += "</select>";
-        return colors;
-    }
-
-    function getSizeOptions(selectedId) {
-        var sizes = "<select class='form-control select-size'>";
-        $.each(cachedObj.sizes, function (i, size) {
-            if (selectedId === size.Id)
-                sizes += '<option value="' + size.Id + '" selected="select">' + size.Name + '</option>';
-            else
-                sizes += '<option value="' + size.Id + '">' + size.Name + '</option>';
-        });
-        sizes += "</select>";
-        return sizes;
-    }
-    
 
     function loadBills(isPageChanged) {
         $.ajax({
@@ -438,6 +252,43 @@
             }
         });
     };
+
+    function getProductOptions(selectedId) {
+        var products = "<select class='form-control select-product'>";
+        $.each(cachedObj.products, function (i, product) {
+            if (selectedId === product.Id)
+                products += '<option value="' + product.Id + '" selected="select">' + product.Name + '</option>';
+            else
+                products += '<option value="' + product.Id + '">' + product.Name + '</option>';
+        });
+        products += "</select>";
+        return products;
+    }
+
+    function getColorOptions(selectedId) {
+        var colors = "<select class='form-control select-color'>";
+        $.each(cachedObj.colors, function (i, color) {
+            if (selectedId === color.Id)
+                colors += '<option value="' + color.Id + '" selected="select">' + color.Name + '</option>';
+            else
+                colors += '<option value="' + color.Id + '">' + color.Name + '</option>';
+        });
+        colors += "</select>";
+        return colors;
+    }
+
+    function getSizeOptions(selectedId) {
+        var sizes = "<select class='form-control select-size'>";
+        $.each(cachedObj.sizes, function (i, size) {
+            if (selectedId === size.Id)
+                sizes += '<option value="' + size.Id + '" selected="select">' + size.Name + '</option>';
+            else
+                sizes += '<option value="' + size.Id + '">' + size.Name + '</option>';
+        });
+        sizes += "</select>";
+        return sizes;
+    }
+
     function getPaymentMethodName(paymentMethod) {
         var method = $.grep(cachedObj.paymentMethods, function (element, index) {
             return element.Value == paymentMethod;
@@ -456,6 +307,171 @@
             return status[0].Name;
         else return '';
     }
+
+    function createBill() {
+        var id = $('#txt-hidden-id').val();
+        var customerName = $('#txt-customer-name').val();
+        var customerAddress = $('#txt-customer-address').val();
+        var customerId = $('#ddlCustomerId').val();
+        var customerMobile = $('#txt-customer-phone').val();
+        var customerMessage = $('#txt-customer-message').val();
+        var paymentMethod = $('#select-payment-method').val();
+        var billStatus = $('#select-bill-status').val();
+        //bill detail
+
+        var billDetails = [];
+        $.each($('#table-bill-details tr'), function (i, item) {
+            billDetails.push({
+                Id: $(item).data('id'),
+                ProductId: $(item).find('select.select-product').first().val(),
+                Quantity: $(item).find('input.txt-quantity').first().val(),
+                ColorId: $(item).find('select.select-color').first().val(),
+                SizeId: $(item).find('select.select-size').first().val(),
+                BillId: id
+            });
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "/Admin/Bill/Create",
+            data: {
+                Id: id,
+                BillStatus: billStatus,
+                CustomerAddress: customerAddress,
+                CustomerId: customerId,
+                CustomerMessage: customerMessage,
+                CustomerMobile: customerMobile,
+                CustomerName: customerName,
+                PaymentMethod: paymentMethod,
+                Status: 1,
+                BillDetails: billDetails
+            },
+            dataType: "json",
+            beforeSend: function () {
+                NUShopConfig.startLoading();
+            },
+            success: function (response) {
+                NUShopConfig.toast('success', 'Save order successful.');
+                $('#bill-modal').modal('hide');
+                resetForm();
+                NUShopConfig.stopLoading();
+                loadBills(true);
+            },
+            error: function () {
+                NUShopConfig.toast('error', 'Has an error in progress.');
+                NUShopConfig.stopLoading();
+            }
+        });
+    }
+
+    function getBillById(id) {
+        $.ajax({
+            type: "GET",
+            url: "/Admin/Bill/GetById",
+            data: {
+                id: id
+            },
+            beforeSend: function () {
+                NUShopConfig.startLoading();
+            },
+            success: function (response) {
+                var data = response;
+                $('#txt-hidden-id').val(data.Id);
+                $('#txt-customer-name').val(data.CustomerName);
+                $('#txt-customer-address').val(data.CustomerAddress);
+                $('#txt-customer-phone').val(data.CustomerMobile);
+                $('#txt-customer-message').val(data.CustomerMessage);
+                $('#select-payment-method').val(data.PaymentMethod);
+                $('#ddlCustomerId').val(data.CustomerId);
+                $('#select-bill-status').val(data.BillStatus);
+
+                var billDetails = data.BillDetails;
+                if (data.BillDetails != null && data.BillDetails.length > 0) {
+                    var render = '';
+                    var templateDetails = $('#template-table-bill-details').html();
+
+                    $.each(billDetails, function (i, item) {
+                        var products = getProductOptions(item.ProductId);
+                        var colors = getColorOptions(item.ColorId);
+                        var sizes = getSizeOptions(item.SizeId);
+
+                        render += Mustache.render(templateDetails,
+                            {
+                                Id: item.Id,
+                                Products: products,
+                                Colors: colors,
+                                Sizes: sizes,
+                                Quantity: item.Quantity
+                            });
+                    });
+                    $('#table-bill-details').html(render);
+                }
+                $('#bill-modal').modal('show');
+                NUShopConfig.stopLoading();
+            },
+            error: function (e) {
+                NUShopConfig.toast('error', 'Has an error in progress.');
+                NUShopConfig.stopLoading();
+            }
+        });
+    }
+
+    function updateBill() {
+        var id = $('#txt-hidden-id').val();
+        var customerName = $('#txt-customer-name').val();
+        var customerAddress = $('#txt-customer-address').val();
+        var customerId = $('#ddlCustomerId').val();
+        var customerMobile = $('#txt-customer-phone').val();
+        var customerMessage = $('#txt-customer-message').val();
+        var paymentMethod = $('#select-payment-method').val();
+        var billStatus = $('#select-bill-status').val();
+        //bill detail
+
+        var billDetails = [];
+        $.each($('#table-bill-details tr'), function (i, item) {
+            billDetails.push({
+                Id: $(item).data('id'),
+                ProductId: $(item).find('select.select-product').first().val(),
+                Quantity: $(item).find('input.txt-quantity').first().val(),
+                ColorId: $(item).find('select.select-color').first().val(),
+                SizeId: $(item).find('select.select-size').first().val(),
+                BillId: id
+            });
+        });
+
+        $.ajax({
+            type: "PUT",
+            url: "/Admin/Bill/Update",
+            data: {
+                Id: id,
+                BillStatus: billStatus,
+                CustomerAddress: customerAddress,
+                CustomerId: customerId,
+                CustomerMessage: customerMessage,
+                CustomerMobile: customerMobile,
+                CustomerName: customerName,
+                PaymentMethod: paymentMethod,
+                Status: 1,
+                BillDetails: billDetails
+            },
+            dataType: "json",
+            beforeSend: function () {
+                NUShopConfig.startLoading();
+            },
+            success: function (response) {
+                NUShopConfig.toast('success', 'Save order successful.');
+                $('#bill-modal').modal('hide');
+                resetForm();
+                NUShopConfig.stopLoading();
+                loadBills(true);
+            },
+            error: function () {
+                NUShopConfig.toast('error', 'Has an error in progress.');
+                NUShopConfig.stopLoading();
+            }
+        });
+    }
+
     function wrapPaging(recordCount, callBack, changePageSize) {
         var totalsize = Math.ceil(recordCount / NUShopConfig.configs.pageSize);
         if ($('#bill-pagination a').length === 0 || changePageSize === true) {

@@ -220,11 +220,10 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             var products = _productService.GetAll();
             using (ExcelPackage package = new ExcelPackage(file))
             {
-                // add a new worksheet to the empty workbook
                 ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Products");
                 worksheet.Cells["A1"].LoadFromCollection(products, true, TableStyles.Light1);
                 worksheet.Cells.AutoFitColumns();
-                package.Save(); //Save the workbook.
+                package.Save(); 
             }
             return new OkObjectResult(fileUrl);
         }

@@ -175,7 +175,7 @@
                 return false;
             }
             else {
-                fileData.append('categoryId');
+                fileData.append('categoryId', parseInt($('#select-category-excel').val()));
 
                 $.ajax({
                     url: '/Admin/Product/ImportExcelAsync',

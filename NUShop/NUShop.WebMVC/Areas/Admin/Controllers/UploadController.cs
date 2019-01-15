@@ -35,7 +35,7 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             var file = files[0];
             var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
 
-            var imageFolder = $@"\upload\images\{date.ToString("yyyyMMdd")}";
+            var imageFolder = $@"\uploaded\images\{date.ToString("yyyyMMdd")}";
             var folder = _env.WebRootPath + imageFolder;
 
             if (!Directory.Exists(folder))
@@ -65,7 +65,7 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             {
                 var file = upload[0];
                 var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                var imageFolder = $@"\upload\images\{date.ToString("yyyyMMdd")}";
+                var imageFolder = $@"\uploaded\images\{date.ToString("yyyyMMdd")}";
                 var folder = _env.WebRootPath + imageFolder;
 
                 if (!Directory.Exists(folder))
