@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --modules-folder=wwwroot\lib jquery-treegrid
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --modules-folder=wwwroot\lib jquery
 
 PATH: 
-  C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2017\ENTERPRISE\COMMON7\IDE\EXTENSIONS\GITHUB\GITHUB\lib\win32\x86;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Yarn\bin\;C:\Users\nucas\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\nucas\AppData\Local\Programs\Python\Python37-32\;C:\Users\nucas\AppData\Local\Microsoft\WindowsApps;;C:\Users\nucas\AppData\Roaming\npm;C:\Users\nucas\.dotnet\tools;C:\Users\nucas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\nucas\AppData\Local\Programs\Fiddler;C:\Users\nucas\AppData\Local\Yarn\bin
+  C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2017\ENTERPRISE\COMMON7\IDE\EXTENSIONS\GITHUB\GITHUB\lib\win32\x86;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\dotnet\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Yarn\bin\;C:\Users\nucas\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\nucas\AppData\Local\Programs\Python\Python37-32\;C:\Users\nucas\AppData\Local\Microsoft\WindowsApps;C:\Users\nucas\AppData\Roaming\npm;C:\Users\nucas\.dotnet\tools;C:\Users\nucas\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\nucas\AppData\Local\Programs\Fiddler;C:\Users\nucas\AppData\Local\Yarn\bin;C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.codeanalysis.analyzers\1.1.0\tools;C:\Users\nucas\.nuget\packages\microsoft.aspnetcore.razor.design\2.1.0\tools;C:\Users\nucas\.nuget\packages\microsoft.aspnetcore.razor.design\2.2.0\tools;C:\Users\nucas\.nuget\packages\microsoft.visualstudio.azure.containers.tools.targets\1.1.1\tools;C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.entityframeworkcore.tools\2.2.0\tools
 
 Yarn version: 
   1.12.3
@@ -20,15 +20,18 @@ npm manifest:
   {
     "author": "nucasspro",
     "dependencies": {
-      "animate.css": "^3.7.0",
+      "animate.css": "3.7.0",
       "bootbox": "4.4.0",
-      "bootstrap": "^4.2.1",
+      "bootstrap": "4.2.1",
+      "bootstrap-datepicker": "1.8.0",
       "bootstrap-daterangepicker": "3.0.3",
-      "ckeditor": "4.11.1",
+      "ckeditor": "4.11.2",
       "font-awesome": "4.7.0",
-      "jquery": "^3.3.1",
+      "jquery": "3.3.1",
       "jquery-easyui": "1.5.21",
       "jquery-treegrid": "0.3.0",
+      "jquery-validation": "1.19.0",
+      "jquery-validation-unobtrusive": "3.2.11",
       "mustache": "3.0.1",
       "popper.js": "1.14.6",
       "toastr": "2.1.4",
@@ -91,7 +94,12 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/jquery-easyui/-/jquery-easyui-1.5.21.tgz#536821a5d2befee778c1b6ae9ae2ef4a124b10bb"
     integrity sha1-U2ghpdK+/ud4wbaumuLvShJLELs=
   
-  jquery@>=1.10, jquery@>=1.7, jquery@^3.3.1:
+  jquery-treegrid@0.3.0:
+    version "0.3.0"
+    resolved "https://registry.yarnpkg.com/jquery-treegrid/-/jquery-treegrid-0.3.0.tgz#e445d4e789cbd85ec045ed467192d70b2ab189d3"
+    integrity sha1-5EXU54nL2F7ARe1GcZLXCyqxidM=
+  
+  jquery@>=1.10, jquery@>=1.12.0, jquery@>=1.7, jquery@^3.3.1:
     version "3.3.1"
     resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
     integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==
@@ -106,15 +114,17 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/mustache/-/mustache-3.0.1.tgz#873855f23aa8a95b150fb96d9836edbc5a1d248a"
     integrity sha512-jFI/4UVRsRYdUbuDTKT7KzfOp7FiD5WzYmmwNwXyUVypC0xjoTL78Fqc0jHUPIvvGD+6DQSPHIt1NE7D1ArsqA==
   
-  notifyjs@^3.0.0:
-    version "3.0.0"
-    resolved "https://registry.yarnpkg.com/notifyjs/-/notifyjs-3.0.0.tgz#7418c9d6c0533aebaa643414214af53b521d1b28"
-    integrity sha1-dBjJ1sBTOuuqZDQUIUr1O1IdGyg=
-  
   popper.js@1.14.6:
     version "1.14.6"
     resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.6.tgz#ab20dd4edf9288b8b3b6531c47c361107b60b4b0"
     integrity sha512-AGwHGQBKumlk/MDfrSOf0JHhJCImdDMcGNoqKmKkU+68GFazv3CQ6q9r7Ja1sKDZmYWTckY/uLyEznheTDycnA==
+  
+  toastr@2.1.4:
+    version "2.1.4"
+    resolved "https://registry.yarnpkg.com/toastr/-/toastr-2.1.4.tgz#8b43be64fb9d0c414871446f2db8e8ca4e95f181"
+    integrity sha1-i0O+ZPudDEFIcURvLbjoyk6V8YE=
+    dependencies:
+      jquery ">=1.12.0"
   
   twbs-pagination@1.4.1:
     version "1.4.1"

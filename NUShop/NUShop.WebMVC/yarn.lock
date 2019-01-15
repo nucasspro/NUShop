@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-animate.css@^3.7.0:
+animate.css@3.7.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.7.0.tgz#5de25d1ee5fba11ba6a1e2c4fa568f512eb7d4da"
   integrity sha512-u3iMXDJr0cxMdQocIciDiou9Au4L5f9uT+/jCtprw3s1j3HcfCuI+khF+90Ps2KdsEhM2soF7SXB4WUvI3HlXg==
@@ -12,6 +12,13 @@ bootbox@4.4.0:
   resolved "https://registry.yarnpkg.com/bootbox/-/bootbox-4.4.0.tgz#ff7f898fb87d4527e547feb64158f88450d1a0c9"
   integrity sha1-/3+Jj7h9RSflR/62QVj4hFDRoMk=
 
+bootstrap-datepicker@1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/bootstrap-datepicker/-/bootstrap-datepicker-1.8.0.tgz#c63513931e6f09f16ae9f11b62f32d950df3958e"
+  integrity sha512-213St/G8KT3mjs4qu4qwww74KWysMaIeqgq5OhrboZjIjemIpyuxlSo9FNNI5+KzpkkxkRRba+oewiRGV42B1A==
+  dependencies:
+    jquery ">=1.7.1 <4.0.0"
+
 bootstrap-daterangepicker@3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/bootstrap-daterangepicker/-/bootstrap-daterangepicker-3.0.3.tgz#670c638dc124a15a95ddf0440af34d1acee7cffc"
@@ -20,15 +27,15 @@ bootstrap-daterangepicker@3.0.3:
     jquery ">=1.10"
     moment "^2.9.0"
 
-bootstrap@^4.2.1:
+bootstrap@4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.2.1.tgz#8f8bdca024dbf0e8644da32e918c8a03a90a5757"
   integrity sha512-tt/7vIv3Gm2mnd/WeDx36nfGGHleil0Wg8IeB7eMrVkY0fZ5iTaBisSh8oNANc2IBsCc6vCgCNTIM/IEN0+50Q==
 
-ckeditor@4.11.1:
-  version "4.11.1"
-  resolved "https://registry.yarnpkg.com/ckeditor/-/ckeditor-4.11.1.tgz#ace84b209573abf2b8430c214500e68ab06e7a14"
-  integrity sha512-UhHe02cc/wWJquDQZysEgh0ohLMEMU56zDx+s8prDdjylY/aBDY2xdIiIpbgCBTXdjhrEPIAPyiDS9g3RxYXig==
+ckeditor@4.11.2:
+  version "4.11.2"
+  resolved "https://registry.yarnpkg.com/ckeditor/-/ckeditor-4.11.2.tgz#90c1439de18afa0b7ee1993a3a463a2e84aa481e"
+  integrity sha512-/qNERAeYsUAnfzEJZAOOI0sVpHk++W6BchCDmJ8+MbDPHq1Tr3jI/1PA9Qw3qSRXazud2T1yHXURfRUI+GT0FA==
 
 font-awesome@4.7.0:
   version "4.7.0"
@@ -45,7 +52,22 @@ jquery-treegrid@0.3.0:
   resolved "https://registry.yarnpkg.com/jquery-treegrid/-/jquery-treegrid-0.3.0.tgz#e445d4e789cbd85ec045ed467192d70b2ab189d3"
   integrity sha1-5EXU54nL2F7ARe1GcZLXCyqxidM=
 
-jquery@>=1.10, jquery@>=1.12.0, jquery@>=1.7, jquery@^3.3.1:
+jquery-validation-unobtrusive@3.2.11:
+  version "3.2.11"
+  resolved "https://registry.yarnpkg.com/jquery-validation-unobtrusive/-/jquery-validation-unobtrusive-3.2.11.tgz#175ee46380385a0e33ed320f255fad321f68f9f5"
+  integrity sha512-3FQPllaWdD+Aq55zJLGSW39+eXPDz1HhwAvrSwYi8zHQ8DVcu5IJ1HVeTiCl0BnCnrIBvfFU3zEB/DrGdcoRIQ==
+  dependencies:
+    jquery ">=1.8"
+    jquery-validation ">=1.16"
+
+jquery-validation@1.19.0, jquery-validation@>=1.16:
+  version "1.19.0"
+  resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.19.0.tgz#0fedf0c0483a030c4fff072398898ac18cfd6e40"
+  integrity sha512-i1ygcs9K9eI0jqQ8fiOZdT0Ofw941YII1zyPQDUkBS8t2G8SoSWz8UUEVT6gV1KvsaBbovtL8YxjLALACR0syQ==
+  dependencies:
+    jquery "^1.7 || ^2.0 || ^3.1"
+
+jquery@>=1.10, jquery@>=1.12.0, jquery@>=1.7, "jquery@>=1.7.1 <4.0.0", jquery@>=1.8, "jquery@^1.7 || ^2.0 || ^3.1", jquery@^3.3.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   integrity sha512-Ubldcmxp5np52/ENotGxlLe6aGMvmF4R8S6tZjsP6Knsaxd/xp3Zrh50cG93lR6nPXyUFwzN3ZSOQI0wRJNdGg==

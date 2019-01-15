@@ -16,7 +16,6 @@ namespace NUShop.ViewModel.ViewModels
         public BillViewModel Bill { set; get; }
         public ProductViewModel Product { set; get; }
         public ColorViewModel Color { set; get; }
-
         public SizeViewModel Size { set; get; }
     }
 }

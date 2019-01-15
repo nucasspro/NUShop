@@ -275,7 +275,6 @@ namespace NUShop.Data.EF.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CustomerMessage")
-                        .IsRequired()
                         .HasColumnName("CustomerMessage")
                         .HasColumnType("nvarchar(255)");
 

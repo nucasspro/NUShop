@@ -16,7 +16,7 @@ namespace NUShop.Data.EF.EntityConfigurations
             entity.Property(x => x.CustomerName).IsRequired(true).HasColumnName("CustomerName").HasColumnType("nvarchar(255)");
             entity.Property(x => x.CustomerAddress).IsRequired(true).HasColumnName("CustomerAddress").HasColumnType("nvarchar(255)");
             entity.Property(x => x.CustomerMobile).IsRequired(true).HasColumnName("CustomerMobile").HasColumnType("nvarchar(255)");
-            entity.Property(x => x.CustomerMessage).IsRequired(true).HasColumnName("CustomerMessage").HasColumnType("nvarchar(255)");
+            entity.Property(x => x.CustomerMessage).IsRequired(false).HasColumnName("CustomerMessage").HasColumnType("nvarchar(255)");
             entity.Property(x => x.PaymentMethod).IsRequired(true).HasColumnName("PaymentMethod").HasColumnType("int");
             entity.Property(x => x.BillStatus).IsRequired(true).HasColumnName("BillStatus").HasColumnType("int");
             entity.Property(x => x.Status).IsRequired(true).HasColumnName("Status").HasColumnType("int").HasDefaultValue(Status.Active);

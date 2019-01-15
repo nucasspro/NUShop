@@ -58,6 +58,10 @@ namespace NUShop.Service.Implements
                 item.Price = product.Price;
             }
             bill.BillDetails = billDetails;
+            var dateTimeNow = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
+            bill.DateCreated = dateTimeNow;
+            bill.DateModified = dateTimeNow;
+
             _billRepository.Add(bill);
             await _unitOfWork.CommitAsync();
         }
@@ -111,16 +115,19 @@ namespace NUShop.Service.Implements
             return paginationSet;
         }
 
-        public BillViewModel GetById(int id)
+        public BillViewModel GetDetailById(int billId)
         {
-            var bill = _billRepository.GetById(id);
+            var bill = _billRepository.GetSingle(x => x.Id == billId);
             var billViewModel = _mapper.Map<BillViewModel>(bill);
+            var billDetails = _billDetailRepository.GetAll(x=>x.BillId == billId);
+            var billDetailsViewModel = _mapper.Map<List<BillDetailViewModel>>(billDetails);
+            billViewModel.BillDetails = billDetailsViewModel;
             return billViewModel;
         }
 
         public List<BillDetailViewModel> GetBillDetails(int billId)
         {
-            var billDetails = _billDetailRepository.GetAll(x => x.BillId == billId);
+            var billDetails = _billDetailRepository.GetAll(x => x.BillId == billId, c => c.Bill, c => c.Color, c => c.Size, c => c.Product);
             var billDetailsViewModel = _mapper.Map<List<BillDetailViewModel>>(billDetails);
             return billDetailsViewModel;
         }

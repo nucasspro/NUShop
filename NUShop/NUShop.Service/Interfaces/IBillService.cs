@@ -11,7 +11,7 @@ namespace NUShop.Service.Interfaces
     public interface IBillService
     {
         PagedResult<BillViewModel> GetAllPaging(string keyword, int pageSize, string startDate, string endDate, int pageIndex = 1);
-        BillViewModel GetById(int id);
+        BillViewModel GetDetailById(int id);
         List<BillDetailViewModel> GetBillDetails(int billId);
         List<ColorViewModel> GetColors();
         ColorViewModel GetColorById(int id);

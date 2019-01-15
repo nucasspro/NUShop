@@ -115,3 +115,5 @@ D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\_ActionsPartial.g.cshtml.cs
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Role\_AssignPermission.g.cshtml.cs
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Product\_ExcelPartial.g.cshtml.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Bill\Index.g.cshtml.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Bill\_ActionsPartial.g.cshtml.cs
