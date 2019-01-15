@@ -53,17 +53,17 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllCategories()
-        {
-            var model = _categoryService.GetAll();
-            return new OkObjectResult(model);
-        }
-
-        [HttpGet]
         public IActionResult GetAllPaging(int? categoryId, string keyword, int pageSize, int pageIndex = 1)
         {
             var model = _productService.GetAllPaging(categoryId, keyword, pageIndex, pageSize);
 
+            return new OkObjectResult(model);
+        }
+
+        [HttpGet]
+        public IActionResult GetAllCategories()
+        {
+            var model = _categoryService.GetAll();
             return new OkObjectResult(model);
         }
 
@@ -75,24 +75,25 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             return new OkObjectResult(model);
         }
 
-        [HttpPost]
-        public IActionResult Add(ProductViewModel productViewModel)
+        [HttpGet]
+        public IActionResult GetImages(int productId)
         {
-            if (!ModelState.IsValid)
-            {
-                var allErrors = ModelState.Values.SelectMany(v => v.Errors);
-                return new BadRequestObjectResult(allErrors);
-            }
-            try
-            {
-                productViewModel.SeoAlias = TextHelper.ToUnsignString(productViewModel.Name);
-                _productService.Add(productViewModel);
-                return new OkObjectResult(productViewModel);
-            }
-            catch (Exception e)
-            {
-                return new BadRequestObjectResult(e.InnerException.Message);
-            }
+            var images = _productService.GetImages(productId);
+            return new OkObjectResult(images);
+        }
+
+        [HttpGet]
+        public IActionResult GetQuantities(int productId)
+        {
+            var quantities = _productService.GetQuantities(productId);
+            return new OkObjectResult(quantities);
+        }
+
+        [HttpGet]
+        public IActionResult GetWholePrices(int productId)
+        {
+            var wholePrices = _productService.GetWholePrices(productId);
+            return new OkObjectResult(wholePrices);
         }
 
         [HttpPut]
@@ -115,61 +116,46 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
             }
         }
 
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        [HttpPost]
+        public IActionResult SaveQuantities(int productId, List<ProductQuantityViewModel> quantities)
+        {
+            _productService.AddQuantity(productId, quantities);
+            return new OkObjectResult(quantities);
+        }
+
+        [HttpPost]
+        public IActionResult SaveImages(int productId, string[] images)
+        {
+            _productService.AddImages(productId, images);
+            return new OkObjectResult(images);
+        }
+
+        [HttpPost]
+        public IActionResult SaveWholePrice(int productId, List<WholePriceViewModel> wholePrices)
+        {
+            _productService.AddWholePrice(productId, wholePrices);
+            return new OkObjectResult(wholePrices);
+        }
+
+        [HttpPost]
+        public IActionResult Add(ProductViewModel productViewModel)
         {
             if (!ModelState.IsValid)
             {
-                return new BadRequestObjectResult(ModelState);
+                var allErrors = ModelState.Values.SelectMany(v => v.Errors);
+                return new BadRequestObjectResult(allErrors);
             }
-            else
+            try
             {
-                _productService.Delete(id);
-                return new OkObjectResult(id);
+                productViewModel.SeoAlias = TextHelper.ToUnsignString(productViewModel.Name);
+                _productService.Add(productViewModel);
+                return new OkObjectResult(productViewModel);
+            }
+            catch (Exception e)
+            {
+                return new BadRequestObjectResult(e.InnerException.Message);
             }
         }
-
-        //[HttpPost]
-        //public IActionResult SaveQuantities(int productId, List<ProductQuantityViewModel> quantities)
-        //{
-        //    _productService.AddQuantity(productId, quantities);
-        //    return new OkObjectResult(quantities);
-        //}
-
-        //[HttpGet]
-        //public IActionResult GetQuantities(int productId)
-        //{
-        //    var quantities = _productService.GetQuantities(productId);
-        //    return new OkObjectResult(quantities);
-        //}
-
-        //[HttpPost]
-        //public IActionResult SaveImages(int productId, string[] images)
-        //{
-        //    _productService.AddImages(productId, images);
-        //    return new OkObjectResult(images);
-        //}
-
-        //[HttpGet]
-        //public IActionResult GetImages(int productId)
-        //{
-        //    var images = _productService.GetImages(productId);
-        //    return new OkObjectResult(images);
-        //}
-
-        //[HttpPost]
-        //public IActionResult SaveWholePrice(int productId, List<WholePriceViewModel> wholePrices)
-        //{
-        //    _productService.AddWholePrice(productId, wholePrices);
-        //    return new OkObjectResult(wholePrices);
-        //}
-
-        //[HttpGet]
-        //public IActionResult GetWholePrices(int productId)
-        //{
-        //    var wholePrices = _productService.GetWholePrices(productId);
-        //    return new OkObjectResult(wholePrices);
-        //}
 
         [HttpPost]
         public async Task<IActionResult> ImportExcelAsync(IList<IFormFile> files, int categoryId)
@@ -223,9 +209,23 @@ namespace NUShop.WebMVC.Areas.Admin.Controllers
                 ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Products");
                 worksheet.Cells["A1"].LoadFromCollection(products, true, TableStyles.Light1);
                 worksheet.Cells.AutoFitColumns();
-                package.Save(); 
+                package.Save();
             }
             return new OkObjectResult(fileUrl);
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            if (!ModelState.IsValid)
+            {
+                return new BadRequestObjectResult(ModelState);
+            }
+            else
+            {
+                _productService.Delete(id);
+                return new OkObjectResult(id);
+            }
         }
 
         #endregion AJAX API

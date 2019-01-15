@@ -1,9 +1,15 @@
 ﻿var ProductController = function () {
+    var productQuantityManagement = new ProductQuantityManagement();
+    var productImageManagement = new ProductImageManagement();
+    var wholePriceManagement = new WholePriceManagement();
     this.Init = function () {
         loadCategories();
         loadProducts();
         registerEvents();
         registerControls();
+        productQuantityManagement.Init();
+        productImageManagement.Init();
+        wholePriceManagement.Init();
     }
 
     var products = [];
@@ -11,7 +17,6 @@
     function registerControls() {
         CKEDITOR.replace('txtDescription', {});
         CKEDITOR.replace('txtContent', {});
-
     }
     function registerEvents() {
 
@@ -72,21 +77,7 @@
 
         $('body').on('click', '#btn-add', function (e) {
             e.preventDefault();
-            var data = collectData('add');
-            $.ajax({
-                type: 'POST',
-                data: data,
-                url: '/Admin/Product/Add',
-                dataType: 'json',
-                success: function (response) {
-                    loadProducts();
-                    NUShopConfig.toast("success", "Created.");
-                },
-                error: function (status) {
-                    console.log(status);
-                    NUShopConfig.toast("error", "Has an error.");
-                }
-            });
+            addProduct();
         });
 
         // button edit
@@ -127,22 +118,7 @@
 
         $('body').on('click', '#btn-save', function (e) {
             e.preventDefault();
-            var data = collectData('update');
-            $.ajax({
-                data: data,
-                type: 'PUT',
-                url: '/Admin/Product/Update',
-                dataType: 'json',
-                success: function (response) {
-                    $('#product-modal').modal('hide');
-                    loadProducts();
-                    NUShopConfig.toast("success", "Saved.");
-                },
-                error: function (status) {
-                    console.log(status);
-                    NUShopConfig.toast("error", "Has an error.");
-                }
-            });
+            updateProduct();
         });
 
         $('body').on('click', '#btn-close', function () {
@@ -213,6 +189,43 @@
                     NUShopConfig.stopLoading();
                 }
             });
+        });
+    }
+
+    function addProduct() {
+        var data = collectData('add');
+        $.ajax({
+            type: 'POST',
+            data: data,
+            url: '/Admin/Product/Add',
+            dataType: 'json',
+            success: function (response) {
+                loadProducts();
+                NUShopConfig.toast("success", "Created.");
+            },
+            error: function (status) {
+                console.log(status);
+                NUShopConfig.toast("error", "Has an error.");
+            }
+        });
+    }
+
+    function updateProduct() {
+        var data = collectData('update');
+        $.ajax({
+            data: data,
+            type: 'PUT',
+            url: '/Admin/Product/Update',
+            dataType: 'json',
+            success: function (response) {
+                $('#product-modal').modal('hide');
+                loadProducts();
+                NUShopConfig.toast("success", "Saved.");
+            },
+            error: function (status) {
+                console.log(status);
+                NUShopConfig.toast("error", "Has an error.");
+            }
         });
     }
 

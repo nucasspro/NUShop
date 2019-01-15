@@ -2,6 +2,9 @@
 }
 
 @section Scripts{
+    <script src="~/app/controllers/product/wholePriceManagement.js" asp-append-version="true"></script>
+    <script src="~/app/controllers/product/productImageManagement.js" asp-append-version="true"></script>
+    <script src="~/app/controllers/product/productQuantityManagement.js" asp-append-version="true"></script>
     <script src="~/app/controllers/product/index.js" asp-append-version="true"></script>
     <script src="~/app/shared/settings.js" asp-append-version="true"></script>
     <script>
@@ -59,6 +62,11 @@
                 <li class="mr-3">
                     <button class="btn-edit" data-id="{{Id}}" id="btn-edit"><i class="fa fa-edit"></i></button>
                 <li><button class="btn-delete" data-id="{{Id}}" id="btn-delete"><i class="ti-trash"></i></button></li>
+                <li>
+                    <a data-id="{{Id}}" class="btn btn-xs btn-images"><i class="fa fa-image"></i></a>
+                    <a data-id="{{Id}}" class="btn btn-xs btn-quantity"><i class="fa fa-hourglass-start"></i></a>
+                    <a data-id="{{Id}}" class="btn btn-xs btn-whole-price"><i class="fa fa-money"></i></a>
+                </li>
             </ul>
         </th>
         <td>{{{Status}}}</td>
@@ -70,4 +78,7 @@
 </script>
 
 @await Html.PartialAsync("_ActionsPartial")
+@await Html.PartialAsync("_ProductQuantityPartial")
+@await Html.PartialAsync("_ProductImagePartial")
+@await Html.PartialAsync("_WholePricePartial")
 @await Html.PartialAsync("_ExcelPartial")
