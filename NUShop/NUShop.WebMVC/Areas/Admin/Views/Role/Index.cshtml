@@ -1,0 +1,79 @@
+﻿@section Styles{
+    <link href="~/lib/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet" />
+}
+
+@section Scripts{
+    <script src="~/app/controllers/role/index.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-treegrid/js/jquery.treegrid.js" asp-append-version="true"></script>
+    <script src="~/app/shared/settings.js" asp-append-version="true"></script>
+    <script>
+        var role = new RoleController();
+        role.Init();
+    </script>
+}
+<div class="col-12 mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title">Role List</h4>
+            @*<button type="button" class="btn btn-primary mb-3" id="btn-create">Add new</button>*@
+            <button type="button" class="btn btn-rounded btn-primary mb-3">Add new</button>
+            <div class="search-box pull-right">
+                <input type="text" name="search" placeholder="Search..." required="">
+                <i class="ti-search"></i>
+            </div>
+            @*<div class="row">
+                    <input class="form-control col-4" type="text" placeholder="Search" id="search-input" style="margin-bottom: 10px; margin-right: 5px;">
+                    <button type="button" class="btn btn-primary mb-3" id="btn-search">Search</button>
+                </div>*@
+
+            <div class="single-table">
+                <div class="table-responsive">
+                    <table class="table table-hover progress-table text-center">
+                        <thead class="text-uppercase">
+                            <tr>
+                                <th scope="col" width="20%">Actions</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-content"></tbody>
+                    </table>
+                </div>
+                <div class="row" style="margin-left: 0px;">
+                    <select class="custom-select col-2" id="select-page-size">
+                        <option value="10" selected="selected">10 items</option>
+                        <option value="20">20 items</option>
+                        <option value="30">30 items</option>
+                        <option value="40">40 items</option>
+                    </select>
+                    <ul class="pagination justify-content-center col-6" id="role-pagination"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script id="table-template" type="x-tmpl-mustache">
+    <tr>
+        <th scope="row">
+            <ul class="d-flex justify-content-center">
+                <li class="mr-3">
+                    @*<button class="btn-edit" data-id="{{Id}}" id="btn-edit"><i class="fa fa-edit"></i></button>*@
+                    <a data-id="{{Id}}" class="btn btn-xs btn-grant" id="btn-grant"><i class="fa fa-android"></i></a>
+                </li>
+                <li class="mr-3">
+                    @*<button class="btn-edit" data-id="{{Id}}" id="btn-edit"><i class="fa fa-edit"></i></button>*@
+                    <a data-id="{{Id}}" class="btn btn-xs btn-edit" id="btn-edit"><i class="fa fa-edit"></i></a>
+                </li>
+                <li>
+                    @*    <button class="btn-delete" data-id="{{Id}}" id="btn-delete"><i class="ti-trash"></i></button>*@
+                    <a data-id="{{Id}}" class="btn btn-xs btn-delete" id="btn-delete"><i class="ti-trash"></i></a>
+                </li>
+            </ul>
+        </th>
+        <td>{{Name}}</td>
+        <td>{{Description}}</td>
+    </tr>
+</script>
+
+@await Html.PartialAsync("_ActionsPartial")
+@await Html.PartialAsync("_AssignPermission")

@@ -2,8 +2,8 @@
 }
 
 @section Scripts{
-    <script src="~/app/controllers/product/index.js"></script>
-    <script src="~/app/shared/settings.js"></script>
+    <script src="~/app/controllers/product/index.js" asp-append-version="true"></script>
+    <script src="~/app/shared/settings.js" asp-append-version="true"></script>
     <script>
         var product = new ProductController();
         product.Init();
@@ -13,8 +13,12 @@
     <div class="card">
         <div class="card-body">
             <h4 class="header-title">Product List</h4>
+            <button type="button" class="btn btn-primary mb-3" id="btn-create">Add new</button>
+            <a class="btn btn-danger mb-3" href="~/template/ProductImportTemplate.xlsx">Download Template</a>
+            <button type="button" class="btn btn-primary mb-3" id="btn-import">Import</button>
+            <button type="button" class="btn btn-primary mb-3" id="btn-export">Export</button>
             <div class="row">
-                <select class="custom-select col-2" id="select-category"></select>
+                <select class="custom-select col-2" id="search-category"></select>
                 <input class="form-control col-4" type="text" placeholder="Search" id="search-input" style="margin-bottom: 10px; margin-right: 5px;">
                 <button type="button" class="btn btn-primary mb-3" id="btn-search">Search</button>
             </div>
@@ -52,8 +56,9 @@
     <tr>
         <th scope="row">
             <ul class="d-flex justify-content-center">
-                <li class="mr-3"><a href="#" class="text-secondary" data-id="{{Id}}"><i class="fa fa-edit"></i></a></li>
-                <li><a href="#" class="text-danger" data-id="{{Id}}"><i class="ti-trash"></i></a></li>
+                <li class="mr-3">
+                    <button class="btn-edit" data-id="{{Id}}" id="btn-edit"><i class="fa fa-edit"></i></button>
+                <li><button class="btn-delete" data-id="{{Id}}" id="btn-delete"><i class="ti-trash"></i></button></li>
             </ul>
         </th>
         <td>{{{Status}}}</td>
@@ -63,3 +68,6 @@
         <td>{{UpdatedDate}}</td>
     </tr>
 </script>
+
+@await Html.PartialAsync("_ActionsPartial")
+@await Html.PartialAsync("_ExcelPartial")

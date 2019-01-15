@@ -144,10 +144,12 @@ namespace NUShop.Service.Implements
 
         public void Update(CategoryViewModel categoryViewModel)
         {
-            var category = _mapper.Map<Category>(categoryViewModel);
             var oldCategory = _mapper.Map<Category>(GetById(categoryViewModel.Id));
+
+            var category = _mapper.Map<Category>(categoryViewModel);
             category.DateCreated = oldCategory.DateCreated;
             category.DateModified = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
+
             _categoryRepository.Update(category);
             _unitOfWork.Commit();
         }

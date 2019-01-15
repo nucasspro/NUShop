@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NUShop.Data.EF.Extensions;
 using NUShop.Data.Entities;
+using NUShop.Data.Enums;
+using NUShop.Utilities.Constants;
 
 namespace NUShop.Data.EF.EntityConfigurations
 {
@@ -23,6 +25,18 @@ namespace NUShop.Data.EF.EntityConfigurations
             entity.Property(x => x.Lat).IsRequired(false).HasColumnName("Lat").HasColumnType("float");
             entity.Property(x => x.Lng).IsRequired(false).HasColumnName("Lng").HasColumnType("float");
             entity.Property(x => x.Status).IsRequired(true).HasColumnName("Status").HasColumnType("int");
+            //entity.HasData(new Contact()
+            //{
+            //    Id = CommonConstants.DefaultFooterId,
+            //    Address = "KTX khu B - ĐHQG TPHCM",
+            //    Email = "nucasspro26@gmail.com",
+            //    Name = "NU Shop",
+            //    Phone = "0963209769",
+            //    Status = Status.Active,
+            //    Website = @"http://nushop.com",
+            //    Lat = 21.0435009,
+            //    Lng = 105.7894758
+            //});
         }
     }
 }

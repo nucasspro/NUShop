@@ -1,0 +1,112 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="user-modal" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Actions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="form-maintainance">
+
+                    @*Name*@
+                    <div class="form-group">
+                        <input type="hidden" id="txt-hidden-id" value="0" />
+                        <label for="txt-fullname" class="col-sm-2 control-label no-padding-right">Fullname</label>
+                        <div class="col-sm-12">
+                            <input type="text" name="txt-fullname" class="form-control" id="txt-fullname" placeholder="Fullname">
+                        </div>
+                    </div>
+
+
+                    @*Name*@
+                    <div class="form-group">
+                        <label for="txt-username" class="col-sm-2 control-label no-padding-right">Username</label>
+                        <div class="col-sm-12">
+                            <input type="text" name="txt-username" class="form-control" id="txt-username" placeholder="Username">
+                        </div>
+                    </div>
+
+                    @*Password*@
+                    <div class="form-group">
+                        <label for="txt-password" class="col-sm-2 control-label no-padding-right">Password</label>
+                        <div class="col-sm-12">
+                            <input type="password" name="txt-password" class="form-control" id="txt-password" placeholder="*********">
+                        </div>
+                    </div>
+
+                    @*Password confirm*@
+                    <div class="form-group">
+                        <label for="txt-password-confirm" class="col-sm-12 control-label no-padding-right">Password confirm</label>
+                        <div class="col-sm-12">
+                            <input type="password" name="txt-password-confirm" class="form-control" id="txt-password-confirm" placeholder="*********">
+                        </div>
+                    </div>
+
+                    @*Email*@
+                    <div class="form-group">
+                        <label for="txt-email" class="col-sm-2 control-label no-padding-right">Email</label>
+                        <div class="col-sm-12">
+                            <input type="email" name="txt-email" class="form-control" id="txt-email" placeholder="name@example.com">
+                        </div>
+                    </div>
+
+                    @*birthday*@
+                    <div class="form-group">
+                        <label for="txt-birthday" class="col-sm-2 control-label no-padding-right">Birthday</label>
+                        <div class="col-sm-12">
+                            <input type="date" name="txt-birthday" class="form-control" id="txt-birthday" placeholder="birthday">
+                        </div>
+                    </div>
+
+                    @*phone*@
+                    <div class="form-group">
+                        <label for="txt-phone" class="col-sm-2 control-label no-padding-right">Phone</label>
+                        <div class="col-sm-12">
+                            <input type="tel" name="txt-phone" class="form-control" id="txt-phone" placeholder="phone">
+                        </div>
+                    </div>
+
+                    @*image*@
+                    <div class="form-group">
+                        <label for="txt-image" class="col-sm-2 control-label no-padding-right">Images</label>
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <input type="text" name="txt-image" class="form-control" id="txt-image" />
+                                <input type="file" id="file-input-image" style="display:none" />
+                                <span class="input-group-btn">
+                                    <input type="button" id="btn-select-image" class="btn btn-default" value="Browser" />
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Roles</label>
+                        <div class="col-sm-10" id="list-roles">
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" checked="checked" id="checkbox-status">
+                                    <span class="text">Active.</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer" id="menu-context">
+                <button type="button" id="btn-close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="btn-save" class="btn btn-primary">Save changes</button>
+                <button type="button" id="btn-add" class="btn btn-primary" style="margin-right: 1rem;">Create</button>
+            </div>
+        </div>
+    </div>
+</div>

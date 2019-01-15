@@ -1,0 +1,41 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="role-modal" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Actions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="form-maintainance">
+
+                    @*Name*@
+                    <div class="form-group">
+                        <input type="hidden" id="txt-hidden-id" value="0" />
+                        <label for="txt-name" class="col-sm-2 control-label no-padding-right">Name</label>
+                        <div class="col-sm-12">
+                            <input type="text" name="txt-name" class="form-control" id="txt-name" placeholder="Fullname">
+                        </div>
+                    </div>
+
+
+                    @*description*@
+                    <div class="form-group">
+                        <label for="txt-description" class="col-sm-2 control-label no-padding-right">Description</label>
+                        <div class="col-sm-12">
+                            <textarea rows="3" name="txt-description" class="form-control" id="txt-description"></textarea>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer" id="menu-context">
+                <button type="button" id="btn-close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="btn-save" class="btn btn-primary">Save changes</button>
+                <button type="button" id="btn-add" class="btn btn-primary" style="margin-right: 1rem;">Create</button>
+            </div>
+        </div>
+    </div>
+</div>

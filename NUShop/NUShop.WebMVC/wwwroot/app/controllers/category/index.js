@@ -48,9 +48,11 @@
                 data: data,
                 success: function (path) {
                     $('#txt-image').val(path);
+                    NUShopConfig.toast("success", "Upload successfully.");
                 },
                 error: function (status) {
                     console.log(status);
+                    NUShopConfig.toast("error", "Has an error while uploading.");
                 }
             });
         });
@@ -103,9 +105,11 @@
                 success: function (response) {
                     loadCategories();
                     loadParents();
+                    NUShopConfig.toast("success", "Created.");
                 },
                 error: function (status) {
                     console.log(status);
+                    NUShopConfig.toast("error", "Has an error.");
                 }
             });
         });
@@ -121,9 +125,11 @@
                 success: function (response) {
                     loadCategories();
                     loadParents();
+                    NUShopConfig.toast("success", "Saved.");
                 },
                 error: function (status) {
                     console.log(status);
+                    NUShopConfig.toast("error", "Has an error.");
                 }
             });
         });
@@ -132,7 +138,20 @@
             resetForm();
         });
 
-        $('#btn-delete');
+        //$('body').on('click', '.btn-delete', function (e) {
+        //    e.preventDefault();
+        //    $.ajax({
+        //        type: 'DELETE',
+        //        url: '/Admin/Category/Delete/' + $(this).data('id'),
+        //        success: function (response) {
+        //            loadCategories();
+        //            loadParents();
+        //        },
+        //        error: function (status) {
+        //            console.log(status);
+        //        }
+        //    });
+        //});
     }
 
     function loadParents() {
@@ -156,6 +175,7 @@
             },
             error: function (status) {
                 console.log(status);
+                NUShopConfig.toast("error", "Has an error.");
             }
         });
     }
@@ -193,6 +213,7 @@
             },
             error: function (status) {
                 console.log(status);
+                NUShopConfig.toast("error", "Has an error.");
             }
         });
     }

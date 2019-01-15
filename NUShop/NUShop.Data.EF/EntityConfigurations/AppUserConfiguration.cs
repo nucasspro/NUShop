@@ -2,11 +2,15 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NUShop.Data.EF.Extensions;
 using NUShop.Data.Entities;
+using NUShop.Data.Enums;
+using NUShop.Utilities.Helpers;
+using System;
 
 namespace NUShop.Data.EF.EntityConfigurations
 {
     public class AppUserConfiguration : DbEntityConfiguration<AppUser>
     {
+        private string dateTime = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
         public override void Configure(EntityTypeBuilder<AppUser> entity)
         {
             entity.ToTable("AppUsers");

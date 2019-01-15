@@ -19,6 +19,8 @@ using System.IO;
 using Microsoft.AspNetCore.Identity;
 using NUShop.Data.Entities;
 using NUShop.WebMVC.Extensions;
+using Microsoft.AspNetCore.Authorization;
+using NUShop.WebMVC.Authorization;
 
 namespace NUShop.WebMVC
 {
@@ -94,10 +96,16 @@ namespace NUShop.WebMVC
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IFunctionService, FunctionService>();
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IRoleService, RoleService>();
+            services.AddTransient<IBillService, BillService>();
+
 
             #endregion Dependency Injection for Services
 
             services.AddAutoMapper();
+            services.AddTransient<IAuthorizationHandler, ResourceAuthorizationHandler>();
+
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

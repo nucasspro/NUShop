@@ -1,0 +1,112 @@
+﻿<!-- Modal -->
+<div class="modal fade" id="bill-modal" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Bill Actions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="form-maintainance">
+
+                    @*Customer name*@
+                    <div class="form-group">
+                        <input type="hidden" id="txt-hidden-id" value="0" />
+                        <label for="txt-customer-name" class="col-sm-12 control-label no-padding-right">Customer Name</label>
+                        <div class="col-sm-12">
+                            <input type="text" name="txt-customer-name" class="form-control" id="txt-customer-name" placeholder="Customer Name">
+                        </div>
+                    </div>
+
+                    @*customer address*@
+                    <div class="form-group">
+                        <label for="txt-customer-address" class="col-sm-12 control-label no-padding-right">Customer address</label>
+                        <div class="col-sm-12">
+                            <input type="text" name="txt-customer-address" class="form-control" id="txt-customer-address">
+                        </div>
+                    </div>
+
+                    @*phone*@
+                    <div class="form-group">
+                        <label for="txt-customer-phone" class="col-sm-2 control-label no-padding-right">Phone</label>
+                        <div class="col-sm-12">
+                            <input type="tel" name="txt-customer-phone" class="form-control" id="txt-customer-phone" placeholder="phone">
+                        </div>
+                    </div>
+
+                    @*customer message*@
+                    <div class="form-group">
+                        <label for="txt-customer-message" class="col-sm-12 control-label no-padding-right">Customer message</label>
+                        <div class="col-sm-12">
+                            <input type="text" name="txt-customer-message" class="form-control" id="txt-customer-message">
+                        </div>
+                    </div>
+
+                    @*payment method*@
+                    <div class="form-group">
+                        <label class="col-sm-12 control-label no-padding-right">Payment method</label>
+                        <div class="col-sm-12">
+                            <select class="form-control" id="select-payment-method"></select>
+                        </div>
+                    </div>
+
+                    @*bill status*@
+                    <div class="form-group">
+                        <label class="col-sm-12 control-label no-padding-right">Bill status</label>
+                        <div class="col-sm-12">
+                            <select class="form-control" id="select-bill-status"></select>
+                        </div>
+                    </div>
+
+                    @*bill detail*@
+                    <div class="form-group">
+                        <label class="col-sm-12 control-label ">Details</label>
+                        <div class="col-sm-12">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Product Name</th>
+                                        <th>Color</th>
+                                        <th>Size</th>
+                                        <th>Quantity</th>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-bill-details"></tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="5">
+                                            <button class="btn btn-xs btn-success" id="btn-add-detail" type="button">Add</button>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                            <script type="x-tmpl-mustache" id="template-table-bill-details">
+                                <tr data-id="{{Id}}">
+                                    <td>{{{Products}}}</td>
+                                    <td>{{{Colors}}}</td>
+                                    <td>{{{Sizes}}}</td>
+                                    <td><input type="number" class="txt-quantity form-control" value="{{Quantity}}" /></td>
+                                    <td><button class="btn btn-xs btn-danger btn-delete-detail" type="button"><i class="fa fa-trash"></i></button></td>
+                                </tr>
+                            </script>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer" id="menu-context">
+                <button type="button" id="btn-close" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="btn-save" class="btn btn-primary">Save changes</button>
+                <button type="button" id="btnConfirm" class="btn btn-success">Confirm payment</button>
+                <button type="button" id="btnPending" class="btn btn-warning">Pending</button>
+                <button type="button" id="btnCancel" class="btn btn-primary">Cancel</button>
+                <button type="button" id="btn-export" class="btn btn-default">Export</button>
+
+                <button type="button" id="btn-add" class="btn btn-primary" style="margin-right: 1rem;">Create</button>
+            </div>
+        </div>
+    </div>
+</div>

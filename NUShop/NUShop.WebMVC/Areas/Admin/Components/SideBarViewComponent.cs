@@ -38,7 +38,8 @@ namespace NUShop.WebMVC.Areas.Admin.Components
             }
             else
             {
-                function = new List<FunctionViewModel>().ToList();
+                // TODO: Need to get with permission
+                function = await _functionService.GetAll(string.Empty);
             }
             return View(function);
         }
