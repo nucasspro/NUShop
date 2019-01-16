@@ -4,6 +4,10 @@ namespace NUShop.Data.Entities
 {
     public class BlogTag : DomainEntity<int>
     {
+        public BlogTag()
+        {
+
+        }
         public BlogTag(int blogId, string tagId)
         {
             BlogId = blogId;

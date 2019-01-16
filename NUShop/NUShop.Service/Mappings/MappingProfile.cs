@@ -212,6 +212,13 @@ namespace NUShop.Service.Mappings
 
             #endregion Slide
 
+            #region SystemConfig
+
+            CreateMap<SystemConfigViewModel, SystemConfig>();
+            CreateMap<SystemConfig, SystemConfigViewModel>();
+
+            #endregion SystemConfig
+
             #region Tag
 
             CreateMap<TagViewModel, Tag>();

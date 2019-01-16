@@ -256,3 +256,569 @@ ORDER BY [x].[ParentId]" (0723d8ff)
 2019-01-16T10:17:31.2372967+07:00 0HLJRC4E688DR:00000001 [INF] Request finished in 14276.2821ms 200 text/html; charset=utf-8 (791a596a)
 2019-01-16T10:17:31.4386785+07:00 0HLJRC4E688DR:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
 2019-01-16T10:17:32.4058021+07:00 0HLJRC4E688DR:00000002 [INF] Request finished in 265.5101ms 404  (791a596a)
+2019-01-16T15:05:49.7717420+07:00 0HLJRH5MFLHDN:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-16T15:05:50.4924945+07:00 0HLJRH5MFLHDN:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-16T15:05:50.5303241+07:00 0HLJRH5MFLHDN:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-16T15:05:53.3231657+07:00 0HLJRH5MFLHDN:00000001 [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-16T15:05:53.5365595+07:00 0HLJRH5MFLHDN:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T15:05:54.1287133+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed DbCommand ("312"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:05:54.3174389+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed DbCommand ("150"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:05:54.7110993+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed DbCommand ("303"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:05:55.0527849+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed DbCommand ("236"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-16T15:05:55.2483430+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed DbCommand ("140"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-16T15:05:55.2707939+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1930.5043ms. (50a9e262)
+2019-01-16T15:05:55.3807356+07:00 0HLJRH5MFLHDN:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-16T15:05:56.2622574+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed DbCommand ("300"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:05:56.9105022+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed DbCommand ("269"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:05:58.4637865+07:00 0HLJRH5MFLHDO:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/style.css   (ca22a1cb)
+2019-01-16T15:05:58.4775635+07:00 0HLJRH5MFLHDQ:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-german.jpg   (ca22a1cb)
+2019-01-16T15:05:58.4959490+07:00 0HLJRH5MFLHDS:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-english.jpg   (ca22a1cb)
+2019-01-16T15:05:58.4988692+07:00 0HLJRH5MFLHDP:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-default.jpg   (ca22a1cb)
+2019-01-16T15:05:58.5296305+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed ViewResult - view "Index" executed in 3209.2547ms. (f66409e9)
+2019-01-16T15:05:58.5628216+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 7999.6972ms (afa2e885)
+2019-01-16T15:05:58.5915212+07:00 0HLJRH5MFLHDN:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T15:05:58.6352881+07:00 0HLJRH5MFLHDR:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-brazil.jpg   (ca22a1cb)
+2019-01-16T15:05:58.7080508+07:00 0HLJRH5MFLHDO:00000001 [INF] Sending file. Request path: '"/client-side/style.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\style.css"' (27b0a520)
+2019-01-16T15:05:58.8280184+07:00 0HLJRH5MFLHDP:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-default.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-default.jpg"' (27b0a520)
+2019-01-16T15:05:58.8633252+07:00 0HLJRH5MFLHDO:00000001 [INF] Request finished in 326.8112ms 200 text/css (791a596a)
+2019-01-16T15:05:59.1595459+07:00 0HLJRH5MFLHDP:00000001 [INF] Request finished in 381.8784ms 200 image/jpeg (791a596a)
+2019-01-16T15:05:59.2117848+07:00 0HLJRH5MFLHDN:00000001 [INF] Request finished in 9129.9838ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T15:05:59.6735263+07:00 0HLJRH5MFLHDR:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-brazil.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-brazil.jpg"' (27b0a520)
+2019-01-16T15:05:59.7512933+07:00 0HLJRH5MFLHDS:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-english.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-english.jpg"' (27b0a520)
+2019-01-16T15:05:59.8635228+07:00 0HLJRH5MFLHDO:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-chile.jpg   (ca22a1cb)
+2019-01-16T15:05:59.8955238+07:00 0HLJRH5MFLHDP:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-spain.jpg   (ca22a1cb)
+2019-01-16T15:05:59.8961596+07:00 0HLJRH5MFLHDR:00000001 [INF] Request finished in 1050.201ms 200 image/jpeg (791a596a)
+2019-01-16T15:05:59.9323019+07:00 0HLJRH5MFLHDS:00000001 [INF] Request finished in 1305.1122ms 200 image/jpeg (791a596a)
+2019-01-16T15:05:59.9462277+07:00 0HLJRH5MFLHDQ:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-german.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-german.jpg"' (27b0a520)
+2019-01-16T15:05:59.9570687+07:00 0HLJRH5MFLHDS:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/products/img01.jpg   (ca22a1cb)
+2019-01-16T15:05:59.9642280+07:00 0HLJRH5MFLHDQ:00000001 [INF] Request finished in 1499.8858ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:00.0438401+07:00 0HLJRH5MFLHDQ:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css   (ca22a1cb)
+2019-01-16T15:06:00.0640432+07:00 0HLJRH5MFLHDO:00000002 [INF] Sending file. Request path: '"/client-side/images/flag-chile.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-chile.jpg"' (27b0a520)
+2019-01-16T15:06:00.1187489+07:00 0HLJRH5MFLHDP:00000002 [INF] Sending file. Request path: '"/client-side/images/flag-spain.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-spain.jpg"' (27b0a520)
+2019-01-16T15:06:00.1579945+07:00 0HLJRH5MFLHDS:00000002 [INF] Sending file. Request path: '"/client-side/images/products/img01.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\products\img01.jpg"' (27b0a520)
+2019-01-16T15:06:00.1827322+07:00 0HLJRH5MFLHDO:00000002 [INF] Request finished in 426.465ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:00.1970152+07:00 0HLJRH5MFLHDP:00000002 [INF] Request finished in 399.6314ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:00.2108958+07:00 0HLJRH5MFLHDS:00000002 [INF] Request finished in 225.811ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:00.2347161+07:00 0HLJRH5MFLHDN:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/animate.css   (ca22a1cb)
+2019-01-16T15:06:00.2937955+07:00 0HLJRH5MFLHDO:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/simple-line-icons.css   (ca22a1cb)
+2019-01-16T15:06:00.3016795+07:00 0HLJRH5MFLHDN:00000002 [INF] Sending file. Request path: '"/client-side/css/animate.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\animate.css"' (27b0a520)
+2019-01-16T15:06:00.3582236+07:00 0HLJRH5MFLHDN:00000002 [INF] Request finished in 130.2251ms 200 text/css (791a596a)
+2019-01-16T15:06:00.3647661+07:00 0HLJRH5MFLHDP:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/owl.carousel.css   (ca22a1cb)
+2019-01-16T15:06:00.3745303+07:00 0HLJRH5MFLHDQ:00000002 [INF] Sending file. Request path: '"/client-side/css/bootstrap.min.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\bootstrap.min.css"' (27b0a520)
+2019-01-16T15:06:00.3880469+07:00 0HLJRH5MFLHDS:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/pe-icon-7-stroke.min.css   (ca22a1cb)
+2019-01-16T15:06:00.4728537+07:00 0HLJRH5MFLHDQ:00000002 [INF] Request finished in 397.2382ms 200 text/css (791a596a)
+2019-01-16T15:06:00.7439652+07:00 0HLJRH5MFLHDP:00000003 [INF] Sending file. Request path: '"/client-side/css/owl.carousel.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\owl.carousel.css"' (27b0a520)
+2019-01-16T15:06:01.2811991+07:00 0HLJRH5MFLHDO:00000003 [INF] Sending file. Request path: '"/client-side/css/simple-line-icons.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\simple-line-icons.css"' (27b0a520)
+2019-01-16T15:06:01.3447804+07:00 0HLJRH5MFLHDR:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/font-awesome.min.css   (ca22a1cb)
+2019-01-16T15:06:01.3429962+07:00 0HLJRH5MFLHDP:00000003 [INF] Request finished in 582.1794ms 200 text/css (791a596a)
+2019-01-16T15:06:01.3790900+07:00 0HLJRH5MFLHDO:00000003 [INF] Request finished in 1045.9225ms 200 text/css (791a596a)
+2019-01-16T15:06:01.3953426+07:00 0HLJRH5MFLHDS:00000003 [INF] Sending file. Request path: '"/client-side/css/pe-icon-7-stroke.min.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\pe-icon-7-stroke.min.css"' (27b0a520)
+2019-01-16T15:06:01.4454614+07:00 0HLJRH5MFLHDS:00000003 [INF] Request finished in 1045.4233ms 200 text/css (791a596a)
+2019-01-16T15:06:01.4562370+07:00 0HLJRH5MFLHDN:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/owl.transitions.css   (ca22a1cb)
+2019-01-16T15:06:01.4640277+07:00 0HLJRH5MFLHDP:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/cloud-zoom.css   (ca22a1cb)
+2019-01-16T15:06:01.4682916+07:00 0HLJRH5MFLHDQ:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/flexslider.css   (ca22a1cb)
+2019-01-16T15:06:01.7013106+07:00 0HLJRH5MFLHDR:00000002 [INF] Sending file. Request path: '"/client-side/css/font-awesome.min.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\font-awesome.min.css"' (27b0a520)
+2019-01-16T15:06:01.7237483+07:00 0HLJRH5MFLHDQ:00000003 [INF] Sending file. Request path: '"/client-side/css/flexslider.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\flexslider.css"' (27b0a520)
+2019-01-16T15:06:01.8263618+07:00 0HLJRH5MFLHDO:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/revolution-slider.css   (ca22a1cb)
+2019-01-16T15:06:01.9546846+07:00 0HLJRH5MFLHDQ:00000003 [INF] Request finished in 313.5298ms 200 text/css (791a596a)
+2019-01-16T15:06:02.0937221+07:00 0HLJRH5MFLHDR:00000002 [INF] Request finished in 1514.0689ms 200 text/css (791a596a)
+2019-01-16T15:06:02.3516136+07:00 0HLJRH5MFLHDN:00000003 [INF] Sending file. Request path: '"/client-side/css/owl.transitions.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\owl.transitions.css"' (27b0a520)
+2019-01-16T15:06:02.4062200+07:00 0HLJRH5MFLHDQ:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/quick_view_popup.css   (ca22a1cb)
+2019-01-16T15:06:02.4200287+07:00 0HLJRH5MFLHDN:00000003 [INF] Request finished in 934.5156ms 200 text/css (791a596a)
+2019-01-16T15:06:02.4246347+07:00 0HLJRH5MFLHDR:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/jquery.fancybox.css   (ca22a1cb)
+2019-01-16T15:06:02.4394101+07:00 0HLJRH5MFLHDN:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/blogmate.css   (ca22a1cb)
+2019-01-16T15:06:02.4496269+07:00 0HLJRH5MFLHDS:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/jquery-ui.css   (ca22a1cb)
+2019-01-16T15:06:02.4802523+07:00 0HLJRH5MFLHDO:00000004 [INF] Sending file. Request path: '"/client-side/css/revolution-slider.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\revolution-slider.css"' (27b0a520)
+2019-01-16T15:06:02.5099344+07:00 0HLJRH5MFLHDO:00000004 [INF] Request finished in 779.2944ms 200 text/css (791a596a)
+2019-01-16T15:06:02.5191772+07:00 0HLJRH5MFLHDQ:00000004 [INF] Sending file. Request path: '"/client-side/css/quick_view_popup.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\quick_view_popup.css"' (27b0a520)
+2019-01-16T15:06:02.5242151+07:00 0HLJRH5MFLHDN:00000004 [INF] Sending file. Request path: '"/client-side/css/blogmate.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\blogmate.css"' (27b0a520)
+2019-01-16T15:06:02.5276176+07:00 0HLJRH5MFLHDQ:00000004 [INF] Request finished in 521.0616ms 200 text/css (791a596a)
+2019-01-16T15:06:02.5363184+07:00 0HLJRH5MFLHDN:00000004 [INF] Request finished in 104.1636ms 200 text/css (791a596a)
+2019-01-16T15:06:02.5432507+07:00 0HLJRH5MFLHDQ:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/responsive.css   (ca22a1cb)
+2019-01-16T15:06:02.5482330+07:00 0HLJRH5MFLHDN:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/bootstrap.min.js?v=LXSFcY4CZMtLuiIxdU_-gVrFDdIjNhvOamNxtRtYR_s   (ca22a1cb)
+2019-01-16T15:06:02.5547784+07:00 0HLJRH5MFLHDR:00000003 [INF] Sending file. Request path: '"/client-side/css/jquery.fancybox.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\jquery.fancybox.css"' (27b0a520)
+2019-01-16T15:06:02.5702645+07:00 0HLJRH5MFLHDS:00000004 [INF] Sending file. Request path: '"/client-side/css/jquery-ui.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\jquery-ui.css"' (27b0a520)
+2019-01-16T15:06:02.5828951+07:00 0HLJRH5MFLHDR:00000003 [INF] Request finished in 461.0369ms 200 text/css (791a596a)
+2019-01-16T15:06:02.5888743+07:00 0HLJRH5MFLHDS:00000004 [INF] Request finished in 646.7293ms 200 text/css (791a596a)
+2019-01-16T15:06:02.6020157+07:00 0HLJRH5MFLHDR:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/logo.png   (ca22a1cb)
+2019-01-16T15:06:02.6130671+07:00 0HLJRH5MFLHDS:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/jquery.min.js?v=t8k2lC97lWsI2K83UP64x3L6wwr-IsV5I98VY6SrvME   (ca22a1cb)
+2019-01-16T15:06:02.6252494+07:00 0HLJRH5MFLHDO:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/style.css   (ca22a1cb)
+2019-01-16T15:06:02.6595916+07:00 0HLJRH5MFLHDP:00000004 [INF] Sending file. Request path: '"/client-side/css/cloud-zoom.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\cloud-zoom.css"' (27b0a520)
+2019-01-16T15:06:02.6709746+07:00 0HLJRH5MFLHDN:00000005 [INF] Sending file. Request path: '"/client-side/js/bootstrap.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\bootstrap.min.js"' (27b0a520)
+2019-01-16T15:06:02.6839685+07:00 0HLJRH5MFLHDP:00000004 [INF] Request finished in 1216.7789ms 200 text/css (791a596a)
+2019-01-16T15:06:02.6953578+07:00 0HLJRH5MFLHDN:00000005 [INF] Request finished in 134.6236ms 200 application/javascript (791a596a)
+2019-01-16T15:06:02.7197662+07:00 0HLJRH5MFLHDP:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/jtv-mobile-menu.css   (ca22a1cb)
+2019-01-16T15:06:02.7236382+07:00 0HLJRH5MFLHDN:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/owl.carousel.min.js?v=Pv6fuCfsFrDircppTCl85PcDDkfVLKpoEek_oEGQxlQ   (ca22a1cb)
+2019-01-16T15:06:02.7342918+07:00 0HLJRH5MFLHDR:00000004 [INF] Sending file. Request path: '"/client-side/images/logo.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\logo.png"' (27b0a520)
+2019-01-16T15:06:02.7716501+07:00 0HLJRH5MFLHDQ:00000005 [INF] Sending file. Request path: '"/client-side/css/responsive.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\responsive.css"' (27b0a520)
+2019-01-16T15:06:02.8297486+07:00 0HLJRH5MFLHDR:00000004 [INF] Request finished in 156.9975ms 200 image/png (791a596a)
+2019-01-16T15:06:02.9458886+07:00 0HLJRH5MFLHDQ:00000005 [INF] Request finished in 242.1704ms 200 text/css (791a596a)
+2019-01-16T15:06:03.3544898+07:00 0HLJRH5MFLHDP:00000005 [INF] Sending file. Request path: '"/client-side/css/jtv-mobile-menu.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\jtv-mobile-menu.css"' (27b0a520)
+2019-01-16T15:06:03.4615416+07:00 0HLJRH5MFLHDQ:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/countdown.js?v=mGJ8d0WWagd9mvc6nA0UGamoKxjq70s1ODlmn5IP1qE   (ca22a1cb)
+2019-01-16T15:06:03.9745635+07:00 0HLJRH5MFLHDP:00000005 [INF] Request finished in 671.6829ms 200 text/css (791a596a)
+2019-01-16T15:06:04.6961187+07:00 0HLJRH5MFLHDR:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/jtv-mobile-menu.js?v=DcuIHBKeWrslmIx0mCMZp1jWlCHx_a5fBdf-3sRcMKI   (ca22a1cb)
+2019-01-16T15:06:04.9435428+07:00 0HLJRH5MFLHDP:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/rev-slider.js?v=zZ8QQQYjXhuHoIzfKbNFe5wAv4sEKggo9YErxIGhv60   (ca22a1cb)
+2019-01-16T15:06:05.0726955+07:00 0HLJRH5MFLHDO:00000005 [INF] Sending file. Request path: '"/client-side/css/style.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\style.css"' (27b0a520)
+2019-01-16T15:06:05.1295887+07:00 0HLJRH5MFLHDN:00000006 [INF] Sending file. Request path: '"/client-side/js/owl.carousel.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\owl.carousel.min.js"' (27b0a520)
+2019-01-16T15:06:05.1433002+07:00 0HLJRH5MFLHDO:00000005 [INF] Request finished in 2562.7244ms 200 text/css (791a596a)
+2019-01-16T15:06:05.1531570+07:00 0HLJRH5MFLHDP:00000006 [INF] Sending file. Request path: '"/client-side/js/rev-slider.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\rev-slider.js"' (27b0a520)
+2019-01-16T15:06:05.1630101+07:00 0HLJRH5MFLHDO:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/slider/slide-img2.jpg   (ca22a1cb)
+2019-01-16T15:06:05.1713545+07:00 0HLJRH5MFLHDP:00000006 [INF] Request finished in 1180.4371ms 200 application/javascript (791a596a)
+2019-01-16T15:06:05.1803523+07:00 0HLJRH5MFLHDN:00000006 [INF] Request finished in 2434.2253ms 200 application/javascript (791a596a)
+2019-01-16T15:06:05.2549382+07:00 0HLJRH5MFLHDP:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/fonts/simple-line-icons/Simple-Line-Icons.woff   (ca22a1cb)
+2019-01-16T15:06:05.2868372+07:00 0HLJRH5MFLHDN:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/main.js?v=YdmrdKGOLfapBBOsO4kxn-I4LIHepAdh5VypKCgHDm8   (ca22a1cb)
+2019-01-16T15:06:05.3165241+07:00 0HLJRH5MFLHDR:00000005 [INF] Sending file. Request path: '"/client-side/js/jtv-mobile-menu.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\jtv-mobile-menu.js"' (27b0a520)
+2019-01-16T15:06:05.3396275+07:00 0HLJRH5MFLHDS:00000005 [INF] Sending file. Request path: '"/client-side/js/jquery.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\jquery.min.js"' (27b0a520)
+2019-01-16T15:06:05.3497542+07:00 0HLJRH5MFLHDP:00000007 [INF] Sending file. Request path: '"/client-side/fonts/simple-line-icons/Simple-Line-Icons.woff"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\fonts\simple-line-icons\Simple-Line-Icons.woff"' (27b0a520)
+2019-01-16T15:06:05.3591116+07:00 0HLJRH5MFLHDO:00000006 [INF] Sending file. Request path: '"/client-side/images/slider/slide-img2.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\slider\slide-img2.jpg"' (27b0a520)
+2019-01-16T15:06:05.3622186+07:00 0HLJRH5MFLHDP:00000007 [INF] Request finished in 177.4022ms 200 application/font-woff (791a596a)
+2019-01-16T15:06:05.3681613+07:00 0HLJRH5MFLHDO:00000006 [INF] Request finished in 215.8522ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:05.3797903+07:00 0HLJRH5MFLHDP:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img2.jpg   (ca22a1cb)
+2019-01-16T15:06:05.4540360+07:00 0HLJRH5MFLHDO:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/bg-img.jpg   (ca22a1cb)
+2019-01-16T15:06:05.5117792+07:00 0HLJRH5MFLHDN:00000007 [INF] Sending file. Request path: '"/client-side/js/main.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\main.js"' (27b0a520)
+2019-01-16T15:06:05.5468331+07:00 0HLJRH5MFLHDR:00000005 [INF] Request finished in 2486.8195ms 200 application/javascript (791a596a)
+2019-01-16T15:06:05.5614772+07:00 0HLJRH5MFLHDP:00000008 [INF] Sending file. Request path: '"/client-side/images/banner-img2.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img2.jpg"' (27b0a520)
+2019-01-16T15:06:05.5697460+07:00 0HLJRH5MFLHDN:00000007 [INF] Request finished in 327.6375ms 200 application/javascript (791a596a)
+2019-01-16T15:06:05.5802412+07:00 0HLJRH5MFLHDP:00000008 [INF] Request finished in 195.7492ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:05.5996675+07:00 0HLJRH5MFLHDN:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img1.jpg   (ca22a1cb)
+2019-01-16T15:06:05.9802208+07:00 0HLJRH5MFLHDP:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T15:06:06.4595376+07:00 0HLJRH5MFLHDO:00000007 [INF] Sending file. Request path: '"/client-side/images/bg-img.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\bg-img.jpg"' (27b0a520)
+2019-01-16T15:06:06.6569432+07:00 0HLJRH5MFLHDN:00000008 [INF] Sending file. Request path: '"/client-side/images/banner-img1.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img1.jpg"' (27b0a520)
+2019-01-16T15:06:06.7455914+07:00 0HLJRH5MFLHDO:00000007 [INF] Request finished in 1088.8227ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:06.7944950+07:00 0HLJRH5MFLHDP:00000009 [INF] Request finished in 878.9476ms 404  (791a596a)
+2019-01-16T15:06:06.8328166+07:00 0HLJRH5MFLHDO:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img3.jpg   (ca22a1cb)
+2019-01-16T15:06:06.8642600+07:00 0HLJRH5MFLHDP:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/testimonials-img1.jpg   (ca22a1cb)
+2019-01-16T15:06:06.9540625+07:00 0HLJRH5MFLHDN:00000008 [INF] Request finished in 1087.2444ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:07.0086522+07:00 0HLJRH5MFLHDR:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0   (ca22a1cb)
+2019-01-16T15:06:07.0414318+07:00 0HLJRH5MFLHDN:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img4.jpg   (ca22a1cb)
+2019-01-16T15:06:07.0716159+07:00 0HLJRH5MFLHDS:00000005 [INF] Request finished in 2750.8481ms 200 application/javascript (791a596a)
+2019-01-16T15:06:07.0789473+07:00 0HLJRH5MFLHDO:00000008 [INF] Sending file. Request path: '"/client-side/images/banner-img3.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img3.jpg"' (27b0a520)
+2019-01-16T15:06:07.1026810+07:00 0HLJRH5MFLHDP:0000000A [INF] Sending file. Request path: '"/client-side/images/testimonials-img1.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\testimonials-img1.jpg"' (27b0a520)
+2019-01-16T15:06:07.1176987+07:00 0HLJRH5MFLHDS:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/slider/slide-img1.jpg   (ca22a1cb)
+2019-01-16T15:06:07.1432930+07:00 0HLJRH5MFLHDQ:00000006 [INF] Sending file. Request path: '"/client-side/js/countdown.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\countdown.js"' (27b0a520)
+2019-01-16T15:06:07.1596390+07:00 0HLJRH5MFLHDP:0000000A [INF] Request finished in 323.0907ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:07.1807617+07:00 0HLJRH5MFLHDQ:00000006 [INF] Request finished in 4197.4274ms 200 application/javascript (791a596a)
+2019-01-16T15:06:07.1900116+07:00 0HLJRH5MFLHDO:00000008 [INF] Request finished in 413.833ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:07.2009768+07:00 0HLJRH5MFLHDP:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/testimonials-img3.jpg   (ca22a1cb)
+2019-01-16T15:06:07.2081833+07:00 0HLJRH5MFLHDO:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/testimonials-img2.jpg   (ca22a1cb)
+2019-01-16T15:06:07.2167761+07:00 0HLJRH5MFLHDR:00000006 [INF] Sending file. Request path: '"/client-side/fonts/font-awesome/fontawesome-webfont.woff2"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\fonts\font-awesome\fontawesome-webfont.woff2"' (27b0a520)
+2019-01-16T15:06:07.2258404+07:00 0HLJRH5MFLHDS:00000006 [INF] Sending file. Request path: '"/client-side/images/slider/slide-img1.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\slider\slide-img1.jpg"' (27b0a520)
+2019-01-16T15:06:07.2858067+07:00 0HLJRH5MFLHDR:00000006 [INF] Request finished in 1671.9099ms 200 font/woff2 (791a596a)
+2019-01-16T15:06:07.3251141+07:00 0HLJRH5MFLHDS:00000006 [INF] Request finished in 157.6397ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:07.3548975+07:00 0HLJRH5MFLHDR:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/brand1.png   (ca22a1cb)
+2019-01-16T15:06:07.3830867+07:00 0HLJRH5MFLHDP:0000000B [INF] Sending file. Request path: '"/client-side/images/testimonials-img3.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\testimonials-img3.jpg"' (27b0a520)
+2019-01-16T15:06:07.4109050+07:00 0HLJRH5MFLHDO:00000009 [INF] Sending file. Request path: '"/client-side/images/testimonials-img2.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\testimonials-img2.jpg"' (27b0a520)
+2019-01-16T15:06:07.4237828+07:00 0HLJRH5MFLHDP:0000000B [INF] Request finished in 223.4631ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:07.4537692+07:00 0HLJRH5MFLHDR:00000007 [INF] Sending file. Request path: '"/client-side/images/brand1.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\brand1.png"' (27b0a520)
+2019-01-16T15:06:07.4749111+07:00 0HLJRH5MFLHDP:0000000C [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/brand2.png   (ca22a1cb)
+2019-01-16T15:06:07.5502599+07:00 0HLJRH5MFLHDR:00000007 [INF] Request finished in 172.5802ms 200 image/png (791a596a)
+2019-01-16T15:06:07.6652629+07:00 0HLJRH5MFLHDO:00000009 [INF] Request finished in 284.7425ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:07.6800623+07:00 0HLJRH5MFLHDR:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/brand5.png   (ca22a1cb)
+2019-01-16T15:06:07.6957937+07:00 0HLJRH5MFLHDO:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/brand4.png   (ca22a1cb)
+2019-01-16T15:06:07.7158919+07:00 0HLJRH5MFLHDP:0000000C [INF] Sending file. Request path: '"/client-side/images/brand2.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\brand2.png"' (27b0a520)
+2019-01-16T15:06:07.7685283+07:00 0HLJRH5MFLHDS:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/brand3.png   (ca22a1cb)
+2019-01-16T15:06:07.8163583+07:00 0HLJRH5MFLHDP:0000000C [INF] Request finished in 292.1318ms 200 image/png (791a596a)
+2019-01-16T15:06:07.8787446+07:00 0HLJRH5MFLHDO:0000000A [INF] Sending file. Request path: '"/client-side/images/brand4.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\brand4.png"' (27b0a520)
+2019-01-16T15:06:07.8921723+07:00 0HLJRH5MFLHDR:00000008 [INF] Sending file. Request path: '"/client-side/images/brand5.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\brand5.png"' (27b0a520)
+2019-01-16T15:06:07.9038596+07:00 0HLJRH5MFLHDO:0000000A [INF] Request finished in 213.489ms 200 image/png (791a596a)
+2019-01-16T15:06:07.9089095+07:00 0HLJRH5MFLHDS:00000007 [INF] Sending file. Request path: '"/client-side/images/brand3.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\brand3.png"' (27b0a520)
+2019-01-16T15:06:07.9223682+07:00 0HLJRH5MFLHDO:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img8.jpg   (ca22a1cb)
+2019-01-16T15:06:07.9398026+07:00 0HLJRH5MFLHDS:00000007 [INF] Request finished in 583.8722ms 200 image/png (791a596a)
+2019-01-16T15:06:07.9565802+07:00 0HLJRH5MFLHDR:00000008 [INF] Request finished in 342.7577ms 200 image/png (791a596a)
+2019-01-16T15:06:07.9773622+07:00 0HLJRH5MFLHDS:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img7.jpg   (ca22a1cb)
+2019-01-16T15:06:08.0430132+07:00 0HLJRH5MFLHDR:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img6.jpg   (ca22a1cb)
+2019-01-16T15:06:09.0764896+07:00 0HLJRH5MFLHDP:0000000D [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/brand6.png   (ca22a1cb)
+2019-01-16T15:06:09.1857030+07:00 0HLJRH5MFLHDO:0000000B [INF] Sending file. Request path: '"/client-side/images/banner-img8.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img8.jpg"' (27b0a520)
+2019-01-16T15:06:09.2186207+07:00 0HLJRH5MFLHDS:00000008 [INF] Sending file. Request path: '"/client-side/images/banner-img7.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img7.jpg"' (27b0a520)
+2019-01-16T15:06:09.2277478+07:00 0HLJRH5MFLHDR:00000009 [INF] Sending file. Request path: '"/client-side/images/banner-img6.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img6.jpg"' (27b0a520)
+2019-01-16T15:06:09.2436033+07:00 0HLJRH5MFLHDP:0000000D [INF] Sending file. Request path: '"/client-side/images/brand6.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\brand6.png"' (27b0a520)
+2019-01-16T15:06:09.2539929+07:00 0HLJRH5MFLHDS:00000008 [INF] Request finished in 1277.9732ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:09.2701227+07:00 0HLJRH5MFLHDR:00000009 [INF] Request finished in 1271.0038ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:09.2816191+07:00 0HLJRH5MFLHDS:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/payment-1.png   (ca22a1cb)
+2019-01-16T15:06:09.3131188+07:00 0HLJRH5MFLHDR:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/payment-2.png   (ca22a1cb)
+2019-01-16T15:06:09.3546641+07:00 0HLJRH5MFLHDP:0000000D [INF] Request finished in 1427.1413ms 200 image/png (791a596a)
+2019-01-16T15:06:09.4077602+07:00 0HLJRH5MFLHDO:0000000B [INF] Request finished in 1286.2148ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:09.4634375+07:00 0HLJRH5MFLHDO:0000000C [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/footer-logo.png   (ca22a1cb)
+2019-01-16T15:06:09.5697242+07:00 0HLJRH5MFLHDS:00000009 [INF] Sending file. Request path: '"/client-side/images/payment-1.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\payment-1.png"' (27b0a520)
+2019-01-16T15:06:09.6339637+07:00 0HLJRH5MFLHDR:0000000A [INF] Sending file. Request path: '"/client-side/images/payment-2.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\payment-2.png"' (27b0a520)
+2019-01-16T15:06:09.6931162+07:00 0HLJRH5MFLHDS:00000009 [INF] Request finished in 315.6925ms 200 image/png (791a596a)
+2019-01-16T15:06:09.6931559+07:00 0HLJRH5MFLHDO:0000000C [INF] Sending file. Request path: '"/client-side/images/footer-logo.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\footer-logo.png"' (27b0a520)
+2019-01-16T15:06:09.7090830+07:00 0HLJRH5MFLHDR:0000000A [INF] Request finished in 368.8173ms 200 image/png (791a596a)
+2019-01-16T15:06:09.7165483+07:00 0HLJRH5MFLHDS:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/right-a.png   (ca22a1cb)
+2019-01-16T15:06:09.7226409+07:00 0HLJRH5MFLHDO:0000000C [INF] Request finished in 287.2584ms 200 image/png (791a596a)
+2019-01-16T15:06:09.7321699+07:00 0HLJRH5MFLHDR:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/payment-4.png   (ca22a1cb)
+2019-01-16T15:06:09.7414938+07:00 0HLJRH5MFLHDP:0000000E [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/payment-3.png   (ca22a1cb)
+2019-01-16T15:06:09.7509956+07:00 0HLJRH5MFLHDN:00000009 [INF] Sending file. Request path: '"/client-side/images/banner-img4.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img4.jpg"' (27b0a520)
+2019-01-16T15:06:09.7661767+07:00 0HLJRH5MFLHDQ:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/fonts/pe-icon-7-stroke/Pe-icon-7-stroke.woff?d7yf1v   (ca22a1cb)
+2019-01-16T15:06:09.7796512+07:00 0HLJRH5MFLHDN:00000009 [INF] Request finished in 2796.9569ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:09.7955532+07:00 0HLJRH5MFLHDN:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/blog-img1.jpg   (ca22a1cb)
+2019-01-16T15:06:09.8683284+07:00 0HLJRH5MFLHDQ:00000007 [INF] Sending file. Request path: '"/client-side/fonts/pe-icon-7-stroke/Pe-icon-7-stroke.woff"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\fonts\pe-icon-7-stroke\Pe-icon-7-stroke.woff"' (27b0a520)
+2019-01-16T15:06:09.8830329+07:00 0HLJRH5MFLHDN:0000000A [INF] Sending file. Request path: '"/client-side/images/blog-img1.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\blog-img1.jpg"' (27b0a520)
+2019-01-16T15:06:09.9065027+07:00 0HLJRH5MFLHDQ:00000007 [INF] Request finished in 2690.4135ms 200 application/font-woff (791a596a)
+2019-01-16T15:06:09.9348940+07:00 0HLJRH5MFLHDN:0000000A [INF] Request finished in 103.5417ms 200 image/jpeg (791a596a)
+2019-01-16T15:06:10.0023661+07:00 0HLJRH5MFLHDO:0000000D [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/left-a.png   (ca22a1cb)
+2019-01-16T15:06:10.1042748+07:00 0HLJRH5MFLHDP:0000000E [INF] Sending file. Request path: '"/client-side/images/payment-3.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\payment-3.png"' (27b0a520)
+2019-01-16T15:06:10.1398247+07:00 0HLJRH5MFLHDS:0000000A [INF] Sending file. Request path: '"/client-side/images/right-a.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\right-a.png"' (27b0a520)
+2019-01-16T15:06:10.1419289+07:00 0HLJRH5MFLHDP:0000000E [INF] Request finished in 749.5451ms 200 image/png (791a596a)
+2019-01-16T15:06:10.1493163+07:00 0HLJRH5MFLHDO:0000000D [INF] Sending file. Request path: '"/client-side/images/left-a.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\left-a.png"' (27b0a520)
+2019-01-16T15:06:10.1845130+07:00 0HLJRH5MFLHDS:0000000A [INF] Request finished in 443.9188ms 200 image/png (791a596a)
+2019-01-16T15:06:10.1996073+07:00 0HLJRH5MFLHDO:0000000D [INF] Request finished in 246.4644ms 200 image/png (791a596a)
+2019-01-16T15:06:10.2095153+07:00 0HLJRH5MFLHDR:0000000B [INF] Sending file. Request path: '"/client-side/images/payment-4.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\payment-4.png"' (27b0a520)
+2019-01-16T15:06:10.2217769+07:00 0HLJRH5MFLHDO:0000000E [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/to-top-arrow.png   (ca22a1cb)
+2019-01-16T15:06:10.2284789+07:00 0HLJRH5MFLHDR:0000000B [INF] Request finished in 502.9011ms 200 image/png (791a596a)
+2019-01-16T15:06:10.2599777+07:00 0HLJRH5MFLHDS:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/favicon.ico   (ca22a1cb)
+2019-01-16T15:06:10.2765770+07:00 0HLJRH5MFLHDO:0000000E [INF] Sending file. Request path: '"/client-side/images/to-top-arrow.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\to-top-arrow.png"' (27b0a520)
+2019-01-16T15:06:10.3021561+07:00 0HLJRH5MFLHDO:0000000E [INF] Request finished in 76.965ms 200 image/png (791a596a)
+2019-01-16T15:06:10.3238936+07:00 0HLJRH5MFLHDS:0000000B [INF] Sending file. Request path: '"/client-side/favicon.ico"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\favicon.ico"' (27b0a520)
+2019-01-16T15:06:10.3309410+07:00 0HLJRH5MFLHDS:0000000B [INF] Request finished in 102.3822ms 200 image/x-icon (791a596a)
+2019-01-16T15:07:45.5341722+07:00 0HLJRH5MFLHDS:0000000C [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-16T15:07:45.5377247+07:00 0HLJRH5MFLHDS:0000000C [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-16T15:07:45.5498564+07:00 0HLJRH5MFLHDS:0000000C [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-16T15:07:45.7107670+07:00 0HLJRH5MFLHDS:0000000C [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-16T15:07:45.7159495+07:00 0HLJRH5MFLHDS:0000000C [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T15:07:45.8760804+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed DbCommand ("118"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:07:46.0817196+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed DbCommand ("76"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:07:46.2021384+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed DbCommand ("113"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:07:46.3078736+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed DbCommand ("97"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-16T15:07:46.3833117+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed DbCommand ("70"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-16T15:07:46.3941290+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 672.9689ms. (50a9e262)
+2019-01-16T15:07:46.4023774+07:00 0HLJRH5MFLHDS:0000000C [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-16T15:07:46.8141207+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed DbCommand ("210"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:07:47.3137819+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed DbCommand ("409"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:07:47.6636404+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed ViewResult - view "Index" executed in 929.6376ms. (f66409e9)
+2019-01-16T15:07:48.0659763+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 2113.9814ms (afa2e885)
+2019-01-16T15:07:48.6643935+07:00 0HLJRH5MFLHDS:0000000C [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T15:07:48.9871415+07:00 0HLJRH5MFLHDS:0000000C [INF] Request finished in 3184.2851ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T15:07:49.7794159+07:00 0HLJRH5MFLHDS:0000000D [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T15:07:49.8153743+07:00 0HLJRH5MFLHDS:0000000D [INF] Request finished in 56.4776ms 404  (791a596a)
+2019-01-16T15:07:53.2511757+07:00 0HLJRH5MFLHDS:0000000E [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/btn_remove.png   (ca22a1cb)
+2019-01-16T15:07:53.4482881+07:00 0HLJRH5MFLHDS:0000000E [INF] Sending file. Request path: '"/client-side/images/btn_remove.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\btn_remove.png"' (27b0a520)
+2019-01-16T15:07:53.5675736+07:00 0HLJRH5MFLHDS:0000000E [INF] Request finished in 274.5728ms 200 image/png (791a596a)
+2019-01-16T15:08:31.1753404+07:00 0HLJRH5MFLHDS:0000000F [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-16T15:08:31.1855018+07:00 0HLJRH5MFLHDS:0000000F [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-16T15:08:31.1898242+07:00 0HLJRH5MFLHDS:0000000F [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-16T15:08:31.2548959+07:00 0HLJRH5MFLHDS:0000000F [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-16T15:08:31.2631838+07:00 0HLJRH5MFLHDS:0000000F [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T15:08:31.3566475+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed DbCommand ("83"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:08:31.4271198+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed DbCommand ("65"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:08:31.7867952+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed DbCommand ("320"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:08:32.1183235+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed DbCommand ("213"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-16T15:08:32.4035164+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed DbCommand ("205"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-16T15:09:31.5179161+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 60255.232ms. (50a9e262)
+2019-01-16T15:09:31.9144670+07:00 0HLJRH5MFLHDS:0000000F [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-16T15:09:52.6705629+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed DbCommand ("596"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:09:52.7921719+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed DbCommand ("112"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:09:52.8132252+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed ViewResult - view "Index" executed in 21280.3415ms. (f66409e9)
+2019-01-16T15:09:52.8529213+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 81623.4378ms (afa2e885)
+2019-01-16T15:09:53.0480321+07:00 0HLJRH5MFLHDS:0000000F [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T15:09:53.2472711+07:00 0HLJRH5MFLHDS:0000000F [INF] Request finished in 81877.129ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T15:09:53.8366184+07:00 0HLJRH5MFLHDS:00000010 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T15:09:53.9021807+07:00 0HLJRH5MFLHDS:00000010 [INF] Request finished in 68.3143ms 404  (791a596a)
+2019-01-16T15:11:55.0357084+07:00 0HLJRH5MFLHDS:00000011 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-16T15:11:55.0962705+07:00 0HLJRH5MFLHDS:00000011 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-16T15:11:55.1657955+07:00 0HLJRH5MFLHDS:00000011 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-16T15:11:55.4724403+07:00 0HLJRH5MFLHDS:00000011 [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-16T15:11:55.4893375+07:00 0HLJRH5MFLHDS:00000011 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T15:11:55.6004171+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed DbCommand ("89"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:11:55.7653508+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed DbCommand ("146"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:11:55.9147639+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed DbCommand ("130"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:11:56.3288609+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed DbCommand ("221"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-16T15:11:56.8556633+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed DbCommand ("401"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-16T15:12:07.2520712+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 11173.8163ms. (50a9e262)
+2019-01-16T15:12:07.4546009+07:00 0HLJRH5MFLHDS:00000011 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-16T15:12:09.3165588+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed DbCommand ("126"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:12:09.8067183+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed DbCommand ("245"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:12:09.8259281+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed ViewResult - view "Index" executed in 2561.6003ms. (f66409e9)
+2019-01-16T15:12:09.8509730+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 14660.1689ms (afa2e885)
+2019-01-16T15:12:09.8656416+07:00 0HLJRH5MFLHDS:00000011 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T15:12:10.0679183+07:00 0HLJRH5MFLHDS:00000011 [INF] Request finished in 14922.5788ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T15:12:10.0945808+07:00 0HLJRH5MFLHDS:00000012 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/products/product-1.jpg   (ca22a1cb)
+2019-01-16T15:12:10.1263437+07:00 0HLJRH5MFLHDS:00000012 [INF] Request finished in 27.9685ms 404  (791a596a)
+2019-01-16T15:12:24.4814830+07:00 0HLJRH5MFLHDS:00000013 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T15:12:24.4985389+07:00 0HLJRH5MFLHDS:00000013 [INF] Request finished in 267.3781ms 404  (791a596a)
+2019-01-16T15:16:47.8191857+07:00 0HLJRH5MFLHDS:00000014 [INF] Request starting HTTP/1.1 GET https://localhost:5001/~/client-side/images/products/product-1.jpg   (ca22a1cb)
+2019-01-16T15:16:48.0421202+07:00 0HLJRH5MFLHDS:00000014 [INF] Request finished in 184.4017ms 404  (791a596a)
+2019-01-16T15:16:56.9679863+07:00 0HLJRH5MFLHDS:00000015 [INF] Request starting HTTP/1.1 GET https://localhost:5001/images/products/product-1.jpg   (ca22a1cb)
+2019-01-16T15:16:57.1154184+07:00 0HLJRH5MFLHDS:00000015 [INF] Request finished in 158.812ms 404  (791a596a)
+2019-01-16T15:17:12.8378785+07:00 0HLJRH5MFLHDS:00000016 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/products/product-1.jpg   (ca22a1cb)
+2019-01-16T15:17:13.0026819+07:00 0HLJRH5MFLHDS:00000016 [INF] Request finished in 94.4432ms 404  (791a596a)
+2019-01-16T15:18:37.5175704+07:00 0HLJRH5MFLHDS:00000017 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-16T15:18:37.6553672+07:00 0HLJRH5MFLHDS:00000017 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-16T15:18:37.6789661+07:00 0HLJRH5MFLHDS:00000017 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-16T15:18:37.7945296+07:00 0HLJRH5MFLHDS:00000017 [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-16T15:18:37.8179073+07:00 0HLJRH5MFLHDS:00000017 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T15:18:38.2637172+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed DbCommand ("315"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:18:38.4149609+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed DbCommand ("128"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:18:38.6222011+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed DbCommand ("182"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:18:38.7847898+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed DbCommand ("139"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-16T15:18:38.8732387+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed DbCommand ("81"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-16T15:18:38.8802063+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1078.9911ms. (50a9e262)
+2019-01-16T15:18:38.8839127+07:00 0HLJRH5MFLHDS:00000017 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-16T15:18:39.0333425+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed DbCommand ("139"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:18:39.3872245+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed DbCommand ("165"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:18:39.4255752+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed ViewResult - view "Index" executed in 516.3912ms. (f66409e9)
+2019-01-16T15:18:39.6339016+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 1746.4802ms (afa2e885)
+2019-01-16T15:18:40.0208778+07:00 0HLJRH5MFLHDS:00000017 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T15:18:40.2582389+07:00 0HLJRH5MFLHDS:00000017 [INF] Request finished in 2626.6271ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T15:18:40.6954191+07:00 0HLJRH5MFLHDS:00000018 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T15:18:40.9306819+07:00 0HLJRH5MFLHDS:00000018 [INF] Request finished in 245.1016ms 404  (791a596a)
+2019-01-16T15:19:46.7167113+07:00 0HLJRH5MFLHDS:00000019 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-16T15:19:46.7303312+07:00 0HLJRH5MFLHDS:00000019 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-16T15:19:46.7531648+07:00 0HLJRH5MFLHDS:00000019 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-16T15:19:46.8994862+07:00 0HLJRH5MFLHDS:00000019 [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-16T15:19:46.9291231+07:00 0HLJRH5MFLHDS:00000019 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T15:19:47.6055588+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed DbCommand ("428"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:19:47.8485754+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed DbCommand ("207"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:19:48.3037719+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed DbCommand ("193"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:19:49.0305599+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed DbCommand ("614"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-16T15:19:49.4875146+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed DbCommand ("363"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-16T15:19:49.6584189+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2588.5804ms. (50a9e262)
+2019-01-16T15:19:49.8048213+07:00 0HLJRH5MFLHDS:00000019 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-16T15:19:50.1474221+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed DbCommand ("273"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:19:50.5959577+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed DbCommand ("377"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:19:50.7087875+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed ViewResult - view "Index" executed in 949.131ms. (f66409e9)
+2019-01-16T15:19:50.8453740+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 3955.5024ms (afa2e885)
+2019-01-16T15:19:50.9085187+07:00 0HLJRH5MFLHDS:00000019 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T15:19:50.9542150+07:00 0HLJRH5MFLHDS:00000019 [INF] Request finished in 4237.7341ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T15:23:09.4598904+07:00 0HLJRH5MFLHDS:0000001A [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-16T15:23:09.4745836+07:00 0HLJRH5MFLHDS:0000001A [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-16T15:23:09.4818420+07:00 0HLJRH5MFLHDS:0000001A [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-16T15:23:09.5966396+07:00 0HLJRH5MFLHDS:0000001A [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-16T15:23:09.6096809+07:00 0HLJRH5MFLHDS:0000001A [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T15:23:09.6858433+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed DbCommand ("69"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:23:10.8138790+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed DbCommand ("455"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:23:11.0418305+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed DbCommand ("176"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:23:11.4702141+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed DbCommand ("196"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-16T15:23:12.1638359+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed DbCommand ("473"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-16T15:23:12.5097556+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2567.4187ms. (50a9e262)
+2019-01-16T15:23:24.6583096+07:00 0HLJRH5MFLHDS:0000001A [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-16T15:23:25.3336188+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed DbCommand ("219"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:23:26.1023343+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed DbCommand ("651"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:23:26.3986629+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed ViewResult - view "Index" executed in 13683.083ms. (f66409e9)
+2019-01-16T15:23:27.0548131+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 16916.7156ms (afa2e885)
+2019-01-16T15:23:27.5284955+07:00 0HLJRH5MFLHDS:0000001A [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T15:23:27.6743505+07:00 0HLJRH5MFLHDS:0000001A [INF] Request finished in 18084.6849ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T15:23:32.6351922+07:00 0HLJRH5MFLHDS:0000001B [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T15:23:32.9421176+07:00 0HLJRH5MFLHDS:0000001B [INF] Request finished in 386.2552ms 404  (791a596a)
+2019-01-16T15:26:22.4158797+07:00 0HLJRH5MFLHDS:0000001C [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T15:26:22.5259635+07:00 0HLJRH5MFLHDS:0000001C [INF] Request finished in 233.3097ms 404  (791a596a)
+2019-01-16T15:27:23.0906340+07:00 0HLJRH5MFLHDS:0000001D [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-16T15:27:23.1303822+07:00 0HLJRH5MFLHDS:0000001D [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-16T15:27:23.2628820+07:00 0HLJRH5MFLHDS:0000001D [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-16T15:27:23.3735225+07:00 0HLJRH5MFLHDS:0000001D [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-16T15:27:23.3902857+07:00 0HLJRH5MFLHDS:0000001D [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T15:27:23.5695099+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed DbCommand ("133"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:27:23.7303851+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed DbCommand ("121"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:27:23.8951892+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed DbCommand ("142"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-16T15:27:24.0088072+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed DbCommand ("95"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-16T15:27:24.1594246+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed DbCommand ("134"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-16T15:27:24.2804779+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 786.0948ms. (50a9e262)
+2019-01-16T15:27:26.3921641+07:00 0HLJRH5MFLHDS:0000001D [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-16T15:27:26.8303845+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed DbCommand ("202"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:27:27.0792387+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed DbCommand ("195"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T15:27:27.2694731+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed ViewResult - view "Index" executed in 2822.4016ms. (f66409e9)
+2019-01-16T15:27:27.5821555+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 4006.6067ms (afa2e885)
+2019-01-16T15:27:28.0616269+07:00 0HLJRH5MFLHDS:0000001D [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T15:27:29.0085794+07:00 0HLJRH5MFLHDS:0000001D [INF] Request finished in 5181.9248ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T15:27:30.5690995+07:00 0HLJRH5MFLHDS:0000001E [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T15:27:30.5883392+07:00 0HLJRH5MFLHDS:0000001E [INF] Request finished in 1560.7828ms 404  (791a596a)
