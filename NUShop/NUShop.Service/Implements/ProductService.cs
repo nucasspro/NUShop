@@ -151,7 +151,7 @@ namespace NUShop.Service.Implements
             return productsViewModel;
         }
 
-        public PagedResult<ProductViewModel> GetAllPaging(int? categoryId, string keyword, int page, int pageSize)
+        public PagedResult<ProductViewModel> GetAllPaging(int? categoryId, string keyword, int pageIndex, int pageSize)
         {
             var query = _productRepository.GetAll(x => x.Status == Status.Active);
             if (!string.IsNullOrEmpty(keyword))
@@ -162,14 +162,14 @@ namespace NUShop.Service.Implements
             var totalRow = query.Count();
 
             query = query.OrderByDescending(x => x.DateCreated)
-                .Skip((page - 1) * pageSize).Take(pageSize);
+                .Skip((pageIndex - 1) * pageSize).Take(pageSize);
 
             var data = _mapper.Map<List<ProductViewModel>>(query);
 
             var paginationSet = new PagedResult<ProductViewModel>()
             {
                 Results = data,
-                CurrentPage = page,
+                CurrentPage = pageIndex,
                 RowCount = totalRow,
                 PageSize = pageSize
             };

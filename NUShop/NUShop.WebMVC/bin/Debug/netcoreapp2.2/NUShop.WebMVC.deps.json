@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "f79137f602fa29ef1ade7d8da27e2749a3cc57e3"
+    "signature": "524837f115b5930d5fa209db38119217d3014db1"
   },
   "compilationOptions": {
     "defines": [
@@ -37,7 +37,6 @@
           "NUShop.Data.EF": "1.0.0",
           "NUShop.Service": "1.0.0",
           "NUShop.ViewModel": "1.0.0",
-          "ReflectionIT.Mvc.Paging": "3.3.0",
           "RestSharp": "106.6.3",
           "Serilog.Extensions.Logging.File": "1.1.0"
         },
@@ -472,26 +471,6 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
-        }
-      },
-      "ReflectionIT.Mvc.Paging/3.3.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Mvc": "2.2.0",
-          "Microsoft.EntityFrameworkCore.Relational": "2.2.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.Views.dll": {
-            "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.0.0"
-          },
-          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {
-            "assemblyVersion": "3.3.0.0",
-            "fileVersion": "3.3.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.Views.dll": {},
-          "lib/netstandard2.0/ReflectionIT.Mvc.Paging.dll": {}
         }
       },
       "RestSharp/106.6.3": {
@@ -4116,13 +4095,6 @@
       "sha512": "sha512-KuqDbPzjOWbUM6gPMbkvdhlQ10roQAoMM7mNZ8hcY/fH+9J4Zc+qT8dLWoNzGyr0OrxQVdZdbSjy/fxwoICgGg==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
-    },
-    "ReflectionIT.Mvc.Paging/3.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6Hum+Sth0HLbBEWqk18KvvJK+y+WleUtwUsfMHL7DH9tPRF0YHff6TXbX9Y9+YvBW418KiqyWs+xrQOTVbjPXw==",
-      "path": "reflectionit.mvc.paging/3.3.0",
-      "hashPath": "reflectionit.mvc.paging.3.3.0.nupkg.sha512"
     },
     "RestSharp/106.6.3": {
       "type": "package",

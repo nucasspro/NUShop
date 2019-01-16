@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using NUShop.Service.Interfaces;
+using NUShop.WebMVC.Models;
 
 namespace NUShop.WebMVC.Controllers
 {
@@ -28,10 +29,30 @@ namespace NUShop.WebMVC.Controllers
 
         #endregion
 
+        [Route("products.html")]
         public IActionResult Index()
         {
             var categories = _categoryService.GetAll();
             return View(categories);
         }
+
+        [Route("{alias}-{id}.html")]
+        public IActionResult Catalog(int id, int? pageSize, string sortBy, int pageIndex = 1)
+        {
+            ViewData["BodyClass"] = "category-page";
+            if (pageSize == null || pageSize <= 0)
+            {
+                pageSize = _configuration.GetValue<int>("PageSize");
+            }
+
+            var catalog = new CatalogViewModel
+            {
+                SortBy = sortBy,
+                PageSize = pageSize,
+                Category = _categoryService.GetById(id),
+                Products = _productService.GetAllPaging(id, string.Empty, pageIndex, pageSize.Value)
+            };
+            return View(catalog);
+        } 
     }
 }
