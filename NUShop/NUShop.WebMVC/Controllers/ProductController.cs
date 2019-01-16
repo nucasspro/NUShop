@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using NUShop.Service.Interfaces;
@@ -16,13 +17,20 @@ namespace NUShop.WebMVC.Controllers
         private readonly ILogger<ProductController> _logger;
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
+        private readonly IBillService _billService;
         private readonly IConfiguration _configuration;
 
-        public ProductController(ILogger<ProductController> logger, IProductService productService, ICategoryService categoryService, IConfiguration configuration)
+        public ProductController(
+            ILogger<ProductController> logger, 
+            IProductService productService, 
+            ICategoryService categoryService,
+            IBillService billService,
+            IConfiguration configuration)
         {
             _logger = logger;
             _productService = productService;
             _categoryService = categoryService;
+            _billService = billService;
             _configuration = configuration;
         }
 
@@ -36,7 +44,7 @@ namespace NUShop.WebMVC.Controllers
             return View(categories);
         }
 
-        [Route("{alias}-{id}.html")]
+        [Route("{alias}-c.{id}.html")]
         public IActionResult Catalog(int id, int? pageSize, string sortBy, int pageIndex = 1)
         {
             ViewData["BodyClass"] = "category-page";
@@ -53,6 +61,36 @@ namespace NUShop.WebMVC.Controllers
                 Products = _productService.GetAllPaging(id, string.Empty, pageIndex, pageSize.Value)
             };
             return View(catalog);
-        } 
+        }
+
+        [Route("{alias}-p.{id}.html", Name = "ProductDetail")]
+        public IActionResult Detail(int id, int? pageSize, string sortBy, int pageIndex = 1)
+        {
+            ViewData["BodyClass"] = "product-page";
+            var productDetail = new ProductDetailViewModel
+            {
+                Product = _productService.GetById(id)
+            };
+
+            productDetail.Category = _categoryService.GetById(productDetail.Product.CategoryId);
+            productDetail.RelatedProducts = _productService.GetRelatedProducts(id, 9);
+            productDetail.UpSellProducts = _productService.GetUpSellProducts(6);
+            productDetail.ProductImages = _productService.GetImages(id);
+            productDetail.Tags = _productService.GetProductTags(id);
+
+            productDetail.Colors = _billService.GetColors().Select(x => new SelectListItem()
+            {
+                Text = x.Name,
+                Value = x.Id.ToString()
+            }).ToList();
+
+            productDetail.Sizes = _billService.GetSizes().Select(x => new SelectListItem()
+            {
+                Text = x.Name,
+                Value = x.Id.ToString()
+            }).ToList();
+
+            return View(productDetail);
+        }
     }
 }

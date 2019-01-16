@@ -1922,3 +1922,318 @@ ORDER BY [x].[ParentId]" (0723d8ff)
 2019-01-16T21:54:16.1823329+07:00 0HLJRO8HA5HP9:0000000A [INF] Request finished in 2440.2774ms 200 text/html; charset=utf-8 (791a596a)
 2019-01-16T21:54:16.9714157+07:00 0HLJRO8HA5HP9:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
 2019-01-16T21:54:17.2339223+07:00 0HLJRO8HA5HP9:0000000B [INF] Request finished in 373.5609ms 404  (791a596a)
+2019-01-16T22:15:51.6328308+07:00 0HLJROLVNA1R0:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/men-shirt-4.html   (ca22a1cb)
+2019-01-16T22:15:51.9315046+07:00 0HLJROLVNA1R0:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (500cc934)
+2019-01-16T22:15:52.0620692+07:00 0HLJROLVNA1R0:00000001 [INF] Route matched with "{action = \"Catalog\", controller = \"Product\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" (a44c0341)
+2019-01-16T22:15:55.3060461+07:00 0HLJROLVNA1R0:00000001 [INF] Executing action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" with arguments (["4", "", "", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-16T22:15:55.3419695+07:00 0HLJROLVNA1R0:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T22:15:55.8820916+07:00 0HLJROLVNA1R0:00000001 [INF] Executed DbCommand ("328"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-16T22:15:56.1475893+07:00 0HLJROLVNA1R0:00000001 [INF] Executed DbCommand ("136"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)" (0723d8ff)
+2019-01-16T22:15:56.4372971+07:00 0HLJROLVNA1R0:00000001 [INF] Executed DbCommand ("147"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY" (0723d8ff)
+2019-01-16T22:15:56.6315632+07:00 0HLJROLVNA1R0:00000001 [INF] Executed action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1187.5427ms. (50a9e262)
+2019-01-16T22:15:57.3824788+07:00 0HLJROLVNA1R0:00000001 [INF] Executing ViewResult, running view "Catalog". (c83d0e25)
+2019-01-16T22:23:53.3931073+07:00 0HLJROLVNA1R0:00000001 [INF] Executed DbCommand ("584"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:23:55.8215769+07:00 0HLJROLVNA1R0:00000001 [INF] Executed DbCommand ("692"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:23:56.8376131+07:00 0HLJROLVNA1R0:00000001 [INF] Executed ViewResult - view "Catalog" executed in 480057.0946ms. (f66409e9)
+2019-01-16T22:23:57.3235681+07:00 0HLJROLVNA1R0:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" in 484778.9146ms (afa2e885)
+2019-01-16T22:23:58.1500279+07:00 0HLJROLVNA1R0:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T22:23:58.6584115+07:00 0HLJROLVNA1R1:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T22:24:01.6640971+07:00 0HLJROLVNA1R1:00000001 [INF] Request finished in 382.021ms 404  (791a596a)
+2019-01-16T22:24:01.9578645+07:00 0HLJROLVNA1R0:00000001 [INF] Request finished in 489970.0933ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T22:26:06.9338753+07:00 0HLJROLVNA1R1:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/men-shirt-4.html   (ca22a1cb)
+2019-01-16T22:26:07.0105027+07:00 0HLJROLVNA1R1:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (500cc934)
+2019-01-16T22:26:07.1034582+07:00 0HLJROLVNA1R1:00000002 [INF] Route matched with "{action = \"Catalog\", controller = \"Product\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" (a44c0341)
+2019-01-16T22:26:07.2718876+07:00 0HLJROLVNA1R1:00000002 [INF] Executing action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" with arguments (["4", "", "", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-16T22:26:07.2873984+07:00 0HLJROLVNA1R1:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T22:26:07.5230374+07:00 0HLJROLVNA1R1:00000002 [INF] Executed DbCommand ("182"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-16T22:26:07.8933438+07:00 0HLJROLVNA1R1:00000002 [INF] Executed DbCommand ("100"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)" (0723d8ff)
+2019-01-16T22:26:08.6943699+07:00 0HLJROLVNA1R1:00000002 [INF] Executed DbCommand ("526"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY" (0723d8ff)
+2019-01-16T22:26:08.7567259+07:00 0HLJROLVNA1R1:00000002 [INF] Executed action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1425.7851ms. (50a9e262)
+2019-01-16T22:26:08.8206780+07:00 0HLJROLVNA1R1:00000002 [INF] Executing ViewResult, running view "Catalog". (c83d0e25)
+2019-01-16T22:26:25.1893069+07:00 0HLJROLVNA1R1:00000002 [INF] Executed DbCommand ("541"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:26:25.3960070+07:00 0HLJROLVNA1R1:00000002 [INF] Executed DbCommand ("122"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:26:25.7140162+07:00 0HLJROLVNA1R1:00000002 [INF] Executed ViewResult - view "Catalog" executed in 16640.9445ms. (f66409e9)
+2019-01-16T22:26:26.1025426+07:00 0HLJROLVNA1R1:00000002 [INF] Executed action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" in 18610.7075ms (afa2e885)
+2019-01-16T22:26:26.4844802+07:00 0HLJROLVNA1R1:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T22:26:27.0924066+07:00 0HLJROLVNA1R1:00000002 [INF] Request finished in 19626.5761ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T22:26:27.2885456+07:00 0HLJROLVNA1R0:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T22:26:27.9004466+07:00 0HLJROLVNA1R0:00000002 [INF] Request finished in 675.3157ms 404  (791a596a)
+2019-01-16T22:26:46.4804426+07:00 0HLJROLVNA1R0:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/men-shirt-4.html?page=2   (ca22a1cb)
+2019-01-16T22:26:46.4942005+07:00 0HLJROLVNA1R0:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (500cc934)
+2019-01-16T22:26:46.5096602+07:00 0HLJROLVNA1R0:00000003 [INF] Route matched with "{action = \"Catalog\", controller = \"Product\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" (a44c0341)
+2019-01-16T22:26:46.7071557+07:00 0HLJROLVNA1R0:00000003 [INF] Executing action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" with arguments (["4", "", "", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-16T22:26:46.7565025+07:00 0HLJROLVNA1R0:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T22:26:47.1368519+07:00 0HLJROLVNA1R0:00000003 [INF] Executed DbCommand ("203"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-16T22:26:47.5755416+07:00 0HLJROLVNA1R0:00000003 [INF] Executed DbCommand ("371"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)" (0723d8ff)
+2019-01-16T22:26:47.8147126+07:00 0HLJROLVNA1R0:00000003 [INF] Executed DbCommand ("195"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY" (0723d8ff)
+2019-01-16T22:26:47.8671578+07:00 0HLJROLVNA1R0:00000003 [INF] Executed action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1107.8859ms. (50a9e262)
+2019-01-16T22:26:47.9412778+07:00 0HLJROLVNA1R0:00000003 [INF] Executing ViewResult, running view "Catalog". (c83d0e25)
+2019-01-16T22:26:48.0651981+07:00 0HLJROLVNA1R0:00000003 [INF] Executed DbCommand ("112"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:26:48.1772345+07:00 0HLJROLVNA1R0:00000003 [INF] Executed DbCommand ("100"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:26:48.3506261+07:00 0HLJROLVNA1R0:00000003 [INF] Executed ViewResult - view "Catalog" executed in 311.399ms. (f66409e9)
+2019-01-16T22:26:48.7160468+07:00 0HLJROLVNA1R0:00000003 [INF] Executed action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" in 1846.949ms (afa2e885)
+2019-01-16T22:26:49.1080732+07:00 0HLJROLVNA1R0:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T22:26:50.0816587+07:00 0HLJROLVNA1R1:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T22:26:50.4655689+07:00 0HLJROLVNA1R0:00000003 [INF] Request finished in 2712.8865ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T22:26:50.9073284+07:00 0HLJROLVNA1R1:00000003 [INF] Request finished in 1006.2514ms 404  (791a596a)
+2019-01-16T22:27:12.4028391+07:00 0HLJROLVNA1R1:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/men-shirt-4.html?page=2   (ca22a1cb)
+2019-01-16T22:27:12.7227486+07:00 0HLJROLVNA1R1:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (500cc934)
+2019-01-16T22:27:13.1381376+07:00 0HLJROLVNA1R1:00000004 [INF] Route matched with "{action = \"Catalog\", controller = \"Product\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" (a44c0341)
+2019-01-16T22:27:13.7867452+07:00 0HLJROLVNA1R1:00000004 [INF] Executing action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" with arguments (["4", "", "", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-16T22:27:14.0054715+07:00 0HLJROLVNA1R1:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T22:27:15.0405872+07:00 0HLJROLVNA1R1:00000004 [INF] Executed DbCommand ("827"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-16T22:27:15.6304444+07:00 0HLJROLVNA1R1:00000004 [INF] Executed DbCommand ("444"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)" (0723d8ff)
+2019-01-16T22:27:16.3301544+07:00 0HLJROLVNA1R1:00000004 [INF] Executed DbCommand ("452"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY" (0723d8ff)
+2019-01-16T22:27:16.4881152+07:00 0HLJROLVNA1R1:00000004 [INF] Executed action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2543.6975ms. (50a9e262)
+2019-01-16T22:27:16.5655308+07:00 0HLJROLVNA1R1:00000004 [INF] Executing ViewResult, running view "Catalog". (c83d0e25)
+2019-01-16T22:27:45.0962241+07:00 0HLJROLVNA1R1:00000004 [INF] Executed DbCommand ("316"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:27:45.2952862+07:00 0HLJROLVNA1R1:00000004 [INF] Executed DbCommand ("161"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:27:45.3247221+07:00 0HLJROLVNA1R1:00000004 [INF] Executed ViewResult - view "Catalog" executed in 28808.5907ms. (f66409e9)
+2019-01-16T22:27:45.3464656+07:00 0HLJROLVNA1R1:00000004 [INF] Executed action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" in 32186.6566ms (afa2e885)
+2019-01-16T22:27:45.6663062+07:00 0HLJROLVNA1R1:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T22:27:46.0350981+07:00 0HLJROLVNA1R1:00000004 [INF] Request finished in 33612.7974ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T22:27:46.6849405+07:00 0HLJROLVNA1R1:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T22:27:47.4786913+07:00 0HLJROLVNA1R1:00000005 [INF] Request finished in 514.8922ms 404  (791a596a)
+2019-01-16T22:27:49.3479966+07:00 0HLJROLVNA1R1:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/men-shirt-4.html?page=2   (ca22a1cb)
+2019-01-16T22:27:49.3627748+07:00 0HLJROLVNA1R1:00000006 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (500cc934)
+2019-01-16T22:27:49.3666496+07:00 0HLJROLVNA1R1:00000006 [INF] Route matched with "{action = \"Catalog\", controller = \"Product\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" (a44c0341)
+2019-01-16T22:27:49.4728937+07:00 0HLJROLVNA1R1:00000006 [INF] Executing action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" with arguments (["4", "", "", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-16T22:28:12.2596474+07:00 0HLJROLVNA1R1:00000006 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T22:28:12.4477656+07:00 0HLJROLVNA1R1:00000006 [INF] Executed DbCommand ("131"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-16T22:28:12.8948641+07:00 0HLJROLVNA1R1:00000006 [INF] Executed DbCommand ("260"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)" (0723d8ff)
+2019-01-16T22:28:13.1235089+07:00 0HLJROLVNA1R1:00000006 [INF] Executed DbCommand ("167"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY" (0723d8ff)
+2019-01-16T22:28:13.2204956+07:00 0HLJROLVNA1R1:00000006 [INF] Executed action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 23650.5707ms. (50a9e262)
+2019-01-16T22:28:13.3050681+07:00 0HLJROLVNA1R1:00000006 [INF] Executing ViewResult, running view "Catalog". (c83d0e25)
+2019-01-16T22:28:18.7828663+07:00 0HLJROLVNA1R1:00000006 [INF] Executed DbCommand ("170"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:28:18.9607544+07:00 0HLJROLVNA1R1:00000006 [INF] Executed DbCommand ("172"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:28:18.9759820+07:00 0HLJROLVNA1R1:00000006 [INF] Executed ViewResult - view "Catalog" executed in 5742.2077ms. (f66409e9)
+2019-01-16T22:28:19.0817196+07:00 0HLJROLVNA1R1:00000006 [INF] Executed action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" in 29609.3389ms (afa2e885)
+2019-01-16T22:28:19.2133955+07:00 0HLJROLVNA1R1:00000006 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T22:28:19.6500865+07:00 0HLJROLVNA1R1:00000006 [INF] Request finished in 29879.8551ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T22:28:20.2743841+07:00 0HLJROLVNA1R1:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T22:28:20.4787804+07:00 0HLJROLVNA1R1:00000007 [INF] Request finished in 224.1337ms 404  (791a596a)
+2019-01-16T22:29:45.9531142+07:00 0HLJROLVNA1R1:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/men-shirt-4.html?page=2   (ca22a1cb)
+2019-01-16T22:29:45.9641994+07:00 0HLJROLVNA1R1:00000008 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (500cc934)
+2019-01-16T22:29:45.9705590+07:00 0HLJROLVNA1R1:00000008 [INF] Route matched with "{action = \"Catalog\", controller = \"Product\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" (a44c0341)
+2019-01-16T22:29:46.0422162+07:00 0HLJROLVNA1R1:00000008 [INF] Executing action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" with arguments (["4", "", "", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-16T22:29:46.0509759+07:00 0HLJROLVNA1R1:00000008 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T22:29:46.1836052+07:00 0HLJROLVNA1R1:00000008 [INF] Executed DbCommand ("99"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-16T22:29:46.5174805+07:00 0HLJROLVNA1R1:00000008 [INF] Executed DbCommand ("217"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)" (0723d8ff)
+2019-01-16T22:29:47.1316319+07:00 0HLJROLVNA1R1:00000008 [INF] Executed DbCommand ("359"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY" (0723d8ff)
+2019-01-16T22:29:47.3513012+07:00 0HLJROLVNA1R1:00000008 [INF] Executed action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1089.1428ms. (50a9e262)
+2019-01-16T22:29:47.3828598+07:00 0HLJROLVNA1R1:00000008 [INF] Executing ViewResult, running view "Catalog". (c83d0e25)
+2019-01-16T22:29:50.1005486+07:00 0HLJROLVNA1R1:00000008 [INF] Executed DbCommand ("543"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:29:51.0635041+07:00 0HLJROLVNA1R1:00000008 [INF] Executed DbCommand ("638"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:29:51.4243073+07:00 0HLJROLVNA1R1:00000008 [INF] Executed ViewResult - view "Catalog" executed in 3713.2586ms. (f66409e9)
+2019-01-16T22:29:51.8449498+07:00 0HLJROLVNA1R1:00000008 [INF] Executed action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" in 5453.7831ms (afa2e885)
+2019-01-16T22:29:52.2955728+07:00 0HLJROLVNA1R1:00000008 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T22:29:52.6530922+07:00 0HLJROLVNA1R0:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T22:29:52.9026320+07:00 0HLJROLVNA1R1:00000008 [INF] Request finished in 6474.6245ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T22:29:53.0280617+07:00 0HLJROLVNA1R0:00000004 [INF] Request finished in 377.0267ms 404  (791a596a)
+2019-01-16T22:30:12.1223953+07:00 0HLJROLVNA1R0:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/men-shirt-4.html?page=2   (ca22a1cb)
+2019-01-16T22:30:12.1878920+07:00 0HLJROLVNA1R0:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (500cc934)
+2019-01-16T22:30:12.1964279+07:00 0HLJROLVNA1R0:00000005 [INF] Route matched with "{action = \"Catalog\", controller = \"Product\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" (a44c0341)
+2019-01-16T22:30:12.3437492+07:00 0HLJROLVNA1R0:00000005 [INF] Executing action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" with arguments (["4", "", "", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-16T22:31:38.6088405+07:00 0HLJROLVNA1R0:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T22:31:39.8369516+07:00 0HLJROLVNA1R0:00000005 [INF] Executed DbCommand ("943"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-16T22:31:40.7054890+07:00 0HLJROLVNA1R0:00000005 [INF] Executed DbCommand ("646"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)" (0723d8ff)
+2019-01-16T22:31:42.0463866+07:00 0HLJROLVNA1R0:00000005 [INF] Executed DbCommand ("770"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY" (0723d8ff)
+2019-01-16T22:31:42.4489762+07:00 0HLJROLVNA1R0:00000005 [INF] Executed action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 89703.0203ms. (50a9e262)
+2019-01-16T22:31:42.8139614+07:00 0HLJROLVNA1R0:00000005 [INF] Executing ViewResult, running view "Catalog". (c83d0e25)
+2019-01-16T22:31:48.4667069+07:00 0HLJROLVNA1R0:00000005 [INF] Executed DbCommand ("333"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:31:49.5043972+07:00 0HLJROLVNA1R0:00000005 [INF] Executed DbCommand ("416"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:31:50.3445947+07:00 0HLJROLVNA1R0:00000005 [INF] Executed ViewResult - view "Catalog" executed in 7054.862ms. (f66409e9)
+2019-01-16T22:31:50.8534379+07:00 0HLJROLVNA1R0:00000005 [INF] Executed action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" in 98148.1748ms (afa2e885)
+2019-01-16T22:31:51.8120572+07:00 0HLJROLVNA1R0:00000005 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T22:31:52.5543836+07:00 0HLJROLVNA1R1:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T22:31:52.8628894+07:00 0HLJROLVNA1R0:00000005 [INF] Request finished in 99721.1359ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T22:31:53.1452681+07:00 0HLJROLVNA1R1:00000009 [INF] Request finished in 953.784ms 404  (791a596a)
+2019-01-16T22:34:02.7628259+07:00 0HLJROLVNA1R1:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/men-shirt-4.html   (ca22a1cb)
+2019-01-16T22:34:02.8419853+07:00 0HLJROLVNA1R1:0000000A [INF] Executing endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (500cc934)
+2019-01-16T22:34:02.8516687+07:00 0HLJROLVNA1R1:0000000A [INF] Route matched with "{action = \"Catalog\", controller = \"Product\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" (a44c0341)
+2019-01-16T22:34:02.9444696+07:00 0HLJROLVNA1R1:0000000A [INF] Executing action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" with arguments (["4", "", "", "1"]) - Validation state: Valid (4e3479ed)
+2019-01-16T22:34:18.3026839+07:00 0HLJROLVNA1R1:0000000A [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T22:34:18.6963481+07:00 0HLJROLVNA1R1:0000000A [INF] Executed DbCommand ("379"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-16T22:34:18.9806037+07:00 0HLJROLVNA1R1:0000000A [INF] Executed DbCommand ("83"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)" (0723d8ff)
+2019-01-16T22:34:19.1267349+07:00 0HLJROLVNA1R1:0000000A [INF] Executed DbCommand ("134"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY" (0723d8ff)
+2019-01-16T22:34:34.2679706+07:00 0HLJROLVNA1R1:0000000A [INF] Executed action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 31316.7653ms. (50a9e262)
+2019-01-16T22:34:34.7101120+07:00 0HLJROLVNA1R1:0000000A [INF] Executing ViewResult, running view "Catalog". (c83d0e25)
+2019-01-16T22:37:48.8809778+07:00 0HLJROLVNA1R1:0000000A [INF] Executed DbCommand ("231"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:37:49.0390474+07:00 0HLJROLVNA1R1:0000000A [INF] Executed DbCommand ("128"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:37:49.0655876+07:00 0HLJROLVNA1R1:0000000A [INF] Executed ViewResult - view "Catalog" executed in 194772.462ms. (f66409e9)
+2019-01-16T22:37:50.0664567+07:00 0HLJROLVNA1R1:0000000A [INF] Executed action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" in 226214.2091ms (afa2e885)
+2019-01-16T22:37:50.6912410+07:00 0HLJROLVNA1R1:0000000A [INF] Executed endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T22:37:52.1923013+07:00 0HLJROLVNA1R1:0000000A [INF] Request finished in 227939.9714ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T22:37:53.1944300+07:00 0HLJROLVNA1R1:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T22:37:53.7017161+07:00 0HLJROLVNA1R1:0000000B [INF] Request finished in 279.2623ms 404  (791a596a)
+2019-01-16T22:37:58.3202385+07:00 0HLJROLVNA1R1:0000000C [INF] Request starting HTTP/1.1 GET https://localhost:5001/men-shirt-4.html?pageIndex=2   (ca22a1cb)
+2019-01-16T22:37:58.4704076+07:00 0HLJROLVNA1R1:0000000C [INF] Executing endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (500cc934)
+2019-01-16T22:37:58.7384049+07:00 0HLJROLVNA1R1:0000000C [INF] Route matched with "{action = \"Catalog\", controller = \"Product\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" (a44c0341)
+2019-01-16T22:37:59.1626297+07:00 0HLJROLVNA1R1:0000000C [INF] Executing action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" with arguments (["4", "", "", "2"]) - Validation state: Valid (4e3479ed)
+2019-01-16T22:38:53.5950433+07:00 0HLJROLVNA1R1:0000000C [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-16T22:38:53.7260943+07:00 0HLJROLVNA1R1:0000000C [INF] Executed DbCommand ("123"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__id_0" (0723d8ff)
+2019-01-16T22:39:33.3453296+07:00 0HLJROLVNA1R1:0000000C [INF] Executed DbCommand ("99"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)" (0723d8ff)
+2019-01-16T22:39:37.3424604+07:00 0HLJROLVNA1R1:0000000C [INF] Executed DbCommand ("302"ms) [Parameters=["@__categoryId_Value_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[CategoryId] = @__categoryId_Value_0)
+ORDER BY [x].[DateCreated] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_1 ROWS ONLY" (0723d8ff)
+2019-01-16T22:40:15.6965852+07:00 0HLJROLVNA1R1:0000000C [INF] Executed action method "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 136514.0847ms. (50a9e262)
+2019-01-16T22:40:15.7014328+07:00 0HLJROLVNA1R1:0000000C [INF] Executing ViewResult, running view "Catalog". (c83d0e25)
+2019-01-16T22:41:19.1241652+07:00 0HLJROLVNA1R1:0000000C [INF] Executed DbCommand ("238"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:41:19.2643747+07:00 0HLJROLVNA1R1:0000000C [INF] Executed DbCommand ("126"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-16T22:41:19.2779123+07:00 0HLJROLVNA1R1:0000000C [INF] Executed ViewResult - view "Catalog" executed in 63569.898ms. (f66409e9)
+2019-01-16T22:41:19.5903441+07:00 0HLJROLVNA1R1:0000000C [INF] Executed action "NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)" in 200539.5221ms (afa2e885)
+2019-01-16T22:41:20.0298619+07:00 0HLJROLVNA1R1:0000000C [INF] Executed endpoint '"NUShop.WebMVC.Controllers.ProductController.Catalog (NUShop.WebMVC)"' (99874f2b)
+2019-01-16T22:41:20.4064341+07:00 0HLJROLVNA1R1:0000000C [INF] Request finished in 202107.4164ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-16T22:41:22.7687475+07:00 0HLJROLVNA1R1:0000000D [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-16T22:41:22.8356844+07:00 0HLJROLVNA1R1:0000000D [INF] Request finished in 896.5111ms 404  (791a596a)

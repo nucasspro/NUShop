@@ -30,7 +30,7 @@
                     <h2 class="page-heading"> <span class="page-heading-title">@(Model.Category.Name)</span> </h2>
                     <div class="toolbar">
                         <div class="row">
-                            <form action="/@Model.Category.SeoAlias-@(Model.Category.Id).html" method="get">
+                            <form action="/@Model.Category.SeoAlias-c.@(Model.Category.Id).html" method="get">
                                 <div class="col-md-4 col-sm-5">
                                 </div>
                                 <div class="col-sm-2 text-right sort-by">
@@ -63,7 +63,7 @@
                                     <div class="item-inner">
                                         <div class="item-img">
                                             <div class="item-img-info">
-                                                <a class="product-image" title="@(item.Name)" href="/@(item.SeoAlias)-@(item.Id).html">
+                                                <a class="product-image" title="@(item.Name)" href="/@(item.SeoAlias)-p.@(item.Id).html">
                                                     @if (item.Image == "")
                                                     {
                                                         <img class="img-responsive" alt="@(item.Name)" src="images/products/img01.jpg">
@@ -87,20 +87,20 @@
                                         </div>
                                         <div class="item-info">
                                             <div class="info-inner">
-                                                <div class="item-title"> 
-                                                    <a title="@(item.Name)" href="/@(item.SeoAlias)-@(item.Id).html"> @(item.Name) </a> 
+                                                <div class="item-title">
+                                                    <a title="@(item.Name)" href="/@(item.SeoAlias)-p.@(item.Id).html"> @(item.Name) </a>
                                                 </div>
                                                 <div class="item-content">
-                                                    <div class="rating"> 
-                                                    <i class="fa fa-star-o"></i> 
-                                                    <i class="fa fa-star-o"></i> 
-                                                    <i class="fa fa-star-o"></i> 
-                                                    <i class="fa fa-star-o"></i> 
-                                                    <i class="fa fa-star-o"></i> 
+                                                    <div class="rating">
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
+                                                        <i class="fa fa-star-o"></i>
                                                     </div>
                                                     <div class="item-price">
                                                         <div class="price-box">
-                                                            @if (item.PromotionPrice == null || item.PromotionPrice <= 0 || item.PromotionPrice <= item.Price)
+                                                            @if (item.PromotionPrice == null || item.PromotionPrice <= 0 || item.PromotionPrice >= item.Price)
                                                             {
                                                                 <span class="regular-price"> <span class="price">@(item.Price.ToString("N0"))</span> </span>
                                                             }

@@ -1,11 +1,11 @@
 ﻿@using NUShop.Utilities.DTOs
 @model PagedResultBase
 @{
-    var urlTemplate = Url.Action() + "?page={0}";
+    var urlTemplate = Url.Action() + "?pageIndex={0}";
     var request = ViewContext.HttpContext.Request;
     foreach (var key in request.Query.Keys)
     {
-        if (key == "page")
+        if (key == "pageIndex")
         {
             continue;
         }
@@ -22,11 +22,7 @@
             @if (Model.PageCount > 1)
             {
                 <ul class="pagination">
-                    @if (Model.CurrentPage == startIndex)
-                    {
-                        <li><i class="fa fa-angle-left"></i></li>
-                    }
-                    else
+                    @if (Model.CurrentPage != startIndex)
                     {
                         <li>
                             <a href="@urlTemplate.Replace("{0}", Model.PageCount.ToString())">
@@ -43,17 +39,18 @@
                         }
                         else
                         {
-                            <li><a href="@urlTemplate.Replace("{0}", i.ToString())">@i</a></li>
+                            <li><a href="@urlTemplate.Replace("{0}", i.ToString())">@(i)</a></li>
                         }
                     }
-                    @if (Model.CurrentPage == finishIndex)
+                    @if (Model.CurrentPage != finishIndex)
                     {
-                        <li><i class="fa fa-angle-right"></i></li>
+                            <li>
+                                <a href="@urlTemplate.Replace("{0}", Model.PageCount.ToString())">
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
                     }
-                    else
-                    {
-                        <li><a href="@urlTemplate.Replace("{0}", Model.PageCount.ToString())"><i class="fa fa-angle-right"></i></a></li>
-                    }
+                   
                 </ul>
             }
         </div>
