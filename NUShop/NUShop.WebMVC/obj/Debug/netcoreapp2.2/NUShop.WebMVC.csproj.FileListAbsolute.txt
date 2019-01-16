@@ -127,3 +127,5 @@ D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_HeaderCartPartial.g.cshtml.cs
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\Menu\Default.g.cshtml.cs
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\MobileMenu\Default.g.cshtml.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Product\Index.g.cshtml.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Product\Catalog.g.cshtml.cs

@@ -2,9 +2,9 @@
 @model HomeViewModel
 
 @{
-    ViewData["Title"] = "Home Page";
-    ViewData["MetaDescription"] = "Home Page";
-    ViewData["MetaKeyword"] = "Home Page";
+    ViewData["Title"] = Model.Title;
+    ViewData["MetaDescription"] = Model.MetaDescription;
+    ViewData["MetaKeyword"] = Model.MetaKeyword;
 }
 
 @section Scripts{
@@ -93,8 +93,8 @@
                 <div id='jtv-rev_slider_wrapper' class='rev_slider_wrapper fullwidthbanner-container'>
                     <div id='jtv-rev_slider' class='rev_slider fullwidthabanner'>
                         <ul>
-                            <li data-transition='fade' data-slotamount='7' data-masterspeed='1000' data-thumb='client-side/images/slider/slide-img1.jpg'>
-                                <img class="img-responsive" src="client-side/images/slider/slide-img1.jpg" alt="slide-img" data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' />
+                            <li data-transition='fade' data-slotamount='7' data-masterspeed='1000' data-thumb='client-side/images/slider/slide-1.jpg'>
+                                <img class="img-responsive" src="client-side/images/slider/slide-1.jpg" alt="slide-img" data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' />
                                 <div class="info">
                                     <div class='tp-caption jtv-sub-title sft  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2;max-width:auto;max-height:auto;white-space:nowrap; color:#393b7d;'><span>New Collection</span> </div>
                                     <div class='tp-caption jtv-large-title sfl  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3;max-width:auto;max-height:auto;white-space:nowrap;'><span style="color:#000;">Stylish Look</span> </div>
@@ -102,8 +102,8 @@
                                     <div class='tp-caption sfb  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap; font-size:18px;'><a href='#' class="jtv-shop-now-btn">Shop Now</a> </div>
                                 </div>
                             </li>
-                            <li data-transition='fade' data-slotamount='7' data-masterspeed='1000' data-thumb='client-side/images/slider/slide-img2.jpg'>
-                                <img class="img-responsive" src="client-side/images/slider/slide-img2.jpg" alt="slide-img" data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' />
+                            <li data-transition='fade' data-slotamount='7' data-masterspeed='1000' data-thumb='client-side/images/slider/slide-2.jpg'>
+                                <img class="img-responsive" src="client-side/images/slider/slide-2.jpg" alt="slide-img" data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' />
                                 <div class="info">
                                     <div class='tp-caption jtv-sub-title sft slide2  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2;max-width:auto;max-height:auto;white-space:nowrap;padding-right:0px; color:#999;'><span>On Day Sale!</span> </div>
                                     <div class='tp-caption jtv-large-title sfl  tp-resizeme ' data-endspeed='500' data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3;max-width:auto;max-height:auto;white-space:nowrap; color:#393b7d;'>New Arrivals</div>

@@ -17,69 +17,6 @@ namespace NUShop.Data.Entities
             BillDetails = new List<BillDetail>();
         }
 
-        //public Product(string name, int categoryId, string thumbnailImage,
-        //    decimal price, decimal originalPrice, decimal? promotionPrice,
-        //    string description, string content, bool? homeFlag, bool? hotFlag,
-        //    string tags, string unit, Status status, string seoPageTitle,
-        //    string seoAlias, string seoMetaKeyword,
-        //    string seoMetaDescription)
-        //{
-        //    Name = name;
-        //    CategoryId = categoryId;
-        //    Image = thumbnailImage;
-        //    Price = price;
-        //    OriginalPrice = originalPrice;
-        //    PromotionPrice = promotionPrice;
-        //    Description = description;
-        //    Content = content;
-        //    HomeFlag = homeFlag;
-        //    HotFlag = hotFlag;
-        //    Tags = tags;
-        //    Unit = unit;
-        //    Status = status;
-        //    SeoPageTitle = seoPageTitle;
-        //    SeoAlias = seoAlias;
-        //    SeoKeywords = seoMetaKeyword;
-        //    SeoDescription = seoMetaDescription;
-        //    ProductTags = new List<ProductTag>();
-        //    ProductImages = new List<ProductImage>();
-        //    ProductQuantities = new List<ProductQuantity>();
-        //    WholePrices = new List<WholePrice>();
-        //    BillDetails = new List<BillDetail>();
-        //}
-
-        //public Product(int id, string name, int categoryId, string thumbnailImage,
-        //     decimal price, decimal originalPrice, decimal? promotionPrice,
-        //     string description, string content, bool? homeFlag, bool? hotFlag,
-        //     string tags, string unit, Status status, string seoPageTitle,
-        //     string seoAlias, string seoMetaKeyword,
-        //     string seoMetaDescription)
-        //{
-        //    Id = id;
-        //    Name = name;
-        //    CategoryId = categoryId;
-        //    Image = thumbnailImage;
-        //    Price = price;
-        //    OriginalPrice = originalPrice;
-        //    PromotionPrice = promotionPrice;
-        //    Description = description;
-        //    Content = content;
-        //    HomeFlag = homeFlag;
-        //    HotFlag = hotFlag;
-        //    Tags = tags;
-        //    Unit = unit;
-        //    Status = status;
-        //    SeoPageTitle = seoPageTitle;
-        //    SeoAlias = seoAlias;
-        //    SeoKeywords = seoMetaKeyword;
-        //    SeoDescription = seoMetaDescription;
-        //    ProductTags = new List<ProductTag>();
-        //    ProductImages = new List<ProductImage>();
-        //    ProductQuantities = new List<ProductQuantity>();
-        //    WholePrices = new List<WholePrice>();
-        //    BillDetails = new List<BillDetail>();
-        //}
-
         public string Name { get; set; }
         public int CategoryId { get; set; }
         public virtual Category Category { set; get; }
