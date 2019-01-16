@@ -1,0 +1,42 @@
+﻿@using NUShop.ViewModel.ViewModels
+@model List<CategoryViewModel>
+
+
+<nav class="">
+    <div class="container">
+        <div class="nav-inner">
+            <div class="mm-toggle-wrap hidden-sm hidden-md hidden-lg">
+                <div class="mm-toggle"><i class="fa fa-align-justify"></i><span class="mm-label">Categories</span> </div>
+            </div>
+            <!-- BEGIN NAV -->
+            <ul id="nav" class="hidden-xs">
+                <li> <a href="/" class="level-top active"><span>Home</span></a> </li>
+
+                @foreach (var item in Model.Where(x => x.ParentId == null))
+                {
+                    <li class="drop-menu">
+                        <a href="/@(item.SeoAlias)-@(item.Id).html"> <span>@(item.Name)</span> </a>
+                        <ul>
+
+                            @foreach (var subItem in Model.Where(y => y.ParentId == item.Id))
+                            {
+                                <li class="sub-cat">
+                                    <a href="/@(subItem.SeoAlias)-@(subItem.Id).html"><span>@(subItem.Name)</span></a>
+                                    <ul>
+                                        @foreach (var subSubItem in Model.Where(z => z.ParentId == subItem.Id))
+                                        {
+                                            <li> <a href="/@(subSubItem.SeoAlias)-@(subSubItem.Id).html"> <span>@(subSubItem.Name)</span> </a> </li>
+                                        }
+
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                }
+
+                <li class="mega-menu"> <a class="level-top" href="blog.html"><span>Blog</span></a> </li>
+            </ul>
+        </div>
+    </div>
+</nav>

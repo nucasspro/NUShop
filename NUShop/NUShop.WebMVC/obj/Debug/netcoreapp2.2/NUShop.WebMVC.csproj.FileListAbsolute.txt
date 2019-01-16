@@ -122,3 +122,7 @@ D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Areas\Admin\Views\Product\_WholePricePartial.g.cshtml.cs
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_FooterPartial.g.cshtml.cs
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_HeaderPartial.g.cshtml.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_HeaderLanguagePartial.g.cshtml.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_HeaderCurrencyPartial.g.cshtml.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_HeaderCartPartial.g.cshtml.cs
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Components\Menu\Default.g.cshtml.cs
