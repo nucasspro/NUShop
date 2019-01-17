@@ -2975,6 +2975,24 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
+      "PaulMiami.AspNetCore.Mvc.Recaptcha/1.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Localization": "1.0.2",
+          "Microsoft.AspNetCore.Mvc.Abstractions": "1.0.3",
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.3",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "1.0.3",
+          "Microsoft.AspNetCore.Razor.Runtime": "1.0.2",
+          "NETStandard.Library": "1.6.0",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.6/PaulMiami.AspNetCore.Mvc.Recaptcha.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/PaulMiami.AspNetCore.Mvc.Recaptcha.dll": {}
+        }
+      },
       "Remotion.Linq/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -8607,6 +8625,19 @@
         "nuget.frameworks.nuspec"
       ]
     },
+    "PaulMiami.AspNetCore.Mvc.Recaptcha/1.2.1": {
+      "sha512": "S0gaqQad6McU/KAz7bA+gEHBULfbfwjnRLYMDcuk44JMybadAIks2H3PoXFUF2r3qE2broYkfl3C/SoNLq1VCQ==",
+      "type": "package",
+      "path": "paulmiami.aspnetcore.mvc.recaptcha/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net451/PaulMiami.AspNetCore.Mvc.Recaptcha.dll",
+        "lib/netstandard1.6/PaulMiami.AspNetCore.Mvc.Recaptcha.dll",
+        "paulmiami.aspnetcore.mvc.recaptcha.1.2.1.nupkg.sha512",
+        "paulmiami.aspnetcore.mvc.recaptcha.nuspec"
+      ]
+    },
     "Remotion.Linq/2.2.0": {
       "sha512": "fK/76UmpC0FXBlGDFVPLJHQlDLYnGC+XY3eoDgCgbtrhi0vzbXDQ3n/IYHhqSKqXQfGw/u04A1drWs7rFVkRjw==",
       "type": "package",
@@ -13822,6 +13853,7 @@
       "NUShop.Data.EF >= 1.0.0",
       "NUShop.Service >= 1.0.0",
       "NUShop.ViewModel >= 1.0.0",
+      "PaulMiami.AspNetCore.Mvc.Recaptcha >= 1.2.1",
       "RestSharp >= 106.6.3",
       "Serilog.Extensions.Logging.File >= 1.1.0"
     ]
@@ -13920,6 +13952,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "PaulMiami.AspNetCore.Mvc.Recaptcha": {
+            "target": "Package",
+            "version": "[1.2.1, )"
           },
           "RestSharp": {
             "target": "Package",

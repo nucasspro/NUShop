@@ -9,6 +9,7 @@ using NUShop.Service.Interfaces;
 using NUShop.Utilities.Helpers;
 using NUShop.ViewModel.ViewModels.AccountViewModels;
 using NUShop.WebMVC.Extensions;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
 using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -218,7 +219,7 @@ namespace NUShop.WebMVC.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        //[ValidateRecaptcha]
+        [ValidateRecaptcha]
         [Route("register.html")]
         public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
         {
@@ -227,7 +228,6 @@ namespace NUShop.WebMVC.Controllers
             {
                 return View(model);
             }
-            //MM/dd/yyy
             var dateTimeNow = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
             var user = new AppUser
             {
@@ -256,7 +256,6 @@ namespace NUShop.WebMVC.Controllers
             }
             AddErrors(result);
 
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 

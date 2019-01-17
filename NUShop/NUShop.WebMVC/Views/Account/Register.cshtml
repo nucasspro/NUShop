@@ -1,8 +1,9 @@
-﻿@using NUShop.ViewModel.ViewModels.AccountViewModels
-@model RegisterViewModel
-
-@{ 
+﻿@model RegisterViewModel
+@{
     ViewData["Title"] = "Register";
+}
+@section Scripts{
+    <recaptcha-script validation-message-element-id="recaptchaErrorMessage" />
 }
 
 <section class="main-container col1-layout">
@@ -72,7 +73,11 @@
                                     <br>
                                     <input type="date" title=">Birth Day" class="input-text required-entry" asp-for="BirthDay" value="" name="birthday">
                                 </li>
-
+                                <li>
+                                    <label for="recaptcha">ReCaptcha</label>
+                                    <recaptcha />
+                                    <span class="text-danger" id="recaptchaErrorMessage"></span>
+                                </li>
                             </ul>
                             <p class="required">* Required Fields</p>
                             <div class="buttons-set">

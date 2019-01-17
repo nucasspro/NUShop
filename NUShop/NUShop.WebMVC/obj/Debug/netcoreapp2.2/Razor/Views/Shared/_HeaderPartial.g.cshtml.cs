@@ -8,7 +8,6 @@ namespace AspNetCore
     #line hidden
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
@@ -28,8 +27,23 @@ using NUShop.Data.Entities;
 
 #line default
 #line hidden
+#line 4 "D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\Views\_ViewImports.cshtml"
+using NUShop.ViewModel.ViewModels.AccountViewModels;
+
+#line default
+#line hidden
+#line 5 "D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#line 6 "D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\Views\_ViewImports.cshtml"
+using System.Linq;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6488f132c48c1f9a6b7a7308a7a3446b0b7eed6c", @"/Views/Shared/_HeaderPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"498dadb98ab44da8f22dd3bbfc4141cfe3943b8d", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"28ce93ebee90d3556cc0d908300095368032538a", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__HeaderPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -133,7 +147,7 @@ using NUShop.Data.Entities;
             WriteLiteral("                     </ul>\r\n                                            </div>\r\n                                        </li>\r\n                                        <li>\r\n                                            ");
             EndContext();
             BeginContext(2672, 306, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6488f132c48c1f9a6b7a7308a7a3446b0b7eed6c11731", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6488f132c48c1f9a6b7a7308a7a3446b0b7eed6c12203", async() => {
                 BeginContext(2783, 188, true);
                 WriteLiteral("\r\n                                                <a href=\"#\" onclick=\"document.getElementById(\'logoutForm\').submit()\"><span>Logout</span></a>\r\n                                            ");
                 EndContext();
@@ -205,7 +219,7 @@ using NUShop.Data.Entities;
             WriteLiteral("\r\n                </div>\r\n                <div class=\"col-lg-6 col-md-4 col-sm-4 col-xs-12 jtv-logo-box\">\r\n                    <div class=\"logo\"> <a title=\"eCommerce\" href=\"/\">");
             EndContext();
             BeginContext(4047, 80, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6488f132c48c1f9a6b7a7308a7a3446b0b7eed6c16262", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "6488f132c48c1f9a6b7a7308a7a3446b0b7eed6c16734", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -225,7 +239,7 @@ using NUShop.Data.Entities;
             WriteLiteral(" </a> </div>\r\n                </div>\r\n                <div class=\"col-lg-3 col-md-4 col-sm-4 col-xs-12 hidden-xs\">\r\n                    <div class=\"search-box\">\r\n                        ");
             EndContext();
             BeginContext(4313, 370, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6488f132c48c1f9a6b7a7308a7a3446b0b7eed6c17797", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6488f132c48c1f9a6b7a7308a7a3446b0b7eed6c18269", async() => {
                 BeginContext(4386, 290, true);
                 WriteLiteral(@"
                             <input type=""text"" placeholder=""Search entire store here..."" value=""Search"" maxlength=""70"" name=""search"" id=""search"">

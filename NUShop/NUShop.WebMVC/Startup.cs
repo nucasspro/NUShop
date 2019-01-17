@@ -1,9 +1,10 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -12,15 +13,15 @@ using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NUShop.Data.EF;
+using NUShop.Data.Entities;
 using NUShop.Infrastructure.Interfaces;
 using NUShop.Service.Implements;
 using NUShop.Service.Interfaces;
-using System.IO;
-using Microsoft.AspNetCore.Identity;
-using NUShop.Data.Entities;
-using NUShop.WebMVC.Extensions;
-using Microsoft.AspNetCore.Authorization;
 using NUShop.WebMVC.Authorization;
+using NUShop.WebMVC.Extensions;
+using PaulMiami.AspNetCore.Mvc.Recaptcha;
+using System;
+using System.IO;
 
 namespace NUShop.WebMVC
 {
@@ -83,6 +84,7 @@ namespace NUShop.WebMVC
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
             #endregion Configure Identity
+
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddTransient<DbSeeder>();
@@ -102,10 +104,13 @@ namespace NUShop.WebMVC
             services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<IUserService, UserService>();
 
-
-
             #endregion Dependency Injection for Services
 
+            services.AddRecaptcha(new RecaptchaOptions()
+            {
+                SiteKey = Configuration["Recaptcha:SiteKey"],
+                SecretKey = Configuration["Recaptcha:SecretKey"]
+            });
             services.AddAutoMapper();
             services.AddTransient<IAuthorizationHandler, ResourceAuthorizationHandler>();
         }

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "524837f115b5930d5fa209db38119217d3014db1"
+    "signature": "6e7098d2389c94076808b8d4b9e99a5fe2bccb1f"
   },
   "compilationOptions": {
     "defines": [
@@ -37,6 +37,7 @@
           "NUShop.Data.EF": "1.0.0",
           "NUShop.Service": "1.0.0",
           "NUShop.ViewModel": "1.0.0",
+          "PaulMiami.AspNetCore.Mvc.Recaptcha": "1.2.1",
           "RestSharp": "106.6.3",
           "Serilog.Extensions.Logging.File": "1.1.0"
         },
@@ -471,6 +472,26 @@
         },
         "compile": {
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
+        }
+      },
+      "PaulMiami.AspNetCore.Mvc.Recaptcha/1.2.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Localization": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.Abstractions": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
+          "Microsoft.AspNetCore.Razor.Runtime": "2.2.0",
+          "NETStandard.Library": "2.0.3",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard1.6/PaulMiami.AspNetCore.Mvc.Recaptcha.dll": {
+            "assemblyVersion": "1.2.1.0",
+            "fileVersion": "1.2.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard1.6/PaulMiami.AspNetCore.Mvc.Recaptcha.dll": {}
         }
       },
       "RestSharp/106.6.3": {
@@ -4095,6 +4116,13 @@
       "sha512": "sha512-KuqDbPzjOWbUM6gPMbkvdhlQ10roQAoMM7mNZ8hcY/fH+9J4Zc+qT8dLWoNzGyr0OrxQVdZdbSjy/fxwoICgGg==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
+    },
+    "PaulMiami.AspNetCore.Mvc.Recaptcha/1.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-S0gaqQad6McU/KAz7bA+gEHBULfbfwjnRLYMDcuk44JMybadAIks2H3PoXFUF2r3qE2broYkfl3C/SoNLq1VCQ==",
+      "path": "paulmiami.aspnetcore.mvc.recaptcha/1.2.1",
+      "hashPath": "paulmiami.aspnetcore.mvc.recaptcha.1.2.1.nupkg.sha512"
     },
     "RestSharp/106.6.3": {
       "type": "package",
