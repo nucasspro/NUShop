@@ -1,0 +1,88 @@
+﻿@using NUShop.ViewModel.ViewModels.AccountViewModels
+@model RegisterViewModel
+
+@{ 
+    ViewData["Title"] = "Register";
+}
+
+<section class="main-container col1-layout">
+    <div class="main container">
+        <div class="account-login">
+            <div class="page-title">
+                <h2>Login or Create an Account</h2>
+            </div>
+            <fieldset class="col2-set">
+                <div class="col-1 new-users">
+                    <strong>New Customers</strong>
+                    <div class="content">
+                        <p>Add image for fun</p>
+                    </div>
+                </div>
+                <div class="col-2 registered-users">
+                    <strong>Registered Customers</strong>
+                    <div class="content">
+                        <form asp-route-returnUrl="@ViewData["ReturnUrl"]" method="post">
+                            <p>If you have an account with us, please log in.</p>
+                            <ul class="form-list">
+                                <li>
+                                    <label>FullName<span class="required">*</span></label>
+                                    <br>
+                                    <input type="text" class="input-text required-entry" asp-for="FullName" name="fullname">
+                                </li>
+                                <li>
+                                    <label for="username">UserName<span class="required">*</span></label>
+                                    <br>
+                                    <input type="text" title="UserName" class="input-text required-entry" asp-for="UserName" value="" name="username">
+                                </li>
+                                <li>
+                                    <label for="pass">Password <span class="required">*</span></label>
+                                    <br>
+                                    <input type="password" asp-for="Password" title="Password" class="input-text required-entry validate-password" name="password">
+                                </li>
+                                <li>
+                                    <label for="pass">Confirm Password <span class="required">*</span></label>
+                                    <br>
+                                    <input type="password" title="ConfirmPassword" asp-for="ConfirmPassword" class="input-text required-entry validate-password" name="confirmpassword">
+                                </li>
+
+                                <li>
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <br>
+                                    <input type="text" title="Email Address" class="input-text required-entry" asp-for="Email" value="" name="email">
+                                </li>
+
+                                <li>
+                                    <label for="address">Address <span class="required">*</span></label>
+                                    <br>
+                                    <input type="text" title="Address" class="input-text required-entry" asp-for="Address" value="" name="address">
+                                </li>
+                                <li>
+                                    <label for="phonenumber">Phone Number<span class="required">*</span></label>
+                                    <br>
+                                    <input type="number" title="Phone Number" class="input-text required-entry" asp-for="PhoneNumber" value="" name="phonenumber">
+                                </li>
+                                <li>
+                                    <label for="avatar">Avatar </label>
+                                    <br>
+                                    <input type="file" title="Avatar" class="input-text required-entry" asp-for="Avatar" value="" name="avatar">
+                                </li>
+                                <li>
+                                    <label for="email">Birth Day</label>
+                                    <br>
+                                    <input type="date" title=">Birth Day" class="input-text required-entry" asp-for="BirthDay" value="" name="birthday">
+                                </li>
+
+                            </ul>
+                            <p class="required">* Required Fields</p>
+                            <div class="buttons-set">
+                                <button id="send2" name="send" type="submit" class="button login"><span>Register</span></button>
+                                <a class="forgot-word" href="http://demo.magentojtv.com/computerstore/customer/account/forgotpassword/">Forgot Your Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+    </div>
+</section>

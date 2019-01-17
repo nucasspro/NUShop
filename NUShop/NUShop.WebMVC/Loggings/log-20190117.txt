@@ -440,3 +440,781 @@ ORDER BY [x].[ParentId]" (0723d8ff)
 2019-01-17T01:03:52.0224825+07:00 0HLJRRHCTFD5U:00000003 [INF] Executed action "NUShop.WebMVC.Controllers.ProductController.Detail (NUShop.WebMVC)" in 10697.7267ms (afa2e885)
 2019-01-17T01:03:52.2529003+07:00 0HLJRRHCTFD5U:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.ProductController.Detail (NUShop.WebMVC)"' (99874f2b)
 2019-01-17T01:03:52.7559688+07:00 0HLJRRHCTFD5U:00000003 [INF] Request finished in 11147.9598ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-17T09:58:58.3859710+07:00 0HLJS4USEHLCO:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-17T09:58:58.8272152+07:00 0HLJS4USEHLCO:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-17T09:58:58.9079936+07:00 0HLJS4USEHLCO:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-17T09:59:02.2811378+07:00 0HLJS4USEHLCO:00000001 [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-17T09:59:02.5169290+07:00 0HLJS4USEHLCO:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T09:59:05.1333369+07:00 0HLJS4USEHLCO:00000001 [INF] Executed DbCommand ("2,174"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T09:59:05.6958962+07:00 0HLJS4USEHLCO:00000001 [INF] Executed DbCommand ("409"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T09:59:06.1730076+07:00 0HLJS4USEHLCO:00000001 [INF] Executed DbCommand ("372"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T09:59:06.9820333+07:00 0HLJS4USEHLCO:00000001 [INF] Executed DbCommand ("476"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-17T09:59:07.9720108+07:00 0HLJS4USEHLCO:00000001 [INF] Executed DbCommand ("695"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-17T09:59:08.1633498+07:00 0HLJS4USEHLCO:00000001 [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 5696.1465ms. (50a9e262)
+2019-01-17T09:59:08.7483975+07:00 0HLJS4USEHLCO:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-17T09:59:09.4877461+07:00 0HLJS4USEHLCO:00000001 [INF] Executed DbCommand ("276"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T09:59:10.2423915+07:00 0HLJS4USEHLCO:00000001 [INF] Executed DbCommand ("367"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T09:59:11.7473417+07:00 0HLJS4USEHLCO:00000001 [INF] Executed ViewResult - view "Index" executed in 3511.0474ms. (f66409e9)
+2019-01-17T09:59:11.8099311+07:00 0HLJS4USEHLCO:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 12839.7041ms (afa2e885)
+2019-01-17T09:59:11.8253011+07:00 0HLJS4USEHLCO:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T09:59:11.8338284+07:00 0HLJS4USEHLCQ:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-english.jpg   (ca22a1cb)
+2019-01-17T09:59:11.9561927+07:00 0HLJS4USEHLCP:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/style.css   (ca22a1cb)
+2019-01-17T09:59:11.9765494+07:00 0HLJS4USEHLCR:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-default.jpg   (ca22a1cb)
+2019-01-17T09:59:12.0314678+07:00 0HLJS4USEHLCP:00000001 [INF] Sending file. Request path: '"/client-side/style.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\style.css"' (27b0a520)
+2019-01-17T09:59:12.0386414+07:00 0HLJS4USEHLCO:00000001 [INF] Request finished in 13657.9736ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-17T09:59:12.0423239+07:00 0HLJS4USEHLCP:00000001 [INF] Request finished in 213.8302ms 200 text/css (791a596a)
+2019-01-17T09:59:12.1001851+07:00 0HLJS4USEHLCQ:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-english.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-english.jpg"' (27b0a520)
+2019-01-17T09:59:12.1100490+07:00 0HLJS4USEHLCR:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-default.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-default.jpg"' (27b0a520)
+2019-01-17T09:59:12.1517824+07:00 0HLJS4USEHLCS:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-chile.jpg   (ca22a1cb)
+2019-01-17T09:59:12.1642576+07:00 0HLJS4USEHLCP:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/jquery.min.js?v=t8k2lC97lWsI2K83UP64x3L6wwr-IsV5I98VY6SrvME   (ca22a1cb)
+2019-01-17T09:59:12.1671209+07:00 0HLJS4USEHLCO:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-brazil.jpg   (ca22a1cb)
+2019-01-17T09:59:12.2101643+07:00 0HLJS4USEHLCS:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-chile.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-chile.jpg"' (27b0a520)
+2019-01-17T09:59:12.2167011+07:00 0HLJS4USEHLCO:00000002 [INF] Sending file. Request path: '"/client-side/images/flag-brazil.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-brazil.jpg"' (27b0a520)
+2019-01-17T09:59:12.3292846+07:00 0HLJS4USEHLCS:00000001 [INF] Request finished in 79.499ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:13.0659218+07:00 0HLJS4USEHLCO:00000002 [INF] Request finished in 76.1297ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:13.4802694+07:00 0HLJS4USEHLCQ:00000001 [INF] Request finished in 408.8727ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:13.7476850+07:00 0HLJS4USEHLCT:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-german.jpg   (ca22a1cb)
+2019-01-17T09:59:14.2098808+07:00 0HLJS4USEHLCS:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/font-awesome.min.css   (ca22a1cb)
+2019-01-17T09:59:14.3272663+07:00 0HLJS4USEHLCR:00000001 [INF] Request finished in 1731.8187ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:14.5001394+07:00 0HLJS4USEHLCO:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/simple-line-icons.css   (ca22a1cb)
+2019-01-17T09:59:14.6039091+07:00 0HLJS4USEHLCQ:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css   (ca22a1cb)
+2019-01-17T09:59:14.7286390+07:00 0HLJS4USEHLCR:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/animate.css   (ca22a1cb)
+2019-01-17T09:59:14.7954114+07:00 0HLJS4USEHLCS:00000002 [INF] Sending file. Request path: '"/client-side/css/font-awesome.min.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\font-awesome.min.css"' (27b0a520)
+2019-01-17T09:59:15.0426501+07:00 0HLJS4USEHLCO:00000003 [INF] Sending file. Request path: '"/client-side/css/simple-line-icons.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\simple-line-icons.css"' (27b0a520)
+2019-01-17T09:59:15.1302868+07:00 0HLJS4USEHLCS:00000002 [INF] Request finished in 1465.2059ms 200 text/css (791a596a)
+2019-01-17T09:59:15.1608304+07:00 0HLJS4USEHLCO:00000003 [INF] Request finished in 1392.8825ms 200 text/css (791a596a)
+2019-01-17T09:59:15.1608784+07:00 0HLJS4USEHLCP:00000002 [INF] Sending file. Request path: '"/client-side/js/jquery.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\jquery.min.js"' (27b0a520)
+2019-01-17T09:59:15.1831548+07:00 0HLJS4USEHLCR:00000002 [INF] Sending file. Request path: '"/client-side/css/animate.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\animate.css"' (27b0a520)
+2019-01-17T09:59:15.2253960+07:00 0HLJS4USEHLCT:00000001 [INF] Sending file. Request path: '"/client-side/images/flag-german.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-german.jpg"' (27b0a520)
+2019-01-17T09:59:15.3138025+07:00 0HLJS4USEHLCR:00000002 [INF] Request finished in 741.2342ms 200 text/css (791a596a)
+2019-01-17T09:59:15.4124193+07:00 0HLJS4USEHLCP:00000002 [INF] Request finished in 3034.6624ms 200 application/javascript (791a596a)
+2019-01-17T09:59:15.4199962+07:00 0HLJS4USEHLCS:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/owl.carousel.css   (ca22a1cb)
+2019-01-17T09:59:15.4199937+07:00 0HLJS4USEHLCO:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/owl.transitions.css   (ca22a1cb)
+2019-01-17T09:59:15.4313932+07:00 0HLJS4USEHLCQ:00000002 [INF] Sending file. Request path: '"/client-side/css/bootstrap.min.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\bootstrap.min.css"' (27b0a520)
+2019-01-17T09:59:15.4486595+07:00 0HLJS4USEHLCT:00000001 [INF] Request finished in 2592.8289ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:15.4869008+07:00 0HLJS4USEHLCQ:00000002 [INF] Request finished in 1969.102ms 200 text/css (791a596a)
+2019-01-17T09:59:15.4957553+07:00 0HLJS4USEHLCO:00000004 [INF] Sending file. Request path: '"/client-side/css/owl.transitions.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\owl.transitions.css"' (27b0a520)
+2019-01-17T09:59:15.5222592+07:00 0HLJS4USEHLCO:00000004 [INF] Request finished in 201.586ms 200 text/css (791a596a)
+2019-01-17T09:59:15.5405917+07:00 0HLJS4USEHLCT:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/pe-icon-7-stroke.min.css   (ca22a1cb)
+2019-01-17T09:59:15.5125938+07:00 0HLJS4USEHLCR:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/flexslider.css   (ca22a1cb)
+2019-01-17T09:59:15.5821238+07:00 0HLJS4USEHLCS:00000003 [INF] Sending file. Request path: '"/client-side/css/owl.carousel.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\owl.carousel.css"' (27b0a520)
+2019-01-17T09:59:15.6562044+07:00 0HLJS4USEHLCS:00000003 [INF] Request finished in 288.7135ms 200 text/css (791a596a)
+2019-01-17T09:59:15.6978675+07:00 0HLJS4USEHLCP:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/cloud-zoom.css   (ca22a1cb)
+2019-01-17T09:59:15.7136340+07:00 0HLJS4USEHLCO:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/jquery-ui.css   (ca22a1cb)
+2019-01-17T09:59:15.7138205+07:00 0HLJS4USEHLCR:00000003 [INF] Sending file. Request path: '"/client-side/css/flexslider.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\flexslider.css"' (27b0a520)
+2019-01-17T09:59:15.7381825+07:00 0HLJS4USEHLCT:00000002 [INF] Sending file. Request path: '"/client-side/css/pe-icon-7-stroke.min.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\pe-icon-7-stroke.min.css"' (27b0a520)
+2019-01-17T09:59:15.7693826+07:00 0HLJS4USEHLCR:00000003 [INF] Request finished in 240.6622ms 200 text/css (791a596a)
+2019-01-17T09:59:15.7878905+07:00 0HLJS4USEHLCQ:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/revolution-slider.css   (ca22a1cb)
+2019-01-17T09:59:15.8065839+07:00 0HLJS4USEHLCO:00000005 [INF] Sending file. Request path: '"/client-side/css/jquery-ui.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\jquery-ui.css"' (27b0a520)
+2019-01-17T09:59:15.8158112+07:00 0HLJS4USEHLCP:00000003 [INF] Sending file. Request path: '"/client-side/css/cloud-zoom.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\cloud-zoom.css"' (27b0a520)
+2019-01-17T09:59:15.8337332+07:00 0HLJS4USEHLCO:00000005 [INF] Request finished in 200.1019ms 200 text/css (791a596a)
+2019-01-17T09:59:15.8429849+07:00 0HLJS4USEHLCP:00000003 [INF] Request finished in 233.5253ms 200 text/css (791a596a)
+2019-01-17T09:59:15.8868227+07:00 0HLJS4USEHLCT:00000002 [INF] Request finished in 384.2602ms 200 text/css (791a596a)
+2019-01-17T09:59:15.9260196+07:00 0HLJS4USEHLCQ:00000003 [INF] Sending file. Request path: '"/client-side/css/revolution-slider.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\revolution-slider.css"' (27b0a520)
+2019-01-17T09:59:15.9579750+07:00 0HLJS4USEHLCQ:00000003 [INF] Request finished in 319.5303ms 200 text/css (791a596a)
+2019-01-17T09:59:15.9580168+07:00 0HLJS4USEHLCT:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/blogmate.css   (ca22a1cb)
+2019-01-17T09:59:15.9738703+07:00 0HLJS4USEHLCR:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/quick_view_popup.css   (ca22a1cb)
+2019-01-17T09:59:16.0111890+07:00 0HLJS4USEHLCP:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/jtv-mobile-menu.css   (ca22a1cb)
+2019-01-17T09:59:16.0357690+07:00 0HLJS4USEHLCR:00000004 [INF] Sending file. Request path: '"/client-side/css/quick_view_popup.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\quick_view_popup.css"' (27b0a520)
+2019-01-17T09:59:16.0483087+07:00 0HLJS4USEHLCP:00000004 [INF] Sending file. Request path: '"/client-side/css/jtv-mobile-menu.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\jtv-mobile-menu.css"' (27b0a520)
+2019-01-17T09:59:16.0554720+07:00 0HLJS4USEHLCR:00000004 [INF] Request finished in 77.9436ms 200 text/css (791a596a)
+2019-01-17T09:59:16.0626187+07:00 0HLJS4USEHLCP:00000004 [INF] Request finished in 68.8269ms 200 text/css (791a596a)
+2019-01-17T09:59:16.0975609+07:00 0HLJS4USEHLCO:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/style.css   (ca22a1cb)
+2019-01-17T09:59:16.1082618+07:00 0HLJS4USEHLCQ:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/responsive.css   (ca22a1cb)
+2019-01-17T09:59:16.1195281+07:00 0HLJS4USEHLCS:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/jquery.fancybox.css   (ca22a1cb)
+2019-01-17T09:59:16.1432234+07:00 0HLJS4USEHLCQ:00000004 [INF] Sending file. Request path: '"/client-side/css/responsive.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\responsive.css"' (27b0a520)
+2019-01-17T09:59:16.1738300+07:00 0HLJS4USEHLCQ:00000004 [INF] Request finished in 87.3501ms 200 text/css (791a596a)
+2019-01-17T09:59:16.1797206+07:00 0HLJS4USEHLCS:00000004 [INF] Sending file. Request path: '"/client-side/css/jquery.fancybox.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\jquery.fancybox.css"' (27b0a520)
+2019-01-17T09:59:16.2491634+07:00 0HLJS4USEHLCP:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/bootstrap.min.js?v=LXSFcY4CZMtLuiIxdU_-gVrFDdIjNhvOamNxtRtYR_s   (ca22a1cb)
+2019-01-17T09:59:16.4318800+07:00 0HLJS4USEHLCR:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/owl.carousel.min.js?v=Pv6fuCfsFrDircppTCl85PcDDkfVLKpoEek_oEGQxlQ   (ca22a1cb)
+2019-01-17T09:59:16.5374068+07:00 0HLJS4USEHLCP:00000005 [INF] Sending file. Request path: '"/client-side/js/bootstrap.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\bootstrap.min.js"' (27b0a520)
+2019-01-17T09:59:16.5716721+07:00 0HLJS4USEHLCT:00000003 [INF] Sending file. Request path: '"/client-side/css/blogmate.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\blogmate.css"' (27b0a520)
+2019-01-17T09:59:16.5763637+07:00 0HLJS4USEHLCQ:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/jtv-mobile-menu.js?v=DcuIHBKeWrslmIx0mCMZp1jWlCHx_a5fBdf-3sRcMKI   (ca22a1cb)
+2019-01-17T09:59:16.5887530+07:00 0HLJS4USEHLCP:00000005 [INF] Request finished in 365.7943ms 200 application/javascript (791a596a)
+2019-01-17T09:59:16.5941312+07:00 0HLJS4USEHLCT:00000003 [INF] Request finished in 649.1053ms 200 text/css (791a596a)
+2019-01-17T09:59:16.6062970+07:00 0HLJS4USEHLCQ:00000005 [INF] Sending file. Request path: '"/client-side/js/jtv-mobile-menu.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\jtv-mobile-menu.js"' (27b0a520)
+2019-01-17T09:59:16.6121123+07:00 0HLJS4USEHLCS:00000004 [INF] Request finished in 117.9478ms 200 text/css (791a596a)
+2019-01-17T09:59:16.6812050+07:00 0HLJS4USEHLCQ:00000005 [INF] Request finished in 148.6895ms 200 application/javascript (791a596a)
+2019-01-17T09:59:16.8435864+07:00 0HLJS4USEHLCS:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/countdown.js?v=mGJ8d0WWagd9mvc6nA0UGamoKxjq70s1ODlmn5IP1qE   (ca22a1cb)
+2019-01-17T09:59:17.0263929+07:00 0HLJS4USEHLCP:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/main.js?v=YdmrdKGOLfapBBOsO4kxn-I4LIHepAdh5VypKCgHDm8   (ca22a1cb)
+2019-01-17T09:59:17.1964709+07:00 0HLJS4USEHLCR:00000005 [INF] Sending file. Request path: '"/client-side/js/owl.carousel.min.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\owl.carousel.min.js"' (27b0a520)
+2019-01-17T09:59:17.2976272+07:00 0HLJS4USEHLCO:00000006 [INF] Sending file. Request path: '"/client-side/css/style.css"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\css\style.css"' (27b0a520)
+2019-01-17T09:59:17.7580881+07:00 0HLJS4USEHLCR:00000005 [INF] Request finished in 1022.4817ms 200 application/javascript (791a596a)
+2019-01-17T09:59:17.8612225+07:00 0HLJS4USEHLCO:00000006 [INF] Request finished in 1242.717ms 200 text/css (791a596a)
+2019-01-17T09:59:17.8645298+07:00 0HLJS4USEHLCS:00000005 [INF] Sending file. Request path: '"/client-side/js/countdown.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\countdown.js"' (27b0a520)
+2019-01-17T09:59:17.9319895+07:00 0HLJS4USEHLCO:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/slider/slide-1.jpg   (ca22a1cb)
+2019-01-17T09:59:17.9319864+07:00 0HLJS4USEHLCR:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/flag-spain.jpg   (ca22a1cb)
+2019-01-17T09:59:17.9923053+07:00 0HLJS4USEHLCS:00000005 [INF] Request finished in 1148.093ms 200 application/javascript (791a596a)
+2019-01-17T09:59:18.0872157+07:00 0HLJS4USEHLCT:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/js/rev-slider.js?v=zZ8QQQYjXhuHoIzfKbNFe5wAv4sEKggo9YErxIGhv60   (ca22a1cb)
+2019-01-17T09:59:18.5428012+07:00 0HLJS4USEHLCO:00000007 [INF] Sending file. Request path: '"/client-side/images/slider/slide-1.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\slider\slide-1.jpg"' (27b0a520)
+2019-01-17T09:59:18.8098737+07:00 0HLJS4USEHLCR:00000006 [INF] Sending file. Request path: '"/client-side/images/flag-spain.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\flag-spain.jpg"' (27b0a520)
+2019-01-17T09:59:19.4749551+07:00 0HLJS4USEHLCO:00000007 [INF] Request finished in 681.5125ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:19.6990936+07:00 0HLJS4USEHLCS:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/slider/slide-2.jpg   (ca22a1cb)
+2019-01-17T09:59:20.2681785+07:00 0HLJS4USEHLCR:00000006 [INF] Request finished in 1440.8186ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:20.2684125+07:00 0HLJS4USEHLCO:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img1.jpg   (ca22a1cb)
+2019-01-17T09:59:21.3615778+07:00 0HLJS4USEHLCP:00000006 [INF] Sending file. Request path: '"/client-side/js/main.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\main.js"' (27b0a520)
+2019-01-17T09:59:21.6614169+07:00 0HLJS4USEHLCS:00000006 [INF] Sending file. Request path: '"/client-side/images/slider/slide-2.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\slider\slide-2.jpg"' (27b0a520)
+2019-01-17T09:59:21.6729418+07:00 0HLJS4USEHLCO:00000008 [INF] Sending file. Request path: '"/client-side/images/banner-img1.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img1.jpg"' (27b0a520)
+2019-01-17T09:59:21.6793583+07:00 0HLJS4USEHLCS:00000006 [INF] Request finished in 3669.3682ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:21.6920056+07:00 0HLJS4USEHLCO:00000008 [INF] Request finished in 2198.0699ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:21.7108220+07:00 0HLJS4USEHLCS:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/fonts/pe-icon-7-stroke/Pe-icon-7-stroke.woff?d7yf1v   (ca22a1cb)
+2019-01-17T09:59:21.9692868+07:00 0HLJS4USEHLCO:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/fonts/font-awesome/fontawesome-webfont.woff2?v=4.7.0   (ca22a1cb)
+2019-01-17T09:59:22.1205137+07:00 0HLJS4USEHLCR:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img2.jpg   (ca22a1cb)
+2019-01-17T09:59:22.4074019+07:00 0HLJS4USEHLCP:00000006 [INF] Request finished in 4645.0611ms 200 application/javascript (791a596a)
+2019-01-17T09:59:22.4623751+07:00 0HLJS4USEHLCS:00000007 [INF] Sending file. Request path: '"/client-side/fonts/pe-icon-7-stroke/Pe-icon-7-stroke.woff"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\fonts\pe-icon-7-stroke\Pe-icon-7-stroke.woff"' (27b0a520)
+2019-01-17T09:59:22.4969725+07:00 0HLJS4USEHLCO:00000009 [INF] Sending file. Request path: '"/client-side/fonts/font-awesome/fontawesome-webfont.woff2"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\fonts\font-awesome\fontawesome-webfont.woff2"' (27b0a520)
+2019-01-17T09:59:22.6593842+07:00 0HLJS4USEHLCS:00000007 [INF] Request finished in 782.9033ms 200 application/font-woff (791a596a)
+2019-01-17T09:59:22.6689002+07:00 0HLJS4USEHLCO:00000009 [INF] Request finished in 804.9545ms 200 font/woff2 (791a596a)
+2019-01-17T09:59:22.7275416+07:00 0HLJS4USEHLCR:00000007 [INF] Sending file. Request path: '"/client-side/images/banner-img2.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img2.jpg"' (27b0a520)
+2019-01-17T09:59:22.8988714+07:00 0HLJS4USEHLCO:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/bg-img.jpg   (ca22a1cb)
+2019-01-17T09:59:22.9595911+07:00 0HLJS4USEHLCS:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/fonts/simple-line-icons/Simple-Line-Icons.woff   (ca22a1cb)
+2019-01-17T09:59:23.3684799+07:00 0HLJS4USEHLCR:00000007 [INF] Request finished in 2582.6718ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:23.4576872+07:00 0HLJS4USEHLCP:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/logo.png   (ca22a1cb)
+2019-01-17T09:59:23.6393134+07:00 0HLJS4USEHLCR:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/left-a.png   (ca22a1cb)
+2019-01-17T09:59:23.6536620+07:00 0HLJS4USEHLCO:0000000A [INF] Sending file. Request path: '"/client-side/images/bg-img.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\bg-img.jpg"' (27b0a520)
+2019-01-17T09:59:23.6874206+07:00 0HLJS4USEHLCP:00000007 [INF] Sending file. Request path: '"/client-side/images/logo.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\logo.png"' (27b0a520)
+2019-01-17T09:59:23.6876382+07:00 0HLJS4USEHLCO:0000000A [INF] Request finished in 984.7366ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:23.7045537+07:00 0HLJS4USEHLCS:00000008 [INF] Sending file. Request path: '"/client-side/fonts/simple-line-icons/Simple-Line-Icons.woff"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\fonts\simple-line-icons\Simple-Line-Icons.woff"' (27b0a520)
+2019-01-17T09:59:23.7142097+07:00 0HLJS4USEHLCP:00000007 [INF] Request finished in 1282.5783ms 200 image/png (791a596a)
+2019-01-17T09:59:23.7397158+07:00 0HLJS4USEHLCO:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img4.jpg   (ca22a1cb)
+2019-01-17T09:59:23.9231279+07:00 0HLJS4USEHLCP:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/testimonials-img1.jpg   (ca22a1cb)
+2019-01-17T09:59:23.9546859+07:00 0HLJS4USEHLCS:00000008 [INF] Request finished in 1045.2072ms 200 application/font-woff (791a596a)
+2019-01-17T09:59:23.9710473+07:00 0HLJS4USEHLCO:0000000B [INF] Sending file. Request path: '"/client-side/images/banner-img4.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img4.jpg"' (27b0a520)
+2019-01-17T09:59:23.9772970+07:00 0HLJS4USEHLCS:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/right-a.png   (ca22a1cb)
+2019-01-17T09:59:23.9868152+07:00 0HLJS4USEHLCO:0000000B [INF] Request finished in 280.9917ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:23.9925489+07:00 0HLJS4USEHLCQ:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/products/img01.jpg   (ca22a1cb)
+2019-01-17T09:59:24.0395425+07:00 0HLJS4USEHLCO:0000000C [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/testimonials-img3.jpg   (ca22a1cb)
+2019-01-17T09:59:24.2902121+07:00 0HLJS4USEHLCT:00000004 [INF] Sending file. Request path: '"/client-side/js/rev-slider.js"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\js\rev-slider.js"' (27b0a520)
+2019-01-17T09:59:24.6282948+07:00 0HLJS4USEHLCR:00000008 [INF] Sending file. Request path: '"/client-side/images/left-a.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\left-a.png"' (27b0a520)
+2019-01-17T09:59:24.8385320+07:00 0HLJS4USEHLCO:0000000C [INF] Sending file. Request path: '"/client-side/images/testimonials-img3.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\testimonials-img3.jpg"' (27b0a520)
+2019-01-17T09:59:24.9254384+07:00 0HLJS4USEHLCQ:00000006 [INF] Sending file. Request path: '"/client-side/images/products/img01.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\products\img01.jpg"' (27b0a520)
+2019-01-17T09:59:24.9368167+07:00 0HLJS4USEHLCS:00000009 [INF] Sending file. Request path: '"/client-side/images/right-a.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\right-a.png"' (27b0a520)
+2019-01-17T09:59:24.9411687+07:00 0HLJS4USEHLCO:0000000C [INF] Request finished in 851.7218ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:24.9520247+07:00 0HLJS4USEHLCS:00000009 [INF] Request finished in 982.1669ms 200 image/png (791a596a)
+2019-01-17T09:59:24.9728530+07:00 0HLJS4USEHLCO:0000000D [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img8.jpg   (ca22a1cb)
+2019-01-17T09:59:24.9977714+07:00 0HLJS4USEHLCS:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img6.jpg   (ca22a1cb)
+2019-01-17T09:59:25.0472442+07:00 0HLJS4USEHLCQ:00000006 [INF] Request finished in 7684.0254ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:25.0934880+07:00 0HLJS4USEHLCT:00000004 [INF] Request finished in 7117.5461ms 200 application/javascript (791a596a)
+2019-01-17T09:59:25.1258985+07:00 0HLJS4USEHLCQ:00000007 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img7.jpg   (ca22a1cb)
+2019-01-17T09:59:25.1574529+07:00 0HLJS4USEHLCT:00000005 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/banner-img3.jpg   (ca22a1cb)
+2019-01-17T09:59:25.2019164+07:00 0HLJS4USEHLCS:0000000A [INF] Sending file. Request path: '"/client-side/images/banner-img6.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img6.jpg"' (27b0a520)
+2019-01-17T09:59:25.2769184+07:00 0HLJS4USEHLCO:0000000D [INF] Sending file. Request path: '"/client-side/images/banner-img8.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img8.jpg"' (27b0a520)
+2019-01-17T09:59:25.4731479+07:00 0HLJS4USEHLCS:0000000A [INF] Request finished in 249.8768ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:25.4896840+07:00 0HLJS4USEHLCO:0000000D [INF] Request finished in 432.0508ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:25.4959292+07:00 0HLJS4USEHLCS:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/payment-1.png   (ca22a1cb)
+2019-01-17T09:59:25.5142656+07:00 0HLJS4USEHLCO:0000000E [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/footer-logo.png   (ca22a1cb)
+2019-01-17T09:59:25.6083204+07:00 0HLJS4USEHLCT:00000005 [INF] Sending file. Request path: '"/client-side/images/banner-img3.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img3.jpg"' (27b0a520)
+2019-01-17T09:59:25.6316073+07:00 0HLJS4USEHLCR:00000008 [INF] Request finished in 1259.6143ms 200 image/png (791a596a)
+2019-01-17T09:59:25.6456072+07:00 0HLJS4USEHLCT:00000005 [INF] Request finished in 508.4293ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:25.6968359+07:00 0HLJS4USEHLCR:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/testimonials-img2.jpg   (ca22a1cb)
+2019-01-17T09:59:25.7348013+07:00 0HLJS4USEHLCT:00000006 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/payment-3.png   (ca22a1cb)
+2019-01-17T09:59:25.7598442+07:00 0HLJS4USEHLCQ:00000007 [INF] Sending file. Request path: '"/client-side/images/banner-img7.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\banner-img7.jpg"' (27b0a520)
+2019-01-17T09:59:25.8075731+07:00 0HLJS4USEHLCO:0000000E [INF] Sending file. Request path: '"/client-side/images/footer-logo.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\footer-logo.png"' (27b0a520)
+2019-01-17T09:59:25.8480760+07:00 0HLJS4USEHLCQ:00000007 [INF] Request finished in 712.5551ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:25.8703630+07:00 0HLJS4USEHLCP:00000008 [INF] Sending file. Request path: '"/client-side/images/testimonials-img1.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\testimonials-img1.jpg"' (27b0a520)
+2019-01-17T09:59:25.9304659+07:00 0HLJS4USEHLCQ:00000008 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/payment-2.png   (ca22a1cb)
+2019-01-17T09:59:26.1269079+07:00 0HLJS4USEHLCR:00000009 [INF] Sending file. Request path: '"/client-side/images/testimonials-img2.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\testimonials-img2.jpg"' (27b0a520)
+2019-01-17T09:59:26.3274304+07:00 0HLJS4USEHLCO:0000000E [INF] Request finished in 520.1048ms 200 image/png (791a596a)
+2019-01-17T09:59:26.3580145+07:00 0HLJS4USEHLCS:0000000B [INF] Sending file. Request path: '"/client-side/images/payment-1.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\payment-1.png"' (27b0a520)
+2019-01-17T09:59:26.5451382+07:00 0HLJS4USEHLCO:0000000F [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/payment-4.png   (ca22a1cb)
+2019-01-17T09:59:26.6024100+07:00 0HLJS4USEHLCS:0000000B [INF] Request finished in 884.8496ms 200 image/png (791a596a)
+2019-01-17T09:59:26.6976845+07:00 0HLJS4USEHLCR:00000009 [INF] Request finished in 495.2715ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:27.0447242+07:00 0HLJS4USEHLCT:00000006 [INF] Sending file. Request path: '"/client-side/images/payment-3.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\payment-3.png"' (27b0a520)
+2019-01-17T09:59:27.1248330+07:00 0HLJS4USEHLCO:0000000F [INF] Sending file. Request path: '"/client-side/images/payment-4.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\payment-4.png"' (27b0a520)
+2019-01-17T09:59:27.1999575+07:00 0HLJS4USEHLCT:00000006 [INF] Request finished in 1399.1405ms 200 image/png (791a596a)
+2019-01-17T09:59:27.3071718+07:00 0HLJS4USEHLCO:0000000F [INF] Request finished in 797.3707ms 200 image/png (791a596a)
+2019-01-17T09:59:27.3343900+07:00 0HLJS4USEHLCQ:00000008 [INF] Sending file. Request path: '"/client-side/images/payment-2.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\payment-2.png"' (27b0a520)
+2019-01-17T09:59:27.3567417+07:00 0HLJS4USEHLCP:00000008 [INF] Request finished in 2156.1278ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:27.3890060+07:00 0HLJS4USEHLCQ:00000008 [INF] Request finished in 1489.7116ms 200 image/png (791a596a)
+2019-01-17T09:59:27.4085698+07:00 0HLJS4USEHLCP:00000009 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/blog-img1.jpg   (ca22a1cb)
+2019-01-17T09:59:27.6607805+07:00 0HLJS4USEHLCP:00000009 [INF] Sending file. Request path: '"/client-side/images/blog-img1.jpg"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\blog-img1.jpg"' (27b0a520)
+2019-01-17T09:59:27.7017356+07:00 0HLJS4USEHLCO:00000010 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/favicon.ico   (ca22a1cb)
+2019-01-17T09:59:27.7431694+07:00 0HLJS4USEHLCP:00000009 [INF] Request finished in 301.6776ms 200 image/jpeg (791a596a)
+2019-01-17T09:59:27.7627285+07:00 0HLJS4USEHLCP:0000000A [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/images/to-top-arrow.png   (ca22a1cb)
+2019-01-17T09:59:27.9970611+07:00 0HLJS4USEHLCO:00000010 [INF] Sending file. Request path: '"/client-side/favicon.ico"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\favicon.ico"' (27b0a520)
+2019-01-17T09:59:28.1606581+07:00 0HLJS4USEHLCP:0000000A [INF] Sending file. Request path: '"/client-side/images/to-top-arrow.png"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\client-side\images\to-top-arrow.png"' (27b0a520)
+2019-01-17T09:59:28.1730432+07:00 0HLJS4USEHLCO:00000010 [INF] Request finished in 474.064ms 200 image/x-icon (791a596a)
+2019-01-17T09:59:28.1731972+07:00 0HLJS4USEHLCP:0000000A [INF] Request finished in 417.5447ms 200 image/png (791a596a)
+2019-01-17T09:59:56.8017738+07:00 0HLJS4USEHLCP:0000000B [INF] Request starting HTTP/1.1 GET https://localhost:5001/register.html   (ca22a1cb)
+2019-01-17T09:59:56.9561808+07:00 0HLJS4USEHLCP:0000000B [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T09:59:57.0039816+07:00 0HLJS4USEHLCP:0000000B [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T09:59:57.6059203+07:00 0HLJS4USEHLCP:0000000B [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments ([""]) - Validation state: Valid (4e3479ed)
+2019-01-17T10:00:05.5954055+07:00 0HLJS4USEHLCP:0000000B [INF] Executed action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 7984.8941ms. (50a9e262)
+2019-01-17T10:00:05.7395393+07:00 0HLJS4USEHLCP:0000000B [INF] Executing ViewResult, running view "Register". (c83d0e25)
+2019-01-17T10:02:53.0180242+07:00 0HLJS512EIL7V:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/register.html   (ca22a1cb)
+2019-01-17T10:02:53.7839930+07:00 0HLJS512EIL7V:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T10:02:53.8639632+07:00 0HLJS512EIL7V:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T10:02:54.5500623+07:00 0HLJS512EIL7V:00000001 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments ([""]) - Validation state: Valid (4e3479ed)
+2019-01-17T10:02:54.7157937+07:00 0HLJS512EIL7V:00000001 [INF] Executed action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2.3044ms. (50a9e262)
+2019-01-17T10:02:54.9977226+07:00 0HLJS512EIL7V:00000001 [INF] Executing ViewResult, running view "Register". (c83d0e25)
+2019-01-17T10:02:56.7321987+07:00 0HLJS512EIL7V:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T10:02:57.1140867+07:00 0HLJS512EIL7V:00000001 [INF] Executed DbCommand ("217"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T10:02:57.3550991+07:00 0HLJS512EIL7V:00000001 [INF] Executed DbCommand ("107"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T10:02:58.0451719+07:00 0HLJS512EIL7V:00000001 [INF] Executed ViewResult - view "Register" executed in 2845.85ms. (f66409e9)
+2019-01-17T10:02:58.2405063+07:00 0HLJS512EIL7V:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 4180.18ms (afa2e885)
+2019-01-17T10:02:58.3795263+07:00 0HLJS512EIL7V:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T10:02:58.5421150+07:00 0HLJS512EIL7V:00000001 [INF] Request finished in 5440.243ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-17T10:04:33.2615503+07:00 0HLJS512EIL7V:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/register.html application/x-www-form-urlencoded 359 (ca22a1cb)
+2019-01-17T10:04:33.5302202+07:00 0HLJS512EIL7V:00000002 [INF] Request finished in 31.268ms 404  (791a596a)
+2019-01-17T10:04:33.8412975+07:00  [INF] Connection id ""0HLJS512EIL7V"", Request id ""0HLJS512EIL7V:00000002"": the application completed without reading the entire request body. (54ac9468)
+2019-01-17T11:15:08.6880546+07:00 0HLJS69EQ2O4B:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-17T11:15:09.1364637+07:00 0HLJS69EQ2O4B:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-17T11:15:09.1562942+07:00 0HLJS69EQ2O4B:00000001 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-17T11:15:10.3504279+07:00 0HLJS69EQ2O4B:00000001 [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-17T11:15:10.3753598+07:00 0HLJS69EQ2O4B:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T11:15:10.6783553+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed DbCommand ("116"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T11:15:10.8495048+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed DbCommand ("102"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T11:15:10.9386671+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed DbCommand ("79"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T11:15:11.3082436+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed DbCommand ("263"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-17T11:15:11.5162584+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed DbCommand ("146"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-17T11:15:11.5464345+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1172.4375ms. (50a9e262)
+2019-01-17T11:15:11.6538465+07:00 0HLJS69EQ2O4B:00000001 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-17T11:15:12.0731221+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed DbCommand ("174"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T11:15:12.3196080+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed DbCommand ("99"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T11:15:13.0027632+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed ViewResult - view "Index" executed in 1297.25ms. (f66409e9)
+2019-01-17T11:15:13.4079559+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 3846.674ms (afa2e885)
+2019-01-17T11:15:13.6425719+07:00 0HLJS69EQ2O4B:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T11:15:13.8757904+07:00 0HLJS69EQ2O4B:00000001 [INF] Request finished in 5002.6097ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-17T11:15:44.1572474+07:00 0HLJS69EQ2O4B:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/register.html   (ca22a1cb)
+2019-01-17T11:15:44.1854089+07:00 0HLJS69EQ2O4B:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T11:15:44.2255164+07:00 0HLJS69EQ2O4B:00000002 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T11:15:44.2921105+07:00 0HLJS69EQ2O4B:00000002 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 36.3931ms (afa2e885)
+2019-01-17T11:15:44.2981201+07:00 0HLJS69EQ2O4B:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T11:15:44.5094357+07:00 0HLJS69EQ2O4B:00000002 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.AspNetCore.Identity.UI.Services.IEmailSender' while attempting to activate 'NUShop.WebMVC.Controllers.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-01-17T11:15:44.7420049+07:00 0HLJS69EQ2O4B:00000002 [INF] Request finished in 521.8791ms 500 text/html; charset=utf-8 (791a596a)
+2019-01-17T11:15:45.3554047+07:00 0HLJS69EQ2O4B:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/favicon.ico   (ca22a1cb)
+2019-01-17T11:15:45.4728303+07:00 0HLJS69EQ2O4B:00000003 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\wwwroot\favicon.ico"' (27b0a520)
+2019-01-17T11:15:45.4886238+07:00 0HLJS69EQ2O4B:00000003 [INF] Request finished in 236.2727ms 200 image/x-icon (791a596a)
+2019-01-17T11:17:45.9174202+07:00 0HLJS6ATNM60V:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/register.html   (ca22a1cb)
+2019-01-17T11:17:46.1530012+07:00 0HLJS6ATNM60V:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T11:17:46.2551689+07:00 0HLJS6ATNM60V:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T11:17:46.2904925+07:00 0HLJS6ATNM60V:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 19.3442ms (afa2e885)
+2019-01-17T11:17:46.3086370+07:00 0HLJS6ATNM60V:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T11:17:46.4413078+07:00 0HLJS6ATNM60V:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.AspNetCore.Identity.UI.Services.IEmailSender' while attempting to activate 'NUShop.WebMVC.Controllers.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-01-17T11:17:46.6249337+07:00 0HLJS6ATNM60V:00000001 [INF] Request finished in 698.4577ms 500 text/html; charset=utf-8 (791a596a)
+2019-01-17T11:28:44.5554410+07:00 0HLJS6H1Q4LDL:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/register.html   (ca22a1cb)
+2019-01-17T11:28:44.9607611+07:00 0HLJS6H1Q4LDL:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T11:28:45.0550179+07:00 0HLJS6H1Q4LDL:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T11:28:45.0985974+07:00 0HLJS6H1Q4LDL:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 28.897ms (afa2e885)
+2019-01-17T11:28:45.1203777+07:00 0HLJS6H1Q4LDL:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T11:28:45.2338797+07:00 0HLJS6H1Q4LDL:00000001 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: Unable to resolve service for type 'Microsoft.AspNetCore.Identity.UI.Services.IEmailSender' while attempting to activate 'NUShop.WebMVC.Controllers.AccountController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-01-17T11:28:45.4731141+07:00 0HLJS6H1Q4LDL:00000001 [INF] Request finished in 902.9772ms 500 text/html; charset=utf-8 (791a596a)
+2019-01-17T11:42:54.3036892+07:00 0HLJS6OUTT9NP:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/register.html   (ca22a1cb)
+2019-01-17T11:42:55.5523664+07:00 0HLJS6OUTT9NP:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T11:42:55.6960595+07:00 0HLJS6OUTT9NP:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T11:42:58.0422491+07:00 0HLJS6OUTT9NP:00000001 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments ([""]) - Validation state: Valid (4e3479ed)
+2019-01-17T11:42:58.1318959+07:00 0HLJS6OUTT9NP:00000001 [INF] Executed action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1.728ms. (50a9e262)
+2019-01-17T11:42:58.2310814+07:00 0HLJS6OUTT9NP:00000001 [INF] Executing ViewResult, running view "Register". (c83d0e25)
+2019-01-17T11:42:58.9293152+07:00 0HLJS6OUTT9NP:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T11:42:59.8174337+07:00 0HLJS6OUTT9NP:00000001 [INF] Executed DbCommand ("549"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T11:43:00.6344748+07:00 0HLJS6OUTT9NP:00000001 [INF] Executed DbCommand ("331"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T11:43:01.2673102+07:00 0HLJS6OUTT9NP:00000001 [INF] Executed ViewResult - view "Register" executed in 2788.2519ms. (f66409e9)
+2019-01-17T11:43:01.4964855+07:00 0HLJS6OUTT9NP:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 5571.7521ms (afa2e885)
+2019-01-17T11:43:01.5353509+07:00 0HLJS6OUTT9NP:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T11:43:01.5829533+07:00 0HLJS6OUTT9NP:00000001 [INF] Request finished in 7378.5771ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-17T11:43:08.4088324+07:00 0HLJS6OUTT9NP:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-17T11:43:08.5071342+07:00 0HLJS6OUTT9NP:00000002 [INF] Request finished in 135.8523ms 404  (791a596a)
+2019-01-17T11:43:41.1742548+07:00 0HLJS6OUTT9NP:00000003 [INF] Request starting HTTP/1.1 POST https://localhost:5001/register.html application/x-www-form-urlencoded 517 (ca22a1cb)
+2019-01-17T11:43:41.1852893+07:00 0HLJS6OUTT9NP:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T11:43:41.2191861+07:00 0HLJS6OUTT9NP:00000003 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T11:43:41.4496419+07:00 0HLJS6OUTT9NP:00000003 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.RegisterViewModel", ""]) - Validation state: Invalid (4e3479ed)
+2019-01-17T11:43:41.5233277+07:00 0HLJS6OUTT9NP:00000003 [INF] Executed action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 15.0117ms. (50a9e262)
+2019-01-17T11:43:41.5543436+07:00 0HLJS6OUTT9NP:00000003 [INF] Executing ViewResult, running view "Register". (c83d0e25)
+2019-01-17T11:43:41.6399336+07:00 0HLJS6OUTT9NP:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T11:43:41.7561349+07:00 0HLJS6OUTT9NP:00000003 [INF] Executed DbCommand ("84"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T11:43:41.9673863+07:00 0HLJS6OUTT9NP:00000003 [INF] Executed DbCommand ("174"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T11:43:42.1358096+07:00 0HLJS6OUTT9NP:00000003 [INF] Executed ViewResult - view "Register" executed in 447.0185ms. (f66409e9)
+2019-01-17T11:43:42.5963630+07:00 0HLJS6OUTT9NP:00000003 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 916.7364ms (afa2e885)
+2019-01-17T11:43:42.9633799+07:00 0HLJS6OUTT9NP:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T11:43:43.0995755+07:00 0HLJS6OUTT9NP:00000003 [INF] Request finished in 1856.6264ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-17T11:43:43.1662439+07:00 0HLJS6OUTT9NP:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-17T11:43:43.2828260+07:00 0HLJS6OUTT9NP:00000004 [INF] Request finished in 67.4455ms 404  (791a596a)
+2019-01-17T11:44:29.2908889+07:00 0HLJS6OUTT9NP:00000005 [INF] Request starting HTTP/1.1 POST https://localhost:5001/register.html application/x-www-form-urlencoded 517 (ca22a1cb)
+2019-01-17T11:44:29.3013186+07:00 0HLJS6OUTT9NP:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T11:44:29.3904162+07:00 0HLJS6OUTT9NP:00000005 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T11:44:29.6167394+07:00 0HLJS6OUTT9NP:00000005 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.RegisterViewModel", ""]) - Validation state: Invalid (4e3479ed)
+2019-01-17T11:54:41.5959161+07:00 0HLJS6VHU48EP:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/register.html application/x-www-form-urlencoded 517 (ca22a1cb)
+2019-01-17T11:54:42.0146704+07:00 0HLJS6VHU48EP:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T11:54:42.1501093+07:00 0HLJS6VHU48EP:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T11:54:45.3493473+07:00 0HLJS6VHU48EP:00000001 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.RegisterViewModel", ""]) - Validation state: Invalid (4e3479ed)
+2019-01-17T11:54:53.6472887+07:00 0HLJS6VHU48EP:00000001 [INF] Executed action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 8075.9974ms. (50a9e262)
+2019-01-17T11:54:53.9632785+07:00 0HLJS6VHU48EP:00000001 [INF] Executing ViewResult, running view "Register". (c83d0e25)
+2019-01-17T11:54:54.8804235+07:00 0HLJS6VHU48EP:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T11:54:55.7943885+07:00 0HLJS6VHU48EP:00000001 [INF] Executed DbCommand ("490"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T11:54:56.3426632+07:00 0HLJS6VHU48EP:00000001 [INF] Executed DbCommand ("199"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T11:54:57.3098086+07:00 0HLJS6VHU48EP:00000001 [INF] Executed ViewResult - view "Register" executed in 3424.8839ms. (f66409e9)
+2019-01-17T11:54:57.6853309+07:00 0HLJS6VHU48EP:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 15160.2391ms (afa2e885)
+2019-01-17T11:54:58.1552293+07:00 0HLJS6VHU48EP:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T11:54:58.3101826+07:00 0HLJS6VHU48EP:00000001 [INF] Request finished in 16609.5355ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-17T11:55:00.0772649+07:00 0HLJS6VHU48EP:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-17T11:55:00.7300413+07:00 0HLJS6VHU48EP:00000002 [INF] Request finished in 512.8718ms 404  (791a596a)
+2019-01-17T11:55:27.8568146+07:00 0HLJS6VHU48EP:00000003 [INF] Request starting HTTP/1.1 POST https://localhost:5001/register.html application/x-www-form-urlencoded 418 (ca22a1cb)
+2019-01-17T11:55:27.8730928+07:00 0HLJS6VHU48EP:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T11:55:27.8878956+07:00 0HLJS6VHU48EP:00000003 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T11:55:28.0003376+07:00 0HLJS6VHU48EP:00000003 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.RegisterViewModel", ""]) - Validation state: Valid (4e3479ed)
+2019-01-17T11:56:26.5448305+07:00 0HLJS6VHU48EP:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T11:56:27.6702030+07:00 0HLJS6VHU48EP:00000003 [INF] Executed DbCommand ("950"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-17T11:56:28.0175331+07:00 0HLJS6VHU48EP:00000003 [INF] Executed DbCommand ("176"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-01-17T11:56:30.9372744+07:00 0HLJS6VHU48EP:00000003 [ERR] Failed executing DbCommand ("1,615"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (Size = 4000), @p6='?' (Size = 255) (DbType = AnsiString), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (Size = 255), @p11='?' (DbType = Boolean), @p12='?' (DbType = DateTimeOffset), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AppUsers] ([Id], [AccessFailedCount], [Avatar], [Balance], [BirthDay], [ConcurrencyStamp], [DateCreated], [DateModified], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Status], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);" (627a98df)
+System.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'DateCreated', table 'NUShop1.dbo.AppUsers'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+ClientConnectionId:91517d50-229e-42c7-a186-9d325e108f5c
+Error Number:515,State:2,Class:16
+2019-01-17T11:56:31.1128473+07:00 0HLJS6VHU48EP:00000003 [ERR] An exception occurred in the database while saving changes for context type '"NUShop.Data.EF.AppDbContext"'."
+""Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'DateCreated', table 'NUShop1.dbo.AppUsers'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)" (170f029e)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'DateCreated', table 'NUShop1.dbo.AppUsers'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.CreateAsync(TUser user, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user, String password)
+2019-01-17T11:56:31.8349871+07:00 0HLJS6VHU48EP:00000003 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 63935.7149ms (afa2e885)
+2019-01-17T11:56:31.8478259+07:00 0HLJS6VHU48EP:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T11:56:32.7645499+07:00 0HLJS6VHU48EP:00000003 [INF] Executed DbCommand ("507"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT OBJECT_ID(N'[__EFMigrationsHistory]');" (0723d8ff)
+2019-01-17T11:56:33.6181048+07:00 0HLJS6VHU48EP:00000003 [INF] Executed DbCommand ("717"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];" (0723d8ff)
+2019-01-17T11:56:34.1549650+07:00 0HLJS6VHU48EP:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'DateCreated', table 'NUShop1.dbo.AppUsers'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__122_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.ExecuteAsync(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(DbContext _, ValueTuple`2 parameters, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IReadOnlyList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.EntityFrameworkCore.UserStore`9.CreateAsync(TUser user, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user)
+   at Microsoft.AspNetCore.Identity.UserManager`1.CreateAsync(TUser user, String password)
+   at NUShop.WebMVC.Controllers.AccountController.Register(RegisterViewModel model, String returnUrl) in D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\Controllers\AccountController.cs:line 240
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2019-01-17T12:00:13.0670303+07:00 0HLJS72KDRJ9I:00000001 [INF] Request starting HTTP/1.1 POST https://localhost:5001/register.html application/x-www-form-urlencoded 418 (ca22a1cb)
+2019-01-17T12:00:13.4413603+07:00 0HLJS72KDRJ9I:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T12:00:13.5777304+07:00 0HLJS72KDRJ9I:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T12:00:15.9162111+07:00 0HLJS72KDRJ9I:00000001 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.RegisterViewModel", ""]) - Validation state: Valid (4e3479ed)
+2019-01-17T12:00:23.8629860+07:00 0HLJS72KDRJ9I:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T12:00:25.0921157+07:00 0HLJS72KDRJ9I:00000001 [INF] Executed DbCommand ("943"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-17T12:00:25.5304634+07:00 0HLJS72KDRJ9I:00000001 [INF] Executed DbCommand ("211"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-01-17T12:00:27.6333482+07:00 0HLJS72KDRJ9I:00000001 [INF] Executed DbCommand ("1,036"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (Size = 4000), @p6='?' (Size = 255) (DbType = AnsiString), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (Size = 255), @p11='?' (DbType = Boolean), @p12='?' (DbType = DateTimeOffset), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AppUsers] ([Id], [AccessFailedCount], [Avatar], [Balance], [BirthDay], [ConcurrencyStamp], [DateCreated], [DateModified], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Status], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);" (0723d8ff)
+2019-01-17T12:00:28.5266403+07:00 0HLJS72KDRJ9I:00000001 [INF] User created a new account with password. (693a7015)
+2019-01-17T12:00:34.7766160+07:00 0HLJS72KDRJ9I:00000001 [INF] Executed DbCommand ("242"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-17T12:00:35.1779778+07:00 0HLJS72KDRJ9I:00000001 [INF] Executed DbCommand ("181"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-17T12:00:35.3106075+07:00 0HLJS72KDRJ9I:00000001 [INF] Executed DbCommand ("75"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-17T12:00:35.4075925+07:00 0HLJS72KDRJ9I:00000001 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-17T12:00:35.4177151+07:00 0HLJS72KDRJ9I:00000001 [INF] User created a new account with password. (693a7015)
+2019-01-17T12:00:35.4544422+07:00 0HLJS72KDRJ9I:00000001 [INF] Executed action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.RedirectToActionResult" in 19511.5447ms. (50a9e262)
+2019-01-17T12:00:35.5597253+07:00 0HLJS72KDRJ9I:00000001 [INF] Executing RedirectResult, redirecting to "/". (d98d540e)
+2019-01-17T12:00:35.7316961+07:00 0HLJS72KDRJ9I:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 21998.6934ms (afa2e885)
+2019-01-17T12:00:36.0251857+07:00 0HLJS72KDRJ9I:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T12:00:36.2102715+07:00 0HLJS72KDRJ9I:00000001 [INF] Request finished in 23060.5174ms 302  (791a596a)
+2019-01-17T12:00:36.3275999+07:00 0HLJS72KDRJ9I:00000002 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-17T12:00:36.4249288+07:00 0HLJS72KDRJ9I:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-17T12:00:36.4988862+07:00 0HLJS72KDRJ9I:00000002 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-17T12:00:37.1016868+07:00 0HLJS72KDRJ9I:00000002 [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-17T12:00:37.2102363+07:00 0HLJS72KDRJ9I:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T12:00:38.1724497+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed DbCommand ("664"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T12:00:38.3506778+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed DbCommand ("87"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T12:00:38.5478719+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed DbCommand ("105"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T12:00:38.9084651+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed DbCommand ("241"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-17T12:00:39.0825404+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed DbCommand ("126"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-17T12:00:39.0895580+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 1984.2123ms. (50a9e262)
+2019-01-17T12:00:39.1480192+07:00 0HLJS72KDRJ9I:00000002 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-17T12:00:39.9650950+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed DbCommand ("325"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T12:00:40.2594157+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed DbCommand ("86"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T12:00:40.6231730+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed ViewResult - view "Index" executed in 1373.3072ms. (f66409e9)
+2019-01-17T12:00:40.6513622+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 4125.0243ms (afa2e885)
+2019-01-17T12:00:40.6634646+07:00 0HLJS72KDRJ9I:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T12:00:40.7115703+07:00 0HLJS72KDRJ9I:00000002 [INF] Request finished in 4377.1491ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-17T12:00:41.6234479+07:00 0HLJS72KDRJ9I:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/client-side/css/bootstrap.min.css.map   (ca22a1cb)
+2019-01-17T12:00:41.7198488+07:00 0HLJS72KDRJ9I:00000003 [INF] Request finished in 121.1269ms 404  (791a596a)
+2019-01-17T12:01:00.4367183+07:00 0HLJS72KDRJ9I:00000004 [INF] Request starting HTTP/1.1 GET https://localhost:5001/register.html   (ca22a1cb)
+2019-01-17T12:01:00.4496017+07:00 0HLJS72KDRJ9I:00000004 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T12:01:00.4736258+07:00 0HLJS72KDRJ9I:00000004 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T12:01:00.5579450+07:00 0HLJS72KDRJ9I:00000004 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments ([""]) - Validation state: Valid (4e3479ed)
+2019-01-17T12:01:00.5632134+07:00 0HLJS72KDRJ9I:00000004 [INF] Executed action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 0.6518ms. (50a9e262)
+2019-01-17T12:01:00.6160243+07:00 0HLJS72KDRJ9I:00000004 [INF] Executing ViewResult, running view "Register". (c83d0e25)
+2019-01-17T12:01:00.9875818+07:00 0HLJS72KDRJ9I:00000004 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T12:01:01.1636393+07:00 0HLJS72KDRJ9I:00000004 [INF] Executed DbCommand ("161"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T12:01:01.2531561+07:00 0HLJS72KDRJ9I:00000004 [INF] Executed DbCommand ("79"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T12:01:01.2726198+07:00 0HLJS72KDRJ9I:00000004 [INF] Executed ViewResult - view "Register" executed in 695.8824ms. (f66409e9)
+2019-01-17T12:01:01.3425630+07:00 0HLJS72KDRJ9I:00000004 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 798.6279ms (afa2e885)
+2019-01-17T12:01:01.3804310+07:00 0HLJS72KDRJ9I:00000004 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T12:01:01.4241255+07:00 0HLJS72KDRJ9I:00000004 [INF] Request finished in 1043.2005ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-17T12:01:25.0290382+07:00 0HLJS72KDRJ9I:00000005 [INF] Request starting HTTP/1.1 POST https://localhost:5001/register.html application/x-www-form-urlencoded 461 (ca22a1cb)
+2019-01-17T12:01:25.0379698+07:00 0HLJS72KDRJ9I:00000005 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T12:01:25.0426955+07:00 0HLJS72KDRJ9I:00000005 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T12:01:25.1223347+07:00 0HLJS72KDRJ9I:00000005 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.RegisterViewModel", ""]) - Validation state: Valid (4e3479ed)
+2019-01-17T12:01:40.9746515+07:00 0HLJS72KDRJ9I:00000005 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T12:01:41.3325901+07:00 0HLJS72KDRJ9I:00000005 [INF] Executed DbCommand ("237"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-17T12:01:41.6259902+07:00 0HLJS72KDRJ9I:00000005 [INF] Executed DbCommand ("229"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-01-17T12:01:41.6382693+07:00 0HLJS72KDRJ9I:00000005 [WRN] User "(null)" validation failed: "DuplicateUserName;DuplicateEmail". (5dc28e15)
+2019-01-17T12:02:33.6924738+07:00 0HLJS72KDRJ9I:00000005 [INF] Executed action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 68557.6516ms. (50a9e262)
+2019-01-17T12:02:34.1119775+07:00 0HLJS72KDRJ9I:00000005 [INF] Executing ViewResult, running view "Register". (c83d0e25)
+2019-01-17T12:04:44.6118831+07:00 0HLJS755N22M9:00000001 [INF] Request starting HTTP/1.1 GET https://localhost:5001/register.html   (ca22a1cb)
+2019-01-17T12:04:45.6609576+07:00 0HLJS755N22M9:00000001 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T12:04:45.9561508+07:00 0HLJS755N22M9:00000001 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T12:04:48.2875510+07:00 0HLJS755N22M9:00000001 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments ([""]) - Validation state: Valid (4e3479ed)
+2019-01-17T12:04:48.3185761+07:00 0HLJS755N22M9:00000001 [INF] Executed action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 2.9874ms. (50a9e262)
+2019-01-17T12:04:48.4166758+07:00 0HLJS755N22M9:00000001 [INF] Executing ViewResult, running view "Register". (c83d0e25)
+2019-01-17T12:04:49.3613997+07:00 0HLJS755N22M9:00000001 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T12:04:50.2881379+07:00 0HLJS755N22M9:00000001 [INF] Executed DbCommand ("490"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T12:04:51.5182723+07:00 0HLJS755N22M9:00000001 [INF] Executed DbCommand ("651"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T12:04:52.0260975+07:00 0HLJS755N22M9:00000001 [INF] Executed ViewResult - view "Register" executed in 3507.3109ms. (f66409e9)
+2019-01-17T12:04:52.3938348+07:00 0HLJS755N22M9:00000001 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 6070.9278ms (afa2e885)
+2019-01-17T12:04:52.7235008+07:00 0HLJS755N22M9:00000001 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T12:04:52.9688372+07:00 0HLJS755N22M9:00000001 [INF] Request finished in 8150.3415ms 200 text/html; charset=utf-8 (791a596a)
+2019-01-17T12:05:50.8449788+07:00 0HLJS755N22M9:00000002 [INF] Request starting HTTP/1.1 POST https://localhost:5001/register.html application/x-www-form-urlencoded 461 (ca22a1cb)
+2019-01-17T12:05:50.9059499+07:00 0HLJS755N22M9:00000002 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (500cc934)
+2019-01-17T12:05:50.9562336+07:00 0HLJS755N22M9:00000002 [INF] Route matched with "{action = \"Register\", controller = \"Account\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" (a44c0341)
+2019-01-17T12:05:51.2769330+07:00 0HLJS755N22M9:00000002 [INF] Executing action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" with arguments (["NUShop.ViewModel.ViewModels.AccountViewModels.RegisterViewModel", ""]) - Validation state: Valid (4e3479ed)
+2019-01-17T12:05:51.5059233+07:00 0HLJS755N22M9:00000002 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T12:05:53.1400083+07:00 0HLJS755N22M9:00000002 [INF] Executed DbCommand ("1,286"ms) [Parameters=["@__normalizedUserName_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0" (0723d8ff)
+2019-01-17T12:05:53.7199852+07:00 0HLJS755N22M9:00000002 [INF] Executed DbCommand ("234"ms) [Parameters=["@__normalizedEmail_0='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Avatar], [u].[Balance], [u].[BirthDay], [u].[ConcurrencyStamp], [u].[DateCreated], [u].[DateModified], [u].[Email], [u].[EmailConfirmed], [u].[FullName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Status], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AppUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0" (0723d8ff)
+2019-01-17T12:05:55.6100497+07:00 0HLJS755N22M9:00000002 [INF] Executed DbCommand ("1,117"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (DbType = Decimal), @p4='?' (DbType = DateTime), @p5='?' (Size = 4000), @p6='?' (Size = 255) (DbType = AnsiString), @p7='?' (Size = 255) (DbType = AnsiString), @p8='?' (Size = 4000), @p9='?' (DbType = Boolean), @p10='?' (Size = 255), @p11='?' (DbType = Boolean), @p12='?' (DbType = DateTimeOffset), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 4000), @p19='?' (DbType = Int32), @p20='?' (DbType = Boolean), @p21='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [AppUsers] ([Id], [AccessFailedCount], [Avatar], [Balance], [BirthDay], [ConcurrencyStamp], [DateCreated], [DateModified], [Email], [EmailConfirmed], [FullName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [Status], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21);" (0723d8ff)
+2019-01-17T12:05:55.7442277+07:00 0HLJS755N22M9:00000002 [INF] User created a new account with password. (693a7015)
+2019-01-17T12:06:00.9334354+07:00 0HLJS755N22M9:00000002 [INF] Executed DbCommand ("198"ms) [Parameters=["@__user_Id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AppUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0" (0723d8ff)
+2019-01-17T12:06:01.1723640+07:00 0HLJS755N22M9:00000002 [INF] Executed DbCommand ("66"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-17T12:06:01.3714463+07:00 0HLJS755N22M9:00000002 [INF] Executed DbCommand ("166"ms) [Parameters=["@__userId_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [role].[Name]
+FROM [AppUserRoles] AS [userRole]
+INNER JOIN [AppRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0" (0723d8ff)
+2019-01-17T12:06:01.4198537+07:00 0HLJS755N22M9:00000002 [INF] AuthenticationScheme: "Identity.Application" signed in. (c66dd7e7)
+2019-01-17T12:06:01.4420262+07:00 0HLJS755N22M9:00000002 [INF] User created a new account with password. (693a7015)
+2019-01-17T12:06:01.4668342+07:00 0HLJS755N22M9:00000002 [INF] Executed action method "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.RedirectToActionResult" in 10178.228ms. (50a9e262)
+2019-01-17T12:06:01.5394421+07:00 0HLJS755N22M9:00000002 [INF] Executing RedirectResult, redirecting to "/". (d98d540e)
+2019-01-17T12:06:01.7353391+07:00 0HLJS755N22M9:00000002 [INF] Executed action "NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)" in 10653.1527ms (afa2e885)
+2019-01-17T12:06:01.8497576+07:00 0HLJS755N22M9:00000002 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.AccountController.Register (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T12:06:02.0696745+07:00 0HLJS755N22M9:00000002 [INF] Request finished in 11049.1969ms 302  (791a596a)
+2019-01-17T12:06:02.3153650+07:00 0HLJS755N22M9:00000003 [INF] Request starting HTTP/1.1 GET https://localhost:5001/   (ca22a1cb)
+2019-01-17T12:06:02.3753154+07:00 0HLJS755N22M9:00000003 [INF] Executing endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (500cc934)
+2019-01-17T12:06:02.3994772+07:00 0HLJS755N22M9:00000003 [INF] Route matched with "{action = \"Index\", controller = \"Home\", area = \"\"}". Executing action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" (a44c0341)
+2019-01-17T12:06:02.7296229+07:00 0HLJS755N22M9:00000003 [INF] Executing action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" - Validation state: Valid (dad538d7)
+2019-01-17T12:06:03.4329049+07:00 0HLJS755N22M9:00000003 [INF] Entity Framework Core "2.2.0-rtm-35687" initialized '"AppDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None" (9958f5bb)
+2019-01-17T12:06:04.1517828+07:00 0HLJS755N22M9:00000003 [INF] Executed DbCommand ("301"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T12:06:04.5493227+07:00 0HLJS755N22M9:00000003 [INF] Executed DbCommand ("277"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T12:06:05.2659323+07:00 0HLJS755N22M9:00000003 [INF] Executed DbCommand ("418"ms) [Parameters=["@__p_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(@__p_0) [x].[Id], [x].[CategoryId], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[OriginalPrice], [x].[Price], [x].[PromotionPrice], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[Unit], [x].[ViewCount]
+FROM [Products] AS [x]
+WHERE ([x].[Status] = 1) AND ([x].[HotFlag] = 1)
+ORDER BY [x].[DateCreated] DESC" (0723d8ff)
+2019-01-17T12:06:05.7368636+07:00 0HLJS755N22M9:00000003 [INF] Executed DbCommand ("307"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HotFlag], [x].[Image], [x].[Name], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[Status], [x].[Tags], [x].[ViewCount]
+FROM [Blogs] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[DateModified] DESC" (0723d8ff)
+2019-01-17T12:06:06.1752304+07:00 0HLJS755N22M9:00000003 [INF] Executed DbCommand ("334"ms) [Parameters=["@__groupAlias_0='?' (Size = 25)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[Content], [x].[Description], [x].[DisplayOrder], [x].[GroupAlias], [x].[Image], [x].[Name], [x].[Status], [x].[Url]
+FROM [Slides] AS [x]
+WHERE ([x].[GroupAlias] = @__groupAlias_0) AND ([x].[Status] = 1)" (0723d8ff)
+2019-01-17T12:06:06.2028389+07:00 0HLJS755N22M9:00000003 [INF] Executed action method "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)", returned result "Microsoft.AspNetCore.Mvc.ViewResult" in 3452.0495ms. (50a9e262)
+2019-01-17T12:06:06.2364467+07:00 0HLJS755N22M9:00000003 [INF] Executing ViewResult, running view "Index". (c83d0e25)
+2019-01-17T12:06:07.0566699+07:00 0HLJS755N22M9:00000003 [INF] Executed DbCommand ("465"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T12:06:07.7347769+07:00 0HLJS755N22M9:00000003 [INF] Executed DbCommand ("574"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [x].[Id], [x].[DateCreated], [x].[DateModified], [x].[Description], [x].[HomeFlag], [x].[HomeOrder], [x].[Image], [x].[Name], [x].[ParentId], [x].[SeoAlias], [x].[SeoDescription], [x].[SeoKeywords], [x].[SeoPageTitle], [x].[SortOrder], [x].[Status]
+FROM [Categories] AS [x]
+ORDER BY [x].[ParentId]" (0723d8ff)
+2019-01-17T12:06:08.0831566+07:00 0HLJS755N22M9:00000003 [INF] Executed ViewResult - view "Index" executed in 1737.9546ms. (f66409e9)
+2019-01-17T12:06:08.1459531+07:00 0HLJS755N22M9:00000003 [INF] Executed action "NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)" in 5683.7454ms (afa2e885)
+2019-01-17T12:06:08.2172225+07:00 0HLJS755N22M9:00000003 [INF] Executed endpoint '"NUShop.WebMVC.Controllers.HomeController.Index (NUShop.WebMVC)"' (99874f2b)
+2019-01-17T12:06:08.5369532+07:00 0HLJS755N22M9:00000003 [INF] Request finished in 6147.5261ms 200 text/html; charset=utf-8 (791a596a)

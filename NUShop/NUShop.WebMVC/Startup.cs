@@ -73,17 +73,17 @@ namespace NUShop.WebMVC
                 options.Password.RequireLowercase = false;
 
                 // Lockout settings
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(30);
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
                 options.Lockout.MaxFailedAccessAttempts = 10;
 
                 // User settings
                 options.User.RequireUniqueEmail = true;
             });
-
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
             #endregion Configure Identity
+            services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddTransient<DbSeeder>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
@@ -108,7 +108,6 @@ namespace NUShop.WebMVC
 
             services.AddAutoMapper();
             services.AddTransient<IAuthorizationHandler, ResourceAuthorizationHandler>();
-
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
