@@ -1,0 +1,92 @@
+﻿@using NUShop.ViewModel.ViewModels.AccountViewModels
+@using Microsoft.AspNetCore.Identity
+@using System.Linq
+@inject SignInManager<AppUser> SignInManager
+@model LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+<section class="main-container col1-layout">
+    <div class="main container">
+        <div class="account-login">
+            <div class="page-title">
+                <h2>Login or Create an Account</h2>
+            </div>
+            <fieldset class="col2-set">
+                <div class="col-1 new-users">
+                    <strong>Login</strong>
+                    <form asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
+                        <div class="content">
+                            <p>If you don't have an account with us, please register.</p>
+                            <ul class="form-list">
+                                <li>
+                                    <label for="username">User Name<span class="required">*</span></label>
+                                    <br>
+                                    <input type="text" title="User Name" asp-for="Username" class="input-text required-entry" id="username" value="" name="username">
+                                </li>
+                                <li>
+                                    <label for="pass">Password <span class="required">*</span></label>
+                                    <br>
+                                    <input type="password" title="Password" asp-for="Password" class="input-text required-entry validate-password" name="password">
+                                </li>
+                                <li>
+                                    <label class="inline" asp-for="RememberMe">
+                                        <input asp-for="RememberMe" />
+                                        Remember me
+                                    </label>
+                                </li>
+                            </ul>
+                           
+                            <p class="required">* Required Fields</p>
+                            <div class="buttons-set">
+                                <button class="button login" type="submit"><span>Login</span></button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <section>
+                        <h4>Use another service to log in.</h4>
+                        <hr />
+                        @{
+                            var loginProviders = (await SignInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+                            if (loginProviders.Count == 0)
+                            {
+                                <div>
+                                    <p>
+                                        There are no external authentication services configured. See <a href="https://go.microsoft.com/fwlink/?LinkID=532715">this article</a>
+                                        for details on setting up this ASP.NET application to support logging in via external services.
+                                    </p>
+                                </div>
+                            }
+                            else
+                            {
+                                <form asp-action="ExternalLogin" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
+                                    <div>
+                                        <p>
+                                            @foreach (var provider in loginProviders)
+                                            {
+                                                <button type="submit" class="btn btn-default" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.Name</button>
+                                            }
+                                        </p>
+                                    </div>
+                                </form>
+                            }
+                        }
+                    </section>
+                </div>
+                <div class="col-2 registered-users">
+                    <strong>Registered Customers</strong>
+                    <div class="content">
+                        <p>If you have an account with us, please log in.</p>
+                        <div class="buttons-set">
+                            <button onclick="window.location.href='/register.html'" class="button"><span>Register</span></button>
+                            <a class="forgot-word" href="http://demo.magentojtv.com/computerstore/customer/account/forgotpassword/">Forgot Your Password?</a>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+    </div>
+</section>

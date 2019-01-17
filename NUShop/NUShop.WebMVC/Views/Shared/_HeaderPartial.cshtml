@@ -21,21 +21,33 @@
                                     <li> <a title="My Account" href="account_page.html"><span class="hidden-xs">My Account</span></a> </li>
                                     <li> <a title="Wishlist" href="wishlist.html">Wishlist</a> </li>
                                     <li> <a title="Checkout" href="checkout.html"><span class="hidden-xs">Checkout</span></a> </li>
-                                    <li>
-                                        <div class="dropdown block-company-wrapper hidden-xs">
-                                            <a role="button" data-toggle="dropdown" data-target="#" class="block-company dropdown-toggle" href="#"> More <span class="caret"></span></a>
-                                            <ul class="dropdown-menu">
-                                                <li><a href="about_us.html"> About Us </a> </li>
-                                                <li><a href="#"> Customer Service </a> </li>
-                                                <li><a href="#"> Privacy Policy </a> </li>
-                                                <li><a href="sitemap.html">Site Map </a> </li>
-                                                <li><a href="#">Search Terms </a> </li>
-                                                <li><a href="#">Advanced Search </a> </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li> <a href="register.html"><span class="hidden-xs">Register</span></a> </li>
-                                    <li> <a href="login.html"><span class="hidden-xs">Log In</span></a> </li>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <li>
+                                            <div class="dropdown block-company-wrapper hidden-xs">
+                                                <a role="button" data-toggle="dropdown" data-target="#" class="block-company dropdown-toggle" href="#"> More <span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="about_us.html"> About Us </a> </li>
+                                                    <li><a href="#"> Customer Service </a> </li>
+                                                    <li><a href="#"> Privacy Policy </a> </li>
+                                                    <li><a href="sitemap.html">Site Map </a> </li>
+                                                    <li><a href="#">Search Terms </a> </li>
+                                                    <li><a href="#">Advanced Search </a> </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="nav-right">
+                                                <a href="#" onclick="document.getElementById('logoutForm').submit()"><span>Logout</span></a>
+                                            </form>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li> <a href="register.html"><span class="hidden-xs">Register</span></a> </li>
+                                        <li> <a href="login.html"><span class="hidden-xs">Log In</span></a> </li>
+                                    }
+
                                 </ul>
                             </div>
                         </div>

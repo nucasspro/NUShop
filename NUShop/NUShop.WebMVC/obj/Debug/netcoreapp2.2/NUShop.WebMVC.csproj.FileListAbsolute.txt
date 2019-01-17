@@ -132,3 +132,4 @@ D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\NUShop.WebMVC.csproj.CopyComplete
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\NUShop.WebMVC.dll
 D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\NUShop.WebMVC.pdb
+D:\Fetch Training\DotnetProject\NUShop\NUShop\NUShop.WebMVC\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
